@@ -1,33 +1,27 @@
-<html>
-<body>
 
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/backend/css/style.css"  />
+</head>
+<body>
 
 
 <div class="main">
     <div class="pleft">
         <dl class="setpbox t1">
-            <dt>安装步骤</dt>
+            <dt>Installation Steps</dt>
             <dd>
                 <ul>
-                    <li class="succeed">许可协议</li>
-                    <li class="succeed">环境检测</li>
-                    <li class="succeed">参数配置</li>
-                    <li class="now">安装模块</li>
-                    <li>安装完成</li>
+                    <li class="now"><h6>License Agreement</h6></li>
+                    <li><h6>EnvironmentalTesting</h6></li>
+                    <li><h6>ParameterConfiguration</h6></li>
+                    <li><h6>Installing</h6></li>
+                    <li><h6>Installation complete</h6></li>
                 </ul>
             </dd>
         </dl>
     </div>
-    <div class="pright">
-        <div class="pr-title"><h3>安装完成</h3></div>
-
-        <div class="btn-box">
-            <input type="button"  value="进入前台页面" />
-            <input type="submit" value="进入后台页面"  />
-        </div>
-    </div>
-</div>
-
 <div class="foot">
 </div>
 

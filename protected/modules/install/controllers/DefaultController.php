@@ -2,6 +2,8 @@
 
 class DefaultController extends Controller
 {
+    public $layout='/layouts/column1';
+
 	public function actionIndex()
 	{
 		$this->render('index');
@@ -119,7 +121,7 @@ class DefaultController extends Controller
         mysql_query("CREATE DATABASE IF NOT EXISTS `".$_POST['ConfigdataForm']['dbname']."`;",$conn);
         mysql_select_db($_POST['ConfigdataForm']['dbname']) or die("<script>alert('选择数据库失败，可能是你没权限，请预先创建一个数据库！');history.go(-1);</script>");
 
-        //获得数据库版本信息
+        //get database information
         $rs = mysql_query("SELECT VERSION();",$conn);
         $row = mysql_fetch_array($rs);
         $mysqlVersions = explode('.',trim($row[0]));
@@ -185,7 +187,7 @@ class DefaultController extends Controller
         }
         fclose($fp);
        /*
-        //导入默认数据
+        //input data
         $query = '';
         $fp = fopen(dirname(__FILE__).'/sql-dfdata.txt','r');
         while(!feof($fp))
@@ -205,14 +207,14 @@ class DefaultController extends Controller
         }
         fclose($fp);
 
-        //增加管理员帐号
+        //add admin
         $adminquery = "INSERT INTO `{$dbprefix}admin` VALUES (1, 10, '$adminuser', '".substr(md5($adminpwd),5,20)."', 'admin', '', '', 0, '".time()."', '127.0.0.1');";
         mysql_query($adminquery,$conn);
         */
 
 
 
-            //锁定安装程序
+            //lock the install
         $insLockfile = dirname(__FILE__).'/install_lock.txt';
         $fp = fopen($insLockfile,'w');
         fwrite($fp,'You have install ok!');
