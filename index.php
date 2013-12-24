@@ -1,17 +1,24 @@
 <?php
 error_reporting(E_ALL & ~(E_STRICT | E_NOTICE));
 // change the following paths if necessary
-$yii=dirname(__FILE__).'/../../yii/framework/yii.php';
-$config=dirname(__FILE__).'/protected/config/main.php';
+$yii = dirname(__FILE__) . '/../../yii/framework/yii.php';
+$config = dirname(__FILE__) . '/protected/config/main.php';
 
 // remove the following lines when in production mode
-defined('YII_DEBUG') or define('YII_DEBUG',true);
+defined('YII_DEBUG') or define('YII_DEBUG', true);
 // specify how many levels of call stack should be shown in each log message
-defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
+defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL', 3);
 
 require_once($yii);
-$local=require('./protected/config/main-local.php');
-$base=require('./protected/config/main.php');
-$config=CMap::mergeArray($base, $local);
-//$config = CMap::mergeArray($config, array('catchAllRequest' => array('install/default/index')));
+$config = require('./protected/config/main.php');
+$local = Yii::getPathOfAlias('application') . '/config/main-local.php';
+$env = Yii::getPathOfAlias('application') . '/config/main-env.php';
+if (file_exists($env)) {
+    $env = require($env);
+    $config = CMap::mergeArray($config, $env);
+}
+if (file_exists($local)) {
+    $local = require($local);
+    $config = CMap::mergeArray($config, $local);
+}
 Yii::createWebApplication($config)->run();

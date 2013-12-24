@@ -17,8 +17,8 @@ class DefaultController extends Controller
         if (file_exists($insLockfile)) {
             exit("You had installed");
         }
-
-        $root = dirname(dirname(dirname(dirname(__FILE__))));
+        $root = Yii::getPathOfAlias('application') . '/..//protected';
+       // $root = dirname(dirname(dirname(dirname(__FILE__))));
         @set_time_limit(0);
         //error_reporting(E_ALL);
         error_reporting(E_ALL || ~E_NOTICE);
@@ -43,11 +43,10 @@ class DefaultController extends Controller
             $sp_mysql_err = FALSE;}
         $sp_testdirs = array(
             '/',
-            '/plugin',
             '/config/main.php',
-            '/modules/*',
-            '/models/*',
-            '/user/',
+            '/config/main-env.php',
+
+
 
         );
 
@@ -90,6 +89,12 @@ class DefaultController extends Controller
         $isdemosign = 0;
 
         $model = new ConfigdataForm;
+        $demofile = Yii::getPathOfAlias('application') . '/../data/';
+        if(file_exists($demofile)){
+            $isdemosign=1;
+        }else{
+            $isdemosign=0;
+        }
 
 
         // collect user input data
@@ -128,22 +133,88 @@ class DefaultController extends Controller
                         break;
                     case '2':
 
-                        $msg = 'change config success...';
+                        $host = $config['dbhost'];
+                        $user = $config['dbuser'];
+                        $pwd = $config['dbpwd'];
+                        $file_dir = Yii::getPathOfAlias('application') . '/../data/';
+                        $file_name = "yincart-1.0.5.sql";
+                        $data_base =$config['dbname'];
+
+                        $conn = mysql_connect($host,$user,$pwd);
+
+                        mysql_select_db($data_base,$conn);
+
+                        $get_sql_data = file_get_contents($file_dir.$file_name);
+
+
+                        $explode = explode(";",$get_sql_data);
+                        $cnt = count($explode);
+                        for($i=0;$i<$cnt ;$i++){
+
+                            $sql = $explode[$i];
+
+                            $result = mysql_query($sql);
+
+
+                            if($result){
+
+                            }else{
+
+                            }
+                        }
+
+
+                        $msg = 'create database table success...';
 
                         break;
 
                     case '3':
+                        if(!$config['installdemo']){
+                            mysql_close($conn);
+                            $msg = 'change config success...';
+                        }else{
+                            $host = $config['dbhost'];
+                            $user = $config['dbuser'];
+                            $pwd = $config['dbpwd'];
+                            $file_dir = Yii::getPathOfAlias('application') . '/../data/';
+                            $file_name = "yincart-1.0.5.sql";
+                            $data_base =$config['dbname'];
+
+                            $conn = mysql_connect($host,$user,$pwd);
+
+                            mysql_select_db($data_base,$conn);
+
+                            $get_sql_data = file_get_contents($file_dir.$file_name);
 
 
-                        $msg = 'create database table success...';
+                            $explode = explode(";",$get_sql_data);
+                            $cnt = count($explode);
+                            for($i=0;$i<$cnt ;$i++){
+
+                                $sql = $explode[$i];
+
+                                $result = mysql_query($sql);
+                                if($result){
+                                    mysql_close($conn);
+                                }else{
+
+                                }
+                            }
+                         }
+
+
                         break;
                     case '4':
-                        $insLockfile = dirname(__FILE__) . '/install_lock.txt';
+                        $file_dir = Yii::getPathOfAlias('application') . '/../protected/config';
+                        $insLockfile = $file_dir . '/main-env.php';
                         $fp = fopen($insLockfile, 'w');
                         fwrite($fp, 'You have install ok!');
                         fclose($fp);
                         $msg = 'create config file success...';
                         break;
+                    case '5':
+                        $_POST['success']=1;
+                        $msg = 'All Competion!';
                 }
                 echo CJSON::encode(array('error' => false, 'msg' => $msg));
                 return;

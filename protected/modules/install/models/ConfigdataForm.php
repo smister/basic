@@ -11,6 +11,9 @@ class ConfigdataForm extends CFormModel
     public $webname = "myweb";
     public $adminuser = "admin";
     public $adminpwd = "admin";
+    public $installdemo = "0";
+    public $success = "0";
+
 
 
     public function rules()

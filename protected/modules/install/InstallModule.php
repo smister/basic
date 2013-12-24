@@ -18,9 +18,9 @@ class InstallModule extends CWebModule
 	{
 		if(parent::beforeControllerAction($controller, $action))
 		{
-			// this method is called before any module controller action is performed
-			// you may place customized code here
-			return true;
+            return true;
+           // $env = Yii::getPathOfAlias('application') . '/config/main-env.php';
+           // return !file_exists($env);
 		}
 		else
 			return false;

@@ -104,17 +104,18 @@ $this->breadcrumbs=array(
                     if($isdemosign == 0)
                     {
                         ?>
-                        <td width="558"><div class="olink" id="_remotesta"><div style="float:left">&nbsp; <color="red">[N] not exit</div><a href="javascript:GetRemoteDemo()">GetsAway </a></div></td>
+                        <td width="558"><div class="olink" id="_remotesta"><div style="float:left">&nbsp; <font color="red">[N] not exit </font></div><a href="javascript:GetRemoteDemo()">GetsAway </a></div></td>
                     <?php
                     } else {
                         ?>
-                        <td width="558">&nbsp; <color="green">[Y] Exist (you can choose to install to experience)</td>
+                        <td width="558">&nbsp; <font color="green">[Y] Exist </font>(you can choose to install to experience)</td>
                     <?php
                     }
                     ?>
                 </tr>
                 <tr>
                     <td colspan="2"><label for="installdemo"><strong>
+                                <?php echo CHtml::activeCheckBox($model, 'installdemo'); ?>
                                 Setup Initialization data experience</strong>(Experience with application data will contain most of the features of the operating examples)</label></td>
                 </tr>
             </table>
