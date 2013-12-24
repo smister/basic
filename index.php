@@ -13,4 +13,5 @@ require_once($yii);
 $local=require('./protected/config/main-local.php');
 $base=require('./protected/config/main.php');
 $config=CMap::mergeArray($base, $local);
+//$config = CMap::mergeArray($config, array('catchAllRequest' => array('install/default/index')));
 Yii::createWebApplication($config)->run();

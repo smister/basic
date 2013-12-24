@@ -7,14 +7,11 @@ class ConfigdataForm extends CFormModel
     public $dbname = "fan";
     public $dblang ="utf-8" ;
     public $dbprefix = "yincart_";
-    public $adminmail ="admin@fanhao.com" ;
+    public $adminemail ="admin@fanhao.com" ;
     public $webname = "myweb";
-    public $cmspath;
-    public $baseurl;
-    public $indexUrl;
     public $adminuser = "admin";
     public $adminpwd = "admin";
-    public $dfDbname;
+
 
     public function rules()
     {

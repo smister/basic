@@ -16,8 +16,8 @@
             <dt>Installation Steps</dt>
             <dd>
                 <ul>
-                    <li class="now"><h6>License Agreement</h6></li>
-                    <li><h6>EnvironmentalTesting</h6></li>
+                    <li><h6>License Agreement</h6></li>
+                    <li class="now"><h6>EnvironmentalTesting</h6></li>
                     <li><h6>ParameterConfiguration</h6></li>
                     <li><h6>Installing</h6></li>
                     <li><h6>Installation complete</h6></li>
@@ -49,7 +49,7 @@
             </tr>
             <tr>
                 <td><strong>System installation directory</strong></td>
-                <td><?php echo ROOT; ?></td>
+                <td><?php echo $root ; ?></td>
             </tr>
         </table>
         <div class="pr-title"><h3>Environmental Monitoring System</h3></div>
@@ -104,9 +104,9 @@
                 <tr>
                     <td><?php echo $d; ?></td>
                     <?php
-                    $fulld = ROOT.str_replace('/*','',$d);
-                    $rsta = (is_readable($fulld) ? '<font color=green>[√]read</font>' : '<font color=red>[×]read</font>');
-                    $wsta = (is_writable($fulld) ? '<font color=green>[√]write</font>' : '<font color=red>[×]write</font>');
+                    $fulld =$root.str_replace('/*','',$d);
+                    $rsta = (is_readable($fulld) ? '<font color=green>[Y]read</font>' : '<font color=red>[N]read</font>');
+                    $wsta = (is_writeable($fulld) ? '<font color=green>[Y]write</font>' : '<font color=red>[N]write</font>');
                     echo "<td>$rsta</td><td>$wsta</td>\r\n";
                     ?>
                 </tr>
