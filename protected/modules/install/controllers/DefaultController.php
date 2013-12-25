@@ -124,6 +124,7 @@ class DefaultController extends Controller
                 echo CJSON::encode(array('error' => true, 'msg' => $e->getMessage()));
                 return;
             }
+            $complete = false;
             try {
                 switch ($_POST['step']) {
                     case '1':
@@ -213,13 +214,13 @@ class DefaultController extends Controller
                         $msg = 'create config file success...';
                         break;
                     case '5':
-                        $_POST['success']=1;
                         $msg = 'All Competion!';
+                        $complete = true;
                 }
-                echo CJSON::encode(array('error' => false, 'msg' => $msg));
+                echo CJSON::encode(array('error' => false, 'complete' => $complete, 'msg' => $msg));
                 return;
             } catch (Exception $e) {
-                echo CJSON::encode(array('error' => true, 'msg' => $e->getMessage()));
+                echo CJSON::encode(array('error' => true,  'complete' => $complete, 'msg' => $e->getMessage()));
                 return;
             }
         } else {
