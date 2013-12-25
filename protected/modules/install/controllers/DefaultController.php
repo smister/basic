@@ -6,17 +6,16 @@ class DefaultController extends Controller
 
     public function actionIndex()
     {
+        $env = Yii::getPathOfAlias('application') . '/config/main-env.php';
+        if (file_exists($env)) {
+            exit("You had installed");
+        }
         $this->render('index');
     }
 
     public function actionStep1()
     {
-        $insLockfile = dirname(__FILE__) . '/install_lock.txt';
 
-
-        if (file_exists($insLockfile)) {
-            exit("You had installed");
-        }
         $root = Yii::getPathOfAlias('application') . '/..//protected';
        // $root = dirname(dirname(dirname(dirname(__FILE__))));
         @set_time_limit(0);
@@ -209,7 +208,7 @@ class DefaultController extends Controller
                         $file_dir = Yii::getPathOfAlias('application') . '/../protected/config';
                         $insLockfile = $file_dir . '/main-env.php';
                         $fp = fopen($insLockfile, 'w');
-                        fwrite($fp, 'You have install ok!');
+                        fwrite($fp, '');
                         fclose($fp);
                         $msg = 'create config file success...';
                         break;
