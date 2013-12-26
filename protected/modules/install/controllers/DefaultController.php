@@ -205,10 +205,24 @@ class DefaultController extends Controller
 
                         break;
                     case '4':
+                        $configdata=" <?php
+
+return array(
+    'components' => array(
+        'db' => array(
+            'connectionString' => 'mysql:host=localhost;dbname=yincart',
+            'emulatePrepare' => true,
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+            'tablePrefix' => ''
+        )
+    )
+);";
                         $file_dir = Yii::getPathOfAlias('application') . '/../protected/config';
                         $insLockfile = $file_dir . '/main-env.php';
                         $fp = fopen($insLockfile, 'w');
-                        fwrite($fp, '');
+                        fwrite($fp, $configdata);
                         fclose($fp);
                         $msg = 'create config file success...';
                         break;
