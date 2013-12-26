@@ -18,4 +18,84 @@ echo TbHtml::formActions(array(
     TbHtml::resetButton('Reset'),
 ));
 $this->endWidget();
+
+Yii::app()->getClientScript()->registerScript("ppsc",'
+	var global = {
+		prop: {},		
+		skus : {},
+		category_url: "'.$this->createUrl('/mall/itemCategory/getPropValues').'"	
+	}
+',CClientScript::POS_HEAD );
+
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .  '/js/jquery.json-2.4.min.js');
+
+if (!$model->isNewRecord){
+	
+	Yii::app()->getClientScript()->registerScript('gjjs','
+	    $.ajax
+		    ({
+			type: "POST",
+			data: { "item_id":"' . $model->item_id. '", "YII_CSRF_TOKEN":$("[name=YII_CSRF_TOKEN]").val()},
+			url: "'.$this->createUrl('/mall/item/getPropValues').'",
+			dataType: "json",
+			success: function(res)
+			{
+			   var props = res.props, skus = res.skus;
+			   $.each(props, function(k, pitem){
+				   
+				   add_attribute_form(pitem);
+				   global.prop[pitem.item_prop_id]= pitem.prop_name;
+				   
+				});
+				
+				 $.each(skus, function(k, pitem){
+				   
+				   add_options_form(pitem);  
+				   global.skus[pitem.item_prop_id]= pitem.prop_name;
+				   add_thread_th(pitem.item_prop_id,pitem.prop_name);			  
+				   
+				});			
+				
+			}
+		});	
+	');
+} else {
+	
+	Yii::app()->getClientScript()->registerScript('gjjs','
+	if ($("#Item_category_id").find("option:selected").val() > 0) {
+	    $("#item_prop_values").show();
+	    var Tid = $("#Item_category_id").find("option:selected").val();
+		
+		 $.ajax
+		    ({
+			type: "POST",
+			data: { "category_id":Tid, "YII_CSRF_TOKEN":$("[name=YII_CSRF_TOKEN]").val()},
+			url: "'.$this->createUrl('/mall/itemCategory/getPropValues').'",
+			dataType: "json",
+			success: function(res)
+			{
+			   var props = res.props, skus = res.skus;
+			   $.each(props, function(k, pitem){
+				   
+				   add_attribute_form(pitem);
+				   global.prop[pitem.item_prop_id]= pitem.prop_name;
+				   
+				});
+				
+				 $.each(skus, function(k, pitem){
+				   
+				   add_options_form(pitem);  
+				   global.skus[pitem.item_prop_id]= pitem.prop_name;
+				   add_thread_th(pitem.item_prop_id,pitem.prop_name);
+				   //renderTable();			  
+				   
+				});
+
+				
+			}
+		});	
+	}
+	');
+	
+}
 ?>

@@ -208,7 +208,7 @@ class ItemProp extends YActiveRecord
     {
         return Category::model()->getSelectOptions($root);
     }
-
+/*
     public function getPropValues()
     {
         $cri = new CDbCriteria(array(
@@ -234,12 +234,12 @@ class ItemProp extends YActiveRecord
         foreach ($list as $k => $v) {
             $data[$this->item_prop_id . ':' . $k] = $v;
         }
-        echo CHtml::DropDownList('Item[props][' . $this->item_prop_id . ']', $selected, $data, array('empty' => '请选择', 'label' => $label));
+        return CHtml::DropDownList('Item[props][' . $this->item_prop_id . ']', $selected, $data, array('empty' => '请选择', 'label' => $label));
     }
 
     public function getPropTextFieldValues($label = '', $value = '')
     {
-        echo CHtml::textField('Item[props][' . $this->item_prop_id . ']', $value, array('label' => $label));
+        return CHtml::textField('Item[props][' . $this->item_prop_id . ']', $value, array('label' => $label));
     }
 
     public function getPropArrayValues()
@@ -262,19 +262,133 @@ class ItemProp extends YActiveRecord
             'order' => 'sort_order asc, prop_value_id asc'
         ));
         $PropValues = PropValue::model()->findAll($cri);
+		
+		//var_dump( $PropValues );
 
         $list = CHtml::listData($PropValues, 'prop_value_id', 'value_name');
         foreach ($list as $k => $v) {
             $data[$this->item_prop_id . ':' . $k] = $v;
         }
-        echo '<ul class="sku-list">';
+        $html = '<ul class="sku-list">';
         if ($child_type) {
-            echo CHtml::checkBoxList('Item[' . $type . '][' . $child_type . '][' . $this->item_prop_id . ']', $selected, $data,
+            $html .= CHtml::checkBoxList('Item[' . $type . '][' . $child_type . '][' . $this->item_prop_id . ']', $selected, $data,
                 array('template' => '<label class="checkbox inline">{input}{label}</label>', 'label' => $label, 'separator' => '', 'class' => $class, 'labelOptions' => array('class' => 'labelForRadio')));
         } else {
-            echo CHtml::checkBoxList('Item[' . $type . '][' . $this->item_prop_id . ']', $selected, $data,
+            $html .=  CHtml::checkBoxList('Item[' . $type . '][' . $this->item_prop_id . ']', $selected, $data,
                 array('template' => '<label class="checkbox inline">{input}{label}</label>', 'label' => $label, 'separator' => '', 'class' => $class, 'labelOptions' => array('class' => 'labelForRadio')));
         }
-        echo '</ul>';
+        $html .=  '</ul>';
+		
+		return $html;
     }
+	
+	*/
+		
+	public static function get_option_values_data($prop_id){
+		
+	  $cri = new CDbCriteria(array(
+		  'condition' => 'item_prop_id =' . $prop_id,
+		  'order' => 'sort_order asc, prop_value_id asc'
+	  ));
+	  
+	  $PropValues = PropValue::model()->findAll($cri);
+  
+	  //$list = CHtml::listData($PropValues, 'value_id', 'value_name');
+	  
+	  $arr = array();
+	  
+	  foreach ($PropValues as $data) {
+		  $arr[$prop_id . ':' . $data->prop_value_id] = $data->value_name;
+	  }
+	  
+	  return  $arr;
+	}
+	
+	
+	
+	  public static  function get_selected_array($valArr){
+		  
+		  $arr = array();
+			  
+		  foreach($valArr as $k => $v) {
+			  
+			  $tmpArr = explode(";",$v);
+			  $idArr = explode(":",$tmpArr[0]);
+			  if ($idArr[1]>0) $arr[] = $tmpArr[0];
+		  }
+		  
+		  return $arr;	
+	  }
+	  
+	  
+	  
+	  
+	  public static function convert_props_to_data($str){
+		   $arr =   self::convert_props_to_tree($str);
+		   $tmpArr = array();	 
+		   foreach( $arr as $data){
+			  $prop = self::model()->findByPk($data['id']);		  	 
+			  $tmpData = $prop->attributes;
+			  $values = get_values_array($data['id'],$data['values']['id'],$data['values']['name']);
+			  $selected = array();
+			  
+			  
+			  $tmpData['values'] = $values;
+			  $tmpData['selected'] = $selected ;
+					  
+			  $tmpArr[] = $tmpData;		  
+		   }
+		  
+		   return $tmpArr;
+		  
+	  }
+	  
+	  
+	  public static function convert_props_to_tree($str){
+		 $arr =  self::props_format_decode($str);
+		 $props_arr = array_keys($arr);
+		 $values_arr = array_values($arr);
+		 $tmpArr = array();
+		
+		$count = count($props_arr);  
+		
+		 for ($i=0; $i< $count; $i=$i+2) {
+			 
+			 $tmpArr[] = array(
+							'id'=>$props_arr[$i],
+							'name' =>$props_arr[$i+1],
+							'values' => array( "id"=>$values_arr[$i], 'name'=>$values_arr[$i+1]) 
+						);
+			 
+		 }
+		 
+		// print_r($tmpArr);
+		 
+		 return $tmpArr;
+		
+	}
+
+	
+	 public static function props_format_decode($str){
+		$tmpArr = explode(';', $str);
+		$arr = array();
+		foreach ($tmpArr as $k => $v) {
+			$data =  explode(':', $v);
+			$arr[F::strip_prop_csvto_string($data[0])][] = F::strip_prop_csvto_string($data[1]);
+			$arr[F::strip_prop_csvto_string($data[2])][] = F::strip_prop_csvto_string($data[3]);
+		}
+		
+		return $arr;
+	}
+	
+	
+	public static function get_oname($id){
+		$model = self::model()->findByPk($id);
+		$name = "";
+		if ($model) {			
+			$name = F::strip_prop_strto_csv($model->prop_name);			
+		}
+		
+		return $name;
+	}
 }

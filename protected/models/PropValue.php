@@ -109,4 +109,16 @@ class PropValue extends CActiveRecord
     {
         return parent::model($className);
     }
+	
+		
+	public static function get_vname($id){
+		$model = self::model()->findByPk($id);
+		$name = "";
+		if ($model) {			
+			$name = F::strip_prop_strto_csv($model->value_name);			
+		}
+		
+		return $name;
+	}
+	
 }

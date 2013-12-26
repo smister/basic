@@ -1,51 +1,7 @@
 <?php
 $cs = Yii::app()->clientScript;
-$cs->registerScriptFile(Yii::app()->baseUrl . '/js/jquery.form.js', CClientScript::POS_END);
-$cs->registerScriptFile(Yii::app()->baseUrl . '/js/skus.js', CClientScript::POS_END);
-
-$cs->registerScript('skusJsD','
-	$("#Item_category_id").change(function() {
-	    $("#item_prop_values").show();
-	    var Tid = $("#Item_category_id").select().val();
-//           var Tid = $("#Item_category_id  option:selected").val();
-//5(178918267)友情提示
-	    $.ajax
-		    ({
-			type: "POST",
-			data: {"category_id":Tid, "YII_CSRF_TOKEN":$("[name=YII_CSRF_TOKEN]").val()},
-			url: "' . Yii::app()->createUrl('/mall/item/getPropValues').'",
-			dataType: "html",
-			success: function(results)
-			{
-			    $("#item_prop_values").empty();
-			    $(results).appendTo("#item_prop_values");
-			}
-		    });
-
-	});
-//返源<pizigou@vip.qq.com>友情提示
-	if ($("#Item_category_id").find("option:selected").val() > 0) {
-//		alert($("#Item_category_id").find("option:selected").val());
-	    $("#item_prop_values").show();
-	    var Tid = $("#Item_category_id").find("option:selected").val();
-//           var Tid = $("#Item_category_id  option:selected").val();
-//5(178918267)友情提示
-	    $.ajax
-		    ({
-			type: "POST",
-			data: {"category_id":Tid, "item_id":"' . $model->item_id. '", "YII_CSRF_TOKEN":$("[name=YII_CSRF_TOKEN]").val()},
-			url: "'.Yii::app()->createUrl('/mall/item/getPropValues').'",
-			dataType: "html",
-			success: function(results)
-			{
-			    $("#item_prop_values").empty();
-			    $(results).appendTo("#item_prop_values");
-				renderTable();
-			}
-		    });
-	}
-');
-
+//$cs->registerScriptFile(Yii::app()->baseUrl . '/js/jquery.form.js', CClientScript::POS_END);
+$cs->registerScriptFile(Yii::app()->baseUrl . '/js/product.options.js', CClientScript::POS_END);
 ?>
 <style>
     table{width:100%}
@@ -64,16 +20,37 @@ $cs->registerScript('skusJsD','
 </div>
 
 <div class="row" style='margin-bottom:10px'>
-    <div id="item_prop_values" style="display:none">
+    <div id="item_prop_values">
 
     </div>
-    <input type="hidden" id="currentRow"  value="0"/>
-    <input type="hidden" id="skus_info" data-id="<?php echo ($model->item_id)? $model->item_id : 0; ?>" data-url="<?php echo Yii::app()->createUrl('/mall/item/ajaxGetSkus'); ?>" value=""/>
+   
 </div>  
 
+<div class="row">
+    <label class="span2 control-label" for="">商品规格</label>
+    <div class="span9">
+        <div id="sku-wrap" class="sku-wrap">
+    
+        </div>
+        
+        
+        <p id="output"></p>
+    </div>       
+</div>
+
+<div class="row">
+    <div class="span2"></div>
+    <div class="span9" style="padding-left:0">
+      <div id="skuTable" class="sku-map">
+      
+      </div>
+    </div>
+</div>
+ <input type="hidden" id="currentRow"  value="0"/>
+    <input type="hidden" id="skus_info" data-id="<?php echo ($model->item_id)? $model->item_id : 0; ?>" data-url="<?php echo Yii::app()->createUrl('/mall/item/ajaxGetSkus'); ?>" value=""/>
 
 <div id="hint-contentbox">  
- <div class="batch-body row">
+ <div class="batch-body row-fluid">
  </div>	
   <div class="batch-foot"><a class="btn btn-success" id="btnPopSub" href="javascript:void(0)">确定</a>  <a class="btn btn-info cancel" id="btnPopCancel" href="javascript:void(0)">取消</a></div>
 </div>

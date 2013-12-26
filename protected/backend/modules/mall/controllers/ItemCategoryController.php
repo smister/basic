@@ -2,6 +2,21 @@
 
 class ItemCategoryController extends MallBaseController
 {
+	
+	 /**
+     * Specifies the access control rules.
+     * This method is used by the 'accessControl' filter.
+     * @return array access control rules
+     */
+    public function accessRules()
+    {
+        return array_merge(array(
+                array('allow',
+                    'users' => array('@'),
+                )
+            ), parent::accessRules()
+        );
+    }
 
     /**
      * Creates a new model.
@@ -107,5 +122,83 @@ class ItemCategoryController extends MallBaseController
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
     }
+	
+	
+	
+	
+	public function actionGetPropValues(){
+		
+		if (!Yii::app()->request->isAjaxRequest) {
+			exit();
+		}
+				
+		$category_id = $_POST["category_id"];
+		
+		
+		$cri = new CDbCriteria(array('condition' => 'is_key_prop=1 and category_id =' . $category_id));
+        $props = ItemProp::model()->findAll($cri);
+		
+		$key_props =  array();
+		
+		 foreach ($props as $p) {
+			$tmpData = $p->attributes;
+			$values =  ItemProp::get_option_values_data($p->item_prop_id);
+			$selected = array();
+			
+			$tmpData['values'] = $values;
+			$tmpData['selected'] = $selected ;
+			$key_props[] = $tmpData;	
+			 
+		 }
+		
+		
+		
+		
+		$cri = new CDbCriteria(array(
+            'condition' => 'is_key_prop=0 and is_sale_prop=0 and category_id =' . $category_id,
+        ));
+        $props = ItemProp::model()->findAll($cri);
+		
+		$common_props =  array();
+		
+		 foreach ($props as $p) {
+			$tmpData = $p->attributes;
+			$values =  ItemProp::get_option_values_data($p->item_prop_id);
+			$selected = array();
+			
+			$tmpData['values'] = $values;
+			$tmpData['selected'] = $selected ;
+			$common_props[] = $tmpData;	
+		 }
+		
+		
+		$cri = new CDbCriteria(array(
+            'condition' => 'is_sale_prop=1 and category_id =' . $category_id,
+        ));
+        $props = ItemProp::model()->findAll($cri);
+
+		
+		$skus =  array();
+		
+		 foreach ($props as $p) {
+			 
+			$tmpData = $p->attributes;
+			$values =  ItemProp::get_option_values_data($p->item_prop_id);
+			$selected = array();
+			
+			$tmpData['values'] = $values;
+			$tmpData['selected'] = $selected ;
+			$skus[] = $tmpData;	
+			 
+		 }
+		
+		$arr = array("props"=>CMap::mergeArray($key_props, $common_props), 'skus'=>$skus);
+		
+		echo CJSON::encode($arr);	
+		
+		Yii::app()->end();			
+		
+	}
+
 
 }

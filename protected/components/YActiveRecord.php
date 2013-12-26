@@ -54,7 +54,7 @@ Class YActiveRecord extends CActiveRecord
                 unset($this->$name);
                 $className = $this->getMetaData()->relations[$name]->className;
                 $foreignKey = $this->getMetaData()->relations[$name]->foreignKey;
-                $primaryKey = $this::model($className)->getTableSchema()->primaryKey;
+                $primaryKey = self::model($className)->getTableSchema()->primaryKey;
                 $savedModelList = array();
                 foreach ($this->$name as $value) {
                     $savedModelList[$value->$primaryKey] = $value;
@@ -73,7 +73,7 @@ Class YActiveRecord extends CActiveRecord
                 if ($savedModelList) {
                     $cri = new CDbCriteria();
                     $cri->addInCondition($primaryKey, array_keys($savedModelList));
-                    $this::model($className)->deleteAll($cri);
+                    self::model($className)->deleteAll($cri);
                 }
             }
         }

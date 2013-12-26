@@ -73,3 +73,13 @@ footer {
     text-align:center
 }
 
+.sku-box {
+overflow: hidden;
+}
+.sku-list li {
+display: inline-block;
+width: 200px;
+height: 25px;
+overflow: hidden;
+vertical-align: middle;
+}

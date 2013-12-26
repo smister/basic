@@ -54,7 +54,7 @@ class Item extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('outer_id, category_id, title, stock, price, currency, props, props_name, desc, location_id, create_time, update_time, language', 'required'),
+            array('category_id, title, stock, price, currency, desc,  create_time, language', 'required'),
             array('is_show, is_promote, is_new, is_hot, is_best', 'numerical', 'integerOnly'=>true),
             array('outer_id, language', 'length', 'max'=>45),
             array('category_id, stock, min_number, price, location_id, shipping_fee, click_count, wish_count, create_time, update_time', 'length', 'max'=>10),
@@ -62,7 +62,7 @@ class Item extends CActiveRecord
             array('currency', 'length', 'max'=>20),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('item_id, outer_id, category_id, title, stock, min_number, price, currency, props, props_name, desc, location_id, shipping_fee, is_show, is_promote, is_new, is_hot, is_best, click_count, wish_count, create_time, update_time, language', 'safe', 'on'=>'search'),
+            array('item_id, outer_id, category_id, title, stock, min_number, price, currency, props, props_name,skus, desc, location_id, shipping_fee, is_show, is_promote, is_new, is_hot, is_best, click_count, wish_count, create_time, update_time, language', 'safe', 'on'=>'search'),
         );
     }
 
@@ -79,7 +79,7 @@ class Item extends CActiveRecord
             'itemImgs' => array(self::HAS_MANY, 'ItemImg', 'item_id'),
             'orderItems' => array(self::HAS_MANY, 'OrderItem', 'item_id'),
             'propImgs' => array(self::HAS_MANY, 'PropImg', 'item_id'),
-            'skus' => array(self::HAS_MANY, 'Sku', 'item_id'),
+            'skuData' => array(self::HAS_MANY, 'Sku', 'item_id'),
         );
     }
 
@@ -99,6 +99,7 @@ class Item extends CActiveRecord
             'currency' => 'Currency',
             'props' => 'Props',
             'props_name' => 'Props Name',
+			'skus' => 'Skus',
             'desc' => 'Desc',
             'location_id' => 'Location',
             'shipping_fee' => 'Shipping Fee',
@@ -143,6 +144,7 @@ class Item extends CActiveRecord
         $criteria->compare('currency',$this->currency,true);
         $criteria->compare('props',$this->props,true);
         $criteria->compare('props_name',$this->props_name,true);
+		$criteria->compare('skus',$this->skus,true);
         $criteria->compare('desc',$this->desc,true);
         $criteria->compare('location_id',$this->location_id,true);
         $criteria->compare('shipping_fee',$this->shipping_fee,true);
@@ -193,14 +195,14 @@ class Item extends CActiveRecord
 
     public function beforeSave()
     {
-        if (parent::beforeSave()) {
-            if ($this->isNewRecord) {
-                $this->create_time = $this->update_time = time();
-            } else
-                $this->update_time = time();
-            return true;
-        } else
-            return false;
+		if ($this->isNewRecord) {
+			$this->create_time = time();
+			$this->update_time = time();	
+		} else {
+			 $this->update_time = time();				
+		}
+		
+		return parent::beforeSave();		
     }
 
     /**
@@ -352,70 +354,65 @@ class Item extends CActiveRecord
         return $data;
     }
 
-    public function afterSave()
-    {
-        parent::afterSave();
-        $this->addImages();
-//        $this->update_props_data();
-    }
-
-    /**
-     * update props data
-     * @author Lonely(qq:81106404)
-     */
-    public function update_props_data()
-    {
-        $rawData = CJSON::decode($this->props, true);
-        $opids = array();
-        $opnames = array();
-
-//        print_r($rawData);
-
-        foreach ($rawData as $k => $v) {
-            if (is_array($v)) {
-
-                foreach ($v as $sk => $sv) {
-                    $tmpArr = explode(":", $sv);
-                    if (count($tmpArr) > 1) {
-                        $opids[] = $sv;
-                        $opnames[] = self::get_props_values_combine($sv);
-                    }
-                }
-
-
-            } else {
-                $tmpArr = explode(":", $v);
-
-                if (count($tmpArr) > 1) {
-                    $opids[] = $sv;
-                    $opnames[] = self::get_props_values_combine($v);
-                }
-            }
-
-        }
-
-        $props_data = implode(";", $opids);
-        $props_name = implode(";", $opnames);
-
-        $sql = 'UPDATE {{item}} SET `props_data`="' . $props_data . '",`props_name`="' . $props_name . '" WHERE item_id=' . $this->item_id;
-
-        Yii::app()->db->createCommand($sql)->execute();
-
-
-    }
-
-    /**
-     * get props values combine
+   	
+	
+  
+	/**
+     * convert skus data
      * @param $arr
      * @return string
      * @author Lonely(qq:81106404)
      */
-    public static function get_props_values_combine($arr)
-    {
-        $op = ItemProp::model()->findByPk($arr[0]);
-        $opv = PropValue::model()->findByPk($arr[1]);
-        $data = $arr[0] . ":" . $arr[1] . ":" . F::strip_prop_strto_csv($op->prop_name) . ":" . F::strip_prop_strto_csv($opv->value_name);
-
-        return $data;
-    }
+	
+	public static function put_sku_data($treeArr,$skuIds){
+		$tmpArr = array();
+		foreach($treeArr as $k =>$v){
+			$prop = ItemProp::model()->findByPk($k);
+			$name = ($prop)?F::strip_prop_strto_csv($prop->prop_name):"";
+			$tmpArr[$k.":".$name.":0:".$prop->must] = self::convert_prop_val_name($v);			
+		}
+		
+		return CJSON::encode($tmpArr);
+	}
+	
+	/**
+     * convert prop values combine
+     * @param $arr
+     * @return string
+     * @author Lonely(qq:81106404)
+     */
+	
+	public static function convert_prop_val_name($tmpArr){
+		$arr = array();
+		$oname = "";
+		$vname = "";
+		if (is_string($tmpArr)) {
+			 $data =  explode(':', $tmpArr);
+			 if (count($data>1)){
+				  $oname =  ItemProp::get_oname($data[0]);
+				  $vname =  PropValue::get_vname($data[1]);
+			 } else {
+				  $oname =  ItemProp::get_oname($tmpArr);
+				  $vname =  '';
+			 }
+			 $arr[] = $tmpArr.";".$oname.":".$vname;
+		} else {
+		  foreach ($tmpArr as $k => $v) {
+			  $data =  explode(':', $v);
+			  if (count($data>1)){
+				  $oname =  ItemProp::get_oname($data[0]);
+				  $vname =  PropValue::get_vname($data[1]);
+			  } else {
+				  $oname =  ItemProp::get_oname($k);
+				  $vname =  F::strip_prop_strto_csv($v);
+			  }
+			  $arr[] = $v.";".$oname.":".$vname;
+			  
+		  }
+		}
+		
+		return $arr;
+	}
+	
+	
 }
