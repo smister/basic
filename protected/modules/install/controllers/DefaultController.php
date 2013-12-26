@@ -15,7 +15,10 @@ class DefaultController extends Controller
 
     public function actionStep1()
     {
-
+        $env = Yii::getPathOfAlias('application') . '/config/main-env.php';
+        if (file_exists($env)) {
+            exit("You had installed");
+        }
         $root = Yii::getPathOfAlias('application') . '/..//protected';
        // $root = dirname(dirname(dirname(dirname(__FILE__))));
         @set_time_limit(0);
@@ -69,7 +72,10 @@ class DefaultController extends Controller
     public function actionStep2()
     {
 
-
+        $env = Yii::getPathOfAlias('application') . '/config/main-env.php';
+        if (file_exists($env)) {
+            exit("You had installed");
+        }
         $s_lang = 'utf-8';
         if (!empty($_SERVER['REQUEST_URI']))
             $scriptName = $_SERVER['REQUEST_URI'];
@@ -115,6 +121,7 @@ class DefaultController extends Controller
 
     public function actionStep3()
     {
+
         if (isset($_POST['is-ajax']) && $_POST['is-ajax']) {
             $config = $_POST['config'];
             try {
