@@ -8,7 +8,15 @@ defined('YII_DEBUG') or define('YII_DEBUG',true);
 defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 require_once($yii);
-$local=require('./protected/config/main-env.php');
-$base=require('./protected/backend/config/main.php');
-$config=CMap::mergeArray($base, $local);
+$config = require('./protected/backend/config/main.php');
+$local = './protected/config/main-local.php';
+$env = './protected/config/main-env.php';
+if (file_exists($env)) {
+    $env = require($env);
+    $config = CMap::mergeArray($config, $env);
+}
+if (file_exists($local)) {
+    $local = require($local);
+    $config = CMap::mergeArray($config, $local);
+}
 Yii::createWebApplication($config)->run();

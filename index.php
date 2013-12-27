@@ -11,8 +11,8 @@ defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL', 3);
 
 require_once($yii);
 $config = require('./protected/config/main.php');
-$local = Yii::getPathOfAlias('application') . '/config/main-local.php';
-$env = Yii::getPathOfAlias('application') . '/config/main-env.php';
+$local = './protected/config/main-local.php';
+$env = './protected/config/main-env.php';
 if (file_exists($env)) {
     $env = require($env);
     $config = CMap::mergeArray($config, $env);

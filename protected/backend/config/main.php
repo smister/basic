@@ -75,7 +75,7 @@ return array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,
             'loginUrl' => array('/site/login'),
-            'stateKeyPrefix' => 'back_',
+//            'stateKeyPrefix' => 'back_',
             'class' => 'auth.components.AuthWebUser',
         ),
         'themeManager' => array(
@@ -91,7 +91,6 @@ return array(
             'behaviors' => array(
                 'auth' => array(
                     'class' => 'auth.components.AuthBehavior',
-                    'admins' => array('admin'), // users with full access
                 ),
             ),
         ),
