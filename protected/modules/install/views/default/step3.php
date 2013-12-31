@@ -32,9 +32,9 @@
     <div class="goto">
         <div class="btn-box" style="display: none">
             <td width="558"><input type="button" value="go to front"
-                                   onclick="window.location.href='<?php echo $this->createUrl('index'); ?>';"/></td>
+                                   onclick="window.location.href='<?php echo $this->createUrl('/'); ?>';"/></td>
             <td width="558"><input type="button" value="go to back"
-                                   onclick="window.location.href='<?php echo $this->createUrl('index'); ?>';"/></td>
+                                   onclick="window.location.href='<?php echo $this->createUrl('/backend.php'); ?>';"/></td>
         </div>
     </div>
     <div class="foot">
