@@ -56,7 +56,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         ),
  array(
      'name' => 'create_time',
-     'value' => 'date("Y年m月d日 H:i:s",$data->create_time +(8 * 3600))',
+     'value' => 'date("Y年m月d日 H:i:s",$data->create_time)',
  ),
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
