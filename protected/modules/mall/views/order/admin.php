@@ -50,22 +50,22 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         array(
             'name' => 'status',
             'value' => '$data->showStatus()',
-            'filter' => array('value' => Tbfunction::ReturnStatus()),
+            'filter' => Tbfunction::ReturnStatus(),
         ),
         array(
             'name' => 'pay_status',
             'value' => '$data->showPayStatus()',
-            'filter' => array( 'value' => Tbfunction::ReturnPayStatus()),
+            'filter' => Tbfunction::ReturnPayStatus(),
         ),
         array(
             'name' => 'ship_status',
             'value' => '$data->showShipStatus()',
-            'filter' => array('value' => Tbfunction::ReturnShipStatus()),
+            'filter' => Tbfunction::ReturnShipStatus(),
         ),
         array(
             'name' => 'refund_status',
             'value' => '$data->showRefundStatus()',
-            'filter' => array('value' => Tbfunction::ReturnRefundStatus()),
+            'filter' => Tbfunction::ReturnRefundStatus(),
         ),
         'pay_fee',
         'ship_fee',

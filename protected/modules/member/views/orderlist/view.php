@@ -27,15 +27,15 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
         ),
         array(
             'name' => 'ship_status',
-            'value' => 'Order::showShipState',
+            'value' => 'Order::showShipStatus',
         ),
         array(
             'name' => 'refund_status',
-            'value' => 'Order::showRefundState',
+            'value' => 'Order::showRefundStatus',
         ),
         array(
             'name' => 'pay_status',
-            'value' => 'Order::showPayState',
+            'value' => 'Order::showPayStatus',
         ),
         'total_fee',
         'ship_fee',

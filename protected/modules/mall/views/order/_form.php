@@ -27,7 +27,7 @@
 
     <div class="input-group space">
         <?php echo $form->labelEx($model, 'pay_status', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->dropdownlist($model, 'pay_status', array('0' => '未支付', '1' => '已付款'),
+        <?php echo $form->dropdownlist($model, 'pay_status', Tbfunction::ReturnPayStatus(),
             array(
                 'class' => 'form-control form-control1',
 //                'ajax' => array(
@@ -42,7 +42,7 @@
 
     <div class="input-group space">
         <?php echo $form->labelEx($model, 'payment_method_id', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->dropdownlist($model, 'payment_method_id', array('0' => '请选择', '1' => '支付宝', '2' => '银行卡'), array('class' => 'form-control form-control1')); ?>
+        <?php echo $form->dropdownlist($model, 'payment_method_id',Tbfunction::ReturnPayStatus(), array('class' => 'form-control form-control1')); ?>
     </div>
 
     <div class="input-group space">
@@ -52,7 +52,7 @@
 
     <div class="input-group space">
         <?php echo $form->labelEx($model, 'shipping_method_id', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->dropdownlist($model, 'shipping_method_id', array('0' => '请选择', '1' => '平邮', '2' => '快递', '3' => 'EMS'), array('class' => 'form-control form-control1')); ?>
+        <?php echo $form->dropdownlist($model, 'shipping_method_id',Tbfunction::ReturnShipMethod(), array('class' => 'form-control form-control1')); ?>
         <?php echo $form->error($model, 'shipping_method_id', array('style' => 'color:red;float:right')); ?>
     </div>
 

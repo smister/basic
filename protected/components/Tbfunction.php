@@ -39,6 +39,14 @@ class Tbfunction {
     }
 
     public function ReturnRefundStatus(){
-        return array('0' => '未发货', '1' => '已发货');
+        return array('0' => '未退款', '1' => '已退款');
+    }
+
+    public function ReturnShipMethod(){
+        return array('1' => '平邮', '2' => '快递', '3' => 'EMS');
+    }
+
+    public function ReturnPayMethod(){
+        return array('0' => '财付通', '1' => '银行卡支付');
     }
 }
