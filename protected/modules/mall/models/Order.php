@@ -165,30 +165,30 @@ class Order extends CActiveRecord
         ));
     }
 
-    public function showRefundState($data = array()){
+    public function showRefundStatus($data = array()){
         if (empty($data)) {
-            $order_state = array('0' => '未退款', '1' => '已退款');
-            return isset($order_state[$this->refund_status]) ? $order_state[$this->refund_status] : $this->refund_status;
+            $order_status = array('0' => '未退款', '1' => '已退款');
+            return isset($order_status[$this->refund_status]) ? $order_status[$this->refund_status] : $this->refund_status;
         } else if ($data instanceof Order) {
-            return $data->showRefundState();
+            return $data->showRefundStatus();
         }
     }
 
-    public function showShipState($data = array()){
+    public function showShipStatus($data = array()){
         if (empty($data)) {
-            $order_state = array('0' => '未发货', '1' => '已发货');
-            return isset($order_state[$this->ship_status]) ? $order_state[$this->ship_status] : $this->ship_status;
+            $order_status = array('0' => '未发货', '1' => '已发货');
+            return isset($order_status[$this->ship_status]) ? $order_status[$this->ship_status] : $this->ship_status;
         } else if ($data instanceof Order) {
-            return $data->showShipState();
+            return $data->showShipStatus();
         }
     }
 
-    public function showPayState($data = array()){
+    public function showPayStatus($data = array()){
         if (empty($data)) {
-            $order_state = array('0' => '待支付', '1' => '已支付');
-            return isset($order_state[$this->pay_status]) ? $order_state[$this->pay_status] : $this->pay_status;
+            $order_status = array('0' => '待支付', '1' => '已支付');
+            return isset($order_status[$this->pay_status]) ? $order_status[$this->pay_status] : $this->pay_status;
         } else if ($data instanceof Order) {
-            return $data->showPayState();
+            return $data->showPayStatus();
         }
     }
 
