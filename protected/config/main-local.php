@@ -5,15 +5,15 @@
 //
 //// This is the main Web application configuration. Any writable
 //// CWebApplication properties can be configured here.
-//return array(
-//    'components' => array(
-//        'db' => array(
-//            'connectionString' => 'mysql:host=localhost;dbname=yincart-basic',
-//            'emulatePrepare' => true,
-//            'username' => 'root',
-//            'password' => '',
-//            'charset' => 'utf8',
-//            'tablePrefix' => ''
-//        )
-//        )
-//    );
+return array(
+    'components' => array(
+        'db' => array(
+            'connectionString' => 'mysql:host=localhost;dbname=yincart-basic',
+            'emulatePrepare' => true,
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+            'tablePrefix' => ''
+        )
+        )
+    );
