@@ -12,10 +12,6 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             $('#cartForm').submit();
         });
     });
-    $.get("compareStock",{quantity:$("#quantity").attr("value")},function($response){
-        $("#sssss").html($response);
-
-    });
 
 </script>
 
@@ -91,7 +87,9 @@ Yii::app()->clientScript->registerCoreScript('jquery');
         var qty = $(this).val();
         var data = {'item_id': item_id, 'props': props, 'qty': qty};
         $.post($(this).data('url'), data, function (response) {
-            window.location.reload();
+//            window.location.reload();
+            $("#txt").attr("stock");
+            }
         }, 'json');
     });
     function getprice() {

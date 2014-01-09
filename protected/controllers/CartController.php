@@ -5,6 +5,7 @@ class CartController extends YController
 
     public function actionIndex()
     {
+
         $this->render('index', array('cart' => Yii::app()->cart));
     }
 
@@ -59,9 +60,7 @@ class CartController extends YController
         echo json_encode(array('total' => $totalPrice));
     }
 
-    public function  actionCompareStock(){
-        echo $_GET['quantity'];
-    }
+
 }
 
 //   public function getStock()
