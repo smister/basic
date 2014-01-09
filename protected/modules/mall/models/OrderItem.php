@@ -124,4 +124,12 @@ class OrderItem extends CActiveRecord
     {
         return parent::model($className);
     }
+
+    public function loadModel($id)
+    {
+        $model=Order::model()->findByPk($id);
+        if($model===null)
+            throw new CHttpException(404,'The requested page does not exist.');
+        return $model;
+    }
 }

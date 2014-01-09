@@ -29,22 +29,22 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         array(
             'name' => 'pay_status',
             'value' => '$data->showPayState()',
-            'filter' => array('0' => '待支付', '1' => '已支付' ),
+            'filter' => Tbfunction::ReturnPayStatus(),
         ),
         array(
             'name' => 'ship_status',
             'value' => '$data->showShipState()',
-            'filter' => array('0' => '未发货', '1' => '已发货' ),
+            'filter' => Tbfunction::ReturnShipStatus(),
         ),
         array(
             'name' => 'refund_status',
             'value' => '$data->showRefundState()',
-            'filter' => array('0' => '未退货', '1' => '已退货' ),
+            'filter' => Tbfunction::ReturnRefundStatus(),
         ),
         array(
             'name' => 'payment_method_id',
             'value' => '$data->showPayMethod()',
-            'filter' => array('0' => '未设置', '1' => '支付宝','2'=>'银行卡支付' ),
+            'filter' => Tbfunction::ReturnPayMethod(),
         ),
         'pay_fee',
         'ship_fee',
@@ -52,7 +52,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         array(
             'name' => 'shipping_method_id',
             'value' => '$data->showShipMethod()',
-            'filter' => array('1' => '平邮', '2' => '快递','3'=>'EMS' ),
+            'filter' => Tbfunction::ReturnShipMethod(),
         ),
  array(
      'name' => 'create_time',

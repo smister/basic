@@ -31,7 +31,7 @@ class OrderlistController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('admin','create','update'),
+				'actions'=>array('detail','admin','create','update'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -50,6 +50,16 @@ class OrderlistController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+
+    public function actionDetail($id)
+    {
+        $model=$this->loadModel($id);
+        $item=OrderItem::loadModel($model->$order_id);
+        var_dump($item);exit;
+        $this->render('view',array(
+            'model'=>$this->loadModel($id),
+        ));
+    }
 
 	/**
 	 * Creates a new model.
