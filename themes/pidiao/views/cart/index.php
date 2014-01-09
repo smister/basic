@@ -12,7 +12,14 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             $('#cartForm').submit();
         });
     });
+    $.get("compareStock",{quantity:$("#quantity").attr("value")},function($response){
+        $("#sssss").html($response);
+
+    });
+
 </script>
+
+<div id="sssss">ssss</div>
 <div class="box">
     <div class="box-title">购物车</div>
     <div class="box-content cart">

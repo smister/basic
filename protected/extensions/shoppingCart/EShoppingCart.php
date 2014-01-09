@@ -54,6 +54,7 @@ class EShoppingCart extends CMap {
         }
     }
 
+
     /**
      * Add item to the shopping cart
      * If the position was previously added to the cart,
@@ -70,9 +71,7 @@ class EShoppingCart extends CMap {
         }
 
         $this->update($position, $quantity);
-
     }
-
 
     /**
      * Add $value items to position with $key specified
@@ -115,6 +114,8 @@ class EShoppingCart extends CMap {
         $position->attachBehavior("CartPosition", new ECartPositionBehaviour());
         $position->setRefresh($this->refresh);
 
+        $stock = $position->getStock();
+        $quantity = $stock < $quantity ? $stock : $quantity;
         $position->setQuantity($quantity);
 
         if ($position->getQuantity() < 1)
@@ -241,6 +242,4 @@ class EShoppingCart extends CMap {
     {
         return !(bool)$this->getCount();
     }
-
-
 }
