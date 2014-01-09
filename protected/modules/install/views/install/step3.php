@@ -1,4 +1,6 @@
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php Yii::app()->bootstrap->register(); ?>
 <body>
 
 
@@ -22,8 +24,8 @@
         <div class="pr-title"><h3>安装完成</h3></div>
 
         <div class="btn-box">
-            <input type="button"  value="进入前台页面" />
-            <input type="submit" value="进入后台页面"  />
+<?php echo CHtml::link('进入前台页面',Yii::app()->baseUrl.'/index.php',array('class'=>'btn btn-primary'))?>
+<?php echo CHtml::link('进入后台页面',Yii::app()->baseUrl.'/backend.php',array('class'=>'btn btn-warning'))?>
         </div>
     </div>
 </div>

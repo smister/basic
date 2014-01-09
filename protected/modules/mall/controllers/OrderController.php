@@ -44,14 +44,14 @@ class OrderController extends Controller
                             $orderItem->item_id = $itemId;
                             $orderItem->title = $items->title;
                             $orderItem->desc = $items->desc;
-                            //                    $orderItem->pic = $items->getMainPic();   //need update;
+                            $orderItem->pic = $items->getMainPic(); //need update;
+//
                             $orderItem->props_name = $items->props_name;
                             $orderItem->price = $items->price;
                             $orderItem->quantity = 1; //need to update
                             $orderItem->total_price = $orderItem->price * $orderItem->quantity;
                             $orderItem->order_id = $model->order_id;
                             if (!$orderItem->save()) {
-
                                 throw new Exception('save order item fail');
                             }
                         }
@@ -107,7 +107,7 @@ class OrderController extends Controller
                             $orderItem->item_id = $itemId;
                             $orderItem->title = $items->title;
                             $orderItem->desc = $items->desc;
-                            //                    $orderItem->pic = $items->getMainPic();   //need update;
+                            $orderItem->pic = $items->getMainPic(); //need update;
                             $orderItem->props_name = $items->props_name;
                             $orderItem->price = $items->price;
                             $orderItem->quantity = 1; //need to update
@@ -139,13 +139,17 @@ class OrderController extends Controller
     {
         if (Yii::app()->request->isPostRequest) {
             // we only allow deletion via POST request
-            $this->loadModel($id)->delete();
-
-            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-            if (!isset($_GET['ajax']))
-                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-        } else
+            $OrderItems = OrderItem::model()->findAllByAttributes(array('order_id' => $id));
+                foreach ($OrderItems as $OrderItem) {
+                    $OrderItem->delete();
+                }
+                $this->loadModel($id)->delete();
+                // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+                if (!isset($_GET['ajax']))
+                    $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+               } else{
             throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
+        }
     }
 
     /**

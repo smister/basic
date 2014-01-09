@@ -16,4 +16,5 @@ class Tbfunction {
     {
         echo  CHtml::link('Add',array('create','user_id'=>$id),array('class'=>'btn btn-primary'));
     }
+
 }

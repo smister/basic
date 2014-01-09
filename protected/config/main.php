@@ -37,7 +37,9 @@ return array(
         'application.modules.user.components.*',
 //        'application.modules.translate.TranslateModule',
         'bootstrap.helpers.TbHtml',
-        'ext.shoppingCart.*'
+        'ext.shoppingCart.*',
+        'application.modules.install.models.*',
+        'application.modules.install.components.*',
     ),
     // path aliases
     'aliases' => array(

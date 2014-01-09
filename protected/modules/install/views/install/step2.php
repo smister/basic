@@ -8,10 +8,11 @@ $this->breadcrumbs=array(
 
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
 <div id='postloader' class='waitpage'></div>
-<form method="post" action="<?php echo $this->createUrl('Default/step3'); ?>">
+<form method="post" action="<?php echo $this->createUrl('install/step3'); ?>">
 
     <div class="main">
         <div class="pleft">
@@ -162,7 +163,7 @@ $this->breadcrumbs=array(
             </table>
 
             <div class="btn-box">
-                <input type="button"  value="后退" onclick="window.location.href='<?php echo $this->createUrl('Default/step1'); ?>';" />
+                <input type="button"  value="后退" onclick="window.location.href='<?php echo $this->createUrl('install/step1'); ?>';" />
                 <input type="submit" value="开始安装"  />
             </div>
         </div>

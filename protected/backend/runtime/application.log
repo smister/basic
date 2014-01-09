@@ -22333,3 +22333,135 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/basic/backend.php
 ---
+2014/01/08 16:10:31 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='48'.
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (143)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/08 16:10:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='48'' in D:\wamp\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('48')
+#2 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(143): CActiveRecord->delete()
+#3 [internal function]: OrderController->actionDelete('48')
+#4 D:\wamp\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#5 D:\wamp\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#6 D:\wamp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\wamp\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#10 D:\wamp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dele...')
+#11 D:\wamp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#13 {main}
+REQUEST_URI=/basic/backend.php/mall/order/delete/id/48?ajax=order-grid
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/08 16:10:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='65'.
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (143)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/08 16:10:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='65'' in D:\wamp\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('65')
+#2 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(143): CActiveRecord->delete()
+#3 [internal function]: OrderController->actionDelete('65')
+#4 D:\wamp\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#5 D:\wamp\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#6 D:\wamp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\wamp\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#10 D:\wamp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dele...')
+#11 D:\wamp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#13 {main}
+REQUEST_URI=/basic/backend.php/mall/order/delete/id/65?ajax=order-grid
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/08 16:10:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='62'.
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (143)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/08 16:10:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='62'' in D:\wamp\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('62')
+#2 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(143): CActiveRecord->delete()
+#3 [internal function]: OrderController->actionDelete('62')
+#4 D:\wamp\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#5 D:\wamp\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#6 D:\wamp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\wamp\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#10 D:\wamp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dele...')
+#11 D:\wamp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#13 {main}
+REQUEST_URI=/basic/backend.php/mall/order/delete/id/62?ajax=order-grid
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/08 16:10:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='18'.
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (143)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/08 16:10:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='18'' in D:\wamp\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('18')
+#2 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(143): CActiveRecord->delete()
+#3 [internal function]: OrderController->actionDelete('18')
+#4 D:\wamp\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#5 D:\wamp\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#6 D:\wamp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\wamp\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#10 D:\wamp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dele...')
+#11 D:\wamp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#13 {main}
+REQUEST_URI=/basic/backend.php/mall/order/delete/id/18?ajax=order-grid
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/08 16:11:53 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='68'.
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (143)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/08 16:11:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='68'' in D:\wamp\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('68')
+#2 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(143): CActiveRecord->delete()
+#3 [internal function]: OrderController->actionDelete('68')
+#4 D:\wamp\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#5 D:\wamp\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#6 D:\wamp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\wamp\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#10 D:\wamp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dele...')
+#11 D:\wamp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#13 {main}
+REQUEST_URI=/basic/backend.php/mall/order/delete/id/68?ajax=order-grid
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/08 16:12:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='46'.
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (143)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/08 16:12:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`order_item`, CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`order_id`='46'' in D:\wamp\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('46')
+#2 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(143): CActiveRecord->delete()
+#3 [internal function]: OrderController->actionDelete('46')
+#4 D:\wamp\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#5 D:\wamp\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#6 D:\wamp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\wamp\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#10 D:\wamp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dele...')
+#11 D:\wamp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#13 {main}
+REQUEST_URI=/basic/backend.php/mall/order/delete/id/46?ajax=order-grid
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
