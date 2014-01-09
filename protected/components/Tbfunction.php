@@ -49,4 +49,5 @@ class Tbfunction {
     public function ReturnPayMethod(){
         return array('0' => '财付通', '1' => '银行卡支付');
     }
+
 }

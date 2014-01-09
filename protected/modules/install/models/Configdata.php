@@ -47,7 +47,7 @@ class Configdata extends CActiveRecord
 			array('username, password, dbname, host', 'length', 'max'=>32),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('username, password, dbname, host', 'safe', 'on'=>'search'),
+			array('username, password, dbname, host,dir', 'safe', 'on'=>'search'),
 		);
 	}
 

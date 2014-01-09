@@ -27,19 +27,46 @@ class OrderController extends Controller
     {
         $model = new Order;
         $model->user_id = $user_id;
-        $order_item = new OrderItem('search');
-        $order_item->unsetAttributes();
+        $item = new Item;
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
-        if (isset($_POST['Order'])) {
-            $model->attributes = $_POST['Order'];
-            $model->create_time = time();
-            if ($model->save())
+        // $this->performAjaxValidation($model)
+        if (isset($_POST['Order']) && isset($_POST['Item'])) {
+            $transaction = $model->dbConnection->beginTransaction();
+            try {
+                $model->attributes = $_POST['Order'];
+                $model->create_time = time();
+                if ($model->save()) {
+                    foreach ($_POST['Item']['item_id'] as $itemId) {
+                        $orderItem = OrderItem::model()->findAll("item_id='$itemId'");
+                        if (!$orderItem) {
+                            $items = Item::model()->findByPk($itemId);
+                            $orderItem = new OrderItem;
+                            $orderItem->item_id = $itemId;
+                            $orderItem->title = $items->title;
+                            $orderItem->desc = $items->desc;
+                            $orderItem->pic = $items->getMainPic(); //need update;
+//
+                            $orderItem->props_name = $items->props_name;
+                            $orderItem->price = $items->price;
+                            $orderItem->quantity = 1; //need to update
+                            $orderItem->total_price = $orderItem->price * $orderItem->quantity;
+                            $orderItem->order_id = $model->order_id;
+                            if (!$orderItem->save()) {
+                                throw new Exception('save order item fail');
+                            }
+                        }
+                    }
+                } else {
+                    throw new Exception('save order item fail');
+                }
+                $transaction->commit();
                 $this->redirect(array('view', 'id' => $model->order_id));
+            } catch (Exception $e) {
+                $transaction->rollBack();
+            }
         }
-
         $this->render('create', array(
-            'model' => $model,'order_item'=>$order_item
+            'model' => $model, 'item' => $item
         ));
     }
 
@@ -51,32 +78,55 @@ class OrderController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->loadModel($id);
-        $order_item = new OrderItem('search');
-        $order_item->unsetAttributes();
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
-
-        if (isset($_POST['Order'])) {
-            $model->attributes = $_POST['Order'];
-            $model->update_time = time();
-            $trans = Yii::app()->db->beginTransaction();
-            try
-            {
+        $item = Item::model()->with('orderItems')->findAll(new CDbCriteria(array('condition' => "order_id='$id'")));
+        if (isset($_POST['Order']) && isset($_POST['Item'])) {
+            $transaction = $model->dbConnection->beginTransaction();
+            try {
+                $model->attributes = $_POST['Order'];
+                $model->update_time = time();
                 if ($model->save()) {
-                    //save order items
-                    $this->redirect(array('view', 'id' => $model->order_id));
-                } else {
-                    throw new Exception();
+                    $originals = OrderItem::model()->findAll("order_id='$model->order_id'");
+                    $flag = array();
+                    foreach ($originals as $key => $original) {
+                        foreach ($_POST['Item']['item_id'] as $itemId) {
+                            if ($original->item_id == $itemId) {
+                                $flag[$key] = 1;
+                            }
+                        }
+                    }
+                    foreach ($originals as $key => $original) {
+                        if ($flag[$key] != 1) {
+                            $original->delete();
+                        }
+                    }
+                    foreach ($_POST['Item']['item_id'] as $itemId) {
+                        $items = Item::model()->findByPk($itemId);
+                        $orderItem = OrderItem::model()->find("item_id='$itemId'");
+                        if (!$orderItem) {
+                            $orderItem = new OrderItem;
+                            $orderItem->item_id = $itemId;
+                            $orderItem->title = $items->title;
+                            $orderItem->desc = $items->desc;
+                            $orderItem->pic = $items->getMainPic(); //need update;
+                            $orderItem->props_name = $items->props_name;
+                            $orderItem->price = $items->price;
+                            $orderItem->quantity = 1; //need to update
+                            $orderItem->total_price = $orderItem->price * $orderItem->quantity;
+                            $orderItem->order_id = $model->order_id;
+                            if (!$orderItem->save()) {
+                                throw new Exception('save order item fail');
+                            }
+                        }
+                    }
                 }
-                $trans->commit();
-            }
-            catch(Exception $e)
-            {
-                $trans->rollback();
+                $transaction->commit();
+                $this->redirect(array('view', 'id' => $model->order_id));
+            } catch (Exception $e) {
+                $transaction->rollBack();
             }
         }
         $this->render('update', array(
-            'model' => $model,'order_item'=>$order_item
+            'model' => $model, 'item' => $item
         ));
     }
 
@@ -89,13 +139,17 @@ class OrderController extends Controller
     {
         if (Yii::app()->request->isPostRequest) {
             // we only allow deletion via POST request
-            $this->loadModel($id)->delete();
-
-            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-            if (!isset($_GET['ajax']))
-                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-        } else
+            $OrderItems = OrderItem::model()->findAllByAttributes(array('order_id' => $id));
+                foreach ($OrderItems as $OrderItem) {
+                    $OrderItem->delete();
+                }
+                $this->loadModel($id)->delete();
+                // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+                if (!isset($_GET['ajax']))
+                    $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+               } else{
             throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
+        }
     }
 
     /**
@@ -149,7 +203,7 @@ class OrderController extends Controller
     public function actionDynamiccities()
     {
         echo CHtml::tag("option", array("value" => ''), CHtml::encode(''), true);
-        echo $_GET['receiver_state'];
+//        echo $_GET['receiver_state'];
         $data = Area::model()->findAll("parent_id=:parent_id", array(":parent_id" => $_GET['receiver_state']));
         $data = CHtml::listData($data, "area_id", "name");
         foreach ($data as $value => $name) {
@@ -179,7 +233,7 @@ class OrderController extends Controller
 
     public function actionAdd_goods()
     {
-        $this->layout='/';
+        $this->layout = '/';
         $goods = new Item('search');
         $goods->unsetAttributes();
         if (isset($_GET['Item'])) {
