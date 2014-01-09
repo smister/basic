@@ -7,7 +7,7 @@
             'id',
             array(
                 'name' => 'username',
-                'value'=>'$data->userlink()'
+                'value'=>'Tbfunction::add_user($data->id)'
             ),
 
             'email',
