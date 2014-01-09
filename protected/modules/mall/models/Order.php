@@ -58,11 +58,11 @@ class Order extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('shipping_method_id,receiver_name,receiver_country,receiver_state,receiver_city,receiver_district,receiver_zip,receiver_address', 'required'),
+            array('shipping_method_id,receiver_name,receiver_state,receiver_city,receiver_district,receiver_zip,receiver_address', 'required'),
             array('status, pay_status, ship_status, refund_status, comment_status', 'numerical', 'integerOnly' => true),
             array('user_id, total_fee, ship_fee, pay_fee, payment_method_id, shipping_method_id, pay_time, ship_time, create_time, update_time', 'length', 'max' => 10),
             array('receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_zip, receiver_mobile, receiver_phone', 'length', 'max' => 45),
-            array('receiver_address', 'length', 'max' => 255),
+            array('receiver_address,receiver_country', 'length', 'max' => 255),
             array('memo', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
@@ -185,33 +185,33 @@ class Order extends CActiveRecord
         return parent::model($className);
     }
 
-    public function showRefundStatus($data = array())
+    public function showRefundState($data = array())
     {
         if (empty($data)) {
             $order_state = array('0' => '未退款', '1' => '已退款');
             return isset($order_state[$this->refund_status]) ? $order_state[$this->refund_status] : $this->refund_status;
         } else if ($data instanceof Order) {
-            return $data->showRefundStatus();
+            return $data->showRefundState();
         }
     }
 
-    public function showShipStatus($data = array())
+    public function showShipState($data = array())
     {
         if (empty($data)) {
             $order_state = array('0' => '未发货', '1' => '已发货');
             return isset($order_state[$this->ship_status]) ? $order_state[$this->ship_status] : $this->ship_status;
         } else if ($data instanceof Order) {
-            return $data->showShipStatus();
+            return $data->showShipState();
         }
     }
 
-    public function showPayStatus($data = array())
+    public function showPayState($data = array())
     {
         if (empty($data)) {
             $order_state = array('0' => '待支付', '1' => '已支付');
             return isset($order_state[$this->pay_status]) ? $order_state[$this->pay_status] : $this->pay_status;
         } else if ($data instanceof Order) {
-            return $data->showPayStatus();
+            return $data->showPayState();
         }
     }
 

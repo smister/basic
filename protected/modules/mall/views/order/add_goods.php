@@ -1,21 +1,22 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="language" content="en"/>
     <link type="text/css" rel="stylesheet"
           href="<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css"/>
+    <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.js"></script>
     <?php Yii::app()->bootstrap->register(); ?>
+    <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/common.js"></script>
+
 </head>
 <body>
-<div class="goods-form">
+<div id="goods-form">
     <?php $this->widget('bootstrap.widgets.TbGridView', array(
         'id' => 'goods-grid',
         'dataProvider' => $goods->search(),
         'filter' => $goods,
         'columns' => array(
             array(
-                'value' => 'Tbfunction::add_goods($date->item_id)'
+                'value' => 'Tbfunction::add_button()'
             ),
             'item_id',
             array(
@@ -41,7 +42,4 @@
     ))
     ?>
 </div>
-
 </body>
-</html>
-

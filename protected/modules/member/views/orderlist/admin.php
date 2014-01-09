@@ -15,21 +15,9 @@ $this->breadcrumbs = array(
             'filter' => $model,
             'columns' => array(
                 'order_id',
-                array(
-                    'name' => 'status',
-                    'value' => '$data->showStatus()',
-                    'filter' => Tbfunction::ReturnStatus(),
-                ),
-                array(
-                    'name' => 'pay_status',
-                    'value' => '$data->showPayStatus()',
-                    'filter' => Tbfunction::ReturnPayStatus(),
-                ),
-                array(
-                    'name' => 'ship_status',
-                    'value' => '$data->showShipStatus()',
-                    'filter' => Tbfunction::ReturnShipStatus(),
-                ),
+                'status',
+                'pay_status',
+                'ship_status',
                 'total_fee',
                 'ship_fee',
                 'pay_fee',
@@ -52,7 +40,7 @@ $this->breadcrumbs = array(
                   'update_time',
                  */
                 array(
-                    'value' => 'Tbfunction::view_user($data->order_id)',
+                    'class' => 'CButtonColumn',
                 ),
             ),
         ));

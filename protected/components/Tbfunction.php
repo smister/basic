@@ -8,46 +8,13 @@
  */
 
 class Tbfunction {
-    static public function add_goods($id)
+    static public function add_button()
     {
-        echo  CHtml::link('<div class="btn btn-primary">Add</div>',array('create','item_id'=>$id));
+        echo '<button class="btn btn-primary">Add</button>';
     }
-
     public function add_user($id)
     {
-        echo  CHtml::link('<div class="btn btn-primary">Add</div>',array('create','user_id'=>$id));
-    }
-
-    public function view_user($id){
-        echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
-    }
-
-    public function state($id){
-        echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
-    }
-
-    public function ReturnStatus(){
-        return array('0' => '无效', '1' => '有效');
-    }
-
-    public function ReturnPayStatus(){
-        return array('0' => '待支付', '1' => '已支付');
-    }
-
-    public function ReturnShipStatus(){
-        return array('0' => '未发货', '1' => '已发货');
-    }
-
-    public function ReturnRefundStatus(){
-        return array('0' => '未退款', '1' => '已退款');
-    }
-
-    public function ReturnShipMethod(){
-        return array('1' => '平邮', '2' => '快递', '3' => 'EMS');
-    }
-
-    public function ReturnPayMethod(){
-        return array('0' => '财付通', '1' => '银行卡支付');
+        echo  CHtml::link('Add',array('create','user_id'=>$id),array('class'=>'btn btn-primary'));
     }
 
 }

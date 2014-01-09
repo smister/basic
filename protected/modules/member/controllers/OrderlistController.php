@@ -27,7 +27,7 @@ class OrderlistController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','detail'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -44,7 +44,7 @@ class OrderlistController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionDetail($id)
+	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
