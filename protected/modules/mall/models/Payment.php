@@ -45,13 +45,13 @@ class Payment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('payment_sn, account, bank, pay_account', 'length', 'max'=>45),
+			array('pay_sn, pay_method, account, bank, pay_account', 'length', 'max'=>45),
 			array('money, currency, order_id', 'length', 'max'=>20),
 			array('user_id, create_time', 'length', 'max'=>10),
 			array('status', 'length', 'max'=>8),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('payment_id, pay_sn, money, currency, order_id, pay_method, user_id, account, bank, pay_account, status, create_time', 'safe', 'on'=>'search'),
+			array('pay_id, pay_sn, money, currency, order_id, pay_method, user_id, account, bank, pay_account, status, create_time', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,11 +72,12 @@ class Payment extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'payment_id' => 'Payment Id',
-			'payment_sn' => 'Payment Sn',
+			'pay_id' => 'Pay',
+			'pay_sn' => 'Pay Sn',
 			'money' => 'Money',
 			'currency' => 'Currency',
 			'order_id' => 'Order',
+			'pay_method' => 'Pay Method',
 			'user_id' => 'User',
 			'account' => 'Account',
 			'bank' => 'Bank',
@@ -97,11 +98,12 @@ class Payment extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('payment_id',$this->payment_id,true);
-		$criteria->compare('payment_sn',$this->payment_sn,true);
+		$criteria->compare('pay_id',$this->pay_id,true);
+		$criteria->compare('pay_sn',$this->pay_sn,true);
 		$criteria->compare('money',$this->money,true);
 		$criteria->compare('currency',$this->currency,true);
 		$criteria->compare('order_id',$this->order_id,true);
+		$criteria->compare('pay_method',$this->pay_method,true);
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('account',$this->account,true);
 		$criteria->compare('bank',$this->bank,true);
