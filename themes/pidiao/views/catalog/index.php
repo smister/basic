@@ -54,8 +54,14 @@
                               ));
                               $num=count(recommendItems);
                               if($num>0){
-                                  foreach($recommendItems as $value){?>
-                                         box.add({"url": "<?php echo $value->getMainPic()?>", "href": "", "title": "<?php echo $value->title?>"});
+                                  foreach($recommendItems as $value){
+                                         if($value->getMainPic()){
+                                            $imageHelper=new ImageHelper();
+                                            $picUrl=$imageHelper->thumb('180','178',$value->getMainPic());
+                                            $picUrl=Yii::app()->baseUrl.$picUrl;
+                                        }else $picUrl='';
+                                  ?>
+                                         box.add({"url": "<?php echo $picUrl?>", "href": "", "title": "<?php echo $value->title?>"});
                                     <?php
                                             }
                                         }else echo 'box.add({"url": "image/tu2.jpg", "href": "", "title": "no data"});';
@@ -163,8 +169,15 @@
                     ?>
                     <div class="product_pd">
                         <div class="product_img"><a href="<?php echo $itemUrl; ?>">
+                                <?php
+                                if($item->getMainPic()){
+                                    $imgHelper=new ImageHelper();
+                                    $picUrl=$imageHelper->thumb('220','220',$item->getMainPic());
+                                    $picUrl=Yii::app()->baseUrl.$picUrl;
+                                }else $picUrl='';
+                                ?>
                                 <img alt="<?php echo $item->title; ?>"
-                                     src="<?php echo $item->getMainPic(); ?>" width="220" height="220"></a>
+                                     src="<?php echo $picUrl; ?>" width="220" height="220"></a>
                         </div>
                         <div class="product_name">
                             <a href="<?php echo $itemUrl; ?>"><?php echo $item->title; ?></a>

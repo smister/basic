@@ -58,7 +58,14 @@ EOF;
                         ?>
                         <div class="warp_tab_list">
                             <div class="tab_img"><a href="<?php echo $itemUrl; ?>">
-                                    <?php echo CHtml::image($hotItem->getMainPic(), $hotItem->title, array('width' => 220, 'height' => '220')) ?>
+                                    <?php
+                                    if( $hotItem->getMainPic()){
+                                        $imageHelper=new ImageHelper();
+                                        $picUrl=$imageHelper->thumb('220','220', $hotItem->getMainPic());
+                                        $picUrl=Yii::app()->baseUrl.$picUrl;
+                                    }else $picUrl='';
+                                    ?>
+                                    <?php echo CHtml::image($picUrl, $hotItem->title, array('width' => 220, 'height' => '220')) ?>
                                 </a></div>
                             <div class="tab_name">
                                 <?php echo CHtml::link($hotItem->title, $itemUrl); ?>
@@ -105,7 +112,7 @@ EOF;
                             <div class="product_img_b"><a href="<?php echo $itemUrl; ?>">
                                     <?php
                                     if( $newItem->getMainPic()){
-                                        $picUrl=$image->thumb('220','220', $newItem->getMainPic());
+                                        $picUrl=$imageHelper->thumb('220','220', $newItem->getMainPic());
                                         $picUrl=Yii::app()->baseUrl.$picUrl;
                                     }else $picUrl='';
                                     ?>
@@ -128,8 +135,14 @@ EOF;
                                 ?>
                                 <div class="product_d">
                                     <div class="product_img"><a href="<?php echo $itemUrl; ?>">
+                                            <?php
+                                            if( $newItem->getMainPic()){
+                                                $picUrl=$imageHelper->thumb('220','220', $newItem->getMainPic());
+                                                $picUrl=Yii::app()->baseUrl.$picUrl;
+                                            }else $picUrl='';
+                                            ?>
                                             <img alt="<?php echo $newItem->title; ?>"
-                                                 src="<?php echo $newItem->getMainPic(); ?>" width="220" height="220"></a>
+                                                 src="<?php echo $picUrl; ?>" width="220" height="220"></a>
                                     </div>
                                     <div class="product_name">
                                         <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
@@ -154,8 +167,14 @@ EOF;
                                 ?>
                                 <div class="product_d">
                                     <div class="product_img"><a href="<?php echo $itemUrl; ?>">
+                                            <?php
+                                            if( $newItem->getMainPic()){
+                                                $picUrl=$imageHelper->thumb('220','220', $newItem->getMainPic());
+                                                $picUrl=Yii::app()->baseUrl.$picUrl;
+                                            }else $picUrl='';
+                                            ?>
                                             <img alt="<?php echo $newItem->title; ?>"
-                                                 src="<?php echo $newItem->getMainPic(); ?>" width="220" height="220"></a>
+                                                 src="<?php echo $picUrl; ?>" width="220" height="220"></a>
                                     </div>
                                     <div class="product_name">
                                         <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
