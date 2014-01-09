@@ -164,7 +164,8 @@
     </div>
     <?php $this->endWidget(); ?>
     <div class="item-form">
-        <?php $this->renderPartial('itemView', array(
+        <?php
+        $this->renderPartial('itemView', array(
             'order_item' => $order_item,
         )); ?>
     </div>

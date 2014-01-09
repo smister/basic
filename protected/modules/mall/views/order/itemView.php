@@ -1,7 +1,8 @@
 <div class="goods-form">
-<?php $this->widget('bootstrap.widgets.TbGridView', array(
+<?php
+$this->widget('bootstrap.widgets.TbGridView', array(
     'id' => 'user-grid',
-    'dataProvider' => $order_item->search(),
+    'dataProvider' =>$order_item->search(),
     'filter' => $order_item,
     'columns' => array(
         'order_item_id',

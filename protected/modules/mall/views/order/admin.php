@@ -28,17 +28,17 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         'user_id',
         array(
             'name' => 'pay_status',
-            'value' => '$data->showPayState()',
+            'value' => '$data->showPayStatus()',
             'filter' => array('0' => '待支付', '1' => '已支付' ),
         ),
         array(
             'name' => 'ship_status',
-            'value' => '$data->showShipState()',
+            'value' => '$data->showShipStatus()',
             'filter' => array('0' => '未发货', '1' => '已发货' ),
         ),
         array(
             'name' => 'refund_status',
-            'value' => '$data->showRefundState()',
+            'value' => '$data->showRefundStatus()',
             'filter' => array('0' => '未退货', '1' => '已退货' ),
         ),
         array(
