@@ -77,12 +77,13 @@ $imageHelper=new ImageHelper();
             <?php
             $skus = array();
             foreach ($item->skus as $sku) {
+                $skuId[]=$sku->sku_id;
                 $key = implode(';', json_decode($sku->props, true));
                 $skus[$key] = json_encode(array('price' => $sku->price, 'stock' => $sku->stock));
             }
             ?>
             <div class="deal_size" data-sku-key='<?php echo json_encode(array_keys($skus)); ?>'
-                 data-sku-value='<?php echo json_encode($skus); ?>'>
+                 data-sku-value='<?php echo json_encode($skus); ?>' data-sku-id="<?php if(isset($skuId))echo implode(',',$skuId); ?>">
                 <?php
                 $propImgs = CHtml::listData($item->propImgs, 'item_prop_value', 'pic');
                 $itemProps = $propValues = array();
@@ -145,7 +146,7 @@ $imageHelper=new ImageHelper();
             <input type="hidden" id="item_id" name="item_id" value="<?php echo $item->item_id; ?>" />
             <input type="hidden" id="props" name="props" value="" />
             <div class="deal_add_car" data-url="<?php echo Yii::app()->createUrl('cart/add'); ?>"><a href="javascript:void(0)">加入购物车</a></div>
-            <div class="deal_add" ><a href="javascript:void(0)">立刻购买</a></div>
+            <div class="deal_add" data-url="<?php echo Yii::app()->createUrl('order/checkout');?>"><a data-url='' href="javascript:void(0)">立即购买</a></div>
             <div class="deal_collect" data-url="<?php echo Yii::app()->createUrl('member/wishlist/addWish'); ?>" ><a href="javascript:void(0)">立即收藏</a></div>
         </form>
     </div>
@@ -280,6 +281,60 @@ $imageHelper=new ImageHelper();
                 }
             }
         }
+        /**立即购买**/
+        function findSkuId(selectPropValue){
+            var select=$('.deal_size');
+            var skuKey=select.data('sku-key');
+            for(var a in skuKey){
+                if(skuKey[a]==selectPropValue){
+                    var num=a;
+                }
+            }
+            var skuKeyId=select.data('sku-id').split(',');
+            var selectAdd=$('.deal_add');
+            selectAdd.find('a').attr({
+                'data-url':selectAdd.data('url')+"?position=Sku"+skuKeyId[num]
+            });
+        }
+        $('.deal_add').click(function(){
+            var selectProps = $('.prop-select,.img-prop-select');
+            if (selectProps.length < $('.deal_size p').length) {
+                $('.deal_size').addClass('prop-div-select');
+            } else {
+                $.post($('.deal_add_car').data('url'), $('#deal').serialize(), function(response) {
+                    /**判断还需要改 待定**/
+                    if(response){
+                        location.href=$('.deal_add a').data('url');
+                    }else{
+                        alert('system error');
+                    }
+                });
+            }
+        })
+        function findSameValue(a,b){
+            var num1= a.length;
+            var num2= b.length;
+            var flag=0;
+            if(num2-num1==0){
+                for(var c in a){
+                    if(a[c]==b[c]&&flag==c){
+                        flag++;
+                    }
+                }if(flag==num1-1){
+                    return true;
+                }
+            }
+            if(num2-num1==1){
+                for(var c in a){
+                    if(a[c]==b[c]){
+                        flag++;
+                    }
+                }
+            }
+            if(flag==num1){
+                return true;
+            }else return false;
+        }
         $('.deal_size a').click(function () {
             var selectClass = $(this).find('img').length ? 'img-prop-select' : 'prop-select';
             if($(this).attr('class') !='disable'){
@@ -293,24 +348,19 @@ $imageHelper=new ImageHelper();
                 $('.prop-select,.img-prop-select').each(function () {
                     selectPropValue.push($(this).data('value'));
                 });
+                /***将库存为0的选项加上disable属性****/
                 if(emptySkus.length>0){
-                    for(var a in selectPropValue){
-                        for(var b in emptySkusArray){
-                            for(var c in emptySkusArray[b]){
-                                if(a==c){
-                                    if(selectPropValue[a]==emptySkusArray[b][c]){
-                                        for(var d=parseInt(parseInt(c)+1);d<emptySkusArray[b].length;d++){
-                                            var selectDisable=$("#prop"+emptySkusArray[b][d].replace(/:/,'-'));
-                                            selectDisable.addClass('disable');
-                                        }
-                                    }else{
-                                        for(var d=parseInt(parseInt(c)+1);d<emptySkusArray[b].length;d++){
-                                            var selectDisable=$("#prop"+emptySkusArray[b][d].replace(/:/,'-'));
-                                           if( selectDisable.attr('class')=='disable')
-                                               selectDisable.removeClass('disable');
-                                        }
-                                    }
-                                }
+                    var disableRemoveFlag=true;
+                    for(var b in emptySkusArray){
+                        if(findSameValue(selectPropValue,emptySkusArray[b])){
+                            var selectDisable=$("#prop"+emptySkusArray[b][emptySkusArray[b].length-1].replace(/:/,'-'));
+                            selectDisable.addClass('disable');
+                            selectDisable .removeClass( 'prop-select');
+                            disableRemoveFlag=false;
+                        }
+                        if(disableRemoveFlag){
+                            while($('.disable').length){
+                                $('.disable').removeClass('disable');
                             }
                         }
                     }
@@ -318,6 +368,7 @@ $imageHelper=new ImageHelper();
                 selectPropValue = selectPropValue.join(';');
                 $('#props').val(selectPropValue);
                 if (skus[selectPropValue]) {
+                    findSkuId(selectPropValue);
                     var sku = $.parseJSON(skus[selectPropValue]);
                     var price = $('.deal_price').find('span:eq(0)');
                     price.text(price.text().substr(0, 1) + sku['price']);

@@ -52,7 +52,6 @@ class OrderController extends Controller
     public function actionCheckout()
     {
         $keys = isset($_REQUEST['position']) ? (is_array($_REQUEST['position']) ? $_REQUEST['position'] : explode('_', $_REQUEST['position'])) : array();
-        var_dump($_REQUEST['position']);exit;
         if (Yii::app()->user->id) {
             $this->render('checkout', array('keys' => $keys));
         } else {

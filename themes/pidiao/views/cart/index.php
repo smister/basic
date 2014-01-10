@@ -38,7 +38,6 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 </tr>
             <?php
             } else {
-                var_dump($cart);
                 foreach ($items as $key => $item) {
                     ?>
                     <tr><?php
