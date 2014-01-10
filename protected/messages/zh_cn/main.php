@@ -21,7 +21,6 @@ return array (
   'Add' => '',
   'Add child' => '',
   'Add {type}' => '',
-  'Administrator' => '',
   'Ancestors' => '',
   'Are you sure you want to delete this item?' => '',
   'Assign' => '',

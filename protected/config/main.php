@@ -23,7 +23,7 @@ return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
     'language' => 'zh_cn',
-    'theme' => 'pidiao',
+    'theme' => 'leather',
     // preloading 'log' component
     'preload' => array('log'),//, 'translate'),
     // autoloading model and component classes
@@ -221,7 +221,7 @@ return array(
             'dbEngine' => 'InnoDB',
         ),
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=yincart-basic',
+            'connectionString' => 'mysql:host=localhost;dbname=yincart',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => '',
