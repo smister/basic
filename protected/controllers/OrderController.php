@@ -110,7 +110,7 @@ class OrderController extends Controller
                              throw new Exception('stock is not enough!');
                          }
                          $original->stock-=$item['quantity'];
-                         
+
                             $OrderItem = new OrderItem;
                             $OrderItem->order_id = $model->order_id;
                             $OrderItem->item_id = $item['item_id'];
