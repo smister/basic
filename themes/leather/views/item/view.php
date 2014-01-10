@@ -303,12 +303,12 @@ $imageHelper=new ImageHelper();
             } else {
                 $.post($('.deal_add_car').data('url'), $('#deal').serialize(), function(response) {
                     /**判断还需要改 待定**/
-                    if(response){
+                    if(response.status){
                         location.href=$('.deal_add a').data('url');
                     }else{
                         alert('system error');
                     }
-                });
+                }, 'json');
             }
         })
         function findSameValue(a,b){
