@@ -25,7 +25,7 @@ class Tbfunction {
     }
 
     public function ReturnStatus(){
-        return array('0' => '无效', '1' => '有效');
+        return array('0' => '未提交', '1' => '有效');
     }
 
     public function ReturnPayStatus(){
@@ -41,7 +41,7 @@ class Tbfunction {
     }
 
     public function ReturnShipMethod(){
-        array('' => '请选择', '1' => '平邮', '2' => '快递', '3' => 'EMS');
+        return array('0' => '未设置', '1' => '平邮', '2' => '快递', '3' => 'EMS');
     }
 
     public function ReturnPayMethod(){

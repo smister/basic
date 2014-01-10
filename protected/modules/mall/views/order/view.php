@@ -70,5 +70,35 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
             'value' => date('Y年m月d日 H:i:s',$model->update_time +(8 * 3600)),
         ),
 	),
-    //对应的是订单查看里面的内容，每一条就是一个内容。
 )); ?>
+
+<?php
+if(!empty($items)){
+    ?>
+    <table width="100%" border="1" cellspacing="1" cellpadding="0" style="text-align:center;vertical-align:middle">
+        <tr>
+            <!--        <th width="16%">图片</th>-->
+            <th width="16%">名称</th>
+            <th width="16%">价格</th>
+            <!--        <th width="16%">数量</th>-->
+            <th width="16%">描述</th>
+            <th width="16%">运费</th>
+        </tr>
+        <?php
+        foreach($items as $item){
+            ?>
+            <tr>
+                <!--            <td>--><?php //echo CHtml::hiddenField($i.'[rowid]', $m['rowid']) ?><!----><?php //echo $m['pic_url'] ?><!--</td>-->
+                <td><?php echo $item['title']; ?></td>
+                <td><?php echo $item['currency'].$item['price'];?></td>
+                <!--            <td>--><?php //echo CHtml::textField($i.'[qty]', $m['qty'], array('size' => '4', 'maxlength' => '5')) ?><!--</td>-->
+                <td><?php echo $item['desc']; ?></td>
+                <td><?php echo $item['shipping_fee'];?></td>
+            </tr>
+        <?php
+        }
+        ?>
+    </table>
+<?php
+}
+?>

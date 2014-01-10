@@ -169,6 +169,8 @@ class Order extends CActiveRecord
         $criteria->compare('create_time', $this->create_time, true);
         $criteria->compare('update_time', $this->update_time, true);
 
+        $criteria->order='order_id desc';
+
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
         ));
@@ -188,7 +190,7 @@ class Order extends CActiveRecord
     public function showRefundState($data = array())
     {
         if (empty($data)) {
-            $order_state = array('0' => '未退款', '1' => '已退款');
+            $order_state = Tbfunction::ReturnRefundStatus();
             return isset($order_state[$this->refund_status]) ? $order_state[$this->refund_status] : $this->refund_status;
         } else if ($data instanceof Order) {
             return $data->showRefundState();
@@ -198,7 +200,7 @@ class Order extends CActiveRecord
     public function showShipState($data = array())
     {
         if (empty($data)) {
-            $order_state = array('0' => '未发货', '1' => '已发货');
+            $order_state = Tbfunction::ReturnShipStatus();
             return isset($order_state[$this->ship_status]) ? $order_state[$this->ship_status] : $this->ship_status;
         } else if ($data instanceof Order) {
             return $data->showShipState();
@@ -208,7 +210,7 @@ class Order extends CActiveRecord
     public function showPayState($data = array())
     {
         if (empty($data)) {
-            $order_state = array('0' => '待支付', '1' => '已支付');
+            $order_state = Tbfunction::ReturnPayStatus();
             return isset($order_state[$this->pay_status]) ? $order_state[$this->pay_status] : $this->pay_status;
         } else if ($data instanceof Order) {
             return $data->showPayState();
@@ -218,7 +220,7 @@ class Order extends CActiveRecord
     public function showPayMethod($data = array())
     {
         if (empty($data)) {
-            $order_state = array('0' => '未设置', '1' => '支付宝', '2' => '银行卡支付');
+            $order_state = Tbfunction::ReturnPayMethod();
             return isset($order_state[$this->payment_method_id]) ? $order_state[$this->payment_method_id] : $this->payment_method_id;
         } else if ($data instanceof Order) {
             return $data->showPayMethod();
@@ -228,7 +230,7 @@ class Order extends CActiveRecord
     public function showStatus($data = array())
     {
         if (empty($data)) {
-            $order_state = array('0' => '未提交', '1' => '有效');
+            $order_state = Tbfunction::ReturnStatus();
             return isset($order_state[$this->status]) ? $order_state[$this->status] : $this->status;
         } else if ($data instanceof Order) {
             return $data->showStatus();
@@ -238,7 +240,7 @@ class Order extends CActiveRecord
     public function showShipMethod($data = array())
     {
         if (empty($data)) {
-            $order_state = array('0' => '未设置', '1' => '平邮', '2' => '快递', '3' => 'EMS');
+            $order_state = Tbfunction::ReturnPayMethod();
             return isset($order_state[$this->shipping_method_id]) ? $order_state[$this->shipping_method_id] : $this->shipping_method_id;
         } else if ($data instanceof Order) {
             return $data->showShipMethod();
