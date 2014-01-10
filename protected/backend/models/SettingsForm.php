@@ -25,6 +25,8 @@ class SettingsForm extends CFormModel
         'port' => '',
         'user' => '',
         'password' => '',
+        'contentFront' =>'',
+        'contentBack' =>'',
         'ssl'=>'',
     );
     public $filter = array(

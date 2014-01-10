@@ -231,7 +231,7 @@ class UserModule extends CWebModule {
         $mailer->FromName = Yii::app()->name;
         $mailer->CharSet = 'UTF-8';
         $mailer->Subject = $subject;
-        $mailer->Body = $message;
+        $mailer->Body = F::sg('mail','contentFront').'<br/>'.$message.'<br/>'.F::sg('mail','contentBack');
         $mailer->IsHTML(true);
 //            var_dump($mailer);
         return $mailer->send();

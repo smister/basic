@@ -120,7 +120,7 @@
         <p class="foot_link"><a href="">关于我们</a>|<a href="">联系我们</a>|<a href="">人才招聘</a>|<a href="">商家入驻</a>|<a href="">广告服务</a>|<a
                 href="">手机商城</a>|<a href="">友情链接</a>|<a href="">销售联盟</a>|<a href="">皮雕社区</a>|<a href="">资源交流</a></p>
 
-        <p>Copyright ? 2013 - 2015 皮雕软包耗材批发商城 All Rights Reserved. <a href="">站长统计</a></p>
+        <p>Copyright ? 2013 - 2015 皮雕软包耗材批发商城 All Rights Reserved. <a href="<?php echo F::sg('site','statistics');?>">站长统计</a></p>
 
         <p>银河方舟 全程技术支持</p>
     </div>

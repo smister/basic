@@ -24,13 +24,13 @@
 <!--        --><?php //echo $form->error($model,'mail_id'); ?>
 <!--    </div>-->
     <div class="">
-        <?php echo $form->textFieldControlGroup($model,'title',array('span'=>5,'maxlength'=>100)); ?>
+        <?php echo $form->textFieldControlGroup($model,'title',array('span'=>4,'maxlength'=>100)); ?>
     </div>
     <div class="">
-        <?php echo $form->textFieldControlGroup($model,'mail_to',array('span'=>5,'maxlength'=>100)); ?>
+        <?php echo $form->textFieldControlGroup($model,'mail_to',array('span'=>4,'maxlength'=>100)); ?>
     </div>
     <div class="">
-        <?php echo $form->textFieldControlGroup($model,'content',array('span'=>5)); ?>
+        <?php echo $form->textAreaControlGroup($model,'content',array('span'=>4)); ?>
     </div>
 
         <div class="form-actions">
