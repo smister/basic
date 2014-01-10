@@ -20,7 +20,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
     <div class="box-title">购物车</div>
     <div class="box-content cart">
         <?php echo CHtml::beginForm(array('/order/checkout'), 'POST', array('id' => 'cartForm')) ?>
-        <table width="100%" border="1" cellspacing="1" cellpadding="0" style="text-align:center;vertical-align:middle">
+        <table width="100%" border="1" cellspacing="1" cellpadding="0" style="text-align:center;vertical-align:middle" id="cart-table">
             <tr>
                 <th width="2%"><?php echo CHtml::checkBox('checkAllPosition', false, array('data-url' => Yii::app()->createUrl('cart/getPrice'))); ?></th>
                 <th width="14%">图片</th>
@@ -44,16 +44,18 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 foreach ($items as $key => $item) {
                     ?>
                     <tr><?php
-                        echo CHtml::hiddenField('item_id[]', $item->item_id);
-                        echo CHtml::hiddenField('props[]', empty($item->sku) ? '' : implode(';', json_decode($item->sku->props, true)));
                         $itemUrl = Yii::app()->createUrl('item/view', array('id' => $item->item_id));
                         ?>
+                        <td style="display:none;">
+                            <?php echo CHtml::hiddenField('item_id[]', $item->item_id, array('id' => '','class' => 'item-id'));
+                                   echo CHtml::hiddenField('props[]', empty($item->sku) ? '' : implode(';', json_decode($item->sku->props, true)),  array('id' => '','class' => 'props'));?>
+                        </td>
                         <td><?php echo CHtml::checkBox('position[]', false, array('value' => $key, 'data-url' => Yii::app()->createUrl('cart/getPrice'))); ?></td>
                         <td><a href="<?php echo $itemUrl; ?>"><?php echo CHtml::image($item->getMainPic(), $item->title, array('width' => '80px', 'height' => '80px')); ?></a></td>
                         <td><?php echo CHtml::link($item->title, $itemUrl); ?></td>
                         <td><?php echo empty($item->sku) ? '' : implode(';', json_decode($item->sku->props_name, true)); ?></td>
                         <td><?php echo $item->getPrice(); ?></td>
-                        <td><?php echo CHtml::textField('quantity[]', $item->getQuantity(), array('size' => '4', 'maxlength' => '5', 'data-url' => Yii::app()->createUrl('cart/update'))); ?></td>
+                        <td><?php echo CHtml::textField('quantity[]', $item->getQuantity(), array('size' => '4', 'maxlength' => '5', 'data-url' => Yii::app()->createUrl('cart/update'), 'data-num' => '123')); ?></td>
                         <td><?php echo $item->getSumPrice() ?>元</td>
                         <td><?php echo CHtml::link('移除', array('/cart/remove', 'key' => $item->getId())) ?></td>
                     </tr>
@@ -81,17 +83,44 @@ Yii::app()->clientScript->registerCoreScript('jquery');
     </div>
 </div>
 <script type="text/javascript">
-    $('[name="quantity[]"]').change(function () {
-        var item_id = $(this).parents('tr').find('[name="item_id[]"]').val();
-        var props = $(this).parents('tr').find('[name="props[]"]').val();
-        var qty = $(this).val();
-        var data = {'item_id': item_id, 'props': props, 'qty': qty};
-        $.post($(this).data('url'), data, function (response) {
-//            window.location.reload();
-            $("#txt").attr("stock");
+    $('#cart-table').on('keyup', 'input[type=text]', function(){
+        var $this = $(this),
+            $tr = $this.closest('tr'),
+            props = $tr.find('.props'),
+            tempId = $tr.find('.item-id'),
+            qty = $.trim(this.value);
+        clearTimeout(window.delay);
+        window.delay = setTimeout(function(){
+            $this.blur();
+            // check input data
+            if(!/^\d+$/.test(qty)){
+                return;
             }
-        }, 'json');
+            console.log(qty);
+            <input type="hidden" name="hid" value="0">
+            // compare number
+            if(parseInt(qty) <= parseInt($this.data('num'))){
+                $.post($(this).data('url'), {'item_id': tempId, 'props': props, 'qty': qty}, function () {
+//            window.location.reload();
+                    $("id").attr("value");
+                }, 'json');
+            }else{
+                // show error
+                $str = $value< $id ? "库存不足" : '';
+                echo $str;
+            }
+        }, 1000);
+
     });
+//    $('[name="quantity[]"]').change(function () {
+//        var item_id = $(this).parents('tr').find('[name="item_id[]"]').val();
+//        var props = $(this).parents('tr').find('[name="props[]"]').val();
+//        var qty = $(this).val();
+//        var data = {'item_id': item_id, 'props': props, 'qty': qty};
+//        $.post($(this).data('url'), data, function (response) {
+//          window.location.reload();
+//        }, 'json');
+//    });
     function getprice() {
         var positions = [];
         $('[name="position[]"]:checked').each(function () {
