@@ -81,9 +81,8 @@ class OrderController extends Controller
                     $model->user_id = Yii::app()->user->id ? Yii::app()->user->id : '0';
                     $model->create_time = time();
                     $cart = Yii::app()->cart;
-                    $items = array();
-                    foreach ($_POST['keys'] as $key)
-                        $items[] = $cart->itemAt($key);
+
+
                     $cri = new CDbCriteria(array(
                         'condition' => 'contact_id =' . $_POST['delivery_address'] . ' AND user_id = ' . Yii::app()->user->id
                     ));
@@ -98,11 +97,20 @@ class OrderController extends Controller
                     $model->receiver_mobile = $address->mobile_phone;
                     $model->receiver_phone = $address->phone;
                     $model->total_fee = 0;
-                    foreach ($items as $item) {
+                    foreach ($_POST['keys'] as $key){
+                        $item= $cart->itemAt($key);
                         $model->total_fee += $item['quantity'] * $item['price'];
                     }
+
                     if ($model->save()) {
-                        foreach ($items as $item) {
+                     foreach ($_POST['keys'] as $key){
+                         $item= $cart->itemAt($key);
+                         $original=Item::model()->findByPk($item['item_id']);
+                         if($original->stock<$item['quantity']){
+                             throw new Exception('stock is not enough!');
+                         }
+                         $original->stock-=$item['quantity'];
+                         
                             $OrderItem = new OrderItem;
                             $OrderItem->order_id = $model->order_id;
                             $OrderItem->item_id = $item['item_id'];
@@ -115,9 +123,8 @@ class OrderController extends Controller
                             if (!$OrderItem->save()) {
                                 throw new Exception('save order item fail');
                             }
-                        }
-                        foreach ($_POST['keys'] as $key) {
-                            $cart->remove($key);
+
+                       $cart->remove($key);
                         }
                     } else {
                         throw new Exception('save order fail');
@@ -126,15 +133,13 @@ class OrderController extends Controller
                     $this->redirect(array('success'));
                 } catch (Exception $e) {
                     $transaction->rollBack();
+                    echo '<script>alert("'.$e->getMessage().'")</script>';
+                    echo '<script>history.go(-3)</script>';
                 }
             }
         }
 
     }
-
-//        $this->render('create', array(
-//            'model' => $model,
-//        ));
 
 
     public function actionSuccess()
