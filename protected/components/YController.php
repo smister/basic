@@ -29,6 +29,13 @@ class YController extends CController {
         Yii::import('ext.ThemePicker.EThemePicker');
         EThemePicker::setTheme();
         Yii::app()->params['title'] = Yii::app()->name;
+
+        $controller = Yii::app()->controller;
+       if(!file_exists('install_lock.txt')){
+           if(!($controller instanceof InstallController)){
+               $this->redirect('install/install');
+           }
+        }
     }
 
     public function afterAction($action)

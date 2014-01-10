@@ -41,4 +41,5 @@ class Tbfunction {
     public function ReturnRefundStatus(){
         return array('0' => '未发货', '1' => '已发货');
     }
+
 }

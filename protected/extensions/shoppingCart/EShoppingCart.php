@@ -142,8 +142,8 @@ class EShoppingCart extends CMap {
         if (Yii::app()->user->id) {
             $profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
             if ($profile) {
-                $this->profile->cart = serialize($this->toArray());
-                $this->profile->save();
+                $profile->cart = serialize($this->toArray());
+                $profile->save();
             }
         }
     }
