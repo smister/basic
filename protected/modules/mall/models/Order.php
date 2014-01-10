@@ -38,14 +38,16 @@ class Order extends CActiveRecord
      * @return Order the static model class
      */
 
-    public static function model($className = __CLASS__){
+    public static function model($className = __CLASS__)
+    {
         return parent::model($className);
     }
 
     /**
      * @return string the associated database table name
      */
-    public function tableName(){
+    public function tableName()
+    {
         return 'order';
     }
 
@@ -57,11 +59,11 @@ class Order extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('shipping_method_id,receiver_name,receiver_country,receiver_state,receiver_city,receiver_district,receiver_zip,receiver_address', 'required'),
+            array('shipping_method_id,receiver_name,receiver_state,receiver_city,receiver_district,receiver_zip,receiver_address', 'required'),
             array('status, pay_status, ship_status, refund_status, comment_status', 'numerical', 'integerOnly' => true),
             array('user_id, total_fee, ship_fee, pay_fee, payment_method_id, shipping_method_id, pay_time, ship_time, create_time, update_time', 'length', 'max' => 10),
             array('receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_zip, receiver_mobile, receiver_phone', 'length', 'max' => 45),
-            array('receiver_address', 'length', 'max' => 255),
+            array('receiver_address,receiver_country', 'length', 'max' => 255),
             array('memo', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
@@ -71,7 +73,8 @@ class Order extends CActiveRecord
     /**
      * @return array relational rules.
      */
-    public function relations(){
+    public function relations()
+    {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
@@ -88,7 +91,8 @@ class Order extends CActiveRecord
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels(){
+    public function attributeLabels()
+    {
         return array(
             'order_id' => Yii::t('mall', 'Order ID'),
             'user_id' => '会员',
@@ -126,7 +130,8 @@ class Order extends CActiveRecord
      * Retrieves a list of models based on the current search/filter conditions.
      * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
      */
-    public function search(){
+    public function search()
+    {
         // Warning: Please modify the following code to remove attributes that
         // should not be searched.
 
@@ -165,7 +170,8 @@ class Order extends CActiveRecord
         ));
     }
 
-    public function showRefundStatus($data = array()){
+    public function showRefundStatus($data = array())
+    {
         if (empty($data)) {
             $order_status = array('0' => '未退款', '1' => '已退款');
             return isset($order_status[$this->refund_status]) ? $order_status[$this->refund_status] : $this->refund_status;
@@ -174,7 +180,8 @@ class Order extends CActiveRecord
         }
     }
 
-    public function showShipStatus($data = array()){
+    public function showShipStatus($data = array())
+    {
         if (empty($data)) {
             $order_status = array('0' => '未发货', '1' => '已发货');
             return isset($order_status[$this->ship_status]) ? $order_status[$this->ship_status] : $this->ship_status;
@@ -183,7 +190,8 @@ class Order extends CActiveRecord
         }
     }
 
-    public function showPayStatus($data = array()){
+    public function showPayStatus($data = array())
+    {
         if (empty($data)) {
             $order_status = array('0' => '待支付', '1' => '已支付');
             return isset($order_status[$this->pay_status]) ? $order_status[$this->pay_status] : $this->pay_status;
@@ -192,7 +200,8 @@ class Order extends CActiveRecord
         }
     }
 
-    public function showPayMethod($data = array()){
+    public function showPayMethod($data = array())
+    {
         if (empty($data)) {
             $order_state = array('0' => '财付通', '1' => '银行卡支付');
             return isset($order_state[$this->payment_method_id]) ? $order_state[$this->payment_method_id] : $this->payment_method_id;
@@ -201,7 +210,8 @@ class Order extends CActiveRecord
         }
     }
 
-    public function showStatus($data = array()){
+    public function showStatus($data = array())
+    {
         if (empty($data)) {
             $order_state = array('0' => '无效', '1' => '有效');
             return isset($order_state[$this->status]) ? $order_state[$this->status] : $this->status;
@@ -210,7 +220,8 @@ class Order extends CActiveRecord
         }
     }
 
-    public function showShipMethod($data = array()){
+    public function showShipMethod($data = array())
+    {
         if (empty($data)) {
             $order_state = array('1' => '平邮', '2' => '快递', '3' => 'EMS');
             return isset($order_state[$this->shipping_method_id]) ? $order_state[$this->shipping_method_id] : $this->shipping_method_id;
@@ -219,15 +230,17 @@ class Order extends CActiveRecord
         }
     }
 
-    public function showDetailAddress($data = array()){
-        foreach (array( 'state', 'city', 'district') as $value) {
+    public function showDetailAddress($data = array())
+    {
+        foreach (array('state', 'city', 'district') as $value) {
             $data->{'receiver_' . $value} = Area::model()->findByPk($data->{'receiver_' . $value})->name;
         }
         $detail_address = $data->receiver_country . $data->receiver_state . $data->receiver_city . $data->receiver_district . $data->receiver_address;
         return $detail_address;
     }
 
-    protected function beforeSave() {
+    protected function beforeSave()
+    {
         $orderLog = new OrderLog();
         if ($this->isNewRecord) {
             $orderLog->op_name = 'create';
@@ -241,7 +254,8 @@ class Order extends CActiveRecord
         return parent::beforeSave();
     }
 
-    protected function afterSave() {
+    protected function afterSave()
+    {
         $orderLog = Yii::app()->params['orderLog'];
         $orderLog->result = 'success';
         $orderLog->save();
