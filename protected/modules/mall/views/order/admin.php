@@ -28,17 +28,17 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         'user_id',
         array(
             'name' => 'pay_status',
-            'value' => '$data->showPayState()',
+            'value' => '$data->showPayStatus()',
             'filter' => Tbfunction::ReturnPayStatus(),
         ),
         array(
             'name' => 'ship_status',
-            'value' => '$data->showShipState()',
+            'value' => '$data->showShipStatus()',
             'filter' => Tbfunction::ReturnShipStatus(),
         ),
         array(
             'name' => 'refund_status',
-            'value' => '$data->showRefundState()',
+            'value' => '$data->showRefundStatus()',
             'filter' => Tbfunction::ReturnRefundStatus(),
         ),
         array(
@@ -54,10 +54,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
             'value' => '$data->showShipMethod()',
             'filter' => Tbfunction::ReturnShipMethod(),
         ),
- array(
-     'name' => 'create_time',
-     'value' => 'date("Y年m月d日 H:i:s",$data->create_time)',
- ),
+        array(
+            'name' => 'create_time',
+            'value' => 'date("Y年m月d日 H:i:s",$data->create_time)',
+        ),
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),

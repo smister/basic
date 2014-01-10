@@ -31,7 +31,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'log_id',
 		'order_id',
-		'op_id',
 		'op_name',
 		'log_text',
 		'action_time',
