@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 
 <h3>Site Settings</h3>
 <?php
-    echo  ('Clear The&nbsp').CHtml::link('Foreground Cache', Yii::app()->createUrl('settings/clearFrontend')).'&nbsp;/&nbsp;'.CHtml::link('Background Cache',Yii::app()->createUrl('settings/clearBackend')).('&nbsp&nbsp&nbsp (notice: In order to make the Changes teke effect ,please clear the Cache )');
+    echo  ('Clear The&nbsp').CHtml::link('Foreground Cache', Yii::app()->createUrl('settings/clearFrontend')).'&nbsp;/&nbsp;'.CHtml::link('Background Cache',Yii::app()->createUrl('settings/clearBackend')).('&nbsp&nbsp&nbsp (notice: In order to make the Changes take effect ,please clear the Cache )');
     echo('<br/><br/>');
 ?>
 

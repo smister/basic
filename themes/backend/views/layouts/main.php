@@ -36,6 +36,7 @@
                     array('label' => '广告管理', 'url' => array('/cms/ad/admin')),
                     array('label' => '友情链接', 'url' => array('/cms/friendLink/admin')),
                     array('label' => '邮件订阅', 'url' => array('/cms/newsletterSubscriber/admin')),
+                    array('label' => '邮件设定', 'url' => array('/mail/mailSettings/admin')),
                     array('label' => '客服管理', 'url' => array('/cms/customerService/admin')),
                 ), 'visible' => !Yii::app()->user->isGuest),
                 array('label' => '商城管理', 'url' => '#', 'items' => array(

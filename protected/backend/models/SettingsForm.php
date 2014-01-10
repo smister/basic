@@ -25,6 +25,7 @@ class SettingsForm extends CFormModel
         'port' => '',
         'user' => '',
         'password' => '',
+        'ssl'=>'',
     );
     public $filter = array(
         'priceLower'=>'',

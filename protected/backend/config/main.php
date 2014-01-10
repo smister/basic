@@ -46,12 +46,16 @@ return array(
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             'ipFilters' => array('127.0.0.1', '::1'),
         ),
+
         'auth' => array(
             'class' => 'backend.modules.auth.AuthModule' // Path to module in backend.
         ),
         // uncomment the following to enable the Gii tool
         'cms' => array(
             'class' => 'application.modules.cms.CmsModule',
+        ),
+        'mail' => array(
+            'class'=>'application.modules.mail.MailModule'
         ),
         'mall' => array(
             'class' => 'application.modules.mall.MallModule',

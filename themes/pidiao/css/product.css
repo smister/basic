@@ -294,17 +294,30 @@
     outline:none;
 }
 .form_vd{
-    height: 32px;
+    border:0;
+    margin:0;
+    padding:0;
+    height:32px;
+
 }
 .form_vcd{
-    float: left;
+    font-size:14px;
+    text-align:right;
+    float:left;
+    width:80px;
+    line-height:32px;
 
+}
+.form_c1{
+    overflow:hidden;
+    margin-top:20px;
+    margin-left: 80px;
 }
 .form_l {
 	font-size:14px;
 	text-align:right;
 	float:left;
-	width:60px;
+	width:80px;
 	line-height:32px;
 }
 .form_c input[type="text"]{

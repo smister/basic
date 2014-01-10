@@ -18,7 +18,7 @@
  */
 return array (
   '
-                    Please enter the letters as they are shown in the image above.
+                    Please enter the letters as they are shown in the image.
                     <br/>Letters are not case-sensitive.
                 ' => '',
   'Add comment' => '',

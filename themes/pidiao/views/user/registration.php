@@ -4,7 +4,9 @@ $this->breadcrumbs=array(
 );
 ?>
 <div class="login_box">
-    <h1><?php echo UserModule::t("Registration"); ?></h1>
+    <div class="login_tit">
+    <a class="current"><?php echo UserModule::t("Registration"); ?></a>
+    </div>
     <div class="login_ct">
     <div class="login">
     <div class="login_form">
@@ -56,9 +58,9 @@ $this->breadcrumbs=array(
         <div class="form_c">
             <div class="form_l">密码强度</div>
             <div class="psw_safe">
-                <span class="safe_d">弱</span>
-                <span class="safe_c">中</span>
-                <span class="safe_h">强</span>
+                <span class="safe_d"hidden="">弱</span>
+                <span class="safe_c"hidden="">中</span>
+                <span class="safe_h"hidden="">强</span>
             </div>
         </div>
 
@@ -92,18 +94,18 @@ $this->breadcrumbs=array(
         }
         ?>
         <?php if (UserModule::doCaptcha('registration')): ?>
-            <div class="">
-                <div class="form_c">
-                <div class="form_1"> <?php echo $form->labelEx($model,'verifyCode'); ?></div>
+            <div class="form_cd">
+                <div class="form_vcd"><?php echo $form->labelEx($model,'verifyCode'); ?></div>
                 <?php echo $form->textField($model,'verifyCode'); ?>
-                </div>
+
+                <div class="form_vd">
                 <?php $this->widget('CCaptcha'); ?>
+                </div>
+<!--                --><?php //echo $form->error($model,'verifyCode'); ?>
 
-                <?php echo $form->error($model,'verifyCode'); ?>
-
-                <p class="hint"><?php echo UserModule::t("Please enter the letters as they are shown in the image above."); ?>
+                <p class="form_c1"><?php echo UserModule::t("Please enter the letters as they are shown in the image above."); ?>
                     <br/><?php echo UserModule::t("Letters are not case-sensitive."); ?></p>
-            </div>
+                </div>
         <?php endif; ?>
 
         <div class="form_c">

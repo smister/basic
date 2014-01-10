@@ -22,11 +22,7 @@ $this->breadcrumbs=array(
 
 	<?php echo CHtml::errorSummary($form); ?>
 	
-	<div class="form_c">
-		<div class="form_1"><?php echo CHtml::activeLabel($form,'username'); ?></div>
-		<?php echo CHtml::activeTextField($form,'login_or_email') ?>
-	</div>
-    <div class="form_c">
+	   <div class="form_c">
         <div class="form_1"> <?php echo CHtml::activeLabel($form,'login_or_email'); ?></div>
         <?php echo CHtml::activeTextField($form,'login_or_email') ?>
     </div>
