@@ -54,10 +54,9 @@ class OrderlistController extends Controller
     public function actionDetail($id)
     {
         $model=$this->loadModel($id);
-        $item=OrderItem::loadModel($model->$order_id);
-        var_dump($item);exit;
+        $items= Item::model()->with('orderItems')->findAll(array('condition'=>"order_id='.$id.'"));
         $this->render('view',array(
-            'model'=>$this->loadModel($id),
+            'model'=>$this->loadModel($id),'items'=>$items,
         ));
     }
 
