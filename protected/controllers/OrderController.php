@@ -104,13 +104,15 @@ class OrderController extends Controller
 
                     if ($model->save()) {
                      foreach ($_POST['keys'] as $key){
-                         $item= $cart->itemAt($key);
-                         $original=Item::model()->findByPk($item['item_id']);
-                         if($original->stock<$item['quantity']){
+                             $item= $cart->itemAt($key);
+                         $sku=Sku::model()->findByPk($item['sku']['sku_id']);
+                         if($sku->stock<$item['quantity']){
                              throw new Exception('stock is not enough!');
                          }
-                         $original->stock-=$item['quantity'];
-
+                         $sku->stock-=$item['quantity'];
+                         if(!$sku->save()) {
+                             throw new Exception('cut down stock fail');
+                         }
                             $OrderItem = new OrderItem;
                             $OrderItem->order_id = $model->order_id;
                             $OrderItem->item_id = $item['item_id'];
@@ -123,7 +125,6 @@ class OrderController extends Controller
                             if (!$OrderItem->save()) {
                                 throw new Exception('save order item fail');
                             }
-
                        $cart->remove($key);
                         }
                     } else {

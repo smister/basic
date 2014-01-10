@@ -37,7 +37,6 @@ class OrderController extends Controller
                 $model->create_time = time();
                 if ($model->save()) {
                     foreach ($_POST['Item']['item_id'] as $itemId) {
-
                         $items = Item::model()->findByPk($itemId);
                         $orderItem = new OrderItem;
                         $orderItem->item_id = $itemId;
