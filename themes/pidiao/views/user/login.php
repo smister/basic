@@ -48,7 +48,7 @@ $this->breadcrumbs=array(
 
         <div class="form_c">
             <div class="form_submit">
-            <?php echo CHtml::submitButton(UserModule::t("Login"))."&nbsp&nbsp&nbsp&nbsp". CHtml::link(UserModule::t("Lost Password?"),Yii::app()->getModule('user')->recoveryUrl). "|".CHtml::link(UserModule::t("Register"),Yii::app()->getModule('user')->registrationUrl). "|".CHtml::link("免注册购买", array('freergt', 'contact_id' => $item->contact_id)); ?>
+            <?php echo CHtml::submitButton(UserModule::t("Login"))."&nbsp&nbsp&nbsp&nbsp". CHtml::link(UserModule::t("Lost Password?"),Yii::app()->getModule('user')->recoveryUrl). "|".CHtml::link(UserModule::t("Register"),Yii::app()->getModule('user')->registrationUrl); ?>
             </div>
         </div>
 
@@ -76,7 +76,6 @@ $form = new CForm(array(
             'type'=>'checkbox',
         )
     ),
-
     'buttons'=>array(
         'login'=>array(
             'type'=>'submit',

@@ -233,8 +233,7 @@ class OrderController extends Controller
         }
     }
 
-   public function actionFreeegt(){
-
+    public function actionFreeegt(){
+       $model = new Order;
    }
-
 }
