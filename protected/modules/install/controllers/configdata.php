@@ -11,5 +11,4 @@ $cfg_indexurl = '';
 $cfg_webname = 'myweb';
 $cfg_adminmail = 'admin@fanhao.com';
 $cfg_install = '~install~';
-
 ?>

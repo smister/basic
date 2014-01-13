@@ -27,11 +27,11 @@ class OrderlistController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','detail'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('admin','create','update'),
+				'actions'=>array('detail','admin','create','update'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -44,12 +44,20 @@ class OrderlistController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionDetail($id)
+	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
+
+    public function actionDetail($id)
+    {
+        $items= Item::model()->with('orderItems')->findAll(array('condition'=>"order_id='.$id.'"));
+        $this->render('view',array(
+            'model'=>$this->loadModel($id),'items'=>$items,
+        ));
+    }
 
 	/**
 	 * Creates a new model.

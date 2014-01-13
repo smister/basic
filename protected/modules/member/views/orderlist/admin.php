@@ -15,24 +15,30 @@ $this->breadcrumbs = array(
             'filter' => $model,
             'columns' => array(
                 'order_id',
+                'status',
                 array(
                     'name' => 'status',
                     'value' => '$data->showStatus()',
-                    'filter' => array('0' => '无效', '1' => '有效' ),
-                ),
-                array(
-                    'name' => 'pay_status',
-                    'value' => '$data->showPayStatus()',
-                    'filter' => array('0' => '待支付', '1' => '已支付' ),
-                ),
-                array(
-                    'name' => 'ship_status',
-                    'value' => '$data->showShipStatus()',
-                    'filter' => array('0' => '未发货', '1' => '已发货' ),
+                    'filter' => Tbfunction::ReturnStatus(),
                 ),
                 'total_fee',
                 'ship_fee',
                 'pay_fee',
+                array(
+                    'name' => 'pay_status',
+                    'value' => '$data->showPayStatus()',
+                    'filter' => Tbfunction::ReturnPayStatus(),
+                ),
+                array(
+                    'name' => 'ship_status',
+                    'value' => '$data->showShipStatus()',
+                    'filter' => Tbfunction::ReturnShipStatus(),
+                ),
+                array(
+                    'name' => 'payment_method_id',
+                    'value' => '$data->showPayMethod()',
+                    'filter' => Tbfunction::ReturnPayMethod(),
+                ),
                 /*
                   'pay_method',
                   'ship_method',

@@ -2,7 +2,7 @@
 <html>
 <head>
 
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
@@ -115,7 +115,7 @@
 
         <div class="btn-box">
             <input type="button"  value="后退" onclick="window.location.href='<?php echo $this->createUrl('index'); ?>';" />
-            <input type="button"  value="继续" onclick="window.location.href='<?php echo $this->createUrl('Default/step2'); ?>'" />
+            <input type="button"  value="继续" onclick="window.location.href='<?php echo $this->createUrl('install/step2'); ?>'" />
         </div>
     </div>
 </div>

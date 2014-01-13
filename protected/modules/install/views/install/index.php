@@ -11,6 +11,17 @@ $this->breadcrumbs=array(
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>安装程序 - FFF内容管理系统</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#confirmNext").click(function () {
+               if($('#readpact').attr('checked')){
+                   $('#check-form').submit();
+             }
+              else alert("请选择确认此协议！");
+            });
+        });
+            </script>
 </head>
 
 <body>
@@ -73,10 +84,11 @@ $this->breadcrumbs=array(
             <p><b>协议发布时间：</b> 2008年1月18日</p>
             <p><b>版本最新更新：</b> 2011年2月21日 By FANHAO.com</p>
         </div>
-        <div class="btn-box">
+        <form class="btn-box" id="check-form" method="post" action="<?php echo Yii::app()->createUrl('install/install/step1'); ?>">
+
             <input name="readpact" type="checkbox" id="readpact" value="" /><label for="readpact"><strong class="fc-690 fs-14">我已经阅读并同意此协议</strong></label>
-            <input type="button"   value="继续" onclick="document.getElementById('readpact').checked ?window.location.href='<?php echo $this->createUrl('Default/step1'); ?>' : alert('您必须同意软件许可协议才能安装！');" />
-        </div>
+           <?php echo CHtml::link("下一步", '#', array('id' => 'confirmNext', 'class' => 'btn btn-danger ')) ?>
+        </form>
     </div>
 </div>
 
@@ -85,4 +97,3 @@ $this->breadcrumbs=array(
 </div>
 
 </body>
-</html>
