@@ -32,7 +32,7 @@ $i = 0;
 foreach ($itemProps as $itemProp) {
     if ($itemProp->is_sale_prop) {
         $itemPropValue =  array();
-        if (isset($itemPropValues[$itemProp->item_prop_id])) {
+        if (isset($itemPropValues[$itemProp->item_prop_id]) && is_array($itemPropValues[$itemProp->item_prop_id])) {
             foreach ($itemPropValues[$itemProp->item_prop_id] as $value) {
                 $values = explode(':', $value);
                 $itemPropValue[] = $values[1];

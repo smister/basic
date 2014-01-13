@@ -7,37 +7,39 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class Tbfunction
-{
-    static public function add_button()
+class Tbfunction {
+    static public function add_goods($id)
     {
-        echo '<button class="btn btn-primary">Add</button>';
+        echo  CHtml::link('<div class="btn btn-primary">Add</div>',array('create','item_id'=>$id));
     }
 
     public function add_user($id)
     {
-        echo CHtml::link('Add', array('create', 'user_id' => $id), array('class' => 'btn btn-primary'));
+        echo  CHtml::link('<div class="btn btn-primary">Add</div>',array('create','user_id'=>$id));
     }
 
-    public function getUser($user_id)
-    {
-        $user = Users::model()->findByAttributes(array('id' => $user_id));
-        return $user->username;
-    }
-    public function showUser()
-    {
-        $data_user=array();
-
-         $users= Users::model()->findAll();
-        foreach($users as $user){
-            if($user->superuser!=1){
-            $data_user[$user->id]=$user->username;}
-        }
-        return $data_user;
+    public function view_user($id){
+        echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
     }
 
-    static public function deliver_goods()
-    {
-        echo '<a  href="javascript:void(0)" class="btn btn-danger" id="deliverGoods">发货</a>';
+    public function state($id){
+        echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
     }
+
+    public function ReturnStatus(){
+        return array('0' => '无效', '1' => '有效');
+    }
+
+    public function ReturnPayStatus(){
+        return array('0' => '待支付', '1' => '已支付');
+    }
+
+    public function ReturnShipStatus(){
+        return array('0' => '未发货', '1' => '已发货');
+    }
+
+    public function ReturnRefundStatus(){
+        return array('0' => '未发货', '1' => '已发货');
+    }
+
 }
