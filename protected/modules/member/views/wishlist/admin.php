@@ -20,14 +20,14 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'name' => 'item.title',
             'value' => '$data->item->title',
         ),
-        array(
-            'name' => 'item.sn',
-            'value' => '$data->item->sn',
-        ),
-        array(
-            'name' => 'item.shop_price',
-            'value' => '$data->item->shop_price',
-        ),
+//        array(
+//            'name' => 'item.sn',
+//            'value' => '$data->item->sn',
+//        ),
+//        array(
+//            'name' => 'item.shop_price',
+//            'value' => '$data->item->shop_price',
+//        ),
         array(
             'name' => 'create_time',
             'value' => 'date("Y-m-d", $data->create_time)',

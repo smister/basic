@@ -48,7 +48,7 @@ class EShoppingCart extends CMap {
         if (Yii::app()->user->id) {
             $profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
             if ($profile) {
-                $data = unserialize($this->profile->cart);
+                $data = unserialize($profile->cart);
                 if (is_array($data) || $data instanceof Traversable)
                     foreach ($data as $key => $product)
                         if (!$this->contains($key))
@@ -58,13 +58,15 @@ class EShoppingCart extends CMap {
         }
     }
 
-    /**
-     * Add item to the shopping cart
-     * If the position was previously added to the cart,
-     * then information about it is updated, and count increases by $quantity
-     * @param IECartPosition $position
-     * @param int count of elements positions
-     */
+   /***
+    *  /**
+    * Add item to the shopping cart
+    * If the position was previously added to the cart,
+    * then information about it is updated, and count increases by $quantity
+    * @param IECartPosition $position
+    * @param int count of elements positions
+    * @return bool
+    */
     public function put(IECartPosition $position, $quantity = 1) {
         $key = $position->getId();
         if ($this->itemAt($key) instanceof IECartPosition) {
@@ -72,8 +74,8 @@ class EShoppingCart extends CMap {
             $oldQuantity = $position->getQuantity();
             $quantity += $oldQuantity;
         }
-
-        $this->update($position, $quantity);
+        if($this->update($position, $quantity))
+            return true;
 
     }
 
@@ -140,8 +142,8 @@ class EShoppingCart extends CMap {
         if (Yii::app()->user->id) {
             $profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
             if ($profile) {
-                $this->profile->cart = serialize($this->toArray());
-                $this->profile->save();
+                $profile->cart = serialize($this->toArray());
+                $profile->save();
             }
         }
     }
