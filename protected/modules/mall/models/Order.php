@@ -57,7 +57,7 @@ class Order extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('shipping_method_id,receiver_name,receiver_country,receiver_state,receiver_city,receiver_district,receiver_zip,receiver_address', 'required'),
+            array('shipping_method_id,receiver_name,receiver_state,receiver_city,receiver_district,receiver_zip,receiver_address', 'required'),
             array('status, pay_status, ship_status, refund_status, comment_status', 'numerical', 'integerOnly' => true),
             array('user_id, total_fee, ship_fee, pay_fee, payment_method_id, shipping_method_id, pay_time, ship_time, create_time, update_time', 'length', 'max' => 10),
             array('receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_zip, receiver_mobile, receiver_phone', 'length', 'max' => 45),
@@ -168,15 +168,6 @@ class Order extends CActiveRecord
         ));
     }
 
-    public function showRefundStatus($data = array()){
-        if (empty($data)) {
-            $order_status = Tbfunction::ReturnRefundStatus();
-            return isset($order_status[$this->refund_status]) ? $order_status[$this->refund_status] : $this->refund_status;
-        } else if ($data instanceof Order) {
-            return $data->showRefundStatus();
-        }
-    }
-
     public function showShipStatus($data = array()){
         if (empty($data)) {
             $order_status = Tbfunction::ReturnShipStatus();
@@ -228,6 +219,15 @@ class Order extends CActiveRecord
         }
         $detail_address = $data->receiver_country . $data->receiver_state . $data->receiver_city . $data->receiver_district . $data->receiver_address;
         return $detail_address;
+    }
+
+    public function showRefundStatus($data = array()){
+        if (empty($data)) {
+            $order_status = Tbfunction::ReturnRefundStatus();
+            return isset($order_status[$this->refund_status]) ? $order_status[$this->refund_status] : $this->refund_status;
+        } else if ($data instanceof Order) {
+            return $data->showRefundStatus();
+        }
     }
 
     protected function beforeSave() {

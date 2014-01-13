@@ -13,7 +13,10 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'order_id',
-        'user_id',
+        array(
+            'name' => 'user_id',
+            'value' =>Tbfunction::getUser($model->user_id),
+        ),
         array(
             'name' => 'status',
             'value' => 'Order::showStatus',
@@ -76,7 +79,7 @@ if(!empty($orderItems)){
             <!--        <th width="16%">图片</th>-->
             <th width="16%">名称</th>
             <th width="16%">价格</th>
-            <!--        <th width="16%">数量</th>-->
+<!--            <th width="16%">数量</th>-->
             <th width="16%">数量</th>
             <th width="16%">总计</th>
         </tr>
@@ -87,7 +90,7 @@ if(!empty($orderItems)){
                 <!--            <td>--><?php //echo CHtml::hiddenField($i.'[rowid]', $m['rowid']) ?><!----><?php //echo $m['pic_url'] ?><!--</td>-->
                 <td><?php echo $item['title']; ?></td>
                 <td><?php echo $item['price']?></td>
-                <!--            <td>--><?php //echo CHtml::textField($i.'[qty]', $m['qty'], array('size' => '4', 'maxlength' => '5')) ?><!--</td>-->
+<!--                <td>--><?php //echo $item['pic'] ?><!--</td>-->
                 <td><?php echo $item['quantity']; ?></td>
                 <td><?php echo $item['total_price'];?></td>
             </tr>

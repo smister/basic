@@ -37,23 +37,20 @@ class OrderController extends Controller
                 $model->create_time = time();
                 if ($model->save()) {
                     foreach ($_POST['Item']['item_id'] as $itemId) {
-                        $orderItem = OrderItem::model()->findAll("item_id='$itemId'");
-                        if (!$orderItem) {
-                            $items = Item::model()->findByPk($itemId);
-                            $orderItem = new OrderItem;
-                            $orderItem->item_id = $itemId;
-                            $orderItem->title = $items->title;
-                            $orderItem->desc = $items->desc;
-                            $orderItem->pic = $items->getMainPic(); //need update;
-//
-                            $orderItem->props_name = $items->props_name;
-                            $orderItem->price = $items->price;
-                            $orderItem->quantity = 1; //need to update
-                            $orderItem->total_price = $orderItem->price * $orderItem->quantity;
-                            $orderItem->order_id = $model->order_id;
-                            if (!$orderItem->save()) {
-                                throw new Exception('save order item fail');
-                            }
+                        $items = Item::model()->findByPk($itemId);
+                        $orderItem = new OrderItem;
+                        $orderItem->item_id = $itemId;
+                        $orderItem->title = $items->title;
+                        $orderItem->desc = $items->desc;
+                        $orderItem->pic = $items->getMainPic(); //need update;
+                        $orderItem->props_name = $items->props_name;
+                        $orderItem->price = $items->price;
+                        $orderItem->quantity = 1; //need to update
+                        $orderItem->total_price = $orderItem->price * $orderItem->quantity;
+                        $orderItem->order_id = $model->order_id;
+//                        var_dump($orderItem);die;
+                        if (!$orderItem->save()) {
+                            throw new Exception('save order item fail');
                         }
                     }
                 } else {
@@ -101,23 +98,23 @@ class OrderController extends Controller
                     }
                     foreach ($_POST['Item']['item_id'] as $itemId) {
                         $items = Item::model()->findByPk($itemId);
-                        $orderItem = OrderItem::model()->find("item_id='$itemId'");
-                        if (!$orderItem) {
-                            $orderItem = new OrderItem;
-                            $orderItem->item_id = $itemId;
-                            $orderItem->title = $items->title;
-                            $orderItem->desc = $items->desc;
-                            $orderItem->pic = $items->getMainPic(); //need update;
-                            $orderItem->props_name = $items->props_name;
-                            $orderItem->price = $items->price;
-                            $orderItem->quantity = 1; //need to update
-                            $orderItem->total_price = $orderItem->price * $orderItem->quantity;
-                            $orderItem->order_id = $model->order_id;
-                            if (!$orderItem->save()) {
-                                throw new Exception('save order item fail');
-                            }
+                        $orderItem = new OrderItem;
+                        $orderItem->item_id = $itemId;
+                        $orderItem->title = $items->title;
+                        $orderItem->desc = $items->desc;
+                        $orderItem->pic = $items->getMainPic(); //need update;
+                        $orderItem->props_name = $items->props_name;
+                        $orderItem->price = $items->price;
+                        $orderItem->quantity = 1; //need to update
+                        $orderItem->total_price = $orderItem->price * $orderItem->quantity;
+                        $orderItem->order_id = $model->order_id;
+
+                        if (!$orderItem->save()) {
+                            throw new Exception('save order item fail');
                         }
                     }
+                }else{
+                    throw new Exception('save order fail');
                 }
                 $transaction->commit();
                 $this->redirect(array('view', 'id' => $model->order_id));
@@ -129,7 +126,6 @@ class OrderController extends Controller
             'model' => $model, 'item' => $item
         ));
     }
-
     /**
      * Deletes a particular model.
      * If deletion is successful, the browser will be redirected to the 'admin' page.

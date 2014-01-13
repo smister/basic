@@ -3,7 +3,6 @@ $this->breadcrumbs=array(
     'Orders'=>array('index'),
     $model->order_id,
 );
-$orderItems = $model->orderItems;
 ?>
 
     <h1>View Order #<?php echo $model->order_id; ?></h1>
@@ -13,7 +12,10 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
     'data'=>$model,
     'attributes'=>array(
         'order_id',
-        'user_id',
+        array(
+            'name' => 'user_id',
+            'value' =>Tbfunction::getUser($model->user_id),
+        ),
         array(
             'name' => 'status',
             'value' => 'Order::showStatus',

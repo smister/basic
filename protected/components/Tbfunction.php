@@ -47,4 +47,15 @@ class Tbfunction {
     public function ReturnPayMethod(){
         return array('0' => '请选择', '1' => '支付宝', '2' => '银行卡');
     }
+
+    public function getUser($user_id)
+    {
+        $user = Users::model()->findByAttributes(array('id' => $user_id));
+        return $user->username;
+    }
+
+    public function showRefundStatus($status){
+        $order_status = Tbfunction::ReturnRefundStatus();
+        return isset($order_status[$status]) ? $order_status[$status] : $status;
+    }
 }

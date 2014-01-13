@@ -25,7 +25,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 
 		'order_id',
-        'user_id',
+        array(
+            'name' => 'user_id',
+            'value' =>'Tbfunction::getUser($data->user_id)',
+            'filter' => Tbfunction::getUser($data->user_id),
+        ),
         array(
             'name' => 'pay_status',
             'value' => '$data->showPayStatus()',

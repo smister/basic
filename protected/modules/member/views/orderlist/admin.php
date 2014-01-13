@@ -15,7 +15,6 @@ $this->breadcrumbs = array(
             'filter' => $model,
             'columns' => array(
                 'order_id',
-                'status',
                 array(
                     'name' => 'status',
                     'value' => '$data->showStatus()',
