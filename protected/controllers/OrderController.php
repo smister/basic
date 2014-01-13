@@ -81,8 +81,6 @@ class OrderController extends Controller
                     $model->user_id = Yii::app()->user->id ? Yii::app()->user->id : '0';
                     $model->create_time = time();
                     $cart = Yii::app()->cart;
-
-
                     $cri = new CDbCriteria(array(
                         'condition' => 'contact_id =' . $_POST['delivery_address'] . ' AND user_id = ' . Yii::app()->user->id
                     ));
@@ -101,7 +99,6 @@ class OrderController extends Controller
                         $item= $cart->itemAt($key);
                         $model->total_fee += $item['quantity'] * $item['price'];
                     }
-
                     if ($model->save()) {
                      foreach ($_POST['keys'] as $key){
                              $item= $cart->itemAt($key);

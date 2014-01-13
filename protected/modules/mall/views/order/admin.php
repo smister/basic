@@ -13,7 +13,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </p>
 <?php echo CHtml::link('<div class="btn btn-primary">Create Order</div>','#',array('class'=>'search-button',)); ?>
 <div class="search-form" style="display:none">
-
     <?php $this->renderPartial('select_user',array(
         'users'=>$users,
     )); ?>
@@ -25,7 +24,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 
 		'order_id',
-        'user_id',
+        array(
+            'name' => 'user_id',
+            'value' =>'Tbfunction::getUser($data->user_id)',
+           'filter' => Tbfunction::showUser(),
+        ),
         array(
             'name' => 'pay_status',
             'value' => '$data->showPayState()',
@@ -44,7 +47,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         array(
             'name' => 'payment_method_id',
             'value' => '$data->showPayMethod()',
-            'filter' => array('0' => '未设置', '1' => '支付宝','2'=>'银行卡支付' ),
+            'filter' => array('0' => '货到付款', '1' => '支付宝','2'=>'银行卡支付' ),
         ),
         'pay_fee',
         'ship_fee',
@@ -58,7 +61,13 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
      'name' => 'create_time',
      'value' => 'date("Y年m月d日 H:i:s",$data->create_time)',
  ),
-		array(
+        array(
+            'name' => 'receiver_name',
+        ),
+        array(
+        'value' =>'Tbfunction::deliver_goods($data->order_id)',
+        ),
+        array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
 	),

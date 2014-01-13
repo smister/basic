@@ -42,7 +42,7 @@ class OrderController extends Controller
                         $orderItem->item_id = $itemId;
                         $orderItem->title = $items->title;
                         $orderItem->desc = $items->desc;
-                        $orderItem->pic = $items->getMainPic(); //need update;
+                        $orderItem->pic = $items->getMainPic();
                         $orderItem->props_name = $items->props_name;
                         $orderItem->price = $items->price;
                         $orderItem->quantity = 1; //need to update
@@ -111,6 +111,8 @@ class OrderController extends Controller
                             throw new Exception('save order item fail');
                         }
                     }
+                }else{
+                    throw new Exception('save order fail');
                 }
                 $transaction->commit();
                 $this->redirect(array('view', 'id' => $model->order_id));
@@ -166,11 +168,11 @@ class OrderController extends Controller
         $users = new Users('search');
         $users->unsetAttributes();
         if (isset($_GET['Users'])) {
-            print_r($_GET['Users']);
             $users->attributes = $_GET['Users'];
         }
-        if (isset($_GET['Order']))
+        if (isset($_GET['Order'])) {
             $model->attributes = $_GET['Order'];
+          }
         $this->render('admin', array(
             'model' => $model, 'users' => $users
         ));
@@ -233,5 +235,12 @@ class OrderController extends Controller
             $goods->attributes = $_GET['Item'];
         }
         $this->render('add_goods', array('goods' => $goods));
+    }
+
+    public function actionDeliverGoods($order_id){
+        $order=Order::model()->findByPk($order_id);
+        $order->ship_status=1;
+        $order->save();
+        $this->redirect(array('/mall/order/admin'));
     }
 }

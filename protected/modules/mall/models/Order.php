@@ -218,7 +218,7 @@ class Order extends CActiveRecord
     public function showPayMethod($data = array())
     {
         if (empty($data)) {
-            $order_state = array('0' => '未设置', '1' => '支付宝', '2' => '银行卡支付');
+            $order_state = array('0' => '货到付款', '1' => '支付宝', '2' => '银行卡支付');
             return isset($order_state[$this->payment_method_id]) ? $order_state[$this->payment_method_id] : $this->payment_method_id;
         } else if ($data instanceof Order) {
             return $data->showPayMethod();
