@@ -7,4 +7,4 @@ $this->breadcrumbs=array(
 
     <h1 style="text-align:center">Create Order</h1>
 
-<?php echo $this->renderPartial('_form1', array('model'=>$model,'order_item'=>$order_item)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'order_item'=>$order_item)); ?>

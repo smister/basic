@@ -8,16 +8,14 @@
  */
 
 class Tbfunction {
-    static public function add_goods($id)
+    static public function add_button()
     {
-        echo  CHtml::link('<div class="btn btn-primary">Add</div>',array('create','item_id'=>$id));
+        echo '<button class="btn btn-primary">Add</button>';
     }
-
     public function add_user($id)
     {
-        echo  CHtml::link('<div class="btn btn-primary">Add</div>',array('create','user_id'=>$id));
+        echo  CHtml::link('Add',array('create','user_id'=>$id),array('class'=>'btn btn-primary'));
     }
-
     public function view_user($id){
         echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
     }
@@ -60,7 +58,14 @@ class Tbfunction {
     }
 
     public function ReturnRefundStatus(){
-        return array('0' => '未发货', '1' => '已发货');
+        return array('0' => '未退款', '1' => '已退款');
     }
 
+    public function ReturnShipMethod(){
+        array('' => '请选择', '1' => '平邮', '2' => '快递', '3' => 'EMS');
+    }
+
+    public function ReturnPayMethod(){
+        return array('0' => '请选择', '1' => '支付宝', '2' => '银行卡');
+    }
 }

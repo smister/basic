@@ -125,10 +125,4 @@ class OrderItem extends CActiveRecord
         return parent::model($className);
     }
 
-    public function getUser($order_id){
-        $model=Order::model()->findByPk($order_id);
-        $user_id=$model->user_id;
-        $username=Users::model()->findByPk($user_id)->username;
-        return $username;
-    }
 }
