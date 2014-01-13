@@ -21,6 +21,27 @@ class Tbfunction {
     public function view_user($id){
         echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
     }
+    public function getUser($user_id)
+    {
+        $user = Users::model()->findByAttributes(array('id' => $user_id));
+        return $user->username;
+    }
+    public function showUser()
+    {
+        $data_user=array();
+
+        $users= Users::model()->findAll();
+        foreach($users as $user){
+            if($user->superuser!=1){
+                $data_user[$user->id]=$user->username;}
+        }
+        return $data_user;
+    }
+
+    static public function deliver_goods()
+    {
+        echo '<a  href="javascript:void(0)" class="btn btn-danger" id="deliverGoods">鍙戣揣</a>';
+    }
 
     public function state($id){
         echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
