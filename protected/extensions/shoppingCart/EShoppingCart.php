@@ -130,7 +130,9 @@ class EShoppingCart extends CMap {
 
         $this->applyDiscounts();
         $this->onUpdatePosition(new CEvent($this));
-        $this->saveState();
+        if($this->saveState()){
+            return true;
+        };
     }
 
     /**
@@ -143,7 +145,9 @@ class EShoppingCart extends CMap {
             $profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
             if ($profile) {
                 $profile->cart = serialize($this->toArray());
-                $profile->save();
+               if($profile->save()) {
+                   return true;
+               }
             }
         }
     }

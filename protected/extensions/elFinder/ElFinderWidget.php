@@ -62,6 +62,7 @@ class ElFinderWidget extends CWidget
 
         $this->settings['url'] = Yii::app()->createUrl($this->connectorRoute);
         $this->settings['lang'] = Yii::app()->language;
+        $this->settings['onlyMimes']='image';
         if (Yii::app()->getRequest()->enableCsrfValidation) {
             $this->settings['customData'] = array(Yii::app()->request->csrfTokenName => Yii::app()->request->csrfToken);
         }
@@ -69,6 +70,7 @@ class ElFinderWidget extends CWidget
 
     public function run()
     {
+
         $id = $this->getId();
         $settings = CJavaScript::encode($this->settings);
         $customData = isset($this->settings['customData']) ? CJavaScript::encode($this->settings['customData']) : '';
