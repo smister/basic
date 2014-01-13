@@ -20,7 +20,9 @@ class ElfinderController extends Controller
                             'URL' =>  Yii::app()->baseUrl . '/upload/', // URL to files (REQUIRED)
                             'mimeDetect' => 'internal',
                             'rootAlias' => 'Home',
-                            'accessControl' => 'access' // disable and hide dot starting files (OPTIONAL)
+                            'accessControl' => 'access' ,// disable and hide dot starting files (OPTIONAL)
+                            'uploadAllow' => array('image'),
+                            'uploadDeny'=>array('all'),
                         )
                     )
                 )

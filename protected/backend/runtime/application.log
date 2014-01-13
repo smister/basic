@@ -22743,3 +22743,372 @@ in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
 in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
 in D:\wamp\www\yincart\basic\protected\models\Item.php (451)
 in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/13 08:55:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 10:16:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 11:52:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 11:57:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 11:58:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 13:40:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:00:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:03:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:04:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:05:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:12:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:12:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:18:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:20:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:26:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:27:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:28:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:29:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:29:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:46:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:47:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:19:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:27:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:28:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:35:42 [error] [php] include(elFinderVolume.php): failed to open stream: No such file or directory (D:\wamp\www\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 D:\wamp\www\yincart\basic\protected\extensions\elFinder\php\elFinder.class.php(254): class_exists()
+#2 D:\wamp\www\yincart\basic\protected\extensions\elFinder\ElFinderConnectorAction.php(19): elFinder->__construct()
+#3 D:\wamp\www\yii\framework\web\actions\CAction.php(76): ElFinderConnectorAction->run()
+#4 D:\wamp\www\yii\framework\web\CController.php(308): ElFinderConnectorAction->runWithParams()
+#5 D:\wamp\www\yii\framework\web\CController.php(286): ElfinderController->runAction()
+#6 D:\wamp\www\yii\framework\web\CController.php(265): ElfinderController->runActionWithFilters()
+#7 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ElfinderController->run()
+#8 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\wamp\www\yincart\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/connector?YII_CSRF_TOKEN=fcd428a96795bc8b79c2036f26331f7d289ca0d1&cmd=open&target=l1_aW1hZ2VcMjAxMzEyMjM&init=1&tree=1&_=1389598542037
+in D:\wamp\www\yincart\basic\protected\extensions\elFinder\php\elFinder.class.php (254)
+in D:\wamp\www\yincart\basic\protected\extensions\elFinder\ElFinderConnectorAction.php (19)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/13 15:38:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:39:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:40:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:40:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:49:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:52:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 16:09:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 16:13:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---

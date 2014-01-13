@@ -48,7 +48,7 @@ class EShoppingCart extends CMap {
         if (Yii::app()->user->id) {
             $profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
             if ($profile) {
-                $data = unserialize($this->profile->cart);
+                $data = unserialize($profile->cart);
                 if (is_array($data) || $data instanceof Traversable)
                     foreach ($data as $key => $product)
                         if (!$this->contains($key))
@@ -130,7 +130,9 @@ class EShoppingCart extends CMap {
 
         $this->applyDiscounts();
         $this->onUpdatePosition(new CEvent($this));
-        $this->saveState();
+        if($this->saveState()){
+            return true;
+        };
     }
 
     /**
@@ -142,8 +144,10 @@ class EShoppingCart extends CMap {
         if (Yii::app()->user->id) {
             $profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
             if ($profile) {
-                $this->profile->cart = serialize($this->toArray());
-                $this->profile->save();
+                $profile->cart = serialize($this->toArray());
+               if($profile->save()) {
+                   return true;
+               }
             }
         }
     }

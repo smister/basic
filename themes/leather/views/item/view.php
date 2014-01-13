@@ -303,12 +303,13 @@ $imageHelper=new ImageHelper();
             } else {
                 $.post($('.deal_add_car').data('url'), $('#deal').serialize(), function(response) {
                     /**判断还需要改 待定**/
-                    if(response){
+                    console.log(response);
+                    if(response.status=='success'){
                         location.href=$('.deal_add a').data('url');
                     }else{
                         alert('system error');
                     }
-                });
+                },'json');
             }
         })
         function findSameValue(a,b){
@@ -394,24 +395,24 @@ $imageHelper=new ImageHelper();
                 $('.deal_size').addClass('prop-div-select');
             } else {
                 $('.deal_size').removeClass('prop-div-select');
-                $.post($(this).data('url'), $('#deal').serialize(), function(response,status) {
-                        alert(status) ;
-                        if(status=='success'){
+                $.post($(this).data('url'), $('#deal').serialize(), function(response) {
+                        if(response.status=='success'){
                             var num=$('.shopping_car').children().text();
                             num=parseInt(num)+1;
                             $('.shopping_car').children().text(num);
-                        }
-                });
+                            alert(response.status);
+                        }else
+                        alert(response.status);
+                },'json');
             }
         });
         $('.deal_collect').click(function() {
-//                alert($(this).data('url'));
-                $.post($(this).data('url'), $('#item_id').serialize(), function(response,status) {
-                    if(response){
+                $.post($(this).data('url'), $('#item_id').serialize(), function(response) {
+                    if(response.status=='exist'){
                         alert('已收藏过该商品');
                     }else
-                    alert(status) ;
-                });
+                    alert(response.status) ;
+                },'json');
         });
     });
 </script>
