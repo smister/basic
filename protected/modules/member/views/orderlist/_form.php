@@ -159,6 +159,8 @@
 		<?php echo $form->error($model,'update_time'); ?>
 	</div>
 
+
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

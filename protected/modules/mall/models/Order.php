@@ -10,11 +10,12 @@
  * @property integer $pay_status
  * @property integer $ship_status
  * @property integer $refund_status
+ * @property integer $comment_status
  * @property string $total_fee
  * @property string $ship_fee
  * @property string $pay_fee
- * @property string $pay_method
- * @property string $ship_method
+ * @property string $payment_method_id
+ * @property integer $shipping_method_id
  * @property string $receiver_name
  * @property string $receiver_country
  * @property string $receiver_state
@@ -29,20 +30,18 @@
  * @property string $ship_time
  * @property string $create_time
  * @property string $update_time
+ *
+ * The followings are the available model relations:
+ * @property PaymentMethod $paymentMethod
+ * @property ShippingMethod $shippingMethod
+ * @property OrderItem[] $orderItems
+ * @property OrderLog[] $orderLogs
+ * @property Payment[] $payments
+ * @property Refund[] $refunds
+ * @property Shipping[] $shippings
  */
 class Order extends CActiveRecord
 {
-    /**
-     * Returns the static model of the specified AR class.
-     * @param string $className active record class name.
-     * @return Order the static model class
-     */
-
-    public static function model($className = __CLASS__)
-    {
-        return parent::model($className);
-    }
-
     /**
      * @return string the associated database table name
      */
@@ -94,9 +93,9 @@ class Order extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'order_id' => Yii::t('mall', 'Order ID'),
+            'order_id' => '订单号',
             'user_id' => '会员',
-            'status' => Yii::t('mall', 'Order Status'),
+            'status' => '订单状态',
             'pay_status' => '付款状态',
             'ship_status' => '配送状态',
             'refund_status' => '退款状态',
@@ -122,18 +121,24 @@ class Order extends CActiveRecord
             'comment_status' => '评论状态',
             'payment_method_id' => '付款方式',
             'shipping_method_id' => '配送方式',
-            'detail_address' => '具体地址',
         );
     }
 
     /**
      * Retrieves a list of models based on the current search/filter conditions.
-     * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+     *
+     * Typical usecase:
+     * - Initialize the model fields with values from filter form.
+     * - Execute this method to get CActiveDataProvider instance which will filter
+     * models according to data in model fields.
+     * - Pass data provider to CGridView, CListView or any similar widget.
+     *
+     * @return CActiveDataProvider the data provider that can return the models
+     * based on the search/filter conditions.
      */
     public function search()
     {
-        // Warning: Please modify the following code to remove attributes that
-        // should not be searched.
+        // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria = new CDbCriteria;
 
@@ -164,46 +169,56 @@ class Order extends CActiveRecord
         $criteria->compare('create_time', $this->create_time, true);
         $criteria->compare('update_time', $this->update_time, true);
 
-
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
         ));
     }
 
-    public function showRefundStatus($data = array())
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return Order the static model class
+     */
+    public static function model($className = __CLASS__)
+    {
+        return parent::model($className);
+    }
+
+    public function showRefundState($data = array())
     {
         if (empty($data)) {
-            $order_status = array('0' => '未退款', '1' => '已退款');
-            return isset($order_status[$this->refund_status]) ? $order_status[$this->refund_status] : $this->refund_status;
+            $order_state = array('0' => '未退款', '1' => '已退款');
+            return isset($order_state[$this->refund_status]) ? $order_state[$this->refund_status] : $this->refund_status;
         } else if ($data instanceof Order) {
-            return $data->showRefundStatus();
+            return $data->showRefundState();
         }
     }
 
-    public function showShipStatus($data = array())
+    public function showShipState($data = array())
     {
         if (empty($data)) {
-            $order_status = array('0' => '未发货', '1' => '已发货');
-            return isset($order_status[$this->ship_status]) ? $order_status[$this->ship_status] : $this->ship_status;
+            $order_state = array('0' => '未发货', '1' => '已发货');
+            return isset($order_state[$this->ship_status]) ? $order_state[$this->ship_status] : $this->ship_status;
         } else if ($data instanceof Order) {
-            return $data->showShipStatus();
+            return $data->showShipState();
         }
     }
 
-    public function showPayStatus($data = array())
+    public function showPayState($data = array())
     {
         if (empty($data)) {
-            $order_status = array('0' => '待支付', '1' => '已支付');
-            return isset($order_status[$this->pay_status]) ? $order_status[$this->pay_status] : $this->pay_status;
+            $order_state = array('0' => '待支付', '1' => '已支付');
+            return isset($order_state[$this->pay_status]) ? $order_state[$this->pay_status] : $this->pay_status;
         } else if ($data instanceof Order) {
-            return $data->showPayStatus();
+            return $data->showPayState();
         }
     }
 
     public function showPayMethod($data = array())
     {
         if (empty($data)) {
-            $order_state = array('0' => '财付通', '1' => '银行卡支付');
+            $order_state = array('0' => '未设置', '1' => '支付宝', '2' => '银行卡支付');
             return isset($order_state[$this->payment_method_id]) ? $order_state[$this->payment_method_id] : $this->payment_method_id;
         } else if ($data instanceof Order) {
             return $data->showPayMethod();
@@ -213,7 +228,7 @@ class Order extends CActiveRecord
     public function showStatus($data = array())
     {
         if (empty($data)) {
-            $order_state = array('0' => '无效', '1' => '有效');
+            $order_state = array('0' => '未提交', '1' => '有效');
             return isset($order_state[$this->status]) ? $order_state[$this->status] : $this->status;
         } else if ($data instanceof Order) {
             return $data->showStatus();
@@ -223,13 +238,12 @@ class Order extends CActiveRecord
     public function showShipMethod($data = array())
     {
         if (empty($data)) {
-            $order_state = array('1' => '平邮', '2' => '快递', '3' => 'EMS');
+            $order_state = array('0' => '未设置', '1' => '平邮', '2' => '快递', '3' => 'EMS');
             return isset($order_state[$this->shipping_method_id]) ? $order_state[$this->shipping_method_id] : $this->shipping_method_id;
         } else if ($data instanceof Order) {
             return $data->showShipMethod();
         }
     }
-
     public function showDetailAddress($data = array())
     {
         foreach (array('state', 'city', 'district') as $value) {
@@ -239,35 +253,4 @@ class Order extends CActiveRecord
         return $detail_address;
     }
 
-    protected function beforeSave()
-    {
-        $orderLog = new OrderLog();
-        if ($this->isNewRecord) {
-            $orderLog->op_name = 'create';
-            $orderLog->log_text = serialize($this);
-        } else {
-            $orderLog->op_name = 'update';
-            $orderLog->log_text = serialize($this->findByPk($this->order_id));
-            $orderLog->order_id = $this->order_id;
-        }
-        Yii::app()->params['orderLog'] = $orderLog;
-        return parent::beforeSave();
-    }
-
-    protected function afterSave()
-    {
-        $orderLog = Yii::app()->params['orderLog'];
-        $orderLog->result = 'success';
-        $orderLog->save();
-    }
-
-    protected function afterDelete()
-    {
-        $orderLog = new OrderLog();
-        $orderLog->op_name = 'delete';
-        $orderLog->log_text = serialize($this);
-        $orderLog->order_id = $this->order_id;
-        $orderLog->result = 'success';
-        $orderLog->save();
-    }
 }

@@ -81,8 +81,6 @@ class OrderController extends Controller
                     $model->user_id = Yii::app()->user->id ? Yii::app()->user->id : '0';
                     $model->create_time = time();
                     $cart = Yii::app()->cart;
-
-
                     $cri = new CDbCriteria(array(
                         'condition' => 'contact_id =' . $_POST['delivery_address'] . ' AND user_id = ' . Yii::app()->user->id
                     ));
@@ -101,18 +99,17 @@ class OrderController extends Controller
                         $item= $cart->itemAt($key);
                         $model->total_fee += $item['quantity'] * $item['price'];
                     }
-var_dump($model);die;
                     if ($model->save()) {
-                        foreach ($_POST['keys'] as $key){
-                            $item= $cart->itemAt($key);
-                            $sku=Sku::model()->findByPk($item['sku']['sku_id']);
-                            if($sku->stock<$item['quantity']){
-                                throw new Exception('stock is not enough!');
-                            }
-                            $sku->stock-=$item['quantity'];
-                            if(!$sku->save()) {
-                                throw new Exception('cut down stock fail');
-                            }
+                     foreach ($_POST['keys'] as $key){
+                             $item= $cart->itemAt($key);
+                         $sku=Sku::model()->findByPk($item['sku']['sku_id']);
+                         if($sku->stock<$item['quantity']){
+                             throw new Exception('stock is not enough!');
+                         }
+                         $sku->stock-=$item['quantity'];
+                         if(!$sku->save()) {
+                             throw new Exception('cut down stock fail');
+                         }
                             $OrderItem = new OrderItem;
                             $OrderItem->order_id = $model->order_id;
                             $OrderItem->item_id = $item['item_id'];
@@ -125,7 +122,7 @@ var_dump($model);die;
                             if (!$OrderItem->save()) {
                                 throw new Exception('save order item fail');
                             }
-                            $cart->remove($key);
+                       $cart->remove($key);
                         }
                     } else {
                         throw new Exception('save order fail');
@@ -141,7 +138,6 @@ var_dump($model);die;
         }
 
     }
-
 
 
     public function actionSuccess()
