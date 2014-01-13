@@ -22510,3 +22510,9 @@ in D:\wamp\www\basic\backend.php (15)
 2014/01/10 11:01:18 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
 in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (82)
 in D:\wamp\www\basic\backend.php (15)
+2014/01/13 08:35:54 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (81)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/13 08:36:09 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (81)
+in D:\wamp\www\basic\backend.php (15)
