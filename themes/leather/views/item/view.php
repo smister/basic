@@ -4,8 +4,8 @@ $cs->registerCssFile(Yii::app()->theme->baseUrl . '/css/deal.css');
 $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/pptBox.js');
 $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/lrtk.js');
 $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/lrtk.js');
-Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/themes/pidiao/css/cart/review.css');
-Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/themes/default/js/review.js');
+Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl.'/css/cart/review.css');
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl.'/js/review.js');
 Yii::app()->clientScript->registerCoreScript('jquery');
 
 $imageHelper=new ImageHelper();
