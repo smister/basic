@@ -37,11 +37,11 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                     echo '</li>';
 
                 }
-            } else {
+            }
+            else {
                 ?>
-                <?php echo CHtml::link('添加收货地址', array('/member/delivery_address/create')) ?>
+                <?php echo CHtml::link('免注册登录', array('/member/delivery_address/create')) ?>
             <?php } ?>
-
         </div>
     </div>
     <div class="box">

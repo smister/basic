@@ -55,7 +55,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                         <td><?php echo CHtml::link($item->title, $itemUrl); ?></td>
                         <td><?php echo empty($item->sku) ? '' : implode(';', json_decode($item->sku->props_name, true)); ?></td>
                         <td><?php echo $item->getPrice(); ?></td>
-                        <td><?php echo CHtml::textField('quantity[]', $item->getQuantity(), array('size' => '4', 'maxlength' => '5', 'data-url' => Yii::app()->createUrl('cart/update'), 'data-num' => '123')); ?></td>
+                        <td><?php echo CHtml::textField('quantity[]', $item->getQuantity(), array('size' => '4', 'maxlength' => '5', 'data-url' => Yii::app()->createUrl('cart/update'), 'data-num' => '3231')); ?></td>
                         <td><?php echo $item->getSumPrice() ?>元</td>
                         <td><?php echo CHtml::link('移除', array('/cart/remove', 'key' => $item->getId())) ?></td>
                     </tr>
@@ -96,21 +96,19 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             if(!/^\d+$/.test(qty)){
                 return;
             }
-            console.log(qty);
-            <input type="hidden" name="hid" value="0">
+            var html = '<input type="hidden" name="hid" value="0">';
             // compare number
             if(parseInt(qty) <= parseInt($this.data('num'))){
-                $.post($(this).data('url'), {'item_id': tempId, 'props': props, 'qty': qty}, function () {
-//            window.location.reload();
-                    $("id").attr("value");
+                $.post($(this).data('url'), {'item_id': tempId, 'props': props, 'qty': qty}, function (response) {
+//             window.location.reload();
+//                    $("id").attr("value");
                 }, 'json');
             }else{
-                // show error
-                $str = $value< $id ? "库存不足" : '';
-                echo $str;
+                var s = "库存不足";
+                document.write(s);
+//                show error
             }
-        }, 1000);
-
+        }, 500);
     });
 //    $('[name="quantity[]"]').change(function () {
 //        var item_id = $(this).parents('tr').find('[name="item_id[]"]').val();

@@ -52,12 +52,12 @@ class OrderController extends Controller
     public function actionCheckout()
     {
         $keys = isset($_REQUEST['position']) ? (is_array($_REQUEST['position']) ? $_REQUEST['position'] : explode('_', $_REQUEST['position'])) : array();
-        if (Yii::app()->user->id) {
+//        if (Yii::app()->user->id) {
             $this->render('checkout', array('keys' => $keys));
-        } else {
-            Yii::app()->user->returnUrl = Yii::app()->createUrl('order/checkout', array('position' => implode('_', $keys)));
-            $this->redirect(array('/user/login'));
-        }
+//        } else {
+//            Yii::app()->user->returnUrl = Yii::app()->createUrl('order/checkout', array('position' => implode('_', $keys)));
+//            $this->redirect(array('/user/login'));
+//        }
     }
 
     /**
@@ -232,5 +232,9 @@ class OrderController extends Controller
             Yii::app()->end();
         }
     }
+
+   public function actionFreeegt(){
+
+   }
 
 }
