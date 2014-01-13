@@ -7,6 +7,8 @@ $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/lrtk.js');
 Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/themes/pidiao/css/cart/review.css');
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/themes/default/js/review.js');
 Yii::app()->clientScript->registerCoreScript('jquery');
+
+$imageHelper=new ImageHelper();
 ?>
 <script type="text/javascript">
     function describe(n) {
@@ -40,18 +42,23 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             <div>
                 <ul id="idNum" class="hdnum">
                     <?php foreach ($item->itemImgs as $itemImg) {
-                        $image=new ImageHelper();
-                        $picUrl=$image->thumb('70','70',$itemImg->pic);
-                         echo '<li><img src="' .yii::app()->baseUrl. $picUrl . '" width="70" height="70"></li>';
+                        if($itemImg->pic){
+                            $picUrl=$imageHelper->thumb('70','70',$itemImg->pic);
+                            $picUrl=yii::app()->baseUrl. $picUrl;
+                        }else $picUrl='';
+
+                         echo '<li><img src="' .$picUrl . '" width="70" height="70"></li>';
                     } ?>
                 </ul>
             </div>
             <div style="height: 450px; overflow: hidden;" id=idTransformView>
                 <ul id=idSlider class=slider>
                     <?php foreach ($item->itemImgs as $itemImg) {
-                        $image=new ImageHelper();
-                        $picUrl=$image->thumb('450','450',$itemImg->pic);
-                        echo '<div><a href="javascript:void(0)" target="_blank"><img alt="' . $item->title . '" src="'  .yii::app()->baseUrl.$picUrl . '" width="450" height="450"/></a></div>';
+                        if($itemImg->pic){
+                            $picUrl=$imageHelper->thumb('450','450',$itemImg->pic);
+                            $picUrl=yii::app()->baseUrl. $picUrl;
+                        }else $picUrl='';
+                        echo '<div><a href="javascript:void(0)" target="_blank"><img alt="' . $item->title . '" src="'  .$picUrl . '" width="450" height="450"/></a></div>';
                     } ?>
                 </ul>
             </div>
@@ -70,12 +77,13 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             <?php
             $skus = array();
             foreach ($item->skus as $sku) {
+                $skuId[]=$sku->sku_id;
                 $key = implode(';', json_decode($sku->props, true));
                 $skus[$key] = json_encode(array('price' => $sku->price, 'stock' => $sku->stock));
             }
             ?>
             <div class="deal_size" data-sku-key='<?php echo json_encode(array_keys($skus)); ?>'
-                 data-sku-value='<?php echo json_encode($skus); ?>'>
+                 data-sku-value='<?php echo json_encode($skus); ?>' data-sku-id="<?php if(isset($skuId))echo implode(',',$skuId); ?>">
                 <?php
                 $propImgs = CHtml::listData($item->propImgs, 'item_prop_value', 'pic');
                 $itemProps = $propValues = array();
@@ -97,13 +105,13 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                                     $propValue = $propValues[$ids[1]];
                                     if ($itemProp->is_color_prop && false) {
                                         ?>
-                                        <a href="javascript:void(0)" data-value="<?php echo $v; ?>">
+                                        <a href="javascript:void(0)" data-value="<?php echo $v; ?>" id="prop<?php echo str_replace(':','-',$v); ?>">
                                             <img alt="<?php echo $propValue->value_name; ?>"
                                                  src="<?php echo isset($propImgs[$v]) ? $propImgs[$v] : ''; ?>"
                                                  width="41" height="41"></a>
                                     <?php } else { ?>
                                         <a href="javascript:void(0)"
-                                           data-value="<?php echo $v; ?>"><?php echo $propValue->value_name; ?></a>
+                                           data-value="<?php echo $v; ?>" id="prop<?php echo str_replace(':','-',$v); ?>"><?php echo $propValue->value_name; ?></a>
                                     <?php
                                     }
                                 }
@@ -112,13 +120,13 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                                 $propValue = $propValues[$ids[1]];
                                 if ($itemProp->is_color_prop && false) {
                                     ?>
-                                    <a href="javascript:void(0)" data-value="<?php echo $pvid; ?>">
+                                    <a href="javascript:void(0)" data-value="<?php echo $pvid; ?>" id="prop<?php echo str_replace(':','-',$v); ?>">
                                         <img alt="<?php echo $propValue->value_name; ?>"
                                              src="<?php echo isset($propImgs[$pvid]) ? $propImgs[$pvid] : ''; ?>"
                                              width="41" height="41"></a>
                                 <?php } else { ?>
                                     <a href="javascript:void(0)"
-                                       data-value="<?php echo $pvid; ?>"><?php echo $propValue->value_name; ?></a>
+                                       data-value="<?php echo $pvid; ?>" id="prop<?php echo str_replace(':','-',$v); ?>"><?php echo $propValue->value_name; ?></a>
                                 <?php
                                 }
                             } ?>
@@ -138,6 +146,8 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             <input type="hidden" id="item_id" name="item_id" value="<?php echo $item->item_id; ?>" />
             <input type="hidden" id="props" name="props" value="" />
             <div class="deal_add_car" data-url="<?php echo Yii::app()->createUrl('cart/add'); ?>"><a href="javascript:void(0)">加入购物车</a></div>
+            <div class="deal_add" data-url="<?php echo Yii::app()->createUrl('order/checkout');?>"><a data-url='' href="javascript:void(0)">立即购买</a></div>
+            <div class="deal_collect" data-url="<?php echo Yii::app()->createUrl('member/wishlist/addWish'); ?>" ><a href="javascript:void(0)">立即收藏</a></div>
         </form>
     </div>
     <div class="pd_l">
@@ -180,7 +190,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                         if($num>0){
                             foreach($recommendItems as $value){
                                 if($value->getMainPic()){
-                                    $picUrl=$image->thumb('180','180',$value->getMainPic());
+                                    $picUrl=$imageHelper->thumb('180','180',$value->getMainPic());
                                     $picUrl=Yii::app()->baseUrl.$picUrl;
                                 }else $picUrl='';
                                 ?>
@@ -255,34 +265,119 @@ Yii::app()->clientScript->registerCoreScript('jquery');
     $(function () {
         var skus = $('.deal_size').data('sku-value');
         var emptySkus = [];
+        var emptySkusArray=new Array();
         for (var i in skus) {
             var sku = $.parseJSON(skus[i]);
             if (sku['stock'] == "0") {
-                emptySkus.push(';' + i + ';');
+                emptySkus.push(i);
             }
+        }
+        if(emptySkus.length>0){
+            for(var a in emptySkus){
+                var data=emptySkus[a].split(';');
+                emptySkusArray[a]=new Array();
+                for( var b in data){
+                    emptySkusArray[a][b]=data[b];
+                }
+            }
+        }
+        /**立即购买**/
+        function findSkuId(selectPropValue){
+            var select=$('.deal_size');
+            var skuKey=select.data('sku-key');
+            for(var a in skuKey){
+                if(skuKey[a]==selectPropValue){
+                    var num=a;
+                }
+            }
+            var skuKeyId=select.data('sku-id').split(',');
+            var selectAdd=$('.deal_add');
+            selectAdd.find('a').attr({
+                'data-url':selectAdd.data('url')+"?position=Sku"+skuKeyId[num]
+            });
+        }
+        $('.deal_add').click(function(){
+            var selectProps = $('.prop-select,.img-prop-select');
+            if (selectProps.length < $('.deal_size p').length) {
+                $('.deal_size').addClass('prop-div-select');
+            } else {
+                $.post($('.deal_add_car').data('url'), $('#deal').serialize(), function(response) {
+                    /**判断还需要改 待定**/
+                    if(response){
+                        location.href=$('.deal_add a').data('url');
+                    }else{
+                        alert('system error');
+                    }
+                });
+            }
+        })
+        function findSameValue(a,b){
+            var num1= a.length;
+            var num2= b.length;
+            var flag=0;
+            if(num2-num1==0){
+                for(var c in a){
+                    if(a[c]==b[c]&&flag==c){
+                        flag++;
+                    }
+                }if(flag==num1-1){
+                    return true;
+                }
+            }
+            if(num2-num1==1){
+                for(var c in a){
+                    if(a[c]==b[c]){
+                        flag++;
+                    }
+                }
+            }
+            if(flag==num1){
+                return true;
+            }else return false;
         }
         $('.deal_size a').click(function () {
             var selectClass = $(this).find('img').length ? 'img-prop-select' : 'prop-select';
-            if ($(this).attr('class') && $(this).attr('class').indexOf(selectClass) !== -1) {
-                $(this).removeClass(selectClass);
-            } else {
-                $(this).parent().find('a').removeClass(selectClass);
-                $(this).addClass(selectClass);
+            if($(this).attr('class') !='disable'){
+                if ($(this).attr('class') && $(this).attr('class').indexOf(selectClass) !== -1) {
+                    $(this).removeClass(selectClass);
+                } else {
+                    $(this).parent().find('a').removeClass(selectClass);
+                    $(this).addClass(selectClass);
+                }
+                var selectPropValue = [];
+                $('.prop-select,.img-prop-select').each(function () {
+                    selectPropValue.push($(this).data('value'));
+                });
+                /***将库存为0的选项加上disable属性****/
+                if(emptySkus.length>0){
+                    var disableRemoveFlag=true;
+                    for(var b in emptySkusArray){
+                        if(findSameValue(selectPropValue,emptySkusArray[b])){
+                            var selectDisable=$("#prop"+emptySkusArray[b][emptySkusArray[b].length-1].replace(/:/,'-'));
+                            selectDisable.addClass('disable');
+                            selectDisable .removeClass( 'prop-select');
+                            disableRemoveFlag=false;
+                        }
+                        if(disableRemoveFlag){
+                            while($('.disable').length){
+                                $('.disable').removeClass('disable');
+                            }
+                        }
+                    }
+                }
+                selectPropValue = selectPropValue.join(';');
+                $('#props').val(selectPropValue);
+                if (skus[selectPropValue]) {
+                    findSkuId(selectPropValue);
+                    var sku = $.parseJSON(skus[selectPropValue]);
+                    var price = $('.deal_price').find('span:eq(0)');
+                    price.text(price.text().substr(0, 1) + sku['price']);
+                    var price = $('.deal_price').find('strong');
+                    price.text(price.text().substr(0, 1) + sku['price']);
+                    $('#stock').text(sku['stock']);
+                }
             }
-            var selectPropValue = [];
-            $('.prop-select,.img-prop-select').each(function () {
-                selectPropValue.push($(this).data('value'));
-            });
-            selectPropValue = selectPropValue.join(';');
-            $('#props').val(selectPropValue);
-            if (skus[selectPropValue]) {
-                var sku = $.parseJSON(skus[selectPropValue]);
-                var price = $('.deal_price').find('span:eq(0)');
-                price.text(price.text().substr(0, 1) + sku['price']);
-                var price = $('.deal_price').find('strong');
-                price.text(price.text().substr(0, 1) + sku['price']);
-                $('#stock').text(sku['stock']);
-            }
+
 
         });
         $('.add').click(function () {
@@ -308,6 +403,15 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                         }
                 });
             }
+        });
+        $('.deal_collect').click(function() {
+//                alert($(this).data('url'));
+                $.post($(this).data('url'), $('#item_id').serialize(), function(response,status) {
+                    if(response){
+                        alert('已收藏过该商品');
+                    }else
+                    alert(status) ;
+                });
         });
     });
 </script>

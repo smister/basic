@@ -94,6 +94,16 @@
 	height:44px;
 	text-indent:-9999px;
 }
+.deal_add{
+    margin-top:5px;
+}
+.deal_add a{
+    display:block;
+    background:url(../image/add_s.jpg) no-repeat;
+    width:169px;
+    height:44px;
+    text-indent:-9999px;
+}
 .pd_l_intr{
 	border:1px solid #e2dfdf;
 }

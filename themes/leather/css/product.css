@@ -408,7 +408,10 @@
     border: solid 2px red;
     padding: 3px 5px !important;
 }
-
+.disable{
+    background: beige;
+    border: none;
+}
 .img-prop-select {
     border: solid 2px red;
     padding: 0 !important;

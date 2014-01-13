@@ -13,8 +13,9 @@ class CartController extends YController
         $item = $this->loadItem();
         $quantity = empty($_POST['qty']) ? 1 : intval($_POST['qty']);
         if(Yii::app()->cart->put($item, $quantity))
-            return true;
-
+            echo json_encode(array('status' => 'success'));
+        else
+            echo json_encode(array('status' => 'fail'));
     }
 
     public function actionUpdate()

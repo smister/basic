@@ -59,7 +59,7 @@ class WishlistController extends Controller {
                 $model->create_time = time();
                 $model->save();
             } else {
-                return false;
+                echo 1;
             }
         } else {
             return false;
