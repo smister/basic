@@ -32,7 +32,7 @@ $this->breadcrumbs = array(
         ),
         array(
             'name' => 'pay_status',
-            'value' => '$data->showPayState()',
+            'value' => 'Tbfunction::showPayState($data->pay_status)',
             'filter' => Tbfunction::ReturnPayStatus(),
         ),
         array(
