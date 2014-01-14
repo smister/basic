@@ -10,7 +10,7 @@ $this->breadcrumbs = array(
     <div class="box-title">我的收藏</div>
     <div class="box-content">
         <?php
-
+$url=Yii::app()->baseUrl.'/item/';
 $this->widget('zii.widgets.grid.CGridView', array(
     'id' => 'wishlist-grid',
     'dataProvider' => $model->search(),
@@ -18,16 +18,16 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'columns' => array(
         array(
             'name' => 'item.title',
-            'value' => '$data->item->title',
+            'value' => 'CHtml::link($data->item->title,$url)',
         ),
-//        array(
-//            'name' => 'item.sn',
-//            'value' => '$data->item->sn',
-//        ),
-//        array(
-//            'name' => 'item.shop_price',
-//            'value' => '$data->item->shop_price',
-//        ),
+       array(
+            'name' => 'item.price',
+            'value' => '$data->item->price',
+        ),
+        array(
+            'name' => 'item.stock',
+            'value' => '$data->item->stock',
+        ),
         array(
             'name' => 'create_time',
             'value' => 'date("Y-m-d", $data->create_time)',
