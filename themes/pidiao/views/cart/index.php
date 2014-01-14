@@ -104,7 +104,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
 //                    $("id").attr("value");
                 }, 'json');
             }else{
-                var s = "库存不足";
+                var s = "库存不足，请更改物品数量！";
                 document.write(s);
 //                show error
             }

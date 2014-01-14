@@ -40,7 +40,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             }
             else {
                 ?>
-                <?php echo CHtml::link('免注册登录', array('/member/delivery_address/create')) ?>
+                <?php echo CHtml::link('免注册登录', array('/order/freergt')) ?>
             <?php } ?>
         </div>
     </div>

@@ -233,7 +233,9 @@ class OrderController extends Controller
         }
     }
 
-    public function actionFreeegt(){
+    public function actionFreergt(){
        $model = new Order;
+        $this->render('freergt', array(
+            'model' => $model,));
    }
 }
