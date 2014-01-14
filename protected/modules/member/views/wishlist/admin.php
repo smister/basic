@@ -7,7 +7,7 @@ $this->breadcrumbs = array(
 ?>
 
 <div class="box">
-    <div class="box-title">我的收藏</div>
+    <div class="box-title">My collect</div>
     <div class="box-content">
         <?php
 $url=Yii::app()->baseUrl.'/item/';
@@ -17,15 +17,17 @@ $this->widget('zii.widgets.grid.CGridView', array(
 //    'filter' => $model,
     'columns' => array(
         array(
-            'name' => 'item.title',
-            'value' => 'CHtml::link($data->item->title,$url)',
+            'class' => 'CLinkColumn',
+            'header' =>'Title',
+            'labelExpression' => '$data->item->title',
+            'urlExpression' => 'Yii::app()->createUrl("item",array("view"=>$data->item->item_id))'
         ),
        array(
-            'name' => 'item.price',
+            'name' => 'price',
             'value' => '$data->item->price',
         ),
         array(
-            'name' => 'item.stock',
+            'name' => 'stock',
             'value' => '$data->item->stock',
         ),
         array(

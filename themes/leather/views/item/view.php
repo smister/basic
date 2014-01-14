@@ -239,7 +239,7 @@ $imageHelper=new ImageHelper();
                         'columns' => array(
                             array(
                                 'name'=>'user',
-                                'value'=>'$data->getUser($data->order_id)',
+                                'value'=>'Tbfunction::getUser($data->order->user_id)',
                             ),
                             'title',
                             'price',
