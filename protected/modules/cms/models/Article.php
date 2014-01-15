@@ -42,6 +42,7 @@ class Article extends CActiveRecord {
             array('category_id, views', 'numerical', 'integerOnly' => true),
             array('title', 'length', 'max' => 250),
             array('from', 'length', 'max' => 200),
+            array('pic_url','length','max'=>150),
             array('url', 'url'),
             array('language', 'safe'),
             // The following rule is used by search().
@@ -75,6 +76,7 @@ class Article extends CActiveRecord {
             'title' => '标题',
             'language' => '语言',
             'from' => '来源',
+            'pic_url'=>'封面图片',
             'summary' => '摘要',
             'content' => '内容',
             'views' => '热度',

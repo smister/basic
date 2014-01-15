@@ -23225,3 +23225,132 @@ REQUEST_URI=/basic/backend.php/mall/order/create/user_id/7
 in D:\wamp\www\basic\protected\modules\mall\views\order\_form.php (52)
 in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
 in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (66)
+2014/01/15 08:40:46 [error] [exception.CException] exception 'CException' with message '属性 "Article.itemImgs" 未被定义.' in D:\wamp\www\yincart\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('itemImgs')
+#1 D:\wamp\www\yincart\basic\protected\modules\cms\views\article\_form.php(65): CActiveRecord->__get('itemImgs')
+#2 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#3 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#4 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#5 D:\wamp\www\yincart\basic\protected\modules\cms\views\article\create.php(14): CController->renderPartial('_form', Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#7 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#8 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#9 D:\wamp\www\yincart\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php(32): CController->render('create', Array)
+#11 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(49): ArticleController->actionCreate()
+#12 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yincart\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/article/cre...')
+#17 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/yincart/basic/backend.php/cms/article/create
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/cms/article/admin
+---
+2014/01/15 08:52:46 [error] [exception.CException] exception 'CException' with message 'ServerFileInput 必须给定 "model" 与 "attribute" 或 "name" 属性值.' in D:\wamp\www\yincart\yii\framework\web\widgets\CInputWidget.php:61
+Stack trace:
+#0 D:\wamp\www\yincart\basic\protected\extensions\elFinder\ServerFileInput.php(12): CInputWidget->resolveNameID()
+#1 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(173): ServerFileInput->run()
+#2 D:\wamp\www\yincart\basic\protected\modules\cms\views\article\_form.php(69): CBaseController->widget('ext.elFinder.Se...', Array)
+#3 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#4 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#5 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#6 D:\wamp\www\yincart\basic\protected\modules\cms\views\article\create.php(14): CController->renderPartial('_form', Array)
+#7 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#8 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#9 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php(32): CController->render('create', Array)
+#12 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(49): ArticleController->actionCreate()
+#13 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 D:\wamp\www\yincart\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#17 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/article/cre...')
+#18 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#20 {main}
+REQUEST_URI=/yincart/basic/backend.php/cms/article/create
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/cms/article/admin
+---
+2014/01/15 09:15:07 [error] [exception.CException] exception 'CException' with message '属性 "Article.pic" 未被定义.' in D:\wamp\www\yincart\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pic')
+#1 D:\wamp\www\yincart\basic\protected\extensions\elFinder\ServerFileInput.php(51): CActiveRecord->__get('pic')
+#2 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(173): ServerFileInput->run()
+#3 D:\wamp\www\yincart\basic\protected\modules\cms\views\article\_form.php(68): CBaseController->widget('ext.elFinder.Se...', Array)
+#4 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#5 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#7 D:\wamp\www\yincart\basic\protected\modules\cms\views\article\create.php(14): CController->renderPartial('_form', Array)
+#8 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#9 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php(32): CController->render('create', Array)
+#13 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(49): ArticleController->actionCreate()
+#14 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yincart\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#18 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/article/cre...')
+#19 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#21 {main}
+REQUEST_URI=/yincart/basic/backend.php/cms/article/create
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/cms/article/admin
+---
+2014/01/15 09:25:54 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (27)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 09:26:52 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (27)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 09:27:04 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (27)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 09:27:13 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (27)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 09:27:24 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (27)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 09:28:19 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 09:29:19 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 09:36:13 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 11:50:17 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 11:52:16 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 11:57:03 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 11:57:52 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 11:58:19 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 13:08:09 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 13:08:50 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 13:12:52 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/15 13:15:15 [warning] [application] Failed to set unsafe attribute "pic_url" of "Article".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\ArticleController.php (45)
+in D:\wamp\www\yincart\basic\backend.php (15)

@@ -38,12 +38,12 @@ foreach ($descendants as $child) {
         if ($model->category_id == $child->id) {
             $selected = 'selected';
 
-            echo '<option value="' . $child->id . '" selected="' . $selected . '">' . $string . '</option>';
+            echo '<option value="' . $child->category_id . '" selected="' . $selected . '">' . $string . '</option>';
         } else {
-            echo '<option value="' . $child->id . '" >' . $string . '</option>';
+            echo '<option value="' . $child->category_id . '" >' . $string . '</option>';
         }
     } else {
-        echo '<option value="' . $child->id . '" >' . $string . '</option>';
+        echo '<option value="' . $child->category_id . '" >' . $string . '</option>';
     }
 }
 echo '</select>';
@@ -58,6 +58,12 @@ echo '</select>';
 
 
 <?php echo $form->textFieldControlGroup($model, 'url', array('class' => 'span5')); ?>
+upload picture
+<?php $this->widget('ext.elFinder.ServerFileInput', array(
+    'model' => $model,
+    'attribute' => 'pic_url',
+    'filebrowserBrowseUrl' => Yii::app()->createUrl('mall/elfinder/view'),
+));?>
 
 <?php echo $form->textAreaControlGroup($model, 'summary', array('class' => 'span5', 'style'=>'height:100px')); ?>
 

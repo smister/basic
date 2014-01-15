@@ -22,8 +22,7 @@ class ArticleController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-	$model = new Article; // Uncomment the following line if AJAX validation is needed
-// $this->performAjaxValidation($model);if (isset($_POST['Article'])) {
+	$model = new Article;
 	$model->attributes = $_POST['Article'];
 	if ($model->save())
 	    $this->redirect(array('admin'));
@@ -39,8 +38,6 @@ class ArticleController extends Controller {
      */
     public function actionUpdate($id) {
 	$model = $this->loadModel($id);
-	// Uncomment the following line if AJAX validation is needed
-// $this->performAjaxValidation($model);
 	if (isset($_POST['Article'])) {
 	    $model->attributes = $_POST['Article'];
 	    if ($model->save())
