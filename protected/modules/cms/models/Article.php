@@ -71,8 +71,8 @@ class Article extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'article_id' => 'Article',
-            'category_id' => 'sorting',
-            'author_id' => 'author',
+            'category_id' => '分类',
+            'author_id' => '作者',
             'title' => 'title',
             'language' => 'language',
             'from' => 'from',
@@ -84,7 +84,7 @@ class Article extends CActiveRecord {
             'update_time' => '更新时间',
             'category.name' => '分类',
             'author.username' => '作者',
-            'url' => 'url'
+            'url' => '链接'
         );
     }
 

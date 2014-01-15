@@ -85,15 +85,18 @@ EOF;
                         box.autoplayer = 5;//自动播放间隔时间
                         //box.add({"url":"图片地址","title":"悬浮标题","href":"链接地址"})
                         <?php
+                        $num=0;
                               foreach($articles as $article){
-                                     if(!empty($article->pic_url)){
-
-                                        $imageHelper=new ImageHelper();
-                                        $picUrl=$imageHelper->thumb('180','178',$article->pic_url);
-                                        $picUrl=Yii::app()->baseUrl.$picUrl;
-                                        echo 'box.add({"url": "'. $picUrl.'", "href": "", "title": "'.$article->title.'"});';
-                                    }
-                                }
+                                  if($num==3){
+                                    break;
+                                  }
+                                  if(!empty($article->pic_url)){
+                                     $imageHelper=new ImageHelper();
+                                            $picUrl=$imageHelper->thumb('180','178',$article->pic_url);
+                                            $picUrl=Yii::app()->baseUrl.$picUrl;
+                                            echo 'box.add({"url": "'. $picUrl.'", "href": "", "title": "'.$article->title.'"});';
+                                  }$num++;
+                               }
                             //else echo 'box.add({"url": "image/tu2.jpg", "href": "", "title": "no data"});';
                 ?>
                         box.show();
