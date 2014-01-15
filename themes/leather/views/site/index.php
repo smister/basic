@@ -1,4 +1,5 @@
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/slides.jquery.js'); ?>
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/pptBox.js'); ?>
 <div class="warp_banner index_bg05" id="mainbody">
     <div id="slides" class="banner">
         <div class="banner_l">
@@ -77,7 +78,26 @@ EOF;
             <div class="news_tit"><?php echo CHtml::link('更多>>', Yii::app()->createUrl('catalog/index', array())); ?></div>
             <div class="news_c">
                 <div class="news_img">
-                    <img alt="" src="" width="180" height="180"/>
+                    <script>
+                        var box = new PPTBox();
+                        box.width = 180; //宽度
+                        box.height = 178;//高度
+                        box.autoplayer = 5;//自动播放间隔时间
+                        //box.add({"url":"图片地址","title":"悬浮标题","href":"链接地址"})
+                        <?php
+                              foreach($articles as $article){
+                                     if(!empty($article->pic_url)){
+
+                                        $imageHelper=new ImageHelper();
+                                        $picUrl=$imageHelper->thumb('180','178',$article->pic_url);
+                                        $picUrl=Yii::app()->baseUrl.$picUrl;
+                                        echo 'box.add({"url": "'. $picUrl.'", "href": "", "title": "'.$article->title.'"});';
+                                    }
+                                }
+                            //else echo 'box.add({"url": "image/tu2.jpg", "href": "", "title": "no data"});';
+                ?>
+                        box.show();
+                    </script>
                 </div>
                 <ul class="news_list">
                     <?php
