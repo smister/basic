@@ -48,6 +48,7 @@ class ServerFileInput extends CInputWidget
             $('#browse-image-btn').before(html);
 EOF;
         } else {
+            echo "<div>upload picture:&nbsp;&nbsp;&nbsp;&nbsp;<button type='button' id='openElfinder'>upload</button></div>";
             echo "<div id='browse-image-btn' class='img-item' style='cursor: pointer'>";
             echo CHtml::image($this->model->{$this->attribute});
             echo CHtml::activeHiddenField($this->model, $this->attribute);
