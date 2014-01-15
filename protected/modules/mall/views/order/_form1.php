@@ -21,7 +21,7 @@ $this->widget('bootstrap.widgets.TbTabs', array(
 'tabs' => array(
 array('label' => '基本信息', 'content' => $this->renderPartial("_form_base", array("model" => $model, 'form' => $form), true), 'active' => true),
 array('label' => '联系方式', 'content' => $this->renderPartial("_form_contact", array("model" => $model, 'form' => $form), true)),
-array('label' => '商品信息', 'content' => $this->renderPartial("_form_item", array("model" => $model, 'item' => $item), true)),
+array('label' => '商品信息', 'content' => $this->renderPartial("_form_item", array("model" => $model, 'Item' => $Item,'ItemSku'=>$ItemSku), true)),
 array('label' => '其他信息', 'content' => $this->renderPartial("_form_other", array("model" => $model, 'form' => $form), true)),
 //array('label' => '商品信息', 'content' => $this->renderPartial("_form_item", array("model" => $model, 'form' => $form), true)),
 ),

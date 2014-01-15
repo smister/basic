@@ -24,7 +24,7 @@
     echo CHtml::dropDownList('Order[receiver_state]', $s_default, $state,
         array(
             'class' => 'form-control form-control1',
-//                'empty' => '请选择省份',
+                'empty' => '请选择省份',
             'ajax' => array(
                 'type' => 'GET', //request type
                 'url' => CController::createUrl('dynamiccities'), //url to call
@@ -46,7 +46,7 @@
     echo CHtml::dropDownList('Order[receiver_city]', $c_default, $city_update,
         array(
             'class' => 'form-control form-control1',
-//                'empty' => '请选择城市',
+                'empty' => '请选择城市',
             'ajax' => array(
                 'type' => 'GET', //request type
                 'url' => CController::createUrl('dynamicdistrict'), //url to call
@@ -68,7 +68,7 @@
     echo CHtml::dropDownList('Order[receiver_district]', $d_default, $district_update,
         array(
             'class' => 'form-control form-control1',
-//                'empty' => '请选择地区',
+                'empty' => '请选择地区',
         )
     );
     ?>

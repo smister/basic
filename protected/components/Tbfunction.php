@@ -62,7 +62,7 @@ class Tbfunction {
     }
 
     public function ReturnShipMethod(){
-        array('' => '请选择', '1' => '平邮', '2' => '快递', '3' => 'EMS');
+        return array('' => '请选择', '1' => '平邮', '2' => '快递', '3' => 'EMS');
     }
 
     public function ReturnPayMethod(){
