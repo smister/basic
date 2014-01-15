@@ -71,20 +71,20 @@ class Article extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'article_id' => 'Article',
-            'category_id' => '分类',
-            'author_id' => '作者',
-            'title' => '标题',
-            'language' => '语言',
-            'from' => '来源',
+            'category_id' => 'sorting',
+            'author_id' => 'author',
+            'title' => 'title',
+            'language' => 'language',
+            'from' => 'from',
             'pic_url'=>'封面图片',
-            'summary' => '摘要',
-            'content' => '内容',
+            'summary' => 'summary',
+            'content' => 'content',
             'views' => '热度',
             'create_time' => '发布时间',
             'update_time' => '更新时间',
             'category.name' => '分类',
             'author.username' => '作者',
-            'url' => '链接'
+            'url' => 'url'
         );
     }
 

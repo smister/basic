@@ -24,8 +24,10 @@ class ArticleController extends Controller {
     public function actionCreate() {
 	$model = new Article;
 	$model->attributes = $_POST['Article'];
-	if ($model->save())
-	    $this->redirect(array('admin'));
+    if (isset($_POST['Article'])){
+        if ($model->save())
+            $this->redirect(array('admin'));
+    }
 	$this->render('create', array(
 	    'model' => $model
 	));

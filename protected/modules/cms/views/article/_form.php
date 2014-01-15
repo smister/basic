@@ -58,7 +58,8 @@ echo '</select>';
 
 
 <?php echo $form->textFieldControlGroup($model, 'url', array('class' => 'span5')); ?>
-upload picture
+upload picture:&nbsp;&nbsp;&nbsp;&nbsp;<button type='button' id='openElfinder'>upload</button>
+
 <?php $this->widget('ext.elFinder.ServerFileInput', array(
     'model' => $model,
     'attribute' => 'pic_url',
