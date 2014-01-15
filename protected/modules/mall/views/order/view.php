@@ -19,30 +19,30 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
         ),
         array(
             'name' => 'status',
-            'value' => 'Order::showStatus',
+            'value' => Tbfunction::showStatus($model->status),
         ),
             array(
             'name' => 'ship_status',
-            'value' => 'Order::showShipStatus',
+            'value' => Tbfunction::showShipStatus($model->ship_status),
         ),
         array(
             'name' => 'refund_status',
-            'value' => 'Order::showRefundStatus',
+            'value' => Tbfunction::showRefundStatus($model->refund_status),
         ),
         array(
             'name' => 'pay_status',
-            'value' => 'Order::showPayStatus',
+            'value' => Tbfunction::showPayStatus($model->pay_status),
         ),
 		'total_fee',
 		'ship_fee',
 		'pay_fee',
         array(
             'name' => 'payment_method_id',
-            'value' => 'Order::showPayMethod',
+            'value' => Tbfunction::showPayMethod($model->payment_method_id),
         ),
         array(
             'name' => 'shipping_method_id',
-            'value' => 'Order::showShipMethod',
+            'value' => Tbfunction::showShipMethod($model->shipping_method_id),
         ),
         array(
             'name' => 'receiver_address',

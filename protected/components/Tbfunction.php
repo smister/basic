@@ -54,8 +54,33 @@ class Tbfunction {
         return $user->username;
     }
 
-    public function showRefundStatus($status){
-        $order_status = Tbfunction::ReturnRefundStatus();
-        return isset($order_status[$status]) ? $order_status[$status] : $status;
+    public function showPayStatus($pay_status){
+        $payStatus=array('0'=>'待支付','1'=>'已支付');
+        return $payStatus[$pay_status];
+    }
+
+    public function showRefundStatus($refund_status){
+        $refundStatus=array('0'=>'未退款','1'=>'已退款');
+        return $refundStatus[$refund_status];
+    }
+
+    public function showShipMethod($ship_method){
+        $shipMethod=array('0'=>'未设置','1'=>'平邮','2'=>'快递','3'=>'EMS');
+        return $shipMethod[$ship_method];
+    }
+
+    public function showStatus($status){
+        $Status=array('0'=>'未提交','1'=>'有效');
+        return $Status[$status];
+    }
+
+    public function showPayMethod($pay_method){
+        $payMethod=array('0'=>'请选择','1'=>'支付宝','2'=>'银行卡');
+        return $payMethod[$pay_method];
+    }
+
+    public function showShipStatus($ship_status){
+        $shipStatus=array('0'=>'已发货','1'=>'未发货');
+        return $shipStatus[$ship_status];
     }
 }

@@ -32,22 +32,22 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         ),
         array(
             'name' => 'pay_status',
-            'value' => '$data->showPayStatus()',
+            'value' => 'Tbfunction::showPayStatus($data->pay_status)',
             'filter' => Tbfunction::ReturnPayStatus(),
         ),
         array(
             'name' => 'ship_status',
-            'value' => '$data->showShipStatus()',
+            'value' => 'Tbfunction::showShipStatus($data->ship_status)',
             'filter' => Tbfunction::ReturnShipStatus(),
         ),
         array(
             'name' => 'refund_status',
-            'value' => '$data->showRefundStatus()',
+            'value' => 'Tbfunction::showRefundStatus($data->refund_status)',
             'filter' => Tbfunction::ReturnRefundStatus(),
         ),
         array(
             'name' => 'payment_method_id',
-            'value' => '$data->showPayMethod()',
+            'value' => 'Tbfunction::showPayMethod($data->payment_method_id)',
             'filter' => Tbfunction::ReturnPayMethod(),
         ),
         'pay_fee',
@@ -55,7 +55,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         'total_fee',
         array(
             'name' => 'shipping_method_id',
-            'value' => '$data->showShipMethod()',
+            'value' => 'Tbfunction::showShipMethod($data->shipping_method_id)',
             'filter' => Tbfunction::ReturnShipMethod(),
         ),
         array(

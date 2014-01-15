@@ -168,66 +168,12 @@ class Order extends CActiveRecord
         ));
     }
 
-    public function showShipStatus($data = array()){
-        if (empty($data)) {
-            $order_status = Tbfunction::ReturnShipStatus();
-            return isset($order_status[$this->ship_status]) ? $order_status[$this->ship_status] : $this->ship_status;
-        } else if ($data instanceof Order) {
-            return $data->showShipStatus();
-        }
-    }
-
-    public function showPayStatus($data = array()){
-        if (empty($data)) {
-            $order_status = Tbfunction::ReturnPayStatus();
-            return isset($order_status[$this->pay_status]) ? $order_status[$this->pay_status] : $this->pay_status;
-        } else if ($data instanceof Order) {
-            return $data->showPayStatus();
-        }
-    }
-
-    public function showPayMethod($data = array()){
-        if (empty($data)) {
-            $order_state = Tbfunction::ReturnPayMethod();
-            return isset($order_state[$this->payment_method_id]) ? $order_state[$this->payment_method_id] : $this->payment_method_id;
-        } else if ($data instanceof Order) {
-            return $data->showPayMethod();
-        }
-    }
-
-    public function showStatus($data = array()){
-        if (empty($data)) {
-            $order_state = Tbfunction::ReturnStatus();
-            return isset($order_state[$this->status]) ? $order_state[$this->status] : $this->status;
-        } else if ($data instanceof Order) {
-            return $data->showStatus();
-        }
-    }
-
-    public function showShipMethod($data = array()){
-        if (empty($data)) {
-            $order_state = Tbfunction::ReturnShipMethod();
-            return isset($order_state[$this->shipping_method_id]) ? $order_state[$this->shipping_method_id] : $this->shipping_method_id;
-        } else if ($data instanceof Order) {
-            return $data->showShipMethod();
-        }
-    }
-
     public function showDetailAddress($data = array()){
         foreach (array( 'state', 'city', 'district') as $value) {
             $data->{'receiver_' . $value} = Area::model()->findByPk($data->{'receiver_' . $value})->name;
         }
         $detail_address = $data->receiver_country . $data->receiver_state . $data->receiver_city . $data->receiver_district . $data->receiver_address;
         return $detail_address;
-    }
-
-    public function showRefundStatus($data = array()){
-        if (empty($data)) {
-            $order_status = Tbfunction::ReturnRefundStatus();
-            return isset($order_status[$this->refund_status]) ? $order_status[$this->refund_status] : $this->refund_status;
-        } else if ($data instanceof Order) {
-            return $data->showRefundStatus();
-        }
     }
 
     protected function beforeSave() {
