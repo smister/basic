@@ -1,5 +1,5 @@
 <?php
-Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . "/themes/pidiao/js/login_nav.js");
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . "/js/login_nav.js");
 ?>
 
 <div class="top_right">

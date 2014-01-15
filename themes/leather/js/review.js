@@ -41,13 +41,15 @@ $(document).ready(function(){
         }
         return false;
     };
-    for(var contentId=0;contentId<10;contentId++){
-        if($('[content-id="'+String(contentId)+'"]').length){
-            $('[content-id="'+String(contentId)+'"]').hideMore({});
+    function hideReview(){
+        for(var contentId=0;contentId<10;contentId++){
+            if($('[content-id="'+String(contentId)+'"]').length){
+                $('[content-id="'+String(contentId)+'"]').hideMore({});
+            }
         }
-
     }
 
+    hideReview();
     /***hidden review***/
     $('.tb-revbd').on('click',".btn-reply",function(event){
           var data_id=$(event.target).attr('data-id');
@@ -103,7 +105,10 @@ $(document).ready(function(){
         var url=$('#review').attr('url');
         var product_id=$('#review').attr('product_id');
         url=url+"/review/default/index?product_id="+product_id+"&&entity_id=1&&rating="+rating;
-        $('.tb-revbd').load(url+' .tb-revbd ul');
+        $('.tb-revbd').load(url+' .tb-revbd ul','',function(){
+            hideReview();
+        });
+
         return false;
     })
 });

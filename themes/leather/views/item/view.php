@@ -83,7 +83,7 @@ $imageHelper=new ImageHelper();
             }
             ?>
             <div class="deal_size" data-sku-key='<?php echo json_encode(array_keys($skus)); ?>'
-                 data-sku-value='<?php echo json_encode($skus); ?>' data-sku-id="<?php if(isset($skuId))echo implode(',',$skuId); ?>">
+                 data-sku-value='<?php echo json_encode($skus); ?>' data-sku-id="<?php if(isset($skuId))echo implode(',',$skuId);else echo $item->item_id; ?>">
                 <?php
                 $propImgs = CHtml::listData($item->propImgs, 'item_prop_value', 'pic');
                 $itemProps = $propValues = array();
@@ -239,7 +239,7 @@ $imageHelper=new ImageHelper();
                         'columns' => array(
                             array(
                                 'name'=>'user',
-                                'value'=>Tbfunction::getUser($data->order_id),
+                                'value'=>'Tbfunction::getUser($data->order->user_id)',
                             ),
                             'title',
                             'price',
@@ -374,6 +374,12 @@ $imageHelper=new ImageHelper();
                     var price = $('.deal_price').find('strong');
                     price.text(price.text().substr(0, 1) + sku['price']);
                     $('#stock').text(sku['stock']);
+                }
+                if($('.deal_size').data('sku-value').length==0){
+                    var selectAdd=$('.deal_add');
+                    selectAdd.find('a').attr({
+                        'data-url':selectAdd.data('url')+"?position=Item"+$('.deal_size').data('sku-id')
+                    })
                 }
             }
 

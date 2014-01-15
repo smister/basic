@@ -1,6 +1,6 @@
 <?php
-Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/themes/pidiao/css/cart/review.css');
-Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/themes/default/js/review.js');
+Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl .'/css/cart/review.css');
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl .'/js/review.js');
 Yii::app()->clientScript->registerCoreScript('jquery');
 $reviewDatas=$reviewReply[0];
 $pages=$reviewReply[1];

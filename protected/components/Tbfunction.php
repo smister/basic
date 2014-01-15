@@ -27,7 +27,6 @@ class Tbfunction {
     public function showUser()
     {
         $data_user=array();
-
         $users= Users::model()->findAll();
         foreach($users as $user){
             if($user->superuser!=1){
