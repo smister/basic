@@ -168,12 +168,15 @@ class Order extends CActiveRecord
         ));
     }
 
-    public function showDetailAddress($data = array()){
+    public function showDetailAddress($model){
+        $data['receiver_country'] = $model->receiver_country;
         foreach (array( 'state', 'city', 'district') as $value) {
-            $data->{'receiver_' . $value} = Area::model()->findByPk($data->{'receiver_' . $value})->name;
+            $data['receiver_' . $value] = Area::model()->findByPk($model->{'receiver_' . $value})->name;
         }
-        $detail_address = $data->receiver_country . $data->receiver_state . $data->receiver_city . $data->receiver_district . $data->receiver_address;
+        $data['receiver_address'] = $model->receiver_address;
+        $detail_address = implode(' ', $data);
         return $detail_address;
+
     }
 
     protected function beforeSave() {
