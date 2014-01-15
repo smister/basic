@@ -3,10 +3,8 @@ $this->breadcrumbs=array(
 	'Orders'=>array('index'),
 	$model->order_id,
 );
-
-
+$orderItems = $model->orderItems;
 ?>
-<!--就是前面的  /Orders/20130429310210-->
 
 <h1>View Order #<?php echo $model->order_id; ?></h1>
 
@@ -15,22 +13,25 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'order_id',
-        'user_id',
+        array(
+            'name' => 'user_id',
+            'value' =>Tbfunction::getUser($model->user_id),
+        ),
         array(
             'name' => 'status',
             'value' => 'Order::showStatus',
         ),
             array(
             'name' => 'ship_status',
-            'value' => 'Order::showShipState',
+            'value' => 'Order::showShipStatus',
         ),
         array(
             'name' => 'refund_status',
-            'value' => 'Order::showRefundState',
+            'value' => 'Order::showRefundStatus',
         ),
         array(
             'name' => 'pay_status',
-            'value' => 'Order::showPayState',
+            'value' => 'Order::showPayStatus',
         ),
 		'total_fee',
 		'ship_fee',
@@ -43,12 +44,10 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
             'name' => 'shipping_method_id',
             'value' => 'Order::showShipMethod',
         ),
-		'receiver_name',
-		'receiver_country',
-		'receiver_state',
-		'receiver_city',
-		'receiver_district',
-		'receiver_address',
+        array(
+            'name' => 'receiver_address',
+            'value' => 'Order::showDetailAddress',
+        ),
 		'receiver_zip',
 		'receiver_mobile',
 		'receiver_phone',
@@ -70,5 +69,35 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
             'value' => date('Y年m月d日 H:i:s',$model->update_time +(8 * 3600)),
         ),
 	),
-    //对应的是订单查看里面的内容，每一条就是一个内容。
 )); ?>
+
+<?php
+if(!empty($orderItems)){
+    ?>
+    <table width="100%" border="1" cellspacing="1" cellpadding="0" style="text-align:center;vertical-align:middle">
+        <tr>
+            <!--        <th width="16%">图片</th>-->
+            <th width="16%">名称</th>
+            <th width="16%">价格</th>
+<!--            <th width="16%">数量</th>-->
+            <th width="16%">数量</th>
+            <th width="16%">总计</th>
+        </tr>
+        <?php
+        foreach($orderItems as $item){
+            ?>
+            <tr>
+                <!--            <td>--><?php //echo CHtml::hiddenField($i.'[rowid]', $m['rowid']) ?><!----><?php //echo $m['pic_url'] ?><!--</td>-->
+                <td><?php echo $item['title']; ?></td>
+                <td><?php echo $item['price']?></td>
+<!--                <td>--><?php //echo $item['pic'] ?><!--</td>-->
+                <td><?php echo $item['quantity']; ?></td>
+                <td><?php echo $item['total_price'];?></td>
+            </tr>
+        <?php
+        }
+        ?>
+    </table>
+<?php
+}
+?>

@@ -22743,61 +22743,374 @@ in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
 in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
 in D:\wamp\www\yincart\basic\protected\models\Item.php (451)
 in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
-2014/01/13 08:37:14 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+2014/01/13 08:55:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
 Stack trace:
-#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
-#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): OrderController->widget()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(784): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(123): OrderController->render()
-#6 unknown(0): OrderController->actionUpdate()
-#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#10 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#11 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#12 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#13 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#14 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#15 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/update/id/211
-in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
-in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (123)
-2014/01/13 08:37:26 [error] [exception.CException] exception 'CException' with message 'Order and its behaviors do not have a method or closure named "showPayState".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 10:16:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
 Stack trace:
-#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('showPayState', Array)
-#1 D:\wamp\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__call('showPayState', Array)
-#2 D:\wamp\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): Order->showPayState()
-#3 D:\wamp\www\yii\framework\base\CComponent.php(612): eval()
-#4 D:\wamp\www\yii\framework\zii\widgets\grid\CDataColumn.php(137): CComponent->evaluateExpression('$data->showPayS...', Array)
-#5 D:\wamp\www\yii\framework\zii\widgets\grid\CGridColumn.php(151): CDataColumn->renderDataCellContent(0, Object(Order))
-#6 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
-#7 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
-#8 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
-#9 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
-#10 [internal function]: CBaseListView->renderSection(Array)
-#11 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{items}?<div cl...')
-#12 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
-#13 D:\wamp\www\yii\framework\web\CBaseController.php(173): CBaseListView->run()
-#14 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(65): CBaseController->widget('bootstrap.widge...', Array)
-#15 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
-#16 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
-#17 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
-#18 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
-#19 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(176): CController->render('admin', Array)
-#20 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
-#21 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#22 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#23 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#24 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
-#25 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
-#26 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#27 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#28 {main}
-REQUEST_URI=/basic/backend.php/mall/order/admin
-HTTP_REFERER=http://localhost/basic/backend.php
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 11:52:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 11:57:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 11:58:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 13:40:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:00:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:03:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:04:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:05:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:12:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:12:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:18:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:20:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:26:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:27:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:28:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:29:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:29:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:46:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 14:47:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:19:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:27:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:28:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:35:42 [error] [php] include(elFinderVolume.php): failed to open stream: No such file or directory (D:\wamp\www\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 D:\wamp\www\yincart\basic\protected\extensions\elFinder\php\elFinder.class.php(254): class_exists()
+#2 D:\wamp\www\yincart\basic\protected\extensions\elFinder\ElFinderConnectorAction.php(19): elFinder->__construct()
+#3 D:\wamp\www\yii\framework\web\actions\CAction.php(76): ElFinderConnectorAction->run()
+#4 D:\wamp\www\yii\framework\web\CController.php(308): ElFinderConnectorAction->runWithParams()
+#5 D:\wamp\www\yii\framework\web\CController.php(286): ElfinderController->runAction()
+#6 D:\wamp\www\yii\framework\web\CController.php(265): ElfinderController->runActionWithFilters()
+#7 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ElfinderController->run()
+#8 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\wamp\www\yincart\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/connector?YII_CSRF_TOKEN=fcd428a96795bc8b79c2036f26331f7d289ca0d1&cmd=open&target=l1_aW1hZ2VcMjAxMzEyMjM&init=1&tree=1&_=1389598542037
+in D:\wamp\www\yincart\basic\protected\extensions\elFinder\php\elFinder.class.php (254)
+in D:\wamp\www\yincart\basic\protected\extensions\elFinder\ElFinderConnectorAction.php (19)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/13 15:38:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:39:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:40:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:40:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:49:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 15:52:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 16:09:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
+---
+2014/01/13 16:13:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "sounds" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('sounds')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('sounds')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/s...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/elfinder/sounds/rm.wav
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/elfinder/admin
 ---
 2014/01/13 17:53:31 [error] [exception.CException] exception 'CException' with message 'Order and its behaviors do not have a method or closure named "showPayState".' in D:\wamp\www\yii\framework\base\CComponent.php:266
 Stack trace:
@@ -22912,7 +23225,7 @@ REQUEST_URI=/basic/backend.php/mall/order/create/user_id/7
 in D:\wamp\www\basic\protected\modules\mall\views\order\_form.php (52)
 in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
 in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (66)
-2014/01/14 08:25:40 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2325)
+2014/01/13 18:07:27 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2325)
 Stack trace:
 #0 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(52): CActiveForm->dropDownList()
 #1 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
@@ -22938,7 +23251,7 @@ REQUEST_URI=/basic/backend.php/mall/order/create/user_id/7
 in D:\wamp\www\basic\protected\modules\mall\views\order\_form.php (52)
 in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
 in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (66)
-2014/01/14 08:25:44 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2325)
+2014/01/14 08:24:05 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2325)
 Stack trace:
 #0 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(52): CActiveForm->dropDownList()
 #1 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
@@ -22964,7 +23277,7 @@ REQUEST_URI=/basic/backend.php/mall/order/create/user_id/7
 in D:\wamp\www\basic\protected\modules\mall\views\order\_form.php (52)
 in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
 in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (66)
-2014/01/14 08:26:30 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2325)
+2014/01/14 08:24:22 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2325)
 Stack trace:
 #0 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(52): CActiveForm->dropDownList()
 #1 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
@@ -22990,7 +23303,7 @@ REQUEST_URI=/basic/backend.php/mall/order/create/user_id/7
 in D:\wamp\www\basic\protected\modules\mall\views\order\_form.php (52)
 in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
 in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (66)
-2014/01/14 08:48:42 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2325)
+2014/01/14 08:27:19 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2325)
 Stack trace:
 #0 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(52): CActiveForm->dropDownList()
 #1 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
@@ -23016,981 +23329,37 @@ REQUEST_URI=/basic/backend.php/mall/order/create/user_id/7
 in D:\wamp\www\basic\protected\modules\mall\views\order\_form.php (52)
 in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
 in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (66)
-2014/01/14 08:54:06 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389660846344
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (256)
+2014/01/14 08:28:44 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (81)
 in D:\wamp\www\basic\backend.php (15)
-2014/01/14 09:00:30 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
+2014/01/14 08:43:07 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
 Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=28&_=1389661230851
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 09:00:31 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=35&_=1389661231730
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 09:04:25 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=31&_=1389661465241
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 09:24:08 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389662648703
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 09:27:13 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389662833878
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 09:28:14 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389662894461
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 09:28:25 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389662905773
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 09:29:51 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389662991926
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 09:31:12 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389663072284
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 10:08:35 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389665315388
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 10:11:10 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389665470211
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 10:22:33 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389666153295
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 10:44:21 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389667461750
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (300)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:17:32 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2078)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#1 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#2 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#5 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#6 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389669452119
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:20:27 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\web\helpers\CHtml.php:2325)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#1 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#2 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#3 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#6 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#7 D:\wamp\www\basic\protected\modules\mall\views\order\create.php(10): OrderController->renderPartial()
-#8 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#9 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#10 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#11 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#12 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(112): OrderController->render()
-#13 unknown(0): OrderController->actionCreate()
-#14 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#15 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#16 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#17 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#18 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#19 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#20 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#21 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#22 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/create/user_id/7
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (33)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
-2014/01/14 11:24:54 [error] [php] Illegal string offset 'sku_id' (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:304)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=31&_=1389669894230
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (304)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:24:59 [error] [php] Illegal string offset 'sku_id' (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:304)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=35&_=1389669899661
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (304)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:25:49 [error] [php] Illegal string offset 'sku_id' (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:304)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=35&_=1389669949821
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (304)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:31:54 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389670314164
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:32:03 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389670323876
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:32:30 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389670350155
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:33:05 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389670385227
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:33:12 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389670392668
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:35:15 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389670515194
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:39:19 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389670759631
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:40:04 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389670804664
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:40:47 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389670847873
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:42:22 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389670942647
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:43:14 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389670994756
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:57:22 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:303)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389671842864
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (303)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 11:58:43 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:303)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389671923046
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (303)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 12:01:16 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:303)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389672076118
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (303)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/14 13:42:27 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:303)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389678147498
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (303)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/15 13:25:53 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:302)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389763553048
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (302)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/15 14:04:04 [error] [exception.CException] exception 'CException' with message '属性 "Item.quantity" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
-Stack trace:
-#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('quantity')
-#1 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(132): CActiveRecord->__get('quantity')
-#2 [internal function]: OrderController->actionUpdate('232')
-#3 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
-#4 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
-#5 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#6 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#7 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
-#9 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
-#10 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#12 {main}
-REQUEST_URI=/basic/backend.php/mall/order/update/id/232
-HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
----
-2014/01/15 14:05:34 [error] [exception.CException] exception 'CException' with message '属性 "Item.orderItem" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
-Stack trace:
-#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('orderItem')
-#1 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(132): CActiveRecord->__get('orderItem')
-#2 [internal function]: OrderController->actionUpdate('232')
-#3 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
-#4 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
-#5 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#6 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#7 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
-#9 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
-#10 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#12 {main}
-REQUEST_URI=/basic/backend.php/mall/order/update/id/232
-HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
----
-2014/01/15 14:05:34 [error] [exception.CException] exception 'CException' with message '属性 "Item.orderItem" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
-Stack trace:
-#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('orderItem')
-#1 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(132): CActiveRecord->__get('orderItem')
-#2 [internal function]: OrderController->actionUpdate('232')
-#3 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
-#4 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
-#5 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#6 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#7 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
-#9 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
-#10 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#12 {main}
-REQUEST_URI=/basic/backend.php/mall/order/update/id/232
-HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
----
-2014/01/15 14:05:36 [error] [exception.CException] exception 'CException' with message '属性 "Item.orderItem" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
-Stack trace:
-#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('orderItem')
-#1 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(132): CActiveRecord->__get('orderItem')
-#2 [internal function]: OrderController->actionUpdate('232')
-#3 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
-#4 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
-#5 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#6 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#7 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
-#9 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
-#10 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#12 {main}
-REQUEST_URI=/basic/backend.php/mall/order/update/id/232
-HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
----
-2014/01/15 14:20:44 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:41)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(188): OrderController->render()
-#11 unknown(0): OrderController->actionUpdate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/update/id/233
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (41)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\update.php (10)
-2014/01/15 14:25:19 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:41)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(188): OrderController->render()
-#11 unknown(0): OrderController->actionUpdate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/update/id/233
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (41)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\update.php (10)
-2014/01/15 14:25:25 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:41)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(188): OrderController->render()
-#11 unknown(0): OrderController->actionUpdate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/update/id/233
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (41)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\update.php (10)
-2014/01/15 14:28:40 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.prop" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
-Stack trace:
-#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('prop')
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php(47): CActiveRecord->__get('prop')
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
-#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): CController->renderPartial('_form_item', Array, true)
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
-#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
-#9 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(10): CController->renderPartial('_form1', Array)
-#10 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
-#11 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
-#12 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
-#13 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
-#14 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(188): CController->render('update', Array)
-#15 [internal function]: OrderController->actionUpdate('233')
-#16 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
-#17 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
-#18 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
-#22 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
+#0 D:\wamp\www\yii\framework\utils\CFormatter.php(128): CFormatter->formatText()
+#1 D:\wamp\www\yii\framework\zii\widgets\grid\CDataColumn.php(140): CFormatter->format()
+#2 D:\wamp\www\yii\framework\zii\widgets\grid\CGridColumn.php(151): TbDataColumn->renderDataCellContent()
+#3 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(616): TbDataColumn->renderDataCell()
+#4 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(572): TbGridView->renderTableRow()
+#5 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(482): TbGridView->renderTableBody()
+#6 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(167): TbGridView->renderItems()
+#7 unknown(0): TbGridView->renderSection()
+#8 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback()
+#9 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(135): TbGridView->renderContent()
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbGridView->run()
+#11 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(76): OrderController->widget()
+#12 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#13 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#14 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
+#15 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
+#16 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(178): OrderController->render()
+#17 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#18 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#19 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#20 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#22 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
 #23 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#24 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#25 {main}
-REQUEST_URI=/basic/backend.php/mall/order/update/id/233
-HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
----
-2014/01/15 14:28:47 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.props" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
-Stack trace:
-#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('props')
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php(47): CActiveRecord->__get('props')
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
-#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): CController->renderPartial('_form_item', Array, true)
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
-#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
-#9 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(10): CController->renderPartial('_form1', Array)
-#10 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
-#11 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
-#12 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
-#13 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
-#14 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(188): CController->render('update', Array)
-#15 [internal function]: OrderController->actionUpdate('233')
-#16 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
-#17 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
-#18 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
-#22 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
-#23 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#24 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#25 {main}
-REQUEST_URI=/basic/backend.php/mall/order/update/id/233
-HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
----
-2014/01/15 14:37:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:253
-Stack trace:
-#0 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(128): OrderController->loadModel('233')
-#1 [internal function]: OrderController->actionUpdate('233')
-#2 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
-#3 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
-#4 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#5 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#6 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#7 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
-#8 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
-#9 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#10 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#11 {main}
-REQUEST_URI=/basic/backend.php/mall/order/update/id/233
-HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
----
-2014/01/15 14:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:253
-Stack trace:
-#0 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(128): OrderController->loadModel('233')
-#1 [internal function]: OrderController->actionUpdate('233')
-#2 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
-#3 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
-#4 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#5 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#6 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#7 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
-#8 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
-#9 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#10 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#11 {main}
-REQUEST_URI=/basic/backend.php/mall/order/update/id/233
-HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/233
----
-2014/01/15 14:37:12 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:41)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\create.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(118): OrderController->render()
-#11 unknown(0): OrderController->actionCreate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/create/user_id/7
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (41)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
-2014/01/15 14:37:15 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:41)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\create.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(118): OrderController->render()
-#11 unknown(0): OrderController->actionCreate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/create/user_id/7
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (41)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
-2014/01/15 14:37:34 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:41)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\create.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(118): OrderController->render()
-#11 unknown(0): OrderController->actionCreate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/create/user_id/12
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (41)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
-2014/01/15 14:39:10 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:41)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\create.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(119): OrderController->render()
-#11 unknown(0): OrderController->actionCreate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/create/user_id/12
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (41)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
-2014/01/15 14:39:44 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:41)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\create.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(118): OrderController->render()
-#11 unknown(0): OrderController->actionCreate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/create/user_id/12
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (41)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\create.php (10)
-2014/01/15 14:42:08 [error] [php] Object of class stdClass could not be converted to string (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:47)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(188): OrderController->render()
-#11 unknown(0): OrderController->actionUpdate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/update/id/234
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (47)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\update.php (10)
-2014/01/15 14:48:04 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:50)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(188): OrderController->render()
-#11 unknown(0): OrderController->actionUpdate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/update/id/234
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (50)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\update.php (10)
-2014/01/15 14:48:11 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:50)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(188): OrderController->render()
-#11 unknown(0): OrderController->actionUpdate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/update/id/234
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (50)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\update.php (10)
-2014/01/15 15:08:15 [error] [php] Object of class Sku could not be converted to string (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:51)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(192): OrderController->render()
-#11 unknown(0): OrderController->actionUpdate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/update/id/234
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (51)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\update.php (10)
-2014/01/15 15:11:52 [error] [php] Object of class Sku could not be converted to string (D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php:51)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php(24): OrderController->renderPartial()
-#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#4 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(10): OrderController->renderPartial()
-#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
-#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
-#8 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
-#9 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
-#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(192): OrderController->render()
-#11 unknown(0): OrderController->actionUpdate()
-#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#20 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/update/id/234
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form_item.php (51)
-in D:\wamp\www\basic\protected\modules\mall\views\order\_form1.php (24)
-in D:\wamp\www\basic\protected\modules\mall\views\order\update.php (10)
-2014/01/15 15:56:18 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yii\framework\db\schema\CDbCommandBuilder.php:670)
-Stack trace:
-#0 unknown(0): OrderController->actionUpdate()
-#1 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#2 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#3 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#5 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#6 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#7 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#9 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/update/id/238
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (150)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/15 16:41:34 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:325)
-Stack trace:
-#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389775294072
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (325)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/15 16:54:08 [error] [php] reset() expects parameter 1 to be array, string given (D:\wamp\www\yii\framework\db\schema\CDbCriteria.php:280)
-Stack trace:
-#0 unknown(0): OrderController->actionUpdate()
-#1 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
-#2 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
-#3 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
-#5 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
-#6 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
-#7 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#9 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
-REQUEST_URI=/basic/backend.php/mall/order/update/id/237
-in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (145)
+#24 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/admin
+in D:\wamp\www\basic\protected\modules\mall\views\order\admin.php (76)
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (178)
 in D:\wamp\www\basic\backend.php (15)
