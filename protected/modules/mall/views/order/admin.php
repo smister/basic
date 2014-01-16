@@ -42,7 +42,7 @@ $this->breadcrumbs = array(
         ),
         array(
             'name' => 'refund_status',
-            'value' => '$data->showRefundState()',
+            'value' => Tbfunction::RefundState(),
             'filter' => Tbfunction::ReturnRefundStatus(),
         ),
         array(
