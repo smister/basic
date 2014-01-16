@@ -1,32 +1,33 @@
 <?php
-$this->breadcrumbs=array(
-	'Orders'=>array('index'),
-	'Manage',
+$this->breadcrumbs = array(
+    'Orders' => array('index'),
+    'Manage',
 );
 
 ?>
 <h1>Manage Orders</h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+    You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
+        &lt;&gt;</b>
+    or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
-<?php echo CHtml::link('<div class="btn btn-primary">Create Order</div>','#',array('class'=>'search-button',)); ?>
+<?php echo CHtml::link('<div class="btn btn-primary">Create Order</div>', '#', array('class' => 'search-button',)); ?>
 <div class="search-form" style="display:none">
-
-    <?php $this->renderPartial('select_user',array(
-        'users'=>$users,
+    <?php $this->renderPartial('select_user', array(
+        'users' => $users,
     )); ?>
 </div>
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
-	'id'=>'order-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'order_id',
+    'id' => 'order-grid',
+    'dataProvider' => $model->search(),
+    'filter' => $model,
+    'columns' => array(
+
+        'order_id',
         array(
             'name' => 'user_id',
-            'value' =>'Tbfunction::getUser($data->user_id)',
+            'value' => 'Tbfunction::getUser($data->user_id)',
             'filter' => Tbfunction::showUser(),
         ),
         array(
@@ -41,7 +42,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         ),
         array(
             'name' => 'refund_status',
-            'value' => 'Tbfunction::showRefundStatus($data->refund_status)',
+            'value' =>'Tbfunction::showRefundStatus($data->refund_status)',
             'filter' => Tbfunction::ReturnRefundStatus(),
         ),
         array(
@@ -61,9 +62,14 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
             'name' => 'create_time',
             'value' => 'date("Y年m月d日 H:i:s",$data->create_time)',
         ),
-		array(
-			'class'=>'bootstrap.widgets.TbButtonColumn',
-		),
-	),
+
+        array(
+            'name' => 'receiver_name',
+        ),
+
+        array(
+            'class' => 'bootstrap.widgets.TbButtonColumn',
+        ),
+    ),
 ));
 ?>
