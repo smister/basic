@@ -75,16 +75,18 @@ class OrderController extends Controller
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model)
         if (isset($_POST['Order']) && isset($_POST['Sku'])) {
+
             $transaction = $model->dbConnection->beginTransaction();
             try {
                 $model->attributes = $_POST['Order'];
+                $model->order_id=F::get_order_id();
                 $model->create_time = time();
                 if ($model->save()) {
                     foreach ($_POST['Sku']['item_id'] as $key => $itemId) {
                         $items = Item::model()->findByPk($itemId);
                         $sku = Sku::model()->findByPk($_POST['Sku']['sku_id'][$key]);
                         if ($sku->stock < $_POST['Item-number'][$key]) {
-                            throw new Exception('Stock is not enough');
+                            throw new Exception('Stock is not enough',0,$sku);
                         }
                         $orderItem = new OrderItem;
                         $orderItem->item_id = $itemId;
@@ -96,16 +98,16 @@ class OrderController extends Controller
                         $orderItem->quantity = $_POST['Item-number'][$key]; //need to update
                         $sku->stock -= $_POST['Item-number'][$key];
                         if (!$sku->save()) {
-                            throw new Exception('Cut down stock fail');
+                            throw new Exception('Cut down stock fail',0,$sku);
                         }
                         $orderItem->total_price = $orderItem->price * $orderItem->quantity;
                         $orderItem->order_id = $model->order_id;
                         if (!$orderItem->save()) {
-                            throw new Exception('save order item fail');
+                            throw new Exception('save order item fail',0,$orderItem);
                         }
                     }
                 } else {
-                    throw new Exception('save order item fail');
+                    throw new Exception('save order item fail', 0, $model);
                 }
                 $transaction->commit();
                 $this->redirect(array('view', 'id' => $model->order_id));
@@ -183,7 +185,7 @@ class OrderController extends Controller
                         }
                         $orderItem->props_name = $sku->props_name;
                         $orderItem->price = $sku->price;
-                        $orderItem->quantity = $_POST['Item-number'][$key]; //need to update
+                        $orderItem->quantity = $_POST['Item-number'][$key];
                         $sku->stock -= $_POST['Item-number'][$key];
                         if (!$sku->save()) {
                             throw new Exception('Cut down stock fail');

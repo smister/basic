@@ -1,52 +1,74 @@
 <?php
 $this->breadcrumbs=array(
-	'Orders'=>array('index'),
-	$model->order_id,
-);
-
-$this->menu=array(
-	array('label'=>'List Order', 'url'=>array('index')),
-	array('label'=>'Create Order', 'url'=>array('create')),
-	array('label'=>'Update Order', 'url'=>array('update', 'id'=>$model->order_id)),
-	array('label'=>'Delete Order', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->order_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Order', 'url'=>array('admin')),
+    'Orders'=>array('index'),
+    $model->order_id,
 );
 ?>
 
-<h1>View Order #<?php echo $model->order_id; ?></h1>
+    <h1>View Order #<?php echo $model->order_id; ?></h1>
 
-
-<?php $this->widget('bootstrap.widgets.TbDetailView', array(
+<?php
+$this->widget('bootstrap.widgets.TbDetailView', array(
     'data'=>$model,
     'attributes'=>array(
         'order_id',
-        'user_id',
-        'status',
-        'pay_status',
-        'ship_status',
-        'refund_status',
+        array(
+            'name' => 'user_id',
+            'value' =>Tbfunction::getUser($model->user_id),
+        ),
+        array(
+            'name' => 'status',
+            'value' => Tbfunction::showStatus($model->status),
+        ),
+        array(
+            'name' => 'ship_status',
+            'value' => Tbfunction::showShipStatus($model->ship_status),
+        ),
+        array(
+            'name' => 'refund_status',
+            'value' => Tbfunction::showRefundStatus($model->refund_status),
+        ),
+        array(
+            'name' => 'pay_status',
+            'value' => Tbfunction::showPayStatus($model->pay_status),
+        ),
         'total_fee',
         'ship_fee',
         'pay_fee',
-        'pay_method',
-        'ship_method',
-        'receiver_name',
-        'receiver_country',
-        'receiver_state',
-        'receiver_city',
-        'receiver_district',
-        'receiver_address',
+        array(
+            'name' => 'payment_method_id',
+            'value' => Tbfunction::showPayMethod($model->payment_method_id),
+        ),
+        array(
+            'name' => 'shipping_method_id',
+            'value' => Tbfunction::showShipMethod($model->shipping_method_id),
+        ),
+        array(
+            'name' => 'receiver_address',
+            'value' => 'Order::showDetailAddress',
+        ),
         'receiver_zip',
         'receiver_mobile',
         'receiver_phone',
         'memo',
-        'pay_time',
-        'ship_time',
-        'create_time',
-        'update_time',
+        array(
+            'name' => 'pay_time',
+            'value' => date('Y年m月d日 H:i:s',$model->pay_time +(8 * 3600)),
+        ),
+        array(
+            'name' => 'ship_time',
+            'value' => date('Y年m月d日 H:i:s',$model->ship_time +(8 * 3600)),
+        ),
+        array(
+            'name' => 'create_time',
+            'value' => date('Y年m月d日 H:i:s',$model->create_time +(8 * 3600)),
+        ),
+        array(
+            'name' => 'update_time',
+            'value' => date('Y年m月d日 H:i:s',$model->update_time +(8 * 3600)),
+        ),
     ),
 )); ?>
-
 <?php
     if(!empty($items)){
 ?>
