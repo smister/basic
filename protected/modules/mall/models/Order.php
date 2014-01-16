@@ -84,6 +84,7 @@ class Order extends CActiveRecord
             'payments' => array(self::HAS_MANY, 'Payment', 'order_id'),
             'refunds' => array(self::HAS_MANY, 'Refund', 'order_id'),
             'shippings' => array(self::HAS_MANY, 'Shipping', 'order_id'),
+            'users' => array(self::BELONGS_TO, 'Users', 'user_id'),
         );
     }
 
@@ -169,6 +170,8 @@ class Order extends CActiveRecord
         $criteria->compare('create_time', $this->create_time, true);
         $criteria->compare('update_time', $this->update_time, true);
 
+        $criteria->with = 'users';
+        $criteria->order='order_id desc';
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
         ));
