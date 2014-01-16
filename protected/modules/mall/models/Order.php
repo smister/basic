@@ -61,12 +61,13 @@ class Order extends CActiveRecord
             array('status, pay_status, ship_status, refund_status, comment_status', 'numerical', 'integerOnly' => true),
             array('user_id, total_fee, ship_fee, pay_fee, payment_method_id, shipping_method_id, pay_time, ship_time, create_time, update_time', 'length', 'max' => 10),
             array('receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_zip, receiver_mobile, receiver_phone', 'length', 'max' => 45),
-            array('receiver_address', 'length', 'max' => 255),
+            array('receiver_address,receiver_country', 'length', 'max' => 255),
             array('memo', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('order_id, user_id, status, pay_status, ship_status, refund_status, comment_status, total_fee, ship_fee, pay_fee, payment_method_id, shipping_method_id, receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_address, receiver_zip, receiver_mobile, receiver_phone, memo, pay_time, ship_time, create_time, update_time', 'safe', 'on' => 'search'),);
     }
+
 
     /**
      * @return array relational rules.
