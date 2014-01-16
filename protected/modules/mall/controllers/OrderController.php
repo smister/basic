@@ -78,6 +78,7 @@ class OrderController extends Controller
             $transaction = $model->dbConnection->beginTransaction();
             try {
                 $model->attributes = $_POST['Order'];
+                $model->order_id=F::get_order_id();
                 $model->create_time = time();
                 if ($model->save()) {
                     foreach ($_POST['Sku']['item_id'] as $key => $itemId) {

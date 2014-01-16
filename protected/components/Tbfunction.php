@@ -37,7 +37,7 @@ class Tbfunction {
 
     static public function deliver_goods()
     {
-        echo '<a  href="javascript:void(0)" class="btn btn-danger" id="deliverGoods">鍙戣揣</a>';
+        echo '<a  href="javascript:void(0)" class="btn btn-danger" id="deliverGoods">发货</a>';
     }
 
     public function state($id){
