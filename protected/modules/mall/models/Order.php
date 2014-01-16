@@ -83,7 +83,7 @@ class Order extends CActiveRecord
             'payments' => array(self::HAS_MANY, 'Payment', 'order_id'),
             'refunds' => array(self::HAS_MANY, 'Refund', 'order_id'),
             'shippings' => array(self::HAS_MANY, 'Shipping', 'order_id'),
-            'users' => array(self::BELONGS_TO, 'User', 'user_id'),
+            'users' => array(self::BELONGS_TO, 'Users', 'user_id'),
         );
     }
 
