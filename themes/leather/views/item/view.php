@@ -4,8 +4,8 @@ $cs->registerCssFile(Yii::app()->theme->baseUrl . '/css/deal.css');
 $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/pptBox.js');
 $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/lrtk.js');
 $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/lrtk.js');
-Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/themes/pidiao/css/cart/review.css');
-Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/themes/default/js/review.js');
+Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl.'/css/cart/review.css');
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl.'/js/review.js');
 Yii::app()->clientScript->registerCoreScript('jquery');
 
 $imageHelper=new ImageHelper();
@@ -83,7 +83,7 @@ $imageHelper=new ImageHelper();
             }
             ?>
             <div class="deal_size" data-sku-key='<?php echo json_encode(array_keys($skus)); ?>'
-                 data-sku-value='<?php echo json_encode($skus); ?>' data-sku-id="<?php if(isset($skuId))echo implode(',',$skuId); ?>">
+                 data-sku-value='<?php echo json_encode($skus); ?>' data-sku-id="<?php if(isset($skuId))echo implode(',',$skuId);else echo $item->item_id; ?>">
                 <?php
                 $propImgs = CHtml::listData($item->propImgs, 'item_prop_value', 'pic');
                 $itemProps = $propValues = array();
@@ -239,7 +239,7 @@ $imageHelper=new ImageHelper();
                         'columns' => array(
                             array(
                                 'name'=>'user',
-                                'value'=>'$data->getUser($data->order_id)',
+                                'value'=>'Tbfunction::getUser($data->order->user_id)',
                             ),
                             'title',
                             'price',
@@ -302,13 +302,12 @@ $imageHelper=new ImageHelper();
                 $('.deal_size').addClass('prop-div-select');
             } else {
                 $.post($('.deal_add_car').data('url'), $('#deal').serialize(), function(response) {
-                    /**判断还需要改 待定**/
-                    if(response){
+                    if(response.status=='success'){
                         location.href=$('.deal_add a').data('url');
                     }else{
                         alert('system error');
                     }
-                });
+                },'json');
             }
         })
         function findSameValue(a,b){
@@ -376,6 +375,12 @@ $imageHelper=new ImageHelper();
                     price.text(price.text().substr(0, 1) + sku['price']);
                     $('#stock').text(sku['stock']);
                 }
+                if($('.deal_size').data('sku-value').length==0){
+                    var selectAdd=$('.deal_add');
+                    selectAdd.find('a').attr({
+                        'data-url':selectAdd.data('url')+"?position=Item"+$('.deal_size').data('sku-id')
+                    })
+                }
             }
 
 
@@ -394,24 +399,24 @@ $imageHelper=new ImageHelper();
                 $('.deal_size').addClass('prop-div-select');
             } else {
                 $('.deal_size').removeClass('prop-div-select');
-                $.post($(this).data('url'), $('#deal').serialize(), function(response,status) {
-                        alert(status) ;
-                        if(status=='success'){
+                $.post($(this).data('url'), $('#deal').serialize(), function(response) {
+                        if(response.status=='success'){
                             var num=$('.shopping_car').children().text();
                             num=parseInt(num)+1;
                             $('.shopping_car').children().text(num);
-                        }
-                });
+                            alert(response.status);
+                        }else
+                        alert(response.status);
+                },'json');
             }
         });
         $('.deal_collect').click(function() {
-//                alert($(this).data('url'));
-                $.post($(this).data('url'), $('#item_id').serialize(), function(response,status) {
-                    if(response){
+                $.post($(this).data('url'), $('#item_id').serialize(), function(response) {
+                    if(response.status=='exist'){
                         alert('已收藏过该商品');
                     }else
-                    alert(status) ;
-                });
+                    alert(response.status) ;
+                },'json');
         });
     });
 </script>

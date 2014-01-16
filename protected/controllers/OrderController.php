@@ -81,8 +81,6 @@ class OrderController extends Controller
                     $model->user_id = Yii::app()->user->id ? Yii::app()->user->id : '0';
                     $model->create_time = time();
                     $cart = Yii::app()->cart;
-
-
                     $cri = new CDbCriteria(array(
                         'condition' => 'contact_id =' . $_POST['delivery_address'] . ' AND user_id = ' . Yii::app()->user->id
                     ));
@@ -101,18 +99,17 @@ class OrderController extends Controller
                         $item= $cart->itemAt($key);
                         $model->total_fee += $item['quantity'] * $item['price'];
                     }
-
                     if ($model->save()) {
-                        foreach ($_POST['keys'] as $key){
-                            $item= $cart->itemAt($key);
-                            $sku=Sku::model()->findByPk($item['sku']['sku_id']);
-                            if($sku->stock<$item['quantity']){
-                                throw new Exception('stock is not enough!');
-                            }
-                            $sku->stock-=$item['quantity'];
-                            if(!$sku->save()) {
-                                throw new Exception('cut down stock fail');
-                            }
+                     foreach ($_POST['keys'] as $key){
+                             $item= $cart->itemAt($key);
+                         $sku=Sku::model()->findByPk($item['sku']['sku_id']);
+                         if($sku->stock<$item['quantity']){
+                             throw new Exception('stock is not enough!');
+                         }
+                         $sku->stock-=$item['quantity'];
+                         if(!$sku->save()) {
+                             throw new Exception('cut down stock fail');
+                         }
                             $OrderItem = new OrderItem;
                             $OrderItem->order_id = $model->order_id;
                             $OrderItem->item_id = $item['item_id'];
@@ -125,7 +122,7 @@ class OrderController extends Controller
                             if (!$OrderItem->save()) {
                                 throw new Exception('save order item fail');
                             }
-                            $cart->remove($key);
+                       $cart->remove($key);
                         }
                     } else {
                         throw new Exception('save order fail');
@@ -147,6 +144,30 @@ class OrderController extends Controller
     {
         $this->render('success');
     }
+
+    /**
+     * Updates a particular model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id the ID of the model to be updated
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->loadModel($id);
+
+        // Uncomment the following line if AJAX validation is needed
+        // $this->performAjaxValidation($model);
+
+        if (isset($_POST['Order'])) {
+            $model->attributes = $_POST['Order'];
+            if ($model->save())
+                $this->redirect(array('view', 'id' => $model->order_id));
+        }
+
+        $this->render('update', array(
+            'model' => $model,
+        ));
+    }
+
     /**
      * Deletes a particular model.
      * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -197,7 +218,7 @@ class OrderController extends Controller
      */
     public function loadModel($id)
     {
-        $model = Order::model()->with('orderItems')->findByPk($id);
+        $model = Order::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;

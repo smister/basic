@@ -91,9 +91,9 @@ class Order extends CActiveRecord
      */
     public function attributeLabels(){
         return array(
-            'order_id' => Yii::t('mall', 'Order ID'),
+            'order_id' => '订单号',
             'user_id' => '会员',
-            'status' => Yii::t('mall', 'Order Status'),
+            'status' => '订单状态',
             'pay_status' => '付款状态',
             'ship_status' => '配送状态',
             'refund_status' => '退款状态',
