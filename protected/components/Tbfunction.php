@@ -53,7 +53,16 @@ class Tbfunction {
         $user = Users::model()->findByAttributes(array('id' => $user_id));
         return $user->username;
     }
-
+    public function showUser()
+    {
+        $data_user=array();
+        $users= Users::model()->findAll();
+        foreach($users as $user){
+            if($user->superuser!=1){
+                $data_user[$user->id]=$user->username;}
+        }
+        return $data_user;
+    }
     public function showPayStatus($pay_status){
         $payStatus=array('0'=>'待支付','1'=>'已支付');
         return $payStatus[$pay_status];
