@@ -4,30 +4,22 @@
  * This is the model class for table "payment".
  *
  * The followings are the available columns in table 'payment':
- * @property string $pay_id
- * @property string $pay_sn
+ * @property string $payment_id
+ * @property string $order_id
+ * @property string $payment_sn
  * @property string $money
  * @property string $currency
- * @property string $order_id
- * @property string $pay_method
  * @property string $user_id
  * @property string $account
  * @property string $bank
  * @property string $pay_account
- * @property string $status
+ * @property integer $status
  * @property string $create_time
+ *
+ * The followings are the available model relations:
+ * @property Order $order
  */
-
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
-	}
-
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */class Payment extends CActiveRecord
+class Payment extends CActiveRecord
 {
     /**
      * @return string the associated database table name
