@@ -75,6 +75,7 @@ class OrderController extends Controller
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model)
         if (isset($_POST['Order']) && isset($_POST['Sku'])) {
+
             $transaction = $model->dbConnection->beginTransaction();
             try {
                 $model->attributes = $_POST['Order'];
@@ -136,7 +137,7 @@ class OrderController extends Controller
             $transaction = $model->dbConnection->beginTransaction();
             try {
                 $model->attributes = $_POST['Order'];
-                $model->update_time = time();
+                $model->update_time = time();var_dump($model);die;
                 if ($model->save()) {
                     $flag = array();
                     $OrderItem = OrderItem::model()->findAllByAttributes(array('order_id' => $id));

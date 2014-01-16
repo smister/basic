@@ -23,12 +23,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-
 		'order_id',
         array(
             'name' => 'user_id',
             'value' =>'Tbfunction::getUser($data->user_id)',
-            'filter' => Tbfunction::getUser($data->user_id),
+            'filter' => Tbfunction::showUser(),
         ),
         array(
             'name' => 'pay_status',
