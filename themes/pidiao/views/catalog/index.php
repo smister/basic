@@ -6,8 +6,8 @@
             <a href="">联系<br/>在线客服</a>
         </div>
     </div>
-    <div class="pd_l">
-        <div class="pd_l_fl">
+    <div class="pd_l container_24">
+        <div class="pd_l_fl grid_5">
             <div class="pd_l_nv">
                 <div class="pd_l_ti">
                     <a href="<?php echo Yii::app()->baseUrl; ?>">首页>></a>
@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <div class="pd_l_fr">
+        <div class="pd_l_fr grid_19">
             <div class="searh_res">找到了 <span class="cor_red blod">搜索词</span> 共计 <span class="cor_red blod">100</span>
                 款供您选择
             </div>

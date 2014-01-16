@@ -93,8 +93,8 @@ EOF;
     <div class="warp_product">
         <div class="product_new">
             <div class="product_new_tit"><a href="">更多新品>></a></div>
-            <div class="product_c">
-                <div class="product_new_b">
+            <div class="product_c container_24">
+                <div class="product_new_b grid_12">
                     <?php if (isset($newItems[0][0])) {
                         $newItem = $newItems[0][0];
                         $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
@@ -113,7 +113,7 @@ EOF;
                         </div>
                     <?php } ?>
                 </div>
-                <div class="product_list">
+                <div class="product_list grid_12">
                     <?php for ($i = 1, $count = count($newItems[0]); $i < $count; $i++) {
                         $newItem = $newItems[0][$i];
                         $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));

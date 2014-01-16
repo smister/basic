@@ -404,7 +404,7 @@ a.online_ser{
 .product_d{
 	width:220px;
 	float:left;
-	margin:0 16px 41px 0;
+	margin:0 30px 41px 45px;
 }
 
 
@@ -554,3 +554,6 @@ a.online_ser{
     margin:0 auto;
 
 }
+/*.container{*/
+    /*text-align:center;*/
+/*}*/
