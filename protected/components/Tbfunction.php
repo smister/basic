@@ -52,7 +52,7 @@ class Tbfunction {
         return array('0' => '待支付', '1' => '已支付');
     }
 
-    public function showPayState($pay_status){
+    public function showPayStates($pay_status){
         if($pay_status==1){echo '已支付'; }
         else echo '待支付';
     }
@@ -99,7 +99,7 @@ class Tbfunction {
     }
 
     public function showShipStatus($ship_status){
-        $shipStatus=array('0'=>'已发货','1'=>'未发货');
+        $shipStatus=array('0'=>'未发货','1'=>'已发货');
         return $shipStatus[$ship_status];
     }
 }
