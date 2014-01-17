@@ -102,5 +102,11 @@ class Tbfunction {
         $shipStatus=array('0'=>'未发货','1'=>'已发货');
         return $shipStatus[$ship_status];
     }
+
+    public function mainMenu($url){
+        if($url==Yii::app()->request->url) return true;
+        else return false;
+    }
+
 }
 
