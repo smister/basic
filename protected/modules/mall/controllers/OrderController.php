@@ -86,7 +86,7 @@ class OrderController extends Controller
                         $items = Item::model()->findByPk($itemId);
                         $sku = Sku::model()->findByPk($_POST['Sku']['sku_id'][$key]);
                         if ($sku->stock < $_POST['Item-number'][$key]) {
-                            throw new Exception('Stock is not enough',0,$sku);
+                            throw new CException('Stock is not enough' . json_encode($sku->getErrors()),0);
                         }
                         $orderItem = new OrderItem;
                         $orderItem->item_id = $itemId;
@@ -107,7 +107,7 @@ class OrderController extends Controller
                         }
                     }
                 } else {
-                    throw new Exception('save order item fail', 0, $model);
+                    throw new Exception('save order fail', 0, $model);
                 }
                 $transaction->commit();
                 $this->redirect(array('view', 'id' => $model->order_id));

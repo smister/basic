@@ -9,9 +9,11 @@
     <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css'/>
         <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/product.css'/>
         <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/member.css'/>
+        <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->baseUrl; ?>/css/common.css'/>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/common.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/passwordCheck.js"></script>
+        <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/common.js"></script>
     <title><?php echo Yii::app()->params['title']; ?></title>
 <body>
 <div class="top">

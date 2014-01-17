@@ -1,0 +1,51 @@
+.space {
+    margin-top: 15px;
+}
+.overlay-popup {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+.popup-container {
+    width: 360px;
+    height: 158px;
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    z-index: 3000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px
+}
+
+.popup-container .close {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+}
+
+.popup-iframe {
+    display: block;
+    margin: 20px auto;
+    width: 95%;
+    height: 90%;
+}
+
+.message {
+width: 90%;
+    height: 80%;
+}
+
+.error-message {
+    margin: 10% ;
+    font-size: 15px;
+    color:#040404;
+}
+
