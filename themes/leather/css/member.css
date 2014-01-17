@@ -28,7 +28,7 @@
     line-height:29px;
     font-weight:bold;
     font-size:14px;
-    text-align: left;
+    text-align: center;
     padding-left: 10px;
 }
 .box-title span{
@@ -43,6 +43,7 @@
     color: #0099FF
 }
 .box-content{
+    margin:20px auto;
     padding:10px;
     overflow:hidden;
     display:block;

@@ -18,7 +18,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
     <div style="margin-top:10px"></div>
 <?php echo CHtml::beginForm(array('/order/create'), 'POST', array('id' => 'orderForm')) ?>
     <div class="box">
-        <div class="box-title"><span
+        <div class="box-title container_24"><span
                 style="float:right"><?php echo CHtml::link('管理收货地址', array('/member/delivery_address/admin')) ?></span>收货地址
         </div>
         <div class="box-content">
@@ -45,7 +45,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
         </div>
     </div>
     <div class="box">
-        <div class="box-title">支付方式</div>
+        <div class="box-title container_24">支付方式</div>
         <div class="box-content">
             <?php
             $cri = new CDbCriteria(array(
@@ -58,8 +58,8 @@ Yii::app()->clientScript->registerCoreScript('jquery');
         </div>
     </div>
     <div class="box">
-        <div class="box-title">商品列表</div>
-        <div class="box-content cart">
+        <div class="box-title container_24">商品列表</div>
+        <div class="box-content cart container_24">
             <table width="100%" border="1" cellspacing="1" cellpadding="0"
                    style="text-align:center;vertical-align:middle">
                 <tr>

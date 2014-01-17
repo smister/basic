@@ -31,14 +31,14 @@ $imageHelper=new ImageHelper();
             <a href="">联系<br/>在线客服</a>
         </div>
     </div>
-    <div class="deal">
+    <div class="deal container_24">
         <div class="deal_tip">
             <a href="<?php echo Yii::app()->baseUrl; ?>">首页>></a>
             <?php foreach ($this->breadcrumbs as $breadcrumb) {
                 echo '<a href="' . $breadcrumb['url'] . '">' . $breadcrumb['name'] . '</a>';
             } ?>
         </div>
-        <div class="deal_pic">
+        <div class="deal_pic grid_14">
             <div>
                 <ul id="idNum" class="hdnum">
                     <?php foreach ($item->itemImgs as $itemImg) {
@@ -150,8 +150,8 @@ $imageHelper=new ImageHelper();
             <div class="deal_collect" data-url="<?php echo Yii::app()->createUrl('member/wishlist/addWish'); ?>" ><a href="javascript:void(0)">立即收藏</a></div>
         </form>
     </div>
-    <div class="pd_l">
-        <div class="pd_l_fl">
+    <div class="pd_l container_24">
+        <div class="pd_l_fl grid_5">
             <div class="pd_l_nv">
                 <div class="pd_l_ti">
                     <a href="<?php echo Yii::app()->baseUrl; ?>">首页>></a>
@@ -207,7 +207,7 @@ $imageHelper=new ImageHelper();
                 </ul>
             </div>
         </div>
-        <div class="pd_l_fr">
+        <div class="pd_l_fr grid_19">
             <ul class="deal_describe_tit">
                 <li onclick="describe(1);" class="current">商品描述</li>
                 <li onclick="describe(2);">顾客评价（<span class="cor_red">14</span>）</li>

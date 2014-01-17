@@ -14,8 +14,8 @@ Yii::app()->clientScript->registerCoreScript('jquery');
     });
 </script>
 <div class="box">
-    <div class="box-title">购物车</div>
-    <div class="box-content cart">
+    <div class="box-title container_24">购物车</div>
+    <div class="box-content cart container_24">
         <?php echo CHtml::beginForm(array('/order/checkout'), 'POST', array('id' => 'cartForm')) ?>
         <table width="100%" border="1" cellspacing="1" cellpadding="0" style="text-align:center;vertical-align:middle">
             <tr>

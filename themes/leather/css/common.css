@@ -1,8 +1,4 @@
-body{font:12px/1.5 '宋体',Arial,Lucida,Helvetica,sans-serif;margin:0;background:#fff;position:relative;}
-*{
-	margin:0;
-	padding:0;
-}
+body{font:12px/1.5 '微软雅黑',Arial,Lucida,Helvetica,sans-serif;margin:0;background:#fff;position:relative;}
 a{text-decoration:none;color:#000;}
 ul,li,ol,dd,dt{list-style:none;}
 a img{border:none;}
@@ -97,7 +93,17 @@ a.online_ser{
     margin-right:10px;
 }
 .login-nav2{
-    width:118px;
+    width:70px;
+    margin: 0;
+    padding: 0;
+}
+.article-title {
+    text-align: center;
+    font:normal 28px/36px "Microsoft YaHei";
+    margin: 0 0 5px 0;
+}
+.article-content {
+    padding: 10px 20px 20px 20px;
 }
 .personal-list a{
     display: none;
@@ -197,6 +203,9 @@ a.online_ser{
 	width:1180px;
 	margin:0 auto;
 }
+.breadcrumbs{
+    padding: 5px 0;
+}
 .float{
 	width:151px;
 	height:278px;
@@ -252,7 +261,7 @@ a.online_ser{
 	color:#fff;
 }
 .warp_tab_c{
-	padding:20px 0 20px 20px;
+	padding:10px 0 5px 80px;
 	overflow:hidden;
 	zoom:1;
 }
@@ -357,7 +366,7 @@ a.online_ser{
 	line-height:34px;
 }
 .product_c,.product_ca{
-	margin-top:30px;
+	margin-top:40px;
 	overflow:hidden;
 }
 .product_new_b{
