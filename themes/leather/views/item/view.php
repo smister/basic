@@ -210,8 +210,8 @@ $imageHelper=new ImageHelper();
         <div class="pd_l_fr">
             <ul class="deal_describe_tit">
                 <li onclick="describe(1);" class="current">商品描述</li>
-                <li onclick="describe(2);">顾客评价（<span class="cor_red">14</span>）</li>
-                <li onclick="describe(3);">月成交记录（<span class="cor_red">2</span>）</li>
+                <li onclick="describe(2);">顾客评价（<span class="cor_red"><?php echo $item->review_count;?></span>）</li>
+                <li onclick="describe(3);">月成交记录（<span class="cor_red"><?php echo $item->deal_count;?></span>）</li>
             </ul>
             <div class="deal_describe" id="describe_1" style="">
                 <?php echo $item->desc; ?>
