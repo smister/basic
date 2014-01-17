@@ -76,7 +76,6 @@ $form = new CForm(array(
             'type'=>'checkbox',
         )
     ),
-
     'buttons'=>array(
         'login'=>array(
             'type'=>'submit',

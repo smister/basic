@@ -37,7 +37,7 @@ EOF;
             <a href="">联系<br/>在线客服</a>
         </div>
     </div>
-    <div class="warp_tab">
+    <div class="warp_tab contaniner_24">
         <div class="warp_tab_con">
             <div class="warp_tab_t">
                 <ul class="tab_t_list">
@@ -118,7 +118,7 @@ EOF;
         $num = 0;
         foreach ($newItems as $category_name => $items) {
             if ($isFrist) { ?>
-                <div class="product_new">
+                <div class="product_new contaniner_24">
                     <div class="product_new_tit"><label><?php echo $category_name; ?></label><a href="">更多新品>></a></div>
                     <div class="product_c">
                         <div class="product_new_b">
@@ -168,7 +168,7 @@ EOF;
                     </div>
                 </div>
            <?php } else { ?>
-                <div class="product_cate">
+                <div class="product_cate contaniner_24">
                     <div class="product_cate_tit<?php echo $num; ?>"><label><?php echo $category_name; ?></label><a href="">更多新品>></a></div>
                     <div class="product_ca">
                         <div class="product_list_ca">

@@ -1,8 +1,8 @@
 <?php
 
  $this->beginContent('//layouts/main'); ?>
-<div class="big-box">
-    <div class="big-box-left">
+<div class="big-box container_24">
+    <div class="big-box-left grid_5">
         <div class="box">
             <div class="box-title">My account</div>
             <div class="box-content">
@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    <div class="big-box-right">
+    <div class="big-box-right grid_19">
         <div id="content">
             <?php echo $content; ?>
         </div><!-- content -->

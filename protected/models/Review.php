@@ -184,4 +184,18 @@ class Review extends CActiveRecord
            return $num;
         }
     }
+
+
+    public function afterSave(){
+        if($this->entity_id==1){
+            $num=self::model()->count(array(
+                'condition'=>'entity_pk_value=:entity_pk_value and entity_id=:entity_id ',
+                'params'=> array(':entity_pk_value' =>$this->entity_pk_value, ':entity_id' =>1),
+            ));
+            $model=Item::model()->findByPk($this->entity_pk_value);
+            $model->review_count=$num;
+            $model->save();
+            return parent::afterSave();
+        }
+    }
 }

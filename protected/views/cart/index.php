@@ -7,9 +7,10 @@ Yii::app()->clientScript->registerCoreScript('jquery');
 <script type="text/javascript">
     $(document).ready(function() {
         $("#updateCart").click(function (event) {
-            $('#cartForm').submit(); 
+            $('#cartForm').submit();
         });
     });
+
 </script>
 <div class="box">
     <div class="box-title">购物车</div>
@@ -25,7 +26,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 <th width="16%">操作</th>
             </tr>
             <?php
-//            print_r($mycart);
+            print_r($mycart);
             if($mycart){
                 $i=1;
             foreach($mycart as $m){?>
@@ -37,10 +38,10 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 <td><?php echo $m['subtotal'] ?>元</td>
                 <td><?php echo CHtml::link('移除', array('/cart/delete', 'rowid'=>$m['rowid']))?></td>
             </tr>
-            <?php 
+            <?php
             $i++;
             }
-            
+
             }else{
             ?>
              <tr>
