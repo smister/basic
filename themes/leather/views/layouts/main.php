@@ -67,14 +67,7 @@
         ?>
     </ul>
 </div>
-<div class="container_24">
-    <?php if(isset($this->breadcrumbs)):?>
-        <?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-    <?php endif?>
     <?php echo $content; ?>
-</div>
 <div class="footer">
     <div class="foot_c">
         <div class="foot_new">
