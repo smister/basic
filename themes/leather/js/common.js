@@ -18,7 +18,7 @@ function addFavorite() {
             window.sidebar.addPanel(title, url, "");
         }
         catch (e) {
-            alert("加入收藏失败，请使用Ctrl+D进行添加");
+            showPopup("加入收藏失败，请使用Ctrl+D进行添加");
         }
     }
 }

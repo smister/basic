@@ -85,6 +85,7 @@ class OrderController extends Controller
                         'condition' => 'contact_id =' . $_POST['delivery_address'] . ' AND user_id = ' . Yii::app()->user->id
                     ));
                     $address = AddressResult::model()->find($cri);
+                    $model->order_id=F::get_order_id();
                     $model->receiver_name = $address->contact_name;
                     $model->receiver_country = $address->country;
                     $model->receiver_state = $address->state;

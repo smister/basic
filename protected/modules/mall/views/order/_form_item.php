@@ -40,7 +40,6 @@
 
 
 <?php if (isset($Item)) {
-//    var_dump($ItemSku);die;
     foreach ($Item as $key1=>$item) {
         foreach ($item->orderItems as $key2=>$orderItem) {
             ?>
