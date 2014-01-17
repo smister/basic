@@ -33,6 +33,7 @@ class ServerFileInput extends CInputWidget
                 echo "</div></div>";
             }
             echo '<div id="browse-image-btn" class="img-plus">&#43;</div>';
+            echo "<button type='button' id='openElfinder'>upload</button>";
 
             $input = '<input name="' . $modelName . '[' . $this->attribute . '][]" id="' . $modelName . '_' . $this->attribute . '" type="hidden" value="\' + url + \'">';
             foreach ($this->attributes as $attr) {
@@ -47,15 +48,19 @@ class ServerFileInput extends CInputWidget
             $('#browse-image-btn').before(html);
 EOF;
         } else {
+            echo "<div>upload picture:&nbsp;&nbsp;&nbsp;&nbsp;<button type='button' id='openElfinder'>upload</button></div>";
             echo "<div id='browse-image-btn' class='img-item' style='cursor: pointer'>";
             echo CHtml::image($this->model->{$this->attribute});
             echo CHtml::activeHiddenField($this->model, $this->attribute);
             echo "</div>";
 
+            echo "<div id='hidden-browse-image-btn'></div>";
+            echo "</div>";
             $input = '<input name="' . $modelName . '[' . $this->attribute . ']" id="' . $modelName . '_' . $this->attribute . '" type="hidden" value="\' + url + \'">';
             $jsContent = <<<EOF
             var html = "<img src='" + url + "'>" + '$input';
             $('#browse-image-btn').html(html);
+            $('#hidden-browse-image-btn').html(html);
 EOF;
         }
 
@@ -63,7 +68,17 @@ EOF;
     #img-area {
         min-height: 70px;
     }
-
+    #hidden-browse-image-btn{
+        position:absolute;
+        top:30px;
+        width:1120px;
+        height:800px;
+        text-align:center;
+        display:none;
+    }
+     #hidden-browse-image-btn img{
+        margin:auto;
+    }
     .img-plus {
         width: 60px;
         height: 60px;
@@ -217,7 +232,7 @@ EOF;
         $js = <<<EOF
     var imgList = $('#img-area'), elpopups;
     // open elfinder popup
-    $('#browse-image-btn').click(function () {
+    $('#openElfinder').click(function () {
         var html;
         // if elfinder has not been initiated, create it
         if (!elpopups) {
@@ -231,8 +246,12 @@ EOF;
         // "_blank",
         // "toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=1552, height=822");
     });
-
-
+    $('#browse-image-btn').click(function(){
+        $('#hidden-browse-image-btn').toggle();
+    })
+    $('#hidden-browse-image-btn').click(function(){
+        $('#hidden-browse-image-btn').toggle();
+    })
 
     imgList.on('click', '.del',function () {
         $(this).closest('.img-item').remove();
