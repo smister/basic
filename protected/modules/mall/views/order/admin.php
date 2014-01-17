@@ -1,50 +1,54 @@
 <?php
-$this->breadcrumbs=array(
-	'Orders'=>array('index'),
-	'Manage',
+$this->breadcrumbs = array(
+    'Orders' => array('index'),
+    'Manage',
 );
 
 ?>
 <h1>Manage Orders</h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+    You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
+        &lt;&gt;</b>
+    or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
-<?php echo CHtml::link('<div class="btn btn-primary">Create Order</div>','#',array('class'=>'search-button',)); ?>
+<?php echo CHtml::link('<div class="btn btn-primary">Create Order</div>', '#', array('class' => 'search-button',)); ?>
 <div class="search-form" style="display:none">
-
-    <?php $this->renderPartial('select_user',array(
-        'users'=>$users,
+    <?php $this->renderPartial('select_user', array(
+        'users' => $users,
     )); ?>
 </div>
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
-	'id'=>'order-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
+    'id' => 'order-grid',
+    'dataProvider' => $model->search(),
+    'filter' => $model,
+    'columns' => array(
 
-		'order_id',
-        'user_id',
+        'order_id',
+        array(
+            'name' => 'user_id',
+            'value' => 'Tbfunction::getUser($data->user_id)',
+            'filter' => Tbfunction::showUser(),
+        ),
         array(
             'name' => 'pay_status',
-            'value' => '$data->showPayState()',
-            'filter' => array('0' => '待支付', '1' => '已支付' ),
+            'value' => 'Tbfunction::showPayState($data->pay_status)',
+            'filter' => Tbfunction::ReturnPayStatus(),
         ),
         array(
             'name' => 'ship_status',
             'value' => '$data->showShipState()',
-            'filter' => array('0' => '未发货', '1' => '已发货' ),
+            'filter' => Tbfunction::ReturnShipStatus(),
         ),
         array(
             'name' => 'refund_status',
             'value' => '$data->showRefundState()',
-            'filter' => array('0' => '未退货', '1' => '已退货' ),
+            'filter' => Tbfunction::ReturnRefundStatus(),
         ),
         array(
             'name' => 'payment_method_id',
             'value' => '$data->showPayMethod()',
-            'filter' => array('0' => '未设置', '1' => '支付宝','2'=>'银行卡支付' ),
+            'filter' => Tbfunction::ReturnPayMethod(),
         ),
         'pay_fee',
         'ship_fee',
@@ -52,15 +56,22 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         array(
             'name' => 'shipping_method_id',
             'value' => '$data->showShipMethod()',
-            'filter' => array('1' => '平邮', '2' => '快递','3'=>'EMS' ),
+            'filter' => Tbfunction::ReturnShipMethod(),
         ),
- array(
-     'name' => 'create_time',
-     'value' => 'date("Y年m月d日 H:i:s",$data->create_time +(8 * 3600))',
- ),
-		array(
-			'class'=>'bootstrap.widgets.TbButtonColumn',
-		),
-	),
+        array(
+            'name' => 'create_time',
+            'value' => 'date("Y年m月d日 H:i:s",$data->create_time)',
+        ),
+
+        array(
+            'name' => 'receiver_name',
+        ),
+        array(
+            'value' => 'Tbfunction::deliver_goods($data->order_id)',
+        ),
+        array(
+            'class' => 'bootstrap.widgets.TbButtonColumn',
+        ),
+    ),
 ));
 ?>

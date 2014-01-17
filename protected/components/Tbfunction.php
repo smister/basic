@@ -16,4 +16,60 @@ class Tbfunction {
     {
         echo  CHtml::link('Add',array('create','user_id'=>$id),array('class'=>'btn btn-primary'));
     }
+    public function view_user($id){
+        echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
+    }
+    public function getUser($user_id)
+    {
+        $user = Users::model()->findByAttributes(array('id' => $user_id));
+        return $user->username;
+    }
+    public function showUser()
+    {
+        $data_user=array();
+        $users= Users::model()->findAll();
+        foreach($users as $user){
+            if($user->superuser!=1){
+                $data_user[$user->id]=$user->username;}
+        }
+        return $data_user;
+    }
+
+    static public function deliver_goods()
+    {
+        echo '<a  href="javascript:void(0)" class="btn btn-danger" id="deliverGoods">发货</a>';
+    }
+
+    public function state($id){
+        echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
+    }
+
+    public function ReturnStatus(){
+        return array('0' => '无效', '1' => '有效');
+    }
+
+    public function ReturnPayStatus(){
+        return array('0' => '待支付', '1' => '已支付');
+    }
+
+    public function showPayState($pay_status){
+        if($pay_status==1){echo '已支付'; }
+        else echo '待支付';
+    }
+
+    public function ReturnShipStatus(){
+        return array('0' => '未发货', '1' => '已发货');
+    }
+
+    public function ReturnRefundStatus(){
+        return array('0' => '未退款', '1' => '已退款');
+    }
+
+    public function ReturnShipMethod(){
+        return array('' => '请选择', '1' => '平邮', '2' => '快递', '3' => 'EMS');
+    }
+
+    public function ReturnPayMethod(){
+        return array('0' => '请选择', '1' => '支付宝', '2' => '银行卡');
+    }
 }

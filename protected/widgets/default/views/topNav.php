@@ -1,5 +1,5 @@
 <?php
-Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . "/themes/pidiao/js/login_nav.js");
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . "/js/login_nav.js");
 ?>
 
 <div class="top_right">
@@ -9,8 +9,8 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . "/themes/pidi
             |<?php echo CHtml::link('注册', array('/user/registration')) ?></div>
     <?php } else { ?>
         <div class="login-nav">欢迎您，<?php echo Yii::app()->user->name ?></div>
-        <div class="login-nav"><?php echo CHtml::link('退出', array('/user/logout')) ?></div>
         <div class="login-nav2"><?php $this->widget('zii.widgets.CMenu', array(
+                'htmlOptions'=>array("style"=>"margin: 0; padding: 0;"),
                 'items'=>array(
                     array('label'=>'会员中心', 'url'=>array('//member'),'itemOptions'=>array('class'=>'personal-center')),
                     array('label'=>'personal data', 'url'=>array('//user/profile/edit'),'itemOptions'=>array('class'=>'personal-list')),
@@ -20,7 +20,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . "/themes/pidi
                 ),
             ));
             ?></div>
+        <div class="login-nav"><?php echo CHtml::link('退出', array('/user/logout')) ?></div>
     <?php } ?>
     <div class="top_daohang">网站导航<i>arrow</i></div>
-    <a href="<?php echo Yii::app()->createUrl('/translate/translate/set', array('lang' => 'zh_cn')) ?>" class="current">中文</a><a href="<?php echo Yii::app()->createUrl('/translate/translate/set', array('lang' => 'en')) ?>">English</a>
 </div>

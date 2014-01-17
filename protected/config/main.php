@@ -23,7 +23,7 @@ return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
     'language' => 'zh_cn',
-    'theme' => 'pidiao',
+    'theme' => 'leather',
     // preloading 'log' component
     'preload' => array('log'),//, 'translate'),
     // autoloading model and component classes
@@ -37,12 +37,14 @@ return array(
         'application.modules.user.components.*',
 //        'application.modules.translate.TranslateModule',
         'bootstrap.helpers.TbHtml',
-        'ext.shoppingCart.*'
+        'ext.shoppingCart.*',
+        'application.modules.install.models.*',
+        'application.modules.install.components.*',
     ),
     // path aliases
     'aliases' => array(
-    // Uncomment the following statement to register path alias.
-    //    'alias' => realpath(__DIR__ . '/../extensions/aliasRealPath'), // change it to fit your need
+        // Uncomment the following statement to register path alias.
+        //    'alias' => realpath(__DIR__ . '/../extensions/aliasRealPath'), // change it to fit your need
     ),
     'modules' => array(
         'comments' => array(

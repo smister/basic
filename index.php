@@ -17,9 +17,4 @@ $config=CMap::mergeArray($base, $local);
 
 Yii::createWebApplication($config);
 
-//$settings=Settings::model()->find('id=:id',array(':id'=>22));
-if(F::sg(maintain,maintain))
-    Yii::app()->catchAllRequest = array('update/index');
-
 Yii::app()->run();
-

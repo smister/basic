@@ -23,6 +23,50 @@ class OrderController extends Controller
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
+    /*  public function actionCreate($user_id)
+      {
+          $model = new Order;
+          $model->user_id = $user_id;
+          $item = new Item;
+          // Uncomment the following line if AJAX validation is needed
+          // $this->performAjaxValidation($model)
+          if (isset($_POST['Order']) && isset($_POST['Item'])) {
+              $transaction = $model->dbConnection->beginTransaction();
+              try {
+                  $model->attributes = $_POST['Order'];
+                  $model->create_time = time();
+                  if ($model->save()) {
+                      foreach ($_POST['Item']['item_id'] as $itemId) {
+                          $items = Item::model()->findByPk($itemId);
+                          $orderItem = new OrderItem;
+                          $orderItem->item_id = $itemId;
+                          $orderItem->title = $items->title;
+                          $orderItem->desc = $items->desc;
+                          $orderItem->pic = $items->getMainPic();
+                          $orderItem->props_name = $items->props_name;
+                          $orderItem->price = $items->price;
+                          $orderItem->quantity = 1; //need to update
+                          $orderItem->total_price = $orderItem->price * $orderItem->quantity;
+                          $orderItem->order_id = $model->order_id;
+                          if (!$orderItem->save()) {
+                              throw new Exception('save order item fail');
+                          }
+                      }
+                  } else {
+                      throw new Exception('save order item fail');
+                  }
+                  $transaction->commit();
+                  $this->redirect(array('view', 'id' => $model->order_id));
+              } catch (Exception $e) {
+                  $transaction->rollBack();
+              }
+          }
+          $this->render('create', array(
+              'model' => $model, 'item' => $item
+          ));
+      }
+  */
+
     public function actionCreate($user_id)
     {
         $model = new Order;
@@ -30,30 +74,35 @@ class OrderController extends Controller
         $item = new Item;
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model)
-        if (isset($_POST['Order']) && isset($_POST['Item'])) {
+        if (isset($_POST['Order']) && isset($_POST['Sku'])) {
             $transaction = $model->dbConnection->beginTransaction();
             try {
                 $model->attributes = $_POST['Order'];
+                $model->order_id=F::get_order_id();
                 $model->create_time = time();
                 if ($model->save()) {
-                    foreach ($_POST['Item']['item_id'] as $itemId) {
-                        $orderItem = OrderItem::model()->findAll("item_id='$itemId'");
-                        if (!$orderItem) {
-                            $items = Item::model()->findByPk($itemId);
-                            $orderItem = new OrderItem;
-                            $orderItem->item_id = $itemId;
-                            $orderItem->title = $items->title;
-                            $orderItem->desc = $items->desc;
-                            //                    $orderItem->pic = $items->getMainPic();   //need update;
-                            $orderItem->props_name = $items->props_name;
-                            $orderItem->price = $items->price;
-                            $orderItem->quantity = 1; //need to update
-                            $orderItem->total_price = $orderItem->price * $orderItem->quantity;
-                            $orderItem->order_id = $model->order_id;
-                            if (!$orderItem->save()) {
-
-                                throw new Exception('save order item fail');
-                            }
+                    foreach ($_POST['Sku']['item_id'] as $key => $itemId) {
+                        $items = Item::model()->findByPk($itemId);
+                        $sku = Sku::model()->findByPk($_POST['Sku']['sku_id'][$key]);
+                        if ($sku->stock < $_POST['Item-number'][$key]) {
+                            throw new Exception('Stock is not enough');
+                        }
+                        $orderItem = new OrderItem;
+                        $orderItem->item_id = $itemId;
+                        $orderItem->title = $items->title;
+                        $orderItem->desc = $items->desc;
+                        $orderItem->pic = $items->getMainPic();
+                        $orderItem->props_name = $sku->props_name;
+                        $orderItem->price = $sku->price;
+                        $orderItem->quantity = $_POST['Item-number'][$key]; //need to update
+                        $sku->stock -= $_POST['Item-number'][$key];
+                        if (!$sku->save()) {
+                            throw new Exception('Cut down stock fail');
+                        }
+                        $orderItem->total_price = $orderItem->price * $orderItem->quantity;
+                        $orderItem->order_id = $model->order_id;
+                        if (!$orderItem->save()) {
+                            throw new Exception('save order item fail');
                         }
                     }
                 } else {
@@ -66,7 +115,7 @@ class OrderController extends Controller
             }
         }
         $this->render('create', array(
-            'model' => $model, 'item' => $item
+            'model' => $model, 'Item' => $item
         ));
     }
 
@@ -78,46 +127,76 @@ class OrderController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->loadModel($id);
-        $item = Item::model()->with('orderItems')->findAll(new CDbCriteria(array('condition' => "order_id='$id'")));
-        if (isset($_POST['Order']) && isset($_POST['Item'])) {
+        $Item = Item::model()->with('orderItems')->findAll(new CDbCriteria(array('condition' => "order_id='$id'")));
+        foreach ($Item as $key1 => $items)
+            foreach ($items->orderItems as $key2 => $orderItem) {
+                $ItemSku[$key1][$key2] = Sku::model()->findByAttributes(array('item_id' => $orderItem->item_id, 'props_name' => $orderItem->props_name, 'price' => $orderItem->price));
+            }
+        if (isset($_POST['Order']) && isset($_POST['Sku'])) {
             $transaction = $model->dbConnection->beginTransaction();
             try {
                 $model->attributes = $_POST['Order'];
                 $model->update_time = time();
                 if ($model->save()) {
-                    $originals = OrderItem::model()->findAll("order_id='$model->order_id'");
                     $flag = array();
-                    foreach ($originals as $key => $original) {
-                        foreach ($_POST['Item']['item_id'] as $itemId) {
-                            if ($original->item_id == $itemId) {
-                                $flag[$key] = 1;
-                            }
+                    $OrderItem = OrderItem::model()->findAllByAttributes(array('order_id' => $id));
+                    foreach ($OrderItem as $key => $original) {
+                        $criteria=new CDbCriteria();
+                        $criteria->addCondition('item_id=:item_id');
+                        $criteria->addCondition('price=:price');
+                        $criteria->addCondition('props_name=:props_name');
+                        $criteria->params[':item_id']=$original->item_id;
+                        $criteria->params[':price']=$original->price;
+                        $criteria->params[':props_name']=$original->props_name;
+                        $sku = Sku::model()->find($criteria);
+                        $sku->stock+=$original->quantity;
+                        $sku->save();
+                        foreach ($_POST['Sku']['sku_id'] as $skuId) {
+                            if ($sku->sku_id == $skuId) $flag[$key] = 1;
                         }
                     }
-                    foreach ($originals as $key => $original) {
-                        if ($flag[$key] != 1) {
+                    foreach ($OrderItem as $key => $original) {
+                            if ($flag[$key] != 1)
+                        {
                             $original->delete();
                         }
                     }
-                    foreach ($_POST['Item']['item_id'] as $itemId) {
-                        $items = Item::model()->findByPk($itemId);
-                        $orderItem = OrderItem::model()->find("item_id='$itemId'");
-                        if (!$orderItem) {
-                            $orderItem = new OrderItem;
-                            $orderItem->item_id = $itemId;
-                            $orderItem->title = $items->title;
-                            $orderItem->desc = $items->desc;
-                            //                    $orderItem->pic = $items->getMainPic();   //need update;
-                            $orderItem->props_name = $items->props_name;
-                            $orderItem->price = $items->price;
-                            $orderItem->quantity = 1; //need to update
-                            $orderItem->total_price = $orderItem->price * $orderItem->quantity;
-                            $orderItem->order_id = $model->order_id;
-                            if (!$orderItem->save()) {
-                                throw new Exception('save order item fail');
-                            }
+                    foreach ($_POST['Sku']['item_id'] as $key => $itemId) {
+                        $item = Item::model()->findByPk($itemId);
+                        $sku = Sku::model()->findByPk($_POST['Sku']['sku_id'][$key]);
+                        if ($sku->stock < $_POST['Item-number'][$key]) {
+                            throw new Exception('Stock is not enough');
+                        }
+                        $criteria=new CDbCriteria();
+                        $criteria->addCondition('item_id=:item_id');
+                        $criteria->addCondition('price=:price');
+                        $criteria->addCondition('props_name=:props_name');
+                        $criteria->params[':item_id']=$sku->item_id;
+                        $criteria->params[':price']=$sku->price;
+                        $criteria->params[':props_name']=$sku->props_name;
+                        $orderItem=OrderItem::model()->find($criteria);
+                        if(!isset($orderItem)){
+                        $orderItem=new OrderItem;
+                        $orderItem->item_id = $itemId;
+                        $orderItem->title = $item->title;
+                        $orderItem->desc = $item->desc;
+                        $orderItem->pic = $item->getMainPic();
+                        }
+                        $orderItem->props_name = $sku->props_name;
+                        $orderItem->price = $sku->price;
+                        $orderItem->quantity = $_POST['Item-number'][$key]; //need to update
+                        $sku->stock -= $_POST['Item-number'][$key];
+                        if (!$sku->save()) {
+                            throw new Exception('Cut down stock fail');
+                        }
+                        $orderItem->total_price = $orderItem->price * $orderItem->quantity;
+                        $orderItem->order_id = $model->order_id;
+                        if (!$orderItem->save()) {
+                            throw new Exception('save order item fail');
                         }
                     }
+                } else {
+                    throw new Exception('save order fail');
                 }
                 $transaction->commit();
                 $this->redirect(array('view', 'id' => $model->order_id));
@@ -126,7 +205,7 @@ class OrderController extends Controller
             }
         }
         $this->render('update', array(
-            'model' => $model, 'item' => $item
+            'model' => $model, 'Item' => $Item, 'ItemSku' => $ItemSku
         ));
     }
 
@@ -139,13 +218,17 @@ class OrderController extends Controller
     {
         if (Yii::app()->request->isPostRequest) {
             // we only allow deletion via POST request
+            $OrderItems = OrderItem::model()->findAllByAttributes(array('order_id' => $id));
+            foreach ($OrderItems as $OrderItem) {
+                $OrderItem->delete();
+            }
             $this->loadModel($id)->delete();
-
             // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if (!isset($_GET['ajax']))
                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-        } else
+        } else {
             throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
+        }
     }
 
     /**
@@ -169,11 +252,11 @@ class OrderController extends Controller
         $users = new Users('search');
         $users->unsetAttributes();
         if (isset($_GET['Users'])) {
-            print_r($_GET['Users']);
             $users->attributes = $_GET['Users'];
         }
-        if (isset($_GET['Order']))
+        if (isset($_GET['Order'])) {
             $model->attributes = $_GET['Order'];
+        }
         $this->render('admin', array(
             'model' => $model, 'users' => $users
         ));
@@ -236,5 +319,54 @@ class OrderController extends Controller
             $goods->attributes = $_GET['Item'];
         }
         $this->render('add_goods', array('goods' => $goods));
+    }
+
+    public function actionSelectProp()
+    {
+        $select_id = $_GET['selectItem'];
+        $items = Sku::model()->findAll(new CDbCriteria(array('condition' => "item_id='$select_id'")));
+        foreach ($items as $key => $item) {
+            $list[$key]['sku_id'] = $item->sku_id;
+            $props = json_decode($item->props, true);
+            $pro = '';
+            foreach ($props as $prop) {
+                $values = explode(':', $prop);
+                $itemProp = ItemProp::model()->findByPk($values[0]);
+                $propValue = PropValue::model()->findByPk($values[1]);
+                $pro .= "$itemProp->prop_name:$propValue->value_name" . ' ';
+            }
+            $list[$key]['prop'] = $pro;
+        }
+        echo CHtml::tag("option", array("value" => ''), CHtml::encode('请选择'), true);
+        foreach ($list as $item) {
+            echo CHtml::tag("option", array("value" => $item['sku_id']), CHtml::encode($item['prop']), true);
+        }
+    }
+
+    public function actionCheckStock()
+    {
+
+        $number = $_GET['number'];
+        $sku_id = $_GET['sku_id'];
+        $sku = Sku::model()->findByPk($sku_id);
+        $criteria=new CDbCriteria();
+        $criteria->addCondition('item_id=:item_id');
+        $criteria->addCondition('price=:price');
+        $criteria->addCondition('props_name=:props_name');
+        $criteria->params[':item_id']=$sku->item_id;
+        $criteria->params[':price']=$sku->price;
+        $criteria->params[':props_name']=$sku->props_name;
+        $orderItem=OrderItem::model()->find($criteria);
+        if (($sku->stock+$orderItem->quantity) < $number) echo 0;
+        else echo 1;
+
+    }
+
+    public function actionDeliverGoods($order_id)
+    {
+        $order = Order::model()->findByPk($order_id);
+        $order->ship_status = 1;
+        $order->save();
+        $this->redirect(array('/mall/order/admin'));
     }
 }

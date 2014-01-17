@@ -19,8 +19,6 @@ class EShoppingCart extends CMap {
 
 	public $cartId = __CLASS__;
 
-    public $profile;
-
     /**
      * Cart-wide discount sum
      * @var float
@@ -40,7 +38,6 @@ class EShoppingCart extends CMap {
      * Restores the shopping cart from the session
      */
     public function restoreFromSession() {
-        $this->restoreFromDB();
         $data = unserialize(Yii::app()->getUser()->getState($this->cartId));
         if (is_array($data) || $data instanceof Traversable)
             foreach ($data as $key => $product)
@@ -49,19 +46,27 @@ class EShoppingCart extends CMap {
 
     public function restoreFromDB() {
         if (Yii::app()->user->id) {
-            $this->profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
-            Yii::app()->getUser()->setState($this->cartId, $this->profile->cart);
+            $profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
+            if ($profile) {
+                $data = unserialize($profile->cart);
+                if (is_array($data) || $data instanceof Traversable)
+                    foreach ($data as $key => $product)
+                        if (!$this->contains($key))
+                            parent::add($key, $product);
+                $this->saveState();
+            }
         }
     }
 
-
-    /**
-     * Add item to the shopping cart
-     * If the position was previously added to the cart,
-     * then information about it is updated, and count increases by $quantity
-     * @param IECartPosition $position
-     * @param int count of elements positions
-     */
+   /***
+    *  /**
+    * Add item to the shopping cart
+    * If the position was previously added to the cart,
+    * then information about it is updated, and count increases by $quantity
+    * @param IECartPosition $position
+    * @param int count of elements positions
+    * @return bool
+    */
     public function put(IECartPosition $position, $quantity = 1) {
         $key = $position->getId();
         if ($this->itemAt($key) instanceof IECartPosition) {
@@ -69,9 +74,11 @@ class EShoppingCart extends CMap {
             $oldQuantity = $position->getQuantity();
             $quantity += $oldQuantity;
         }
+        if($this->update($position, $quantity))
+            return true;
 
-        $this->update($position, $quantity);
     }
+
 
     /**
      * Add $value items to position with $key specified
@@ -114,8 +121,6 @@ class EShoppingCart extends CMap {
         $position->attachBehavior("CartPosition", new ECartPositionBehaviour());
         $position->setRefresh($this->refresh);
 
-        $stock = $position->getStock();
-        $quantity = $stock < $quantity ? $stock : $quantity;
         $position->setQuantity($quantity);
 
         if ($position->getQuantity() < 1)
@@ -125,7 +130,9 @@ class EShoppingCart extends CMap {
 
         $this->applyDiscounts();
         $this->onUpdatePosition(new CEvent($this));
-        $this->saveState();
+        if($this->saveState()){
+            return true;
+        };
     }
 
     /**
@@ -134,10 +141,14 @@ class EShoppingCart extends CMap {
      */
     protected function saveState() {
         Yii::app()->getUser()->setState($this->cartId, serialize($this->toArray()));
-        if ($this->profile) {
-            $this->profile->cart = serialize($this->toArray());
-            $this->profile->save();
-            var_dump($this->profile);
+        if (Yii::app()->user->id) {
+            $profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
+            if ($profile) {
+                $profile->cart = serialize($this->toArray());
+               if($profile->save()) {
+                   return true;
+               }
+            }
         }
     }
 
@@ -242,4 +253,6 @@ class EShoppingCart extends CMap {
     {
         return !(bool)$this->getCount();
     }
+
+
 }

@@ -19,4 +19,6 @@
 return array (
   'Ei18n.connectionID "{id}" does not point to a valid CDbConnection application component.' => '',
   'Please fix the following input errors:' => '',
+  'You are not authorized to perform this action.' => '',
+  '{controller} cannot find the requested view "{view}".' => '',
 );
