@@ -101,7 +101,7 @@ class PaymentController extends Controller {
 	 */
 	public function actionAdmin()
 	{
-		$model=new Payment('search');
+		$model=new Payment;
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Payment']))
 			$model->attributes=$_GET['Payment'];
