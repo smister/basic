@@ -56,7 +56,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
         <span style="float:right;padding:5px 10px;"><?php echo CHtml::link('继续购物', array('/item-list-all'), array('class'=>'btn'))?></span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="float:right;padding:5px 10px;"><?php echo CHtml::link('更新购物车', '#', array('id'=>'updateCart', 'class'=>'btn'))?></span></td>
             </tr>
             <tr>
-                 <td colspan="6"><span style="float:right;padding:5px 10px;"><?php echo CHtml::link('结算', array('/order/checkout'), array('class'=>'btn1'))?></span></td>
+                 <td colspan="6"><span style="float:right;padding:5px 10px;"><?php echo CHtml::link('结算', array('/order/checkout'), array('class'=>'btn'))?></span></td>
              </tr>
         </table>
          <?php echo CHtml::endForm(); ?>
