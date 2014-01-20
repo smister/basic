@@ -1,101 +1,225 @@
-<?php
-$this->breadcrumbs=array(
-    'Orders'=>array('index'),
-    $model->order_id,
-);
-?>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/order.css"/>
+</head>
 
-    <h1>View Order #<?php echo $model->order_id; ?></h1>
+<body id="trade-order-detail" class="tm-buyer  ">
 
-<?php
-$this->widget('bootstrap.widgets.TbDetailView', array(
-    'data'=>$model,
-    'attributes'=>array(
-        'order_id',
-        array(
-            'name' => 'user_id',
-            'value' =>Tbfunction::getUser($model->user_id),
-        ),
-        array(
-            'name' => 'status',
-            'value' => Tbfunction::showStatus($model->status),
-        ),
-        array(
-            'name' => 'ship_status',
-            'value' => Tbfunction::showShipStatus($model->ship_status),
-        ),
-        array(
-            'name' => 'refund_status',
-            'value' => Tbfunction::showRefundStatus($model->refund_status),
-        ),
-        array(
-            'name' => 'pay_status',
-            'value' => Tbfunction::showPayStatus($model->pay_status),
-        ),
-        'total_fee',
-        'ship_fee',
-        'pay_fee',
-        array(
-            'name' => 'payment_method_id',
-            'value' => Tbfunction::showPayMethod($model->payment_method_id),
-        ),
-        array(
-            'name' => 'shipping_method_id',
-            'value' => Tbfunction::showShipMethod($model->shipping_method_id),
-        ),
-        array(
-            'name' => 'receiver_address',
-            'value' => 'Order::showDetailAddress',
-        ),
-        'receiver_zip',
-        'receiver_mobile',
-        'receiver_phone',
-        'memo',
-        array(
-            'name' => 'pay_time',
-            'value' => date('Y年m月d日 H:i:s',$model->pay_time +(8 * 3600)),
-        ),
-        array(
-            'name' => 'ship_time',
-            'value' => date('Y年m月d日 H:i:s',$model->ship_time +(8 * 3600)),
-        ),
-        array(
-            'name' => 'create_time',
-            'value' => date('Y年m月d日 H:i:s',$model->create_time +(8 * 3600)),
-        ),
-        array(
-            'name' => 'update_time',
-            'value' => date('Y年m月d日 H:i:s',$model->update_time +(8 * 3600)),
-        ),
-    ),
-)); ?>
-<?php
-    if(!empty($items)){
-?>
-    <table width="100%" border="1" cellspacing="1" cellpadding="0" style="text-align:center;vertical-align:middle">
-    <tr>
-<!--        <th width="16%">图片</th>-->
-        <th width="16%">名称</th>
-        <th width="16%">价格</th>
-<!--        <th width="16%">数量</th>-->
-        <th width="16%">描述</th>
-        <th width="16%">运费</th>
+<div class="tabs-container" id="J_TabView">
+<ul class="tabs-nav">
+    <li class="current ks-switchable-trigger-internal164"><a name="tab0">订单信息</a></li>
+</ul>
+<div class="tabs-panels">
+<div class="info-box order-info ks-switchable-panel-internal165" style="display: block;">
+<h2>订单信息</h2>
+<div class="bd">
+<div class="addr_and_note">
+    <dl>
+        <dt>
+            收货地址
+            ：
+        </dt>
+        <dd>
+            <?php
+            echo $Order->receiver_name.' ，'.$Order->receiver_mobile.' ，';
+            echo Order::model()->showDetailAddress($Order);
+            ?>
+        </dd>
+        <dt>买家留言：</dt>
+        <dd>
+            <p id="J_ExistMessage"></p>
+        </dd>
+    </dl>
+</div>
+
+<hr>
+<!-- 订单信息 -->
+<div class="misc-info">
+    <h3>订单信息</h3>
+    <dl>
+        <dt>订单编号：</dt>
+        <dd>
+            <?php
+            echo $Order->order_id;
+            ?>
+        </dd>
+        <dt>成交时间：</dt>
+        <dd>
+            <?php
+            if($Order->create_time){
+                echo date("Y年m月d日 H:i:s",$Order->create_time);
+            }
+            ?>
+        </dd></dl>
+    <dl>
+        <dt>发货时间：</dt>
+        <dd>
+            <?php
+            if($Order->ship_time){
+                echo date("Y年m月d日 H:i:s",$Order->ship_time);
+            }
+            ?>
+        </dd>
+
+        <dt>付款时间：</dt>
+        <dd>
+            <?php
+            if($Order->pay_time){
+                echo date("Y年m月d日 H:i:s",$Order->pay_time);
+            }
+            ?>
+        </dd>
+
+        <dt>&nbsp;</dt>
+        <dd>&nbsp;</dd>
+    </dl>
+    <div class="clearfix"></div>
+</div>
+
+<hr>
+<div class="misc-info">
+    <h3>订单详情</h3>
+    <dl>
+        <dt>订单状态：</dt>
+        <dd>
+            <?php
+            echo Tbfunction::showStatus($Order->status);
+            ?>
+        </dd>
+        <dt>支付状态：</dt>
+        <dd>
+            <?php
+            echo Tbfunction::showPayStatus($Order->pay_status);
+            ?>
+        </dd></dl>
+    <dl>
+        <dt>发货状态：</dt>
+        <dd>
+            <?php
+            echo Tbfunction::showShipStatus($Order->ship_status);
+            ?>
+        </dd>
+
+        <dt>退款状态：</dt>
+        <dd>
+            <?php
+            echo Tbfunction::showRefundStatus($Order->refund_status);
+            ?>
+        </dd>
+
+        <dt>&nbsp;</dt>
+        <dd>&nbsp;</dd>
+    </dl>
+    <div class="clearfix"></div>
+</div>
+<!-- 订单信息 -->
+<table>
+    <colgroup>
+        <col class="item">
+        <col class="sku">
+        <!-- 宝贝 -->
+
+        <col class="status">
+        <!-- 交易状态 -->
+
+        <col class="service">
+        <!-- 服务 -->
+
+        <col class="price">
+        <!-- 单价（元） -->
+
+        <col class="num">
+        <!-- 数量 -->
+
+        <col class="discount">
+        <!-- 优惠 -->
+
+        <col class="order-price">
+
+        <!-- 合计（元） -->
+        <!-- 买/卖家信息 -->
+    </colgroup>
+    <tbody class="order">
+    <tr class="sep-row">
+        <td colspan="8"></td>
     </tr>
+    <tr class="order-hd">
+        <th class="item">宝贝</th>
+        <th class="sku">宝贝属性</th>
+        <th class="price">单价(元)</th>
+        <th class="num">数量</th>
+        <th class="order-price last">商品总价(元)</th>
+    </tr>
+
     <?php
-        foreach($items as $item){
-    ?>
-        <tr>
-<!--            <td>--><?php //echo CHtml::hiddenField($i.'[rowid]', $m['rowid']) ?><!----><?php //echo $m['pic_url'] ?><!--</td>-->
-            <td><?php echo $item['title']; ?></td>
-            <td><?php echo $item['currency'].$item['price'];?></td>
-<!--            <td>--><?php //echo CHtml::textField($i.'[qty]', $m['qty'], array('size' => '4', 'maxlength' => '5')) ?><!--</td>-->
-            <td><?php echo $item['desc']; ?></td>
-            <td><?php echo $item['shipping_fee'];?></td>
+    foreach($Order_item as $orderItems){
+
+        ?>
+        <tr class="order-item">
+            <td class="item">
+                <div class="pic-info">
+                    <div class="pic s50">
+                        <a target="_blank" href="javascript:void(0)" title="商品图片">
+                            <img alt="查看宝贝详情" src="<?php echo $orderItems->pic ?>" />
+                        </a>
+                    </div>
+                </div>
+                <div class="txt-info">
+                    <div class="desc">
+                        <span class="name"><a href="#" title="" target="_blank"><?php echo $orderItems->title ?></a></span>
+                        <br>
+                    </div>
+                </div>
+            </td>
+            <td class="sku">
+                <div class="props"><span><?php echo implode(',',json_decode($orderItems->props_name, true)); ?></span></div>
+            </td>
+
+            <td class="price">
+                <?php
+                echo $orderItems->price;
+                ?>
+            </td>
+            <td class="num">
+                <?php
+                echo $orderItems->quantity;
+                ?>
+            </td>
+            <td class="order-price" rowspan="1">
+                <?php
+                echo $orderItems->total_price;
+                ?>
+                <li>
+                    (快递: <?php echo $Order->ship_fee;?>)
+                </li>
+            </td>
         </tr>
-    <?php
-        }
-    ?>
-    </table>
-<?php
+
+        <?php
+        $pay += $orderItems->total_price;
     }
-?>
+    ?>
+    <tr class="order-ft">
+        <td colspan="8">
+            <div class="get-money" colspan="6">
+                <br>
+                实付款：
+                <strong>
+                    <?php
+                    echo $pay;
+                    ?>
+                </strong>元
+                <br>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+</div>
+</div><!-- end order-info -->
+
+</body>
+</html>

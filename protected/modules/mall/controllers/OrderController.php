@@ -14,8 +14,10 @@ class OrderController extends Controller
      */
     public function actionView($id)
     {
+        $order = Order::model()->findByPk($id);
+        $order_items = $order->orderItems;
         $this->render('view', array(
-            'model' => $this->loadModel($id),
+            'Order' => $order, 'Order_item' => $order_items
         ));
     }
 

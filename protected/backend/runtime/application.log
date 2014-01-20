@@ -24092,3 +24092,2105 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389942397573
 in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (342)
 in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:13:53 [error] [exception.CException] exception 'CException' with message 'Order and its behaviors do not have a method or closure named "date".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('date', Array)
+#1 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(59): CActiveRecord->__call('date', Array)
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(59): Order->date('Y???m???d??? H:...', NULL)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(19): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140117977926')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 10:13:54 [error] [exception.CException] exception 'CException' with message 'Order and its behaviors do not have a method or closure named "date".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('date', Array)
+#1 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(59): CActiveRecord->__call('date', Array)
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(59): Order->date('Y???m???d??? H:...', NULL)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(19): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140117977926')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 10:34:52 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 10:34:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id/20140117977926
+---
+2014/01/20 10:34:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 10:34:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id/20140117977926
+---
+2014/01/20 10:35:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 10:35:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id/20140117977926
+---
+2014/01/20 10:35:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 10:35:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 10:35:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id/20140117977926
+---
+2014/01/20 10:35:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 10:35:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 10:35:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id/20140117977926
+---
+2014/01/20 10:35:04 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 10:35:04 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id/20140117977926
+---
+2014/01/20 10:35:15 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 10:35:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#5 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#6 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id/20140117977926
+---
+2014/01/20 10:44:30 [error] [php] Object of class Item could not be converted to string (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:20)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#3 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#5 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#7 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (20)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:45:14 [error] [php] Object of class Item could not be converted to string (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:20)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#3 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#5 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#7 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (20)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:45:15 [error] [php] Object of class Item could not be converted to string (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:20)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#3 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#5 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#7 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (20)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:45:45 [error] [php] Object of class Item could not be converted to string (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:21)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#3 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#5 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#7 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (21)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:45:45 [error] [php] Object of class Item could not be converted to string (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:21)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#3 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#5 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#7 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (21)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:45:46 [error] [php] Object of class Item could not be converted to string (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:21)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#3 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#5 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#7 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (21)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:45:46 [error] [php] Object of class Item could not be converted to string (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:21)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#3 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#5 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#7 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (21)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:45:46 [error] [php] Object of class Item could not be converted to string (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:21)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#3 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#5 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#7 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (21)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:45:46 [error] [php] Object of class Item could not be converted to string (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:21)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#3 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#5 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#7 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (21)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:45:46 [error] [php] Object of class Item could not be converted to string (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:21)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#3 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#5 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#7 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (21)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:45:46 [error] [php] Object of class Item could not be converted to string (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:21)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#3 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#4 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#5 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#7 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (21)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 10:56:40 [error] [php] Wrong parameter count for var_dump() (D:\wamp\www\basic\protected\modules\mall\views\order\view.php:11)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(870): OrderController->renderFile()
+#2 D:\wamp\www\yii\framework\web\CController.php(783): OrderController->renderPartial()
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(24): OrderController->render()
+#4 unknown(0): OrderController->actionView()
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#9 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+in D:\wamp\www\basic\protected\modules\mall\views\order\view.php (11)
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (24)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:11:19 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:347)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1390187479654
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (347)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:23:15 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:347)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1390188195394
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (347)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:26:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:280
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(135): OrderController->loadModel('68')
+#1 [internal function]: OrderController->actionUpdate('68')
+#2 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#3 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#4 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#8 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
+#9 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#10 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/basic/backend.php/mall/order/update/id/68
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:26:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:280
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(135): OrderController->loadModel('68')
+#1 [internal function]: OrderController->actionUpdate('68')
+#2 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#3 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#4 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#8 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
+#9 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#10 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/basic/backend.php/mall/order/update/id/68
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/68
+---
+2014/01/20 11:36:59 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:36:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:37:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:37:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 11:38:15 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.').
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (17)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 11:38:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item` `t` WHERE (is_show = 1) AND (order_id='.20140117977926.')' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140117977926')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140117977926
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 13:19:59 [error] [exception.CDbException] exception 'CDbException' with message 'Table "item" 没有名为 "order_id" 的栏位.' in D:\wamp\www\yii\framework\db\schema\CDbCommandBuilder.php:694
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1518): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(17): CActiveRecord->findByAttributes(Array)
+#2 [internal function]: OrderController->actionView('20140120300906')
+#3 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#4 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#5 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#9 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#10 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#11 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#12 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:23:54 [error] [exception.CException] exception 'CException' with message '属性 "Order.item_id" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('item_id')
+#1 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(19): CActiveRecord->__get('item_id')
+#2 [internal function]: OrderController->actionView('20140120300906')
+#3 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#4 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#5 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#9 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#10 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#11 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#12 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 13:23:55 [error] [exception.CException] exception 'CException' with message '属性 "Order.item_id" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('item_id')
+#1 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(19): CActiveRecord->__get('item_id')
+#2 [internal function]: OrderController->actionView('20140120300906')
+#3 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#4 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#5 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#9 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#10 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#11 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#12 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 13:26:43 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:43 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:43 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:43 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:44 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:44 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:44 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:44 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:44 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:44 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:45 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:45 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:45 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:45 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:45 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:46 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:46 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:26:46 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:27:37 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:27:38 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:27:38 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:27:38 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(139): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:00 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(169): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:01 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(169): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:01 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(169): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:02 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(169): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:02 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(169): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:02 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(169): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:02 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(169): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:02 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(169): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:02 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(169): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:32 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(197): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:33 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(197): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:33 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(197): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:28:33 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(197): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(25): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 13:34:13 [error] [exception.CException] exception 'CException' with message '属性 "CDbCriteria.order_id" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\schema\CDbCriteria.php(160): CComponent->__set('order_id', '20140120300906')
+#1 D:\wamp\www\yii\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(18): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140120300906')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 13:37:37 [error] [exception.CException] exception 'CException' with message '属性 "CDbCriteria.item_id" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\schema\CDbCriteria.php(160): CComponent->__set('item_id', NULL)
+#1 D:\wamp\www\yii\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(21): CActiveRecord->findAll(Array)
+#4 [internal function]: OrderController->actionView('20140120300906')
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 14:13:58 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\view.php:126)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(870): OrderController->renderFile()
+#1 D:\wamp\www\yii\framework\web\CController.php(783): OrderController->renderPartial()
+#2 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(33): OrderController->render()
+#3 unknown(0): OrderController->actionView()
+#4 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#8 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#9 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#12 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+in D:\wamp\www\basic\protected\modules\mall\views\order\view.php (126)
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (33)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 14:17:49 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(140): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(34): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 14:17:50 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(140): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(34): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 14:17:50 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(140): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(34): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 14:17:50 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.0" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(140): CModel->offsetGet(0)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(34): CController->render('view', Array)
+#8 [internal function]: OrderController->actionView('20140120300906')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 14:31:28 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): TbActiveForm->textFieldRow(Object(Refund), 'refund_id', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\mall\views\refund\admin.php(25): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\basic\protected\modules\mall\controllers\RefundController.php(112): CController->render('admin', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): RefundController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#16 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#17 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#18 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 14:31:28 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): TbActiveForm->textFieldRow(Object(Refund), 'refund_id', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\mall\views\refund\admin.php(25): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\basic\protected\modules\mall\controllers\RefundController.php(112): CController->render('admin', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): RefundController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#16 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#17 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#18 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 14:31:30 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): TbActiveForm->textFieldRow(Object(Refund), 'refund_id', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\mall\views\refund\admin.php(25): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\basic\protected\modules\mall\controllers\RefundController.php(112): CController->render('admin', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): RefundController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#16 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#17 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#18 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 14:31:30 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): TbActiveForm->textFieldRow(Object(Refund), 'refund_id', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\mall\views\refund\admin.php(25): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\basic\protected\modules\mall\controllers\RefundController.php(112): CController->render('admin', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): RefundController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#16 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#17 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#18 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id/20140120300906
+---
+2014/01/20 14:31:56 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\views\order\view.php:122)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(870): OrderController->renderFile()
+#1 D:\wamp\www\yii\framework\web\CController.php(783): OrderController->renderPartial()
+#2 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(34): OrderController->render()
+#3 unknown(0): OrderController->actionView()
+#4 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#8 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#9 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#12 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/upload/image/20131223/20131223174212_92702.jpg
+in D:\wamp\www\basic\protected\modules\mall\views\order\view.php (122)
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (34)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 14:33:58 [error] [exception.CException] exception 'CException' with message '属性 "OrderItem.props" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('props')
+#1 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(142): CActiveRecord->__get('props')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(34): CController->render('view', Array)
+#7 [internal function]: OrderController->actionView('20140120300906')
+#8 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#9 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#10 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#15 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#16 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/20 14:35:43 [error] [php] Object of class stdClass could not be converted to string (D:\wamp\www\basic\protected\modules\mall\views\order\view.php:142)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(870): OrderController->renderFile()
+#1 D:\wamp\www\yii\framework\web\CController.php(783): OrderController->renderPartial()
+#2 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(34): OrderController->render()
+#3 unknown(0): OrderController->actionView()
+#4 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#8 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#9 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#12 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+in D:\wamp\www\basic\protected\modules\mall\views\order\view.php (142)
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (34)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/20 14:35:59 [error] [php] implode(): Invalid arguments passed (D:\wamp\www\basic\protected\modules\mall\views\order\view.php:142)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#1 D:\wamp\www\yii\framework\web\CController.php(870): OrderController->renderFile()
+#2 D:\wamp\www\yii\framework\web\CController.php(783): OrderController->renderPartial()
+#3 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(34): OrderController->render()
+#4 unknown(0): OrderController->actionView()
+#5 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#6 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#9 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#10 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#11 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 D:\wamp\www\yii\framework\base\CApplication.php(187): CWebApplication->processRequest()
+#13 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20140120300906
+in D:\wamp\www\basic\protected\modules\mall\views\order\view.php (142)
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (34)
+in D:\wamp\www\basic\backend.php (15)
