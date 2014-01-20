@@ -7,6 +7,7 @@ $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/lrtk.js');
 Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl.'/css/cart/review.css');
 Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl.'/js/review.js');
 Yii::app()->clientScript->registerCoreScript('jquery');
+//Yii::app()->bootstrap->register();
 
 $imageHelper=new ImageHelper();
 ?>
@@ -147,6 +148,7 @@ $imageHelper=new ImageHelper();
             <input type="hidden" id="props" name="props" value="" />
             <div class="deal_add_car" data-url="<?php echo Yii::app()->createUrl('cart/add'); ?>"><a href="javascript:void(0)">加入购物车</a></div>
             <div class="deal_add" data-url="<?php echo Yii::app()->createUrl('order/checkout');?>"><a data-url='' href="javascript:void(0)">立即购买</a></div>
+            <div style="clear:both"></div>
             <div class="deal_collect" data-url="<?php echo Yii::app()->createUrl('member/wishlist/addWish'); ?>" ><a href="javascript:void(0)">立即收藏</a></div>
         </form>
     </div>
@@ -210,8 +212,8 @@ $imageHelper=new ImageHelper();
         <div class="pd_l_fr grid_19">
             <ul class="deal_describe_tit">
                 <li onclick="describe(1);" class="current">商品描述</li>
-                <li onclick="describe(2);">顾客评价（<span class="cor_red"><?php echo $item->review_count;?></span>）</li>
-                <li onclick="describe(3);">月成交记录（<span class="cor_red"><?php echo $item->deal_count;?></span>）</li>
+<!--                <li onclick="describe(2);">顾客评价（<span class="cor_red">--><?php //echo $item->review_count;?><!--</span>）</li>-->
+<!--                <li onclick="describe(3);">月成交记录（<span class="cor_red">--><?php //echo $item->deal_count;?><!--</span>）</li>-->
             </ul>
             <div class="deal_describe" id="describe_1" style="">
                 <?php echo $item->desc; ?>
