@@ -75,7 +75,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             </tr>
             <tr>
                 <td colspan="8"><span
-                        style="float:right;padding:5px 10px;"><?php echo CHtml::submitButton('结算', array('class' => 'btn1')) ?></span>
+                        style="float:right;padding:5px 10px;"><?php echo CHtml::link('结算','#', array('class' => 'btn','id'=>'account')) ?></span>
                 </td>
             </tr>
         </table>
@@ -83,59 +83,5 @@ Yii::app()->clientScript->registerCoreScript('jquery');
     </div>
 </div>
 <script type="text/javascript">
-    $('#cart-table').on('keyup', 'input[type=text]', function(){
-        var $this = $(this),
-            $tr = $this.closest('tr'),
-            props = $tr.find('.props'),
-            tempId = $tr.find('.item-id'),
-            qty = $.trim(this.value);
-        clearTimeout(window.delay);
-        window.delay = setTimeout(function(){
-            $this.blur();
-            // check input data
-            if(!/^\d+$/.test(qty)){
-                return;
-            }
-            var html = '<input type="hidden" name="hid" value="0">';
-            // compare number
-            if(parseInt(qty) <= parseInt($this.data('num'))){
-                $.post($(this).data('url'), {'item_id': tempId, 'props': props, 'qty': qty}, function (response) {
-//             window.location.reload();
-//                    $("id").attr("value");
-                }, 'json');
-            }else{
-                var s = "库存不足，请更改物品数量！";
-                document.write(s);
-//                show error
-            }
-        }, 500);
-    });
-//    $('[name="quantity[]"]').change(function () {
-//        var item_id = $(this).parents('tr').find('[name="item_id[]"]').val();
-//        var props = $(this).parents('tr').find('[name="props[]"]').val();
-//        var qty = $(this).val();
-//        var data = {'item_id': item_id, 'props': props, 'qty': qty};
-//        $.post($(this).data('url'), data, function (response) {
-//          window.location.reload();
-//        }, 'json');
-//    });
-    function getprice() {
-        var positions = [];
-        $('[name="position[]"]:checked').each(function () {
-            positions.push($(this).val());
-        });
-        $.get($(this).data('url'), {'positions': positions}, function (response) {
-            if (!response.msg) {
-                $('#total_price').text(response.total);
-            }
-        }, 'json');
-    }
-    $('#checkAllPosition').click(function () {
-        if ($(this).attr('checked')) {
-            $('[name="position[]"]').attr('checked', 'checked');
-        } else {
-            $('[name="position[]"]').removeAttr('checked');
-        }
-    });
-    $('#cartForm').on('click', '[name="position[]"]', getprice);
+
 </script>

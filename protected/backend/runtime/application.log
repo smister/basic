@@ -23592,3 +23592,503 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/mall/orderLog/admin
 HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
 ---
+2014/01/16 16:16:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "layout"。' in D:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('layout')
+#1 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/basic/backend.php/layout
+---
+2014/01/16 16:16:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "layout"。' in D:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('layout')
+#1 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/basic/backend.php/layout
+HTTP_REFERER=http://localhost/basic/backend.php/layout
+---
+2014/01/16 16:17:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/create/user_id/7
+---
+2014/01/16 16:17:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/site/message.php
+---
+2014/01/16 16:21:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/create/user_id/7
+---
+2014/01/16 16:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/site/message.php
+---
+2014/01/16 16:22:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/create/user_id/7
+---
+2014/01/16 16:22:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/site/message.php
+---
+2014/01/16 16:23:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/create/user_id/7
+---
+2014/01/16 16:23:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/site/message.php
+---
+2014/01/16 16:23:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/create/user_id/7
+---
+2014/01/16 16:23:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/site/message.php
+---
+2014/01/16 16:25:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/create/user_id/7
+---
+2014/01/16 16:25:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/site/message.php
+---
+2014/01/16 16:27:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/create/user_id/7
+---
+2014/01/16 16:27:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "message.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('message.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('message.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/message.ph...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/site/message.php
+HTTP_REFERER=http://localhost/basic/backend.php/site/message.php
+---
+2014/01/17 14:33:06 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:342)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=&_=1389940386715
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (342)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:33:53 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:342)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389940433492
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (342)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:54:37 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:54:37 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:54:37 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:37 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:37 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:37 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:37 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:37 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:37 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:58 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:54:58 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:54:58 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:58 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:58 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:58 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:58 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:54:58 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:55:05 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:55:05 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:55:05 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:55:25 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:55:25 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:55:25 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:55:25 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:55:25 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:55:25 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:55:25 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:55:25 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:56:01 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:342)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389941761387
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (342)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:56:06 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:342)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389941766683
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (342)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:56:11 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:342)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389941771009
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (342)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:56:50 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:56:50 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:56:50 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:02 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:57:02 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:57:02 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:22 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:57:22 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:57:22 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:22 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:22 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:36 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:57:36 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 14:57:36 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:36 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:36 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:36 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:36 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:57:36 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 14:58:07 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:342)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389941887770
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (342)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 15:03:04 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 15:03:04 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 15:03:04 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 15:03:04 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 15:03:04 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 15:03:04 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 15:03:04 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 15:03:04 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 15:04:45 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 15:04:45 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/17 15:04:45 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 15:04:45 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\basic\protected\models\Item.php (451)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (41)
+2014/01/17 15:06:37 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php:342)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#1 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#3 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\wamp\www\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389942397573
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (342)
+in D:\wamp\www\basic\backend.php (15)

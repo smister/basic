@@ -53,7 +53,6 @@ class OrderlistController extends Controller
 
     public function actionDetail($id)
     {
-        $model=$this->loadModel($id);
         $items= Item::model()->with('orderItems')->findAll(array('condition'=>"order_id='.$id.'"));
         $this->render('view',array(
             'model'=>$this->loadModel($id),'items'=>$items,

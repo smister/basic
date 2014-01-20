@@ -385,7 +385,7 @@ class Item extends YActiveRecord
      * @return string
      * @author milkyway(yhxxlm@gmail.com)
      */
-    public function getHolderJs($width = '150', $height = '150', $text = 'No Pic')
+    public function getHolderJs($width, $height , $text = 'No Pic')
     {
         return 'holder.js/' . $width . 'x' . $height . '/text:' . $text;
     }

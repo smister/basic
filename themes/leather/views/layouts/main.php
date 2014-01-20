@@ -6,13 +6,15 @@
     <meta http-equiv="content-language" content="zh"/>
     <meta http-equiv="Cache-Control" content="max-age=7200"/>
     <meta content="IE=7" http-equiv="X-UA-Compatible"/>
+    <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.js"></script>
     <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css'/>
         <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/product.css'/>
         <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/member.css'/>
         <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/grid.css'/>
-    <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.4.4.min.js"></script>
+
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/common.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/passwordCheck.js"></script>
+    <script type="text/javascript" src="<?php echo F::baseUrl(); ?>/js/holder.js"></script>
     <title><?php echo Yii::app()->params['title']; ?></title>
 <body>
 <div class="top">
@@ -56,25 +58,9 @@
     </a>
 </div>
 <div class="nav">
-    <ul class="nav_list">
-        <?php $class = isset(Yii::app()->params['categoryIds']) ? '' : 'current';
-        echo '<li class="' . $class . '"><a href="' . Yii::app()->getBaseUrl(true) . '">首页</a></li>';
-        $categories = Category::model()->findAllByAttributes(array('root' => '3', 'level' => 2));
-        foreach ($categories as $cate) {
-            $class = isset(Yii::app()->params['categoryIds']) && in_array($cate->category_id, Yii::app()->params['categoryIds']) ? 'current' : '';
-            echo '<li class="' . $class . '"><a href="' . Yii::app()->createUrl('catalog/index', array('cat' => $cate->category_id)) . '">' . $cate->name . '</a></li>';
-        }
-        ?>
-    </ul>
+<?php $this->widget('widgets.leather.WMainMenu') ?>
 </div>
-<div class="container_24">
-    <?php if(isset($this->breadcrumbs)):?>
-        <?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-    <?php endif?>
     <?php echo $content; ?>
-</div>
 <div class="footer">
     <div class="foot_c">
         <div class="foot_new">

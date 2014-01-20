@@ -59,7 +59,7 @@
                                             $imageHelper=new ImageHelper();
                                             $picUrl=$imageHelper->thumb('180','178',$value->getMainPic());
                                             $picUrl=Yii::app()->baseUrl.$picUrl;
-                                        }else $picUrl='';
+                                        }else $picUrl=$value->getHolderJs('180','178');
                                   ?>
                                          box.add({"url": "<?php echo $picUrl?>", "href": "", "title": "<?php echo $value->title?>"});
                                     <?php
@@ -174,7 +174,7 @@
                                     $imgHelper=new ImageHelper();
                                     $picUrl=$imageHelper->thumb('220','220',$item->getMainPic());
                                     $picUrl=Yii::app()->baseUrl.$picUrl;
-                                }else $picUrl='';
+                                }else $picUrl=$item->getHolderJs('220','220');
                                 ?>
                                 <img alt="<?php echo $item->title; ?>"
                                      src="<?php echo $picUrl; ?>" width="220" height="220"></a>

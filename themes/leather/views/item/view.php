@@ -46,8 +46,7 @@ $imageHelper=new ImageHelper();
                         if($itemImg->pic){
                             $picUrl=$imageHelper->thumb('70','70',$itemImg->pic);
                             $picUrl=yii::app()->baseUrl. $picUrl;
-                        }else $picUrl='';
-
+                        }else $picUrl=$item->getHolderJs('70','70');
                          echo '<li><img src="' .$picUrl . '" width="70" height="70"></li>';
                     } ?>
                 </ul>
@@ -58,7 +57,7 @@ $imageHelper=new ImageHelper();
                         if($itemImg->pic){
                             $picUrl=$imageHelper->thumb('450','450',$itemImg->pic);
                             $picUrl=yii::app()->baseUrl. $picUrl;
-                        }else $picUrl='';
+                        }else $picUrl=$item->getHolderJs('450','450');
                         echo '<div><a href="javascript:void(0)" target="_blank"><img alt="' . $item->title . '" src="'  .$picUrl . '" width="450" height="450"/></a></div>';
                     } ?>
                 </ul>
@@ -194,7 +193,7 @@ $imageHelper=new ImageHelper();
                                 if($value->getMainPic()){
                                     $picUrl=$imageHelper->thumb('180','180',$value->getMainPic());
                                     $picUrl=Yii::app()->baseUrl.$picUrl;
-                                }else $picUrl='';
+                                }else $picUrl=$item->getHolderJs('180','180');
                                 ?>
                                 <li>
                                     <div class="intr_list_img"><a href=""><img alt="" src="<?php echo $picUrl?>" width="180" height="180"/></a></div>
@@ -307,7 +306,7 @@ $imageHelper=new ImageHelper();
                     if(response.status=='success'){
                         location.href=$('.deal_add a').data('url');
                     }else{
-                        alert('system error');
+                        showPopup('system error');
                     }
                 },'json');
             }
@@ -406,18 +405,18 @@ $imageHelper=new ImageHelper();
                             var num=$('.shopping_car').children().text();
                             num=parseInt(num)+1;
                             $('.shopping_car').children().text(num);
-                            alert(response.status);
+                            showPopup(response.status);
                         }else
-                        alert(response.status);
+                            showPopup(response.status);
                 },'json');
             }
         });
         $('.deal_collect').click(function() {
                 $.post($(this).data('url'), $('#item_id').serialize(), function(response) {
                     if(response.status=='exist'){
-                        alert('已收藏过该商品');
+                        showPopup('已收藏过该商品');
                     }else
-                    alert(response.status) ;
+                        showPopup(response.status) ;
                 },'json');
         });
     });
