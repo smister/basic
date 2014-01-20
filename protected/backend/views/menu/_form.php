@@ -58,26 +58,23 @@ foreach ($menu as $n => $m) {
 echo '</select>';
 ?>
 
-<?php echo $form->textFieldRow($model, 'name', array('class' => 'span5', 'maxlength' => 100)); ?>
+<?php echo $form->textFieldControlGroup($model, 'name', array('class' => 'span5', 'maxlength' => 100)); ?>
 
-<?php echo $form->textFieldRow($model, 'url', array('class' => 'span5', 'maxlength' => 255,'hint'=>'格式为：模块/控制器/动作  Modules/Controller/action 没地址请留空')); ?>
+<?php echo $form->textFieldControlGroup($model, 'url', array('class' => 'span5', 'maxlength' => 255,'hint'=>'格式为：模块/控制器/动作  Modules/Controller/action 没地址请留空')); ?>
 
 <?php //echo $form->fileFieldRow($model,'pic',array('class'=>'span5','maxlength'=>255)); ?>
 
 <?php //echo $form->dropDownListRow($model, 'position', array('middle' => '前台主目录导航', 'bottom' => '前台底部导航', 'admin' => '后台菜单导航')); ?>
 
-<?php echo $form->dropDownListRow($model, 'if_show', array('1' => '是', '0' => '否')); ?>
+<?php echo $form->dropDownListControlGroup($model, 'if_show', array('1' => '是', '0' => '否')); ?>
 
-    <?php echo $form->textAreaRow($model, 'memo', array('rows' => 6, 'cols' => 50, 'class' => 'span8')); ?>
+    <?php echo $form->textAreaControlGroup($model, 'memo', array('rows' => 6, 'cols' => 50, 'class' => 'span8')); ?>
 
-<div class="form-actions">
+
     <?php
-    $this->widget('bootstrap.widgets.TbButton', array(
-        'buttonType' => 'submit',
-        'type' => 'primary',
-        'label' => $model->isNewRecord ? 'Create' : 'Save',
-    ));
-    ?>
-</div>
+    echo TbHtml::formActions(array(
+        TbHtml::submitButton('Submit', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),
+        TbHtml::resetButton('Reset'),
+    ));?>
 
 <?php $this->endWidget(); ?>

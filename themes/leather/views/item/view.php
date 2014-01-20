@@ -304,7 +304,7 @@ $imageHelper=new ImageHelper();
                     if(response.status=='success'){
                         location.href=$('.deal_add a').data('url');
                     }else{
-                        alert('system error');
+                        showPopup('system error');
                     }
                 },'json');
             }
@@ -403,18 +403,18 @@ $imageHelper=new ImageHelper();
                             var num=$('.shopping_car').children().text();
                             num=parseInt(num)+1;
                             $('.shopping_car').children().text(num);
-                            alert(response.status);
+                            showPopup(response.status);
                         }else
-                        alert(response.status);
+                            showPopup(response.status);
                 },'json');
             }
         });
         $('.deal_collect').click(function() {
                 $.post($(this).data('url'), $('#item_id').serialize(), function(response) {
                     if(response.status=='exist'){
-                        alert('已收藏过该商品');
+                        showPopup('已收藏过该商品');
                     }else
-                    alert(response.status) ;
+                        showPopup(response.status) ;
                 },'json');
         });
     });

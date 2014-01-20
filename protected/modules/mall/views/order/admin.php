@@ -32,22 +32,22 @@ $this->breadcrumbs = array(
         ),
         array(
             'name' => 'pay_status',
-            'value' => 'Tbfunction::showPayState($data->pay_status)',
+            'value' => 'Tbfunction::showPayStates($data->pay_status)',
             'filter' => Tbfunction::ReturnPayStatus(),
         ),
         array(
             'name' => 'ship_status',
-            'value' => '$data->showShipState()',
+            'value' => 'Tbfunction::showShipStatus($data->ship_status)',
             'filter' => Tbfunction::ReturnShipStatus(),
         ),
         array(
             'name' => 'refund_status',
-            'value' => '$data->showRefundState()',
+            'value' =>'Tbfunction::showRefundStatus($data->refund_status)',
             'filter' => Tbfunction::ReturnRefundStatus(),
         ),
         array(
             'name' => 'payment_method_id',
-            'value' => '$data->showPayMethod()',
+            'value' => 'Tbfunction::showPayMethod($data->payment_method_id)',
             'filter' => Tbfunction::ReturnPayMethod(),
         ),
         'pay_fee',
@@ -55,7 +55,7 @@ $this->breadcrumbs = array(
         'total_fee',
         array(
             'name' => 'shipping_method_id',
-            'value' => '$data->showShipMethod()',
+            'value' => 'Tbfunction::showShipMethod($data->shipping_method_id)',
             'filter' => Tbfunction::ReturnShipMethod(),
         ),
         array(
