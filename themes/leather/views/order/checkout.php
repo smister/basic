@@ -80,6 +80,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                     </tr>
                 <?php
                 } else {
+                    $price=0;
                     foreach ($keys as $key) {
                         if (!isset($items[$key])) continue;
                         $item = $items[$key];
@@ -93,12 +94,13 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                             <td><?php echo $item->getPrice(); ?></td>
                             <td><?php echo $item->getQuantity(); ?></td>
                             <td><?php echo $item->getSumPrice() ?>元</td>
+                            <?php $price+=$item->getSumPrice()?>
                         </tr>
                     <?php
                     }
                 } ?>
                 <tr>
-                    <td colspan="6" style="padding:10px;text-align:right">总计：<?php echo $cart->getCost(); ?> 元</td>
+                    <td colspan="6" style="padding:10px;text-align:right">总计：<?php echo $price; ?> 元</td>
                 </tr>
             </table>
         </div>

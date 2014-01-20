@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'购物车'=>array('/cart'),
-        '确认订单' 
+        '确认订单'
 );
 Yii::app()->clientScript->registerCoreScript('jquery');
 ?>
@@ -22,11 +22,11 @@ Yii::app()->clientScript->registerCoreScript('jquery');
 				'class' => 'buyer-address shop_selection'),
                 $address->s->name.'&nbsp;'.$address->c->name.'&nbsp;'.$address->d->name.'&nbsp;'.$address->address.'&nbsp;('.$address->contact_name.'&nbsp;收)&nbsp;'.$address->mobile_phone);
         echo '</li>';
-        
+
         }}else{?>
-        <?php echo CHtml::link('添加收货地址', array('/member/delivery_address/create'))?>    
+        <?php echo CHtml::link('添加收货地址', array('/member/delivery_address/create'))?>
         <?php }?>
-        
+
     </div>
 </div>
 <div class="box">
@@ -45,7 +45,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
 <div class="box">
     <div class="box-title">购物车</div>
     <div class="box-content cart">
-        
+
         <table width="100%" border="1" cellspacing="1" cellpadding="0" style="text-align:center;vertical-align:middle">
             <tr>
                 <th width="20%">图片</th>
@@ -55,7 +55,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 <th width="20%">小计</th>
             </tr>
             <?php
-//            print_r($mycart);
+            print_r($mycart);
             if($mycart){
                 $i=1;
             foreach($mycart as $m){?>
@@ -66,10 +66,10 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 <td><?php echo CHtml::hiddenField('order['.$i.'][qty]', $m['qty']) ?><?php echo $m['qty'] ?></td>
                 <td><?php echo CHtml::hiddenField('order['.$i.'][subtotal]', $m['subtotal']) ?><?php echo $m['subtotal'] ?>元</td>
             </tr>
-            <?php 
+            <?php
             $i++;
             }
-            
+
             }else{
             ?>
              <tr>
@@ -98,6 +98,6 @@ Yii::app()->clientScript->registerCoreScript('jquery');
     </div>
     <div class="clear"></div>
     <div class="order-confirm"><span style="float:right;padding:5px 10px;"><?php echo CHtml::link('确认订单', '#', array('id'=>'confirmOrder', 'class'=>'btn1'))?></span></div>
-    
+
 
 <?php echo CHtml::endForm() ?>
