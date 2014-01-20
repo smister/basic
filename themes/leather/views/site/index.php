@@ -130,7 +130,7 @@ EOF;
                                     if( $newItem->getMainPic()){
                                         $picUrl=$image->thumb('220','220', $newItem->getMainPic());
                                         $picUrl=Yii::app()->baseUrl.$picUrl;
-                                    }else $picUrl='';
+                                    }else $picUrl=$newItem->getHolderJs('220','220');
                                     ?>
                                     <img alt="<?php echo $newItem->title; ?>" src="<?php echo $picUrl; ?>"
                                          width="220" height="220"></a>

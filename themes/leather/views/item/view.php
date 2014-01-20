@@ -45,8 +45,7 @@ $imageHelper=new ImageHelper();
                         if($itemImg->pic){
                             $picUrl=$imageHelper->thumb('70','70',$itemImg->pic);
                             $picUrl=yii::app()->baseUrl. $picUrl;
-                        }else $picUrl='';
-
+                        }else $picUrl=$item->getHolderJs('70','70');
                          echo '<li><img src="' .$picUrl . '" width="70" height="70"></li>';
                     } ?>
                 </ul>
@@ -57,7 +56,7 @@ $imageHelper=new ImageHelper();
                         if($itemImg->pic){
                             $picUrl=$imageHelper->thumb('450','450',$itemImg->pic);
                             $picUrl=yii::app()->baseUrl. $picUrl;
-                        }else $picUrl='';
+                        }else $picUrl=$item->getHolderJs('450','450');
                         echo '<div><a href="javascript:void(0)" target="_blank"><img alt="' . $item->title . '" src="'  .$picUrl . '" width="450" height="450"/></a></div>';
                     } ?>
                 </ul>
@@ -192,7 +191,7 @@ $imageHelper=new ImageHelper();
                                 if($value->getMainPic()){
                                     $picUrl=$imageHelper->thumb('180','180',$value->getMainPic());
                                     $picUrl=Yii::app()->baseUrl.$picUrl;
-                                }else $picUrl='';
+                                }else $picUrl=$item->getHolderJs('180','180');
                                 ?>
                                 <li>
                                     <div class="intr_list_img"><a href=""><img alt="" src="<?php echo $picUrl?>" width="180" height="180"/></a></div>
