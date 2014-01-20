@@ -9,11 +9,10 @@
     <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css'/>
         <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/product.css'/>
         <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/member.css'/>
-        <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->baseUrl; ?>/css/common.css'/>
+        <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/grid.css'/>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/common.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/passwordCheck.js"></script>
-        <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/common.js"></script>
     <title><?php echo Yii::app()->params['title']; ?></title>
 <body>
 <div class="top">
@@ -57,9 +56,18 @@
     </a>
 </div>
 <div class="nav">
-    <?php $this->widget('widgets.leather.WMainMenu') ?>
+    <ul class="nav_list">
+        <?php $class = isset(Yii::app()->params['categoryIds']) ? '' : 'current';
+        echo '<li class="' . $class . '"><a href="' . Yii::app()->getBaseUrl(true) . '">首页</a></li>';
+        $categories = Category::model()->findAllByAttributes(array('root' => '3', 'level' => 2));
+        foreach ($categories as $cate) {
+            $class = isset(Yii::app()->params['categoryIds']) && in_array($cate->category_id, Yii::app()->params['categoryIds']) ? 'current' : '';
+            echo '<li class="' . $class . '"><a href="' . Yii::app()->createUrl('catalog/index', array('cat' => $cate->category_id)) . '">' . $cate->name . '</a></li>';
+        }
+        ?>
+    </ul>
 </div>
-<?php echo $content; ?>
+    <?php echo $content; ?>
 <div class="footer">
     <div class="foot_c">
         <div class="foot_new">
