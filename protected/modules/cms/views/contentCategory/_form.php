@@ -10,12 +10,11 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 <?php echo $form->errorSummary($model); ?>
 <?php
 if (!$model->isNewRecord) {
-    $category_check = Category::model()->findByPk($model->id);
-    $parent = $category_check->parent()->find();
+//    $category_check = Category::model()->findByPk($model->category_id);
+    $parent = $model->parent()->find();
 }
 echo '<select id="Category_node" name="Category[node]">';
-
-$descendants = Category::model()->findAll(array('condition' => 'root=1', 'order' => 'lft'));
+$descendants = Category::model()->findAll(array('condition' => 'root=1'));
 $level = 1;
 foreach ($descendants as $child) {
     $string = '&nbsp;&nbsp;';
@@ -29,15 +28,15 @@ foreach ($descendants as $child) {
     $string .= $child->name;
 //		echo $string;
     if (!$model->isNewRecord) {
-        if ($parent->id == $child->id) {
+        if ($parent->category_id == $child->category_id) {
             $selected = 'selected';
 
-            echo '<option value="' . $child->id . '" selected="' . $selected . '">' . $string . '</option>';
+            echo '<option value="' . $child->category_id . '" selected="' . $selected . '">' . $string . '</option>';
         } else {
-            echo '<option value="' . $child->id . '" >' . $string . '</option>';
+            echo '<option value="' . $child->category_id . '" >' . $string . '</option>';
         }
     } else {
-        echo '<option value="' . $child->id . '" >' . $string . '</option>';
+        echo '<option value="' . $child->category_id . '" >' . $string . '</option>';
     }
 }
 echo '</select>';

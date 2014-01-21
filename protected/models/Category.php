@@ -37,12 +37,12 @@ class Category extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, pic', 'required'),
+            array('name', 'required'),
             array('label, is_show', 'numerical', 'integerOnly' => true),
             array('left, right, root, level', 'length', 'max' => 10),
             array('name, url', 'length', 'max' => 200),
             array('pic', 'length', 'max' => 255),
-            array('left, right, root, level', 'safe'),
+            array('left, right, root, level,pic', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('category_id, left, right, root, level, name, label, url, pic, is_show', 'safe', 'on' => 'search'),

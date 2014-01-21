@@ -57,6 +57,7 @@ class ContentCategoryController extends Controller {
 // Uncomment the following line if AJAX validation is needed
 // $this->performAjaxValidation($model);
 
+
         if (isset($_POST['Category'])) {
             $model->attributes = $_POST['Category'];
 
@@ -66,7 +67,7 @@ class ContentCategoryController extends Controller {
                 $node = Category::model()->findByPk($parent_node);
                 $parent = $model->parent()->find();
                 if ($node->id !== $model->id && $node->id !== $parent->id) {
-// move 
+// move
                     $model->moveAsLast($node);
                 }
                 if ($model->saveNode())

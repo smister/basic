@@ -1,6 +1,6 @@
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/slides.jquery.js'); ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/pptBox.js'); ?>
-<div class="warp_banner index_bg05" id="mainbody">
+<div class="warp_banner index_bg01" id="mainbody">
     <div id="slides" class="banner">
         <div class="banner_l">
             <a class="prev" href="#">
@@ -130,7 +130,7 @@ EOF;
                                     if( $newItem->getMainPic()){
                                         $picUrl=$image->thumb('220','220', $newItem->getMainPic());
                                         $picUrl=Yii::app()->baseUrl.$picUrl;
-                                    }else $picUrl='';
+                                    }else $picUrl=$newItem->getHolderJs('220','220');
                                     ?>
                                     <img alt="<?php echo $newItem->title; ?>" src="<?php echo $picUrl; ?>"
                                          width="220" height="220"></a>
@@ -204,7 +204,7 @@ EOF;
 <script type="text/javascript">
     //保证导航栏背景与图片轮播背景一起显示
     $("#mainbody").removeClass();
-    $("#mainbody").addClass("index_bg05");
+    $("#mainbody").addClass("index_bg01");
     $(function () {
         //滚动Banner图片的显示
         $('#slides').slides({
