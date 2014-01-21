@@ -38,29 +38,34 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         'price',
         array(
             'name' => 'is_show',
-            'value' => '$data->isShow()',
+            'value' => 'Tbfunction::showYesOrNo($data->is_show)',
+            'filter' => Tbfunction::ReturnYesOrNo(),
         ),
         array(
             'name' => 'is_promote',
-            'value' => '$data->isPromote()',
+            'value' => 'Tbfunction::showYesOrNo($data->is_promote)',
+            'filter' => Tbfunction::ReturnYesOrNo(),
         ),
         array(
             'name' => 'is_new',
-            'value' => '$data->isNew()',
+            'value' => 'Tbfunction::showYesOrNo($data->is_new)',
+            'filter' => Tbfunction::ReturnYesOrNo(),
         ),
         array(
             'name' => 'is_hot',
-            'value' => '$data->isHot()',
-        ),
-        array(
+            'value' => 'Tbfunction::showYesOrNo($data->is_hot)',
+            'filter' => Tbfunction::ReturnYesOrNo(),
+        ),array(
             'name' => 'is_best',
-            'value' => '$data->isBest()',
+            'value' => 'Tbfunction::showYesOrNo($data->is_best)',
+            'filter' => Tbfunction::ReturnYesOrNo(),
         ),
         array(
             'class' => 'bootstrap.widgets.TbButtonColumn',
         ),
     ),
 ));
+
 ?>
     <div class="control-group bulk" style="padding-top:10px">
 

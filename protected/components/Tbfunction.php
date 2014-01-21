@@ -52,11 +52,6 @@ class Tbfunction {
         return array('0' => '待支付', '1' => '已支付');
     }
 
-    public function showPayStates($pay_status){
-        if($pay_status==1){echo '已支付'; }
-        else echo '待支付';
-    }
-
     public function ReturnShipStatus(){
         return array('0' => '未发货', '1' => '已发货');
     }
@@ -67,6 +62,10 @@ class Tbfunction {
 
     public function ReturnShipMethod(){
         return array('' => '请选择', '1' => '平邮', '2' => '快递', '3' => 'EMS');
+    }
+
+    public function ReturnYesOrNo(){
+        return array('0' => '否', '1' => '是');
     }
 
     public function ReturnPayMethod(){
@@ -90,6 +89,11 @@ class Tbfunction {
 
     public function showStatus($status){
         $Status=array('0'=>'未提交','1'=>'有效');
+        return $Status[$status];
+    }
+
+    public function showYesOrNo($status){
+        $Status=array('0'=>'否','1'=>'是');
         return $Status[$status];
     }
 

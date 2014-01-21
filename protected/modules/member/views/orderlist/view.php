@@ -5,34 +5,36 @@
     <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/order.css"/>
 </head>
 
-<body id="trade-order-detail" class="tm-buyer  ">
-
-<div class="tabs-container" id="J_TabView">
+<body>
+<div class="tabs-container">
 <ul class="tabs-nav">
     <li class="current ks-switchable-trigger-internal164"><a name="tab0">订单信息</a></li>
 </ul>
+
 <div class="tabs-panels">
 <div class="info-box order-info ks-switchable-panel-internal165" style="display: block;">
 <h2>订单信息</h2>
-<div class="bd">
-<div class="addr_and_note">
-    <dl>
-        <dt>
-            收货地址
-            ：
-        </dt>
-        <dd>
-            <?php
-            echo $Order->receiver_name.' ，'.$Order->receiver_mobile.' ，';
-            echo Order::model()->showDetailAddress($Order);
-            ?>
-        </dd>
-        <dt>买家留言：</dt>
-        <dd>
-            <p id="J_ExistMessage"></p>
-        </dd>
-    </dl>
-</div>
+<div>
+    <div class="addr_and_note">
+        <dl>
+            <dt>
+                收货地址
+                ：
+            </dt>
+            <dd>
+                <?php
+                echo $Order->receiver_name.' ，'.$Order->receiver_mobile.' ，';
+                echo Order::model()->showDetailAddress($Order);
+                ?>
+            </dd>
+            <dt>备注：</dt>
+            <dd>
+                <?php
+                echo $Order->memo;
+                ?>
+            </dd>
+        </dl>
+    </div>
 
 <hr>
 <!-- 订单信息 -->
