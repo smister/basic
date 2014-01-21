@@ -10,7 +10,13 @@ $this->menu = array(
 ?>
 <h1>内容分类</h1>
 <div class="well well-large">
-<?php
+    <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+            'id' => 'contentForm',
+            'htmlOptions' => array(
+                'class' => 'form-horizontal',
+            )
+        )
+    );
 $options = array(
     array(
         'text' => '更新',
@@ -26,5 +32,6 @@ $options = array(
     )
 );
 echo Category::model()->getTree(1, $options, 'getLabel');
+    $this->endWidget();
 ?>
 </div>
