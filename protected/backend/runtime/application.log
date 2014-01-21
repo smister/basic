@@ -24559,63 +24559,7 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/cms/contentCategory/delete/id/132
 HTTP_REFERER=http://localhost/basic/backend.php/cms/contentCategory/admin
 ---
-2014/01/21 09:21:18 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
-Stack trace:
-#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
-#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
-#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
-#3 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#4 {main}
-REQUEST_URI=/basic/backend.php/cms/contentCategory/delete/id/131
-HTTP_REFERER=http://localhost/basic/backend.php/cms/contentCategory/admin
----
-2014/01/21 09:21:20 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
-Stack trace:
-#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
-#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
-#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
-#3 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#4 {main}
-REQUEST_URI=/basic/backend.php/cms/contentCategory/delete/id/131
-HTTP_REFERER=http://localhost/basic/backend.php/cms/contentCategory/admin
----
-2014/01/21 09:21:20 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
-Stack trace:
-#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
-#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
-#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
-#3 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#4 {main}
-REQUEST_URI=/basic/backend.php/cms/contentCategory/delete/id/131
-HTTP_REFERER=http://localhost/basic/backend.php/cms/contentCategory/admin
----
-2014/01/21 10:04:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
-Stack trace:
-#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
-#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
-#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
-#3 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#4 {main}
-REQUEST_URI=/basic/backend.php/cms/contentCategory/delete/id/131
-HTTP_REFERER=http://localhost/basic/backend.php/cms/contentCategory/admin
----
-2014/01/21 10:51:35 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
-Stack trace:
-#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
-#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
-#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
-#3 D:\wamp\www\basic\backend.php(15): CApplication->run()
-#4 {main}
-REQUEST_URI=/basic/backend.php/cms/contentCategory/delete/id/131
-HTTP_REFERER=http://localhost/basic/backend.php/cms/contentCategory/admin
----
-2014/01/21 10:51:52 [warning] [application] Failed to set unsafe attribute "node" of "Category".
-in D:\wamp\www\basic\protected\modules\mall\controllers\ItemCategoryController.php (18)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/21 10:52:18 [warning] [application] Failed to set unsafe attribute "node" of "Category".
-in D:\wamp\www\basic\protected\modules\mall\controllers\ItemCategoryController.php (18)
-in D:\wamp\www\basic\backend.php (15)
-2014/01/21 10:54:36 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
+2014/01/21 09:20:57 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
 Stack trace:
 #0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
 #1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
