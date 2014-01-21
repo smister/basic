@@ -24559,3 +24559,13 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/cms/contentCategory/delete/id/132
 HTTP_REFERER=http://localhost/basic/backend.php/cms/contentCategory/admin
 ---
+2014/01/21 09:20:57 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#4 {main}
+REQUEST_URI=/basic/backend.php/cms/contentCategory/delete/id/131
+HTTP_REFERER=http://localhost/basic/backend.php/cms/contentCategory/admin
+---
