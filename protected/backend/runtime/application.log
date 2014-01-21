@@ -24092,3 +24092,6 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/mall/order/selectProp?selectItem=6&_=1389942397573
 in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (342)
 in D:\wamp\www\basic\backend.php (15)
+2014/01/20 15:39:00 [warning] [application] Failed to set unsafe attribute "keywords" of "Page".
+in D:\wamp\www\yincart\basic\protected\modules\cms\controllers\PageController.php (58)
+in D:\wamp\www\yincart\basic\backend.php (15)
