@@ -77,6 +77,7 @@ $imageHelper=new ImageHelper();
             <?php
             $skus = array();
             foreach ($item->skus as $sku) {
+
                 $skuId[]=$sku->sku_id;
                 $key = implode(';', json_decode($sku->props, true));
                 $skus[$key] = json_encode(array('price' => $sku->price, 'stock' => $sku->stock));
@@ -146,7 +147,8 @@ $imageHelper=new ImageHelper();
             <input type="hidden" id="item_id" name="item_id" value="<?php echo $item->item_id; ?>" />
             <input type="hidden" id="props" name="props" value="" />
             <div class="deal_add_car" data-url="<?php echo Yii::app()->createUrl('cart/add'); ?>"><a href="javascript:void(0)">加入购物车</a></div>
-            <div class="deal_add" data-url="<?php echo Yii::app()->createUrl('order/checkout');?>"><a data-url='' href="javascript:void(0)">立即购买</a></div>
+<!--            <div class="deal_add" data-url="--><?php //echo Yii::app()->createUrl('order/checkout');?><!--"><a data-url='' href="javascript:void(0)">立即购买</a></div>-->
+            <?php echo CHtml::link("立即购买",array("/order/checkout",),array("class"=>"deal_add"))?>
             <div style="clear:both"></div>
             <div class="deal_collect" data-url="<?php echo Yii::app()->createUrl('member/wishlist/addWish'); ?>" ><a href="javascript:void(0)">立即收藏</a></div>
         </form>
@@ -297,20 +299,20 @@ $imageHelper=new ImageHelper();
                 'data-url':selectAdd.data('url')+"?position=Sku"+skuKeyId[num]
             });
         }
-        $('.deal_add').click(function(){
-            var selectProps = $('.prop-select,.img-prop-select');
-            if (selectProps.length < $('.deal_size p').length) {
-                $('.deal_size').addClass('prop-div-select');
-            } else {
-                $.post($('.deal_add_car').data('url'), $('#deal').serialize(), function(response) {
-                    if(response.status=='success'){
-                        location.href=$('.deal_add a').data('url');
-                    }else{
-                        showPopup('system error');
-                    }
-                },'json');
-            }
-        })
+//        $('.deal_add').click(function(){
+//            var selectProps = $('.prop-select,.img-prop-select');
+//            if (selectProps.length < $('.deal_size p').length) {
+//                $('.deal_size').addClass('prop-div-select');
+//            } else {
+//                $.post($('.deal_add_car').data('url'), $('#deal').serialize(), function(response) {
+//                    if(response.status=='success'){
+//                        location.href=$('.deal_add a').data('url');
+//                    }else{
+//                        showPopup('system error');
+//                    }
+//                },'json');
+//            }
+//        })
         function findSameValue(a,b){
             var num1= a.length;
             var num2= b.length;
