@@ -15,7 +15,7 @@ class CatalogController extends YController
         $criteria->addInCondition('category_id', $descendantIds);
 
         if (!empty($_GET['key'])) {
-            $criteria->addCondition("(t.title LIKE '%{$_GET['key']}%' AND t.desc LIKE '%{$_GET['key']}%')");
+            $criteria->addCondition("(t.title LIKE '%{$_GET['key']}%')");
         }
         if (!empty($_GET['floor_price'])) {
             $criteria->addCondition("t.price >= '{$_GET['floor_price']}'");
@@ -83,7 +83,7 @@ class CatalogController extends YController
         $pager->pageSize = 5;
         $pager->applyLimit($criteria);
         $items = Item::model()->findAll($criteria);
-
+//        var_dump($criteria);die;
         $parentCategories = $category->parent()->findAll();
         $parentCategories = array_reverse($parentCategories);
         $categoryIds = array($category->category_id);
@@ -112,8 +112,8 @@ class CatalogController extends YController
             'pager' => $pager,
             'categories' => $categories,
             'itemProps' => $itemProps,
-            'sort'=>$_GET['sort'],
-            'key'=>$_GET['key'],
+            'sort' => $_GET['sort'],
+            'key' => $_GET['key'],
         ));
     }
 }

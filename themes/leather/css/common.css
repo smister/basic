@@ -79,6 +79,7 @@ a.online_ser{
 	overflow:hidden;
 	margin-right:10px;
 }
+
 .top_daohang i,.top_center i{
 	background:url(../image/arrow_d.png) no-repeat;
 	width:13px;
@@ -93,7 +94,7 @@ a.online_ser{
     margin-right:10px;
 }
 .login-nav2{
-    width:70px;
+    width:120px;
     margin: 0;
     padding: 0;
 }
@@ -110,6 +111,10 @@ a.online_ser{
 }
 .personal-center a{
     diaplay:inline;
+}
+.current{
+    background-color: #c4c4c4;
+    color: #fff;
 }
 .head{
 	width:1180px;

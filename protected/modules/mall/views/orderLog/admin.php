@@ -4,10 +4,6 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List OrderLog', 'icon'=>'list', 'url'=>array('index')),
-	array('label'=>'Create OrderLog', 'icon'=>'plus','url'=>array('create')),
-);
 ?>
 
 <h1>Manage Order Logs</h1>
@@ -35,15 +31,15 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 		'op_name',
         array(
             'name' => 'action_time',
-            'value' => 'date("Y年m月d日 H:i:s",$data->action_time)',
+            'value'=>'date("Y-m-d H:i;s",$data->action_time+8*3600)'
         ),
         array(
             'name' => 'log_text',
             'value' => '$data->showOp($data->log_id)'
         ),
-		array(
-			'class'=>'bootstrap.widgets.TbButtonColumn',
-		),
+        array(
+            'value' => 'Tbfunction::view_log($data->log_id)',
+        ),
 	),
 ));
 ?>
