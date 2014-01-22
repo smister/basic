@@ -101,7 +101,7 @@ class OrderController extends Controller
                         $item= $cart->itemAt($key);
                         $model->total_fee += $item['quantity'] * $item['price'];
                     }
-//                    var_dump($model->save());die;
+
                     if ($model->save()) {
                      foreach ($_POST['keys'] as $key){
                              $item= $cart->itemAt($key);
@@ -121,7 +121,7 @@ class OrderController extends Controller
                             $OrderItem->props_name = $item['props_name'];
                             $OrderItem->price = $item['price'];
                             $OrderItem->quantity = $item['quantity'];
-                            $OrderItem->total_price = $OrderItem->quantity * $OrderItem->price;
+                            $OrderItem->total_price = $OrderItem->quantity * $OrderItem->price;var_dump($OrderItem);die;
                             if (!$OrderItem->save()) {
                                 throw new Exception('save order item fail');
                             }
