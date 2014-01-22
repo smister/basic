@@ -112,6 +112,8 @@ class CatalogController extends YController
             'pager' => $pager,
             'categories' => $categories,
             'itemProps' => $itemProps,
+            'sort'=>$_GET['sort'],
+            'key'=>$_GET['key'],
         ));
     }
 }

@@ -26115,3 +26115,47 @@ Stack trace:
 REQUEST_URI=/yincart/basic/backend.php/theme/default
 HTTP_REFERER=http://localhost/yincart/basic/backend.php/theme/default
 ---
+2014/01/22 08:47:14 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/22 08:47:14 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/22 08:47:14 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (451)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/22 08:47:14 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (451)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/22 08:47:14 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (451)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/22 08:47:14 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (451)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/22 08:47:14 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (451)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/22 08:47:14 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (451)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/22 08:47:42 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/22 08:47:42 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/22 08:47:42 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (451)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
