@@ -30,21 +30,21 @@
             <input type="text" name="user[number]" placeholder="请确保是11位手机号" class="title">
         </div>
     </div>
-    <div class="control-group">
-        <label class="control-label">验证码</label>
-        <div class="controls">
-            <?php $this->widget('CCaptcha',array(
-                'showRefreshButton'=>true,
-                'clickableImage'=>true,
-                'buttonLabel'=>'刷新验证码',
-                'imageOptions'=>array(
-                    'alt'=>'点击换图',
-                    'title'=>'点击换图',
-                    'style'=>'cursor:pointer',
-                    'padding'=>'10')
-            )); ?>
-            <input type="text" name="user[varifyCode]" placeholder="验证码" >
-        </div>
+<!--    <div class="control-group">-->
+<!--        <label class="control-label">验证码</label>-->
+<!--        <div class="controls">-->
+<!--            --><?php //$this->widget('CCaptcha',array(
+//                'showRefreshButton'=>true,
+//                'clickableImage'=>true,
+//                'buttonLabel'=>'刷新验证码',
+//                'imageOptions'=>array(
+//                    'alt'=>'点击换图',
+//                    'title'=>'点击换图',
+//                    'style'=>'cursor:pointer',
+//                    'padding'=>'10')
+//            )); ?>
+<!--            <input type="text" name="user[varifyCode]" placeholder="验证码" >-->
+<!--        </div>-->
     </div>
     <div class="form-actions">
         <input type="submit" value="保存收货人信息" class="btn btn-primary">
