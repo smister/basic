@@ -28197,3 +28197,25 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/mall/shippingMethod/update/id/0
 HTTP_REFERER=http://localhost/basic/backend.php/mall/shippingMethod/admin
 ---
+2014/01/22 16:55:20 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yincart\basic\protected\modules\mall\controllers\OrderController.php:344)
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\web\CController.php(286): OrderController->runAction()
+#1 D:\wamp\www\yincart\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#2 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#3 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\wamp\www\yincart\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/yincart/basic/backend.php/mall/order/selectProp?selectItem=6&_=1390380920561
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\OrderController.php (344)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/22 17:15:11 [error] [php] Invalid argument supplied for foreach() (D:\wamp\www\yincart\basic\protected\modules\mall\controllers\OrderController.php:344)
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\web\CController.php(286): OrderController->runAction()
+#1 D:\wamp\www\yincart\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#2 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#3 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\wamp\www\yincart\basic\backend.php(15): CWebApplication->run()
+REQUEST_URI=/yincart/basic/backend.php/mall/order/selectProp?selectItem=6&_=1390382111015
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\OrderController.php (344)
+in D:\wamp\www\yincart\basic\backend.php (15)
