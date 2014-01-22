@@ -1,18 +1,28 @@
 /**
- * Created by ps on 1/6/14.
+ * Created by wucangzhou on 1/6/14.
+ *email:1415373197@qq.com
  */
 $(document).ready(function(){
-   $('.personal-center a').mouseover(function(){
-        $('.personal-list a').show();
-   })
-    $('.personal-center a').mouseout(function(){
-        $('.personal-list a').hide();
-    })
-    $('.personal-list a').mouseover(function(){
-        $('.personal-list a').show();
-    })
-    $('.personal-list a').mouseout(function(){
-        $('.personal-list a').hide();
+    var personal_list= $('.personal-list a');
+    $('.personal-center a').mouseover(function(){
+       $(this).addClass('current');
+       personal_list.show();
+    }).mouseout(function(){
+       $(this).removeClass('current');
+       personal_list.hide();
     })
 
+    $('.login-nav a').mouseover(function(){
+        $(this).addClass('current');
+    }).mouseout(function(){
+        $(this).removeClass('current');
+     })
+
+    personal_list.mouseover(function(){
+        $(this).addClass('current');
+        personal_list.show();
+    }).mouseout(function(){
+        $(this).removeClass('current');
+        personal_list.hide();
+    })
 })

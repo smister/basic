@@ -19,6 +19,11 @@ class Tbfunction {
     public function view_user($id){
         echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
     }
+
+    public function view_log($id){
+        echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
+    }
+
     public function getUser($user_id)
     {
         $user = Users::model()->findByAttributes(array('id' => $user_id));

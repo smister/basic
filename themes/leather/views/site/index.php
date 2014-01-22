@@ -111,7 +111,7 @@ EOF;
         foreach ($newItems as $category_name => $items) {
             if ($isFrist) { ?>
                 <div class="product_new contaniner_24">
-                    <div class="product_new_tit"><label><?php echo $category_name; ?></label><a href="<?php echo Yii::app()->baseUrl.'/'.Menu::model()->getUrl($category_name).'&is_new=1';?>">更多新品>></a></div>
+                    <div class="product_new_tit"><label><?php echo $category_name; ?></label><a href="<?php echo Yii::app()->baseUrl.'/'.Menu::model()->getUrl($category_name).'&sort=newd';?>">更多新品>></a></div>
                     <div class="product_c">
                         <div class="product_new_b">
                             <?php $newItem = $items[0];
@@ -161,7 +161,7 @@ EOF;
                 </div>
            <?php } else { ?>
                 <div class="product_cate contaniner_24">
-                    <div class="product_cate_tit<?php echo $num; ?>"><label><?php echo $category_name; ?></label><a href="<?php echo Yii::app()->baseUrl.'/'.Menu::model()->getUrl($category_name).'&is_new=1';?>">更多新品>></a></div>
+                    <div class="product_cate_tit<?php echo $num; ?>"><label><?php echo $category_name; ?></label><a href="<?php echo Yii::app()->baseUrl.'/'.Menu::model()->getUrl($category_name).'&sort=newd';?>">更多新品>></a></div>
                     <div class="product_ca">
                         <div class="product_list_ca">
                             <?php foreach ($items as $newItem) {
@@ -230,4 +230,16 @@ EOF;
             }
         });
     });
+    function change_bg(n) {
+        var tnum = $(".tab_t_list>li").length;
+        for (i = 1; i <= tnum; i++) {
+            if (i == n) {
+                $("#pop_" + i).css("display", "");
+                $(".tab_t_list>li")[i - 1].className = "current";
+            } else {
+                $("#pop_" + i).css("display", "none");
+                $(".tab_t_list>li")[i - 1].className = "";
+            }
+        }
+    }
 </script>
