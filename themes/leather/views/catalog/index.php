@@ -191,8 +191,8 @@
                 <?php } ?>
             </div>
             <div class="page_p">
-                <?php if ($pager->pageCount > 1 || true) {
-                    if ($pager->currentPage == 0 && false) {
+                <?php if ($pager->pageCount > 1 ) {
+                    if ($pager->currentPage == 0 ) {
                         echo '<span class="end"><a href="javascript:void(0)" class="page_p"><img alt="" src=""/>首页</a></a></span>';
                         echo '<span class="end"><a href="javascript:void(0)" class="page_p"><img alt="" src=""/>上一页</a></a></span>';
                     } else {
@@ -201,9 +201,9 @@
                     }
                     for ($i = 0; $i < $pager->pageCount; $i++) {
                         $class = $i == $pager->currentPage ? 'current' : '';
-                        echo '<span class="' . $class . '"><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => $i))) . '">' . ($i + 1) . '</a></span>';
+                        echo '<span class="' . $class . '"><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => $i+1))) . '">' . ($i+1) . '</a></span>';
                     }
-                    if ($pager->currentPage >= $pager->pageCount - 1 && false) {
+                    if ($pager->currentPage == $pager->pageCount - 1 ) {
                         echo '<span class="end"><a href="javascript:void(0)" class="page_n"><img alt="" src=""/>下一页</a></a></span>';
                         echo '<span class="end"><a href="javascript:void(0)" class="page_n"><img alt="" src=""/>末页</a></a></span>';
                     } else {
@@ -212,6 +212,7 @@
                     }
                 }
                 ?>
+
             </div>
         </div>
     </div>
