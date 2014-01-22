@@ -230,4 +230,16 @@ EOF;
             }
         });
     });
+    function change_bg(n) {
+        var tnum = $(".tab_t_list>li").length;
+        for (i = 1; i <= tnum; i++) {
+            if (i == n) {
+                $("#pop_" + i).css("display", "");
+                $(".tab_t_list>li")[i - 1].className = "current";
+            } else {
+                $("#pop_" + i).css("display", "none");
+                $(".tab_t_list>li")[i - 1].className = "";
+            }
+        }
+    }
 </script>
