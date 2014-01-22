@@ -112,7 +112,6 @@ class OrderLog extends CActiveRecord
 
     public function showOp($log_id){
         $logOp = OrderLog::model()->findByPk($log_id);
-        $username =
         $op = 'User ' .$logOp->user_id . ' ' .$logOp->op_name .  " order " .$logOp->order_id;
         return $op;
     }

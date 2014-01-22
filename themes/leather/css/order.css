@@ -19,44 +19,44 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
     max-width:50px;
     max-height:50px;
 }
-table{
-    border-collapse:collapse;
-    border-spacing:0;
-}
+ table{
+     border-collapse:collapse;
+     border-spacing:0;
+ }
 th{
-    font-style:normal;
-    font-weight:normal;
-}
-li{list-style:none;
-}
-caption,th{
-    text-align:left;
-}
-h1,h2,h3,h4,h5,h6{
-    font-size:100%;
-}
-h1{
-    font-size:18px;
-}
-h2{
-    font-size:16px;
-}
-h3{
-    font-size:14px;
-}
-a{
-    color:#36c;
-    text-decoration:none;
-}
-hr{
-    color:#D1D7DC;
-    background-color:#D1D7DC;
-    border:none;
-    height:1px;
-}
-html{
-    overflow-y:scroll;
-}
+     font-style:normal;
+     font-weight:normal;
+ }
+ li{list-style:none;
+ }
+ caption,th{
+     text-align:left;
+ }
+ h1,h2,h3,h4,h5,h6{
+     font-size:100%;
+ }
+ h1{
+     font-size:18px;
+ }
+ h2{
+     font-size:16px;
+ }
+ h3{
+     font-size:14px;
+ }
+ a{
+     color:#36c;
+     text-decoration:none;
+ }
+ hr{
+     color:#D1D7DC;
+     background-color:#D1D7DC;
+     border:none;
+     height:1px;
+ }
+ html{
+     overflow-y:scroll;
+ }
 .tabs-container{
     position:relative;
     margin:20px 0
@@ -79,7 +79,7 @@ html{
     padding-top:8px;
     line-height:21px;
     text-align:center;
-    background:url(../../leather/image/tabview_bg.gif) no-repeat 0 6px;
+    background:url(../image/tabview_bg.gif) no-repeat 0 6px;
     cursor:pointer
 }
 .tabs-nav .current a {
@@ -156,7 +156,6 @@ html{
     width: 160px;
     height: 35px;
 }
-
 .addr_and_note dt,.invoice-info dt,.misc-info dt,.misc-info dd,.contact-info dt,.contact-info dd{
     display:inline;float:left
 }

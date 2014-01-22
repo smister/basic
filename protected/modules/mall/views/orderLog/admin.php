@@ -24,7 +24,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView', array(
+<?php
+$this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'order-log-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
@@ -32,14 +33,17 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'log_id',
 		'order_id',
 		'op_name',
-		'log_text',
-		'action_time',
-		/*
-		'behavior',
-		'result',
-		*/
+        array(
+            'name' => 'action_time',
+            'value' => 'date("Y年m月d日 H:i:s",$data->action_time)',
+        ),
+        array(
+            'name' => 'log_text',
+            'value' => '$data->showOp($data->log_id)'
+        ),
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
 	),
-)); ?>
+));
+?>
