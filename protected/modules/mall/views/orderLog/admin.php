@@ -4,10 +4,6 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List OrderLog', 'icon'=>'list', 'url'=>array('index')),
-	array('label'=>'Create OrderLog', 'icon'=>'plus','url'=>array('create')),
-);
 ?>
 
 <h1>Manage Order Logs</h1>
@@ -24,7 +20,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('bootstrap.widgets.TbGridView', array(
+<?php
+$this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'order-log-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
@@ -32,14 +29,17 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'log_id',
 		'order_id',
 		'op_name',
-		'log_text',
-		'action_time',
-		/*
-		'behavior',
-		'result',
-		*/
-		array(
-			'class'=>'bootstrap.widgets.TbButtonColumn',
-		),
+        array(
+            'name' => 'action_time',
+            'value'=>'date("Y-m-d H:i;s",$data->action_time+8*3600)'
+        ),
+        array(
+            'name' => 'log_text',
+            'value' => '$data->showOp($data->log_id)'
+        ),
+        array(
+            'value' => 'Tbfunction::view_log($data->log_id)',
+        ),
 	),
-)); ?>
+));
+?>

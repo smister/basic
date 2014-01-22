@@ -32,14 +32,11 @@ $this->breadcrumbs = array(
         ),
         array(
             'name' => 'pay_status',
-            'value' => 'Tbfunction::showPayStates($data->pay_status)',
+            'value' => 'Tbfunction::showPayStatus($data->pay_status)',
             'filter' => Tbfunction::ReturnPayStatus(),
         ),
-        array(
-            'name' => 'ship_status',
-            'value' => 'Tbfunction::showShipStatus($data->ship_status)',
-            'filter' => Tbfunction::ReturnShipStatus(),
-        ),
+
+
         array(
             'name' => 'refund_status',
             'value' =>'Tbfunction::showRefundStatus($data->refund_status)',
@@ -60,7 +57,7 @@ $this->breadcrumbs = array(
         ),
         array(
             'name' => 'create_time',
-            'value' => 'date("Y年m月d日 H:i:s",$data->create_time)',
+            'value'=>'date("Y-m-d H:i;s",$data->create_time+8*3600)'
         ),
 
         array(
