@@ -23,7 +23,7 @@ echo $form->textFieldControlGroup($model, 'url');
 <div class="control-group">
     <?php echo $form->labelEx($model, 'pic', array('class' => 'control-label')); ?>
     <div class="controls">
-        <?php $this->widget('ext.elfinder.ServerFileInput', array(
+        <?php $this->widget('ext.elFinder.ServerFileInput', array(
             'model' => $model,
             'attribute' => 'pic',
             'filebrowserBrowseUrl' => Yii::app()->createUrl('mall/elfinder/view'),
