@@ -2,13 +2,9 @@
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/pptBox.js'); ?>
 <div class="warp_banner index_bg01" id="mainbody">
     <div id="slides" class="banner">
-        <div class="banner_l">
-            <a class="prev" href="#">
+            <a class="slidesjs-previous slidesjs-navigation" href="#" style="top: 240px;width: 43px;position: absolute;left: 0;z-index: 9999;">
                 <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/image/banner_l.png', '上一页', array('width' => '43', 'height' => '43')); ?>
             </a>
-        </div>
-        <div class="bannerImg">
-            <div class="slides_container">
                 <?php
                 $i = 0;
                 foreach ($ads as $ad) {
@@ -22,13 +18,9 @@
 EOF;
                 }
                 ?>
-            </div>
-        </div>
-        <div class="banner_r">
-            <a class="next" href="#">
+            <a class="slidesjs-next slidesjs-navigation" href="#" style="top: 240px;width: 43px;position: absolute;right: 0;z-index: 9999;">
                 <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/image/banner_r.png', '下一页', array('width' => '43', 'height' => '43')); ?>
             </a>
-        </div>
     </div>
 </div>
 <div class="warp_contant">
@@ -203,32 +195,39 @@ EOF;
 </div>
 <script type="text/javascript">
     //保证导航栏背景与图片轮播背景一起显示
-    $("#mainbody").removeClass();
-    $("#mainbody").addClass("index_bg01");
+//    $("#mainbody").removeClass();
+//    $("#mainbody").addClass("index_bg01");
     $(function () {
         //滚动Banner图片的显示
-        $('#slides').slides({
-            preload: false,
-            preloadImage: '/images/loading.gif',
-            effect: 'fade',
-            slideSpeed: 400,
-            fadeSpeed: 100,
-            play: 3000,
-            pause: 100,
-            hoverPause: true
-        });
-        //$('#js-news').ticker();
-    });
-    function change_bg(n) {
-        var tnum = $(".tab_t_list>li").length;
-        for (i = 1; i <= tnum; i++) {
-            if (i == n) {
-                $("#pop_" + i).css("display", "");
-                $(".tab_t_list>li")[i - 1].className = "current";
-            } else {
-                $("#pop_" + i).css("display", "none");
-                $(".tab_t_list>li")[i - 1].className = "";
+        $('#slides').slidesjs({
+            width: 940,
+            height: 400,
+            navigation: {
+                active:true,
+                effect:"fade"
+            },
+            effect:{
+                fade:{
+                    speed:200
+                }
+            },
+            play: {
+                active: true,
+                // [boolean] Generate the play and stop buttons.
+                // You cannot use your own buttons. Sorry.
+                effect: "fade",
+                // [string] Can be either "slide" or "fade".
+                interval: 5000,
+                // [number] Time spent on each slide in milliseconds.
+                auto: true,
+                // [boolean] Start playing the slideshow on load.
+                swap: true,
+                // [boolean] show/hide stop and play buttons
+                pauseOnHover: false,
+                // [boolean] pause a playing slideshow on hover
+                restartDelay: 2500
+                // [number] restart delay on inactive slideshow
             }
-        }
-    }
+        });
+    });
 </script>
