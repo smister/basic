@@ -124,4 +124,5 @@ class OrderItem extends CActiveRecord
     {
         return parent::model($className);
     }
+
 }

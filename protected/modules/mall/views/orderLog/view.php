@@ -20,11 +20,10 @@ $this->menu=array(
 	'attributes'=>array(
 		'log_id',
 		'order_id',
-		'op_id',
 		'op_name',
 		'log_text',
 		'action_time',
-		'behavior',
+		'user_id',
 		'result',
 	),
 )); ?>
