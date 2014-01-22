@@ -52,12 +52,12 @@ class OrderController extends Controller
     public function actionCheckout()
     {
         $keys = isset($_REQUEST['position']) ? (is_array($_REQUEST['position']) ? $_REQUEST['position'] : explode('_', $_REQUEST['position'])) : array();
-        if (Yii::app()->user->id) {
+//        if (Yii::app()->user->id) {
             $this->render('checkout', array('keys' => $keys));
-        } else {
-            Yii::app()->user->returnUrl = Yii::app()->createUrl('order/checkout', array('position' => implode('_', $keys)));
-            $this->redirect(array('/user/login'));
-        }
+//        } else {
+//            Yii::app()->user->returnUrl = Yii::app()->createUrl('order/checkout', array('position' => implode('_', $keys)));
+//            $this->redirect(array('/user/login'));
+//        }
     }
 
     /**
@@ -81,13 +81,11 @@ class OrderController extends Controller
                     $model->user_id = Yii::app()->user->id ? Yii::app()->user->id : '0';
                     $model->create_time = time();
                     $cart = Yii::app()->cart;
-                    $items = array();
-                    foreach ($_POST['keys'] as $key)
-                        $items[] = $cart->itemAt($key);
                     $cri = new CDbCriteria(array(
                         'condition' => 'contact_id =' . $_POST['delivery_address'] . ' AND user_id = ' . Yii::app()->user->id
                     ));
                     $address = AddressResult::model()->find($cri);
+                    $model->order_id=F::get_order_id();
                     $model->receiver_name = $address->contact_name;
                     $model->receiver_country = $address->country;
                     $model->receiver_state = $address->state;
@@ -98,11 +96,21 @@ class OrderController extends Controller
                     $model->receiver_mobile = $address->mobile_phone;
                     $model->receiver_phone = $address->phone;
                     $model->total_fee = 0;
-                    foreach ($items as $item) {
+                    foreach ($_POST['keys'] as $key){
+                        $item= $cart->itemAt($key);
                         $model->total_fee += $item['quantity'] * $item['price'];
                     }
                     if ($model->save()) {
-                        foreach ($items as $item) {
+                     foreach ($_POST['keys'] as $key){
+                             $item= $cart->itemAt($key);
+                         $sku=Sku::model()->findByPk($item['sku']['sku_id']);
+                         if($sku->stock<$item['quantity']){
+                             throw new Exception('stock is not enough!');
+                         }
+                         $sku->stock-=$item['quantity'];
+                         if(!$sku->save()) {
+                             throw new Exception('cut down stock fail');
+                         }
                             $OrderItem = new OrderItem;
                             $OrderItem->order_id = $model->order_id;
                             $OrderItem->item_id = $item['item_id'];
@@ -115,9 +123,7 @@ class OrderController extends Controller
                             if (!$OrderItem->save()) {
                                 throw new Exception('save order item fail');
                             }
-                        }
-                        foreach ($_POST['keys'] as $key) {
-                            $cart->remove($key);
+                       $cart->remove($key);
                         }
                     } else {
                         throw new Exception('save order fail');
@@ -126,15 +132,13 @@ class OrderController extends Controller
                     $this->redirect(array('success'));
                 } catch (Exception $e) {
                     $transaction->rollBack();
+                    echo '<script>alert("'.$e->getMessage().'")</script>';
+                    echo '<script>history.go(-3)</script>';
                 }
             }
         }
 
     }
-
-//        $this->render('create', array(
-//            'model' => $model,
-//        ));
 
 
     public function actionSuccess()
@@ -215,7 +219,7 @@ class OrderController extends Controller
      */
     public function loadModel($id)
     {
-        $model = Order::model()->with('orderItems')->findByPk($id);
+        $model = Order::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
@@ -233,4 +237,9 @@ class OrderController extends Controller
         }
     }
 
+    public function actionFreergt(){
+       $model = new Order;
+        $this->render('freergt', array(
+            'model' => $model,));
+   }
 }

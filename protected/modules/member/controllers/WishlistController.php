@@ -57,12 +57,10 @@ class WishlistController extends Controller {
                 $model->item_id = $item_id;
                 $model->user_id = Yii::app()->user->id;
                 $model->create_time = time();
-                $model->save();
-            } else {
-                return false;
-            }
-        } else {
-            return false;
+               if($model->save()){
+                  echo json_encode(array('status'=>'success'));
+               }else echo  json_encode(array('status'=>'fail'));
+            }else echo  json_encode(array('status'=>'exist'));
         }
     }
 

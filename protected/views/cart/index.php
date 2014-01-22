@@ -7,9 +7,10 @@ Yii::app()->clientScript->registerCoreScript('jquery');
 <script type="text/javascript">
     $(document).ready(function() {
         $("#updateCart").click(function (event) {
-            $('#cartForm').submit(); 
+            $('#cartForm').submit();
         });
     });
+
 </script>
 <div class="box">
     <div class="box-title">购物车</div>
@@ -25,7 +26,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 <th width="16%">操作</th>
             </tr>
             <?php
-//            print_r($mycart);
+            print_r($mycart);
             if($mycart){
                 $i=1;
             foreach($mycart as $m){?>
@@ -37,10 +38,10 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 <td><?php echo $m['subtotal'] ?>元</td>
                 <td><?php echo CHtml::link('移除', array('/cart/delete', 'rowid'=>$m['rowid']))?></td>
             </tr>
-            <?php 
+            <?php
             $i++;
             }
-            
+
             }else{
             ?>
              <tr>
@@ -55,7 +56,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
         <span style="float:right;padding:5px 10px;"><?php echo CHtml::link('继续购物', array('/item-list-all'), array('class'=>'btn'))?></span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="float:right;padding:5px 10px;"><?php echo CHtml::link('更新购物车', '#', array('id'=>'updateCart', 'class'=>'btn'))?></span></td>
             </tr>
             <tr>
-                 <td colspan="6"><span style="float:right;padding:5px 10px;"><?php echo CHtml::link('结算', array('/order/checkout'), array('class'=>'btn1'))?></span></td>
+                 <td colspan="6"><span style="float:right;padding:5px 10px;"><?php echo CHtml::link('结算', array('/order/checkout'), array('class'=>'btn'))?></span></td>
              </tr>
         </table>
          <?php echo CHtml::endForm(); ?>

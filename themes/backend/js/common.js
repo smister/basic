@@ -11,9 +11,9 @@ $(document).ready(function () {
         $(window.parent.document).find('#item-table').append(html + '</tr>');
         $(this).closest('tr').remove();
     });
-    $('#item-table').on('click', '#delete', function () {
-        var tr = $(this).closest('tr');
-        tr.remove();
+    $('#ItemList').on('click', '#delete', function () {
+        var div = $(this).parent();
+        div.remove();
     });
     $('#add_prop').dynoTable({
         removeClass: '.row-remover', //class for the clickable row remover
@@ -77,18 +77,71 @@ $(document).ready(function () {
         });
         return false;
     });
+    $('#item-number').change(function () {
+        var skuValue = $('#Sku_item');
+        if (skuValue.val() != '' && $('#selectItem').val() != '') {
+            var number1 = parseInt($('#item-number').val());
+            if (!isNaN(number1)) {
+                var number2 = 0;
+                var sku = $('#ItemList').find('input[value=' + skuValue.val() + '][id=Sku_sku_id]');
+                if ((sku.val() != undefined)) {
+                    var number2 = parseInt(sku.parent().find('#Item-number').val());
+                }
+                $.get($(this).data('url'), {number: number1 + number2, sku_id: $('#Sku_item').val() }, function (response) {
+                    if (response == 0) {
+                        $('#stockError').remove();
+                        $('#StockError').append('<div style="color: red" id="stockError">库存不足！</div>');
+                    }
+                    else $('#stockError').remove();
+                });
+            }
+        }
+    });
+    $('#Sku_item').change(function () {
+        $('#item-number').trigger('change');
+    });
+    $('#add-button').click(function () {
+        var skuValue = $('#Sku_item');
+        if ($('#selectItem').val() == '') {
+            showPopup('请选择商品！');
+        }
+        else {
+            if (skuValue.val() == '') {
+                showPopup('请选择商品属性');
+            }
+            else {
+                if ($('#item-number').val() == '') {
+                    showPopup('请输入商品数量');
+                }
+                else {
+                    var number = parseInt($('#item-number').val());
+                    var sku = $('#ItemList').find('input[value=' + skuValue.val() + '][id=Sku_sku_id]');
+                    if ((sku.val() != undefined)) {
+                        number += parseInt(sku.parent().find('#Item-number').val());
+                    }
+                    $.get($('#item-number').data('url'), {number: number, sku_id: skuValue.val() }, function (response) {
+                        if (response == 0) {
+                            $('#stockError').remove();
+                            $('#StockError').append('<div style="color: red" id="stockError">库存不足！</div>');
+                        }
+                        else {
+                            $('#stockError').remove();
+                            sku.parent().remove();
+                            var html = '<div>';
+                            html += '<input id="Sku_item_id" name="Sku[item_id][]" type="hidden" value="' + $('#selectItem').val() + '"/>';
+                            html += '<input id="Sku_sku_id" name="Sku[sku_id][]" type="hidden" value="' + $('#Sku_item').val() + '"/>';
+                            html += '<input id="Item-number" name="Item-number[]" type="hidden" value="' + number + '"/>';
+                            html += '<div>商品标题：' + $("#selectItem  option:selected").html() + '</div>';
+                            html += '<div>商品属性：' + $("#Sku_item  option:selected").html() + '</div>';
+                            html += '<div>商品数量：' + number + '</div>' + '<div class="btn btn-danger" id="delete">Delete</div></div>';
+                            $('#ItemList').append(html);
+                        }
+                    });
+                }
+            }
+        }
+    });
 });
-function showPopup(url) {
-    var $popup = $('#overlay-popup');
-    if ($popup.length) { // if popup has existed, use it
-        $popup.show();
-    } else { // if popup has not been created, create it
-        $popup = $('<div id="overlay-popup"><div class="overlay-popup"></div><div class="popup-container"><b class="close">X</b><iframe class="popup-iframe" src="' + url + '"></iframe></div></div>').appendTo('body')
-            .on('click', '.close', function () {
-                $(this).parent().parent().hide();
-            });
-    }
-}
 $(function () {
     var getItemProps = function () {
         $.get($('#Item_category_id').data('url'),

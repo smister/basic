@@ -57,16 +57,17 @@ class Order extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('shipping_method_id,receiver_name,receiver_country,receiver_state,receiver_city,receiver_district,receiver_zip,receiver_address', 'required'),
+            array('shipping_method_id,receiver_name,receiver_state,receiver_city,receiver_district,receiver_zip,receiver_address', 'required'),
             array('status, pay_status, ship_status, refund_status, comment_status', 'numerical', 'integerOnly' => true),
             array('user_id, total_fee, ship_fee, pay_fee, payment_method_id, shipping_method_id, pay_time, ship_time, create_time, update_time', 'length', 'max' => 10),
             array('receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_zip, receiver_mobile, receiver_phone', 'length', 'max' => 45),
-            array('receiver_address', 'length', 'max' => 255),
+            array('receiver_address,receiver_country', 'length', 'max' => 255),
             array('memo', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('order_id, user_id, status, pay_status, ship_status, refund_status, comment_status, total_fee, ship_fee, pay_fee, payment_method_id, shipping_method_id, receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_address, receiver_zip, receiver_mobile, receiver_phone, memo, pay_time, ship_time, create_time, update_time', 'safe', 'on' => 'search'),);
     }
+
 
     /**
      * @return array relational rules.
@@ -82,7 +83,7 @@ class Order extends CActiveRecord
             'payments' => array(self::HAS_MANY, 'Payment', 'order_id'),
             'refunds' => array(self::HAS_MANY, 'Refund', 'order_id'),
             'shippings' => array(self::HAS_MANY, 'Shipping', 'order_id'),
-            'users' => array(self::BELONGS_TO, 'User', 'user_id'),
+            'users' => array(self::BELONGS_TO, 'Users', 'user_id'),
         );
     }
 
@@ -168,66 +169,15 @@ class Order extends CActiveRecord
         ));
     }
 
-    public function showRefundStatus($data = array()){
-        if (empty($data)) {
-            $order_status = Tbfunction::ReturnRefundStatus();
-            return isset($order_status[$this->refund_status]) ? $order_status[$this->refund_status] : $this->refund_status;
-        } else if ($data instanceof Order) {
-            return $data->showRefundStatus();
-        }
-    }
-
-    public function showShipStatus($data = array()){
-        if (empty($data)) {
-            $order_status = Tbfunction::ReturnShipStatus();
-            return isset($order_status[$this->ship_status]) ? $order_status[$this->ship_status] : $this->ship_status;
-        } else if ($data instanceof Order) {
-            return $data->showShipStatus();
-        }
-    }
-
-    public function showPayStatus($data = array()){
-        if (empty($data)) {
-            $order_status = Tbfunction::ReturnPayStatus();
-            return isset($order_status[$this->pay_status]) ? $order_status[$this->pay_status] : $this->pay_status;
-        } else if ($data instanceof Order) {
-            return $data->showPayStatus();
-        }
-    }
-
-    public function showPayMethod($data = array()){
-        if (empty($data)) {
-            $order_state = Tbfunction::ReturnPayMethod();
-            return isset($order_state[$this->payment_method_id]) ? $order_state[$this->payment_method_id] : $this->payment_method_id;
-        } else if ($data instanceof Order) {
-            return $data->showPayMethod();
-        }
-    }
-
-    public function showStatus($data = array()){
-        if (empty($data)) {
-            $order_state = Tbfunction::ReturnStatus();
-            return isset($order_state[$this->status]) ? $order_state[$this->status] : $this->status;
-        } else if ($data instanceof Order) {
-            return $data->showStatus();
-        }
-    }
-
-    public function showShipMethod($data = array()){
-        if (empty($data)) {
-            $order_state = Tbfunction::ReturnShipMethod();
-            return isset($order_state[$this->shipping_method_id]) ? $order_state[$this->shipping_method_id] : $this->shipping_method_id;
-        } else if ($data instanceof Order) {
-            return $data->showShipMethod();
-        }
-    }
-
-    public function showDetailAddress($data = array()){
+    public function showDetailAddress($model){
+        $data['receiver_country'] = $model->receiver_country;
         foreach (array( 'state', 'city', 'district') as $value) {
-            $data->{'receiver_' . $value} = Area::model()->findByPk($data->{'receiver_' . $value})->name;
+            $data['receiver_' . $value] = Area::model()->findByPk($model->{'receiver_' . $value})->name;
         }
-        $detail_address = $data->receiver_country . $data->receiver_state . $data->receiver_city . $data->receiver_district . $data->receiver_address;
+        $data['receiver_address'] = $model->receiver_address;
+        $detail_address = implode(' ', $data);
         return $detail_address;
+
     }
 
     protected function beforeSave() {

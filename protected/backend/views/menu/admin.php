@@ -13,6 +13,13 @@ $this->menu=array(
 
 <div class="well well-large">
 <?php
+$form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+        'id' => 'Menu',
+        'htmlOptions' => array(
+            'class' => 'form-horizontal',
+        )
+    )
+);
 $criteria = new CDbCriteria;
 $criteria->order = 't.root, t.lft'; // or 't.root, t.lft' for multiple trees
 $menu = Menu::model()->findAll($criteria);
@@ -43,6 +50,6 @@ for ($i = $level; $i; $i--) {
     echo CHtml::closeTag('li') . "\n";
     echo CHtml::closeTag('ul') . "\n";
 }
-
+$this->endWidget();
 ?>
 </div>

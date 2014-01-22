@@ -60,7 +60,7 @@ class Item extends YActiveRecord
         return array(
             array('category_id, title, stock, price, currency, props, props_name, desc, language, country, state, city', 'required'),
             array('is_show, is_promote, is_new, is_hot, is_best', 'numerical', 'integerOnly' => true),
-            array('category_id, stock, min_number, price, shipping_fee, click_count, wish_count, create_time, update_time, country, state, city', 'length', 'max' => 10),
+            array('category_id, stock, min_number, price, shipping_fee, click_count, wish_count, review_count,deal_count,create_time, update_time, country, state, city', 'length', 'max' => 10),
             array('outer_id, language', 'length', 'max' => 45),
             array('title', 'length', 'max' => 255),
             array('currency', 'length', 'max' => 20),
@@ -255,7 +255,7 @@ class Item extends YActiveRecord
      * @return array
      * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
      */
-    public function getItemPics()
+    public function getItemPics($width = 200, $height = 200)
     {
         $itemImgs = ItemImg::model()->findAllByAttributes(array('item_id' => $this->item_id));
         return CHtml::listData($itemImgs, 'item_img_id', 'pic');
@@ -266,15 +266,16 @@ class Item extends YActiveRecord
      * @return mixed
      * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
      */
-    public function getMainPic()
+    public function getMainPic($width = 200, $height = 200)
     {
         $itemImg = ItemImg::model()->findByAttributes(array('item_id' => $this->item_id, 'position' => 0));
         return $itemImg->pic;
+        return ImageHelper::thumb($width, $height, $itemImg->pic);
     }
 
     public function defaultScope()
     {
-        return array('condition' => 't.is_show = 1');
+        return array('condition' => 'is_show = 1');
     }
 
     public function scopes()
@@ -384,7 +385,7 @@ class Item extends YActiveRecord
      * @return string
      * @author milkyway(yhxxlm@gmail.com)
      */
-    public function getHolderJs($width = '150', $height = '150', $text = 'No Pic')
+    public function getHolderJs($width, $height , $text = 'No Pic')
     {
         return 'holder.js/' . $width . 'x' . $height . '/text:' . $text;
     }
