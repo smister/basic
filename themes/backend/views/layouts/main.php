@@ -108,6 +108,6 @@ $cs = Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl . '/js/jquery.form.js', CClientScript::POS_END);
 $cs->registerScriptFile(Yii::app()->baseUrl . '/js/skus.js', CClientScript::POS_END); ?>
 <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui.min.js"></script>
-<!--<script type="text/javascript" src="--><?php //echo Yii::app()->theme->baseUrl; ?><!--/js/common.js"></script>-->
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/common.js"></script>
 </body>
 </html>

@@ -80,7 +80,7 @@ class CatalogController extends YController
         }
         $count = Item::model()->count($criteria);
         $pager = new CPagination($count);
-        $pager->pageSize = 12;
+        $pager->pageSize = 5;
         $pager->applyLimit($criteria);
         $items = Item::model()->findAll($criteria);
 
@@ -112,6 +112,8 @@ class CatalogController extends YController
             'pager' => $pager,
             'categories' => $categories,
             'itemProps' => $itemProps,
+            'sort'=>$_GET['sort'],
+            'key'=>$_GET['key'],
         ));
     }
 }

@@ -134,5 +134,18 @@ class Menu extends CActiveRecord {
         $menu = Menu::model()->findByPk($this->id);
         $descendants = $menu->children()->findAll();
         return count($descendants);
-    }    
+    }
+
+    /****
+     * get Menu url by name
+     * @param $name
+     * @return mixed
+     */
+    public function getUrl($name){
+        $menu=self::model()->find(array(
+            'condition'=>'name=?',
+            'params'=>array($name),
+        ));
+        return $menu->url;
+    }
 }

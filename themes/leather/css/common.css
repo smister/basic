@@ -569,6 +569,26 @@ a.online_ser{
     margin:0 auto;
 
 }
+.chenyu{
+    height:220px;
+    width:220px;
+}
+.view1 {
+    width: 350px;
+    display: inline-block;
+}
+.wangjingye{
+    position : static;
+    text-align: center;
+}
+.shenyue{
+    text-align: right;
+}
+/*li{*/
+    /*width:88px;*/
+    /*height:33px;*/
+    /*display:inline;*/
+/*}*/
 /*.container{*/
     /*text-align:center;*/
 /*}*/
