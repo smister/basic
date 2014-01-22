@@ -18,6 +18,14 @@ class OrderLogController extends Controller {
 		));
 	}
 
+    public function actionDetail($id)
+    {
+        $orderlog = OrderLog::model()->findByPk($id);
+        $this->render('view', array(
+            'model' => $orderlog,
+        ));
+    }
+
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
