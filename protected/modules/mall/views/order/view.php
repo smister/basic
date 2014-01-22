@@ -51,7 +51,8 @@
                     <dd>
                         <?php
                         if($Order->create_time){
-                            echo date("Y年m月d日 H:i:s",$Order->create_time);
+
+                            echo date("Y-m-d H:i;s",$Order->create_time + 8*3600);
                         }
                         ?>
                     </dd></dl>
@@ -60,7 +61,7 @@
                     <dd>
                         <?php
                         if($Order->ship_time){
-                            echo date("Y年m月d日 H:i:s",$Order->ship_time);
+                            echo date("Y-m-d H:i;s",$Order->ship_time + 8*3600);
                         }
                         ?>
                     </dd>
@@ -69,7 +70,7 @@
                     <dd>
                         <?php
                         if($Order->pay_time){
-                            echo date("Y年m月d日 H:i:s",$Order->pay_time);
+                            echo date("Y-m-d H:i;s",$Order->pay_time + 8*3600);
                         }
                         ?>
                     </dd>
