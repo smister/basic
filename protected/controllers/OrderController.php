@@ -121,7 +121,7 @@ class OrderController extends Controller
                             $OrderItem->props_name = $item['props_name'];
                             $OrderItem->price = $item['price'];
                             $OrderItem->quantity = $item['quantity'];
-                            $OrderItem->total_price = $OrderItem->quantity * $OrderItem->price;var_dump($OrderItem);die;
+                            $OrderItem->total_price = $OrderItem->quantity * $OrderItem->price;
                             if (!$OrderItem->save()) {
                                 throw new Exception('save order item fail');
                             }
