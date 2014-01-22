@@ -315,8 +315,10 @@ a.online_ser{
 }
 .news_list{
 	margin:2px;
+
 }
 .news_list li{
+    margin-right: 50px;
 	height:23px;
 	line-height:23px;
 	overflow:hidden;
@@ -574,7 +576,7 @@ a.online_ser{
     width:220px;
 }
 .view1 {
-    width: 350px;
+    width: 280px;
     display: inline-block;
 }
 .wangjingye{
@@ -582,6 +584,9 @@ a.online_ser{
     text-align: center;
 }
 .shenyue{
+    text-align: right;
+}
+.summary{
     text-align: right;
 }
 /*li{*/

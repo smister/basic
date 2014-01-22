@@ -85,48 +85,41 @@
 	height:21px;
 }
 .deal_add_car{
-	margin-top:40px;
-    float:left;
-    font-size:x-large;
-    /*width:120px ;*/
-    /*height: 35px;*/
+	margin-top:30px;
+    font-size: 20px;
     border: 1px #000000;
-    background: red;
-    border-radius: 10px ;
-    /*text-align: center;*/
-
+    background-color: red;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
 }
 .deal_add_car a{
 	/*display:block;*/
 	/*background:url(../image/add_s_car.png) no-repeat;*/
-    font-size: 20px;
+    color: white;
 	/*text-indent:-9999px;*/
 }
 
 .deal_add{
-    margin-top:45px;
+    margin-left: 10px;
+    margin-top:30px;
+    font-size: 16px;
     border: 1px #000000;
-    background: lightpink;
-    float: right;
-    font-size:large;
-    margin-right:85px;
-    border-radius: 10px ;
+    background-color: wheat;
+    padding: 13px;
+    text-align: center;
+    display: inline-block;
 }
-.deal_add a{
-    /*display:block;*/
-    /*background:url(../image/add_s.jpg) no-repeat;*/
-    color: #000000;
-    width:169px;
-    height:44px;
-    /*text-indent:-9999px;*/
-}
+
 .deal_collect{
-    margin-top:-20px;
+    margin-left: 10px;
+    margin-top:30px;
+    font-size: 16px;
     border: 1px #000000;
-    background: lightseagreen;
-    float: right;
-    font-size:small;
-    border-radius: 10px ;
+    background-color: wheat;
+    padding: 13px;
+    text-align: center;
+    display: inline-block;
 }
 
 .pd_l_intr{

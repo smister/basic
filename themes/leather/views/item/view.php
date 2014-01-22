@@ -148,8 +148,7 @@ $imageHelper=new ImageHelper();
             <input type="hidden" id="props" name="props" value="" />
             <div class="deal_add_car" data-url="<?php echo Yii::app()->createUrl('cart/add'); ?>"><a href="javascript:void(0)">加入购物车</a></div>
 <!--            <div class="deal_add" data-url="--><?php //echo Yii::app()->createUrl('order/checkout');?><!--"><a data-url='' href="javascript:void(0)">立即购买</a></div>-->
-            <?php echo CHtml::link("立即购买",array("/order/checkout",),array("class"=>"deal_add"))?>
-            <div style="clear:both"></div>
+            <div class="deal_add"><?php echo CHtml::link("立即购买",array("/order/checkout"))?></div>
             <div class="deal_collect" data-url="<?php echo Yii::app()->createUrl('member/wishlist/addWish'); ?>" ><a href="javascript:void(0)">立即收藏</a></div>
         </form>
     </div>
