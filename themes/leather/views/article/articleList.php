@@ -9,14 +9,10 @@
 
 ?>
 <div class="view1">
-
-    <b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
-    <?php echo CHtml::link(CHtml::encode($data->title), "#"); ?>
-    <br/>
-
-    <b><?php echo CHtml::encode($data->getAttributeLabel('pic_url')); ?>:</b>
+    <img class="chenyu" src=" <?php echo $data->pic_url; ?>" />
+    <div class="wangjingye grid_4"><?php echo CHtml::link(CHtml::encode($data->title), "#"); ?></div>
     <?php echo '</br>'; ?>
-    <?php echo CHtml::encode($data->pic_url); ?>
     <br/>
 
 </div>
+

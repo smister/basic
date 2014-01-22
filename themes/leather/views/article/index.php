@@ -1,1 +1,1 @@
-<?php $this->widget('zii.widgets.CListView', array(    'dataProvider'=>$dataProvider,    'itemView'=>'articleList',)); ?>
+<?php $this->widget('zii.widgets.CListView', array(    'dataProvider'=>$dataProvider,    'itemView'=>'articleList',    'htmlOptions'=>array('class'=>'container_24'),    'pager'=>array(        'header'=>'王敬业',        'prevPageLabel'=>'跳到上一个页面',        'nextPageLabel'=>'跳到下一个页面',        'footer'=>'王敬业',    ),    'pagerCssClass'=>'shenyue',)); ?>

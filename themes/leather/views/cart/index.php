@@ -42,6 +42,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             <?php
             } else {
                 foreach ($items as $key => $item) {
+//                    var_dump($key);die;
                     ?>
                     <tr><?php
                         $itemUrl = Yii::app()->createUrl('item/view', array('id' => $item->item_id));

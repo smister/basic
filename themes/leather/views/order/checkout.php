@@ -13,10 +13,10 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 $('#orderForm').submit();
             });
         });
-
     </script>
     <div style="margin-top:10px"></div>
 <?php echo CHtml::beginForm(array('/order/create'), 'POST', array('id' => 'orderForm')) ?>
+<?php if (Yii::app()->user->id) { ?>
     <div class="box">
         <div class="box-title container_24"><span
                 style="float:right"><?php echo CHtml::link('管理收货地址', array('/member/delivery_address/admin')) ?></span>收货地址
@@ -35,15 +35,96 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                             'class' => 'buyer-address shop_selection'),
                         $address->s->name . '&nbsp;' . $address->c->name . '&nbsp;' . $address->d->name . '&nbsp;' . $address->address . '&nbsp;(' . $address->contact_name . '&nbsp;收)&nbsp;' . $address->mobile_phone);
                     echo '</li>';
-
                 }
             }
-            else {
-                ?>
-                <?php echo CHtml::link('免注册登录', array('/order/freergt')) ?>
-            <?php } ?>
+            ?>
         </div>
     </div>
+
+<?php } else { ?>
+    <div class="box">
+        <div class="box-title">delivery address</div>
+        <div class="box-content">
+            <?php $model = new AddressResult;
+            ?>
+
+            <p class="note">Fields with <span class="required">*</span> are required.</p>
+
+            <div class="row">
+                <label for="AddressResult_contact_name" class="required">联系人<span class="required">*</span></label>
+                <input size="45" maxlength="45" name="AddressResult[contact_name]" id="AddressResult_contact_name"
+                       type="text"/>
+            </div>
+            <div class="row">
+                <?php
+                $state_data = Area::model()->findAll("grade=:grade",
+                    array(":grade" => 1));
+                $state = CHtml::listData($state_data, "area_id", "name");
+                $s_default = $model->isNewRecord ? '' : $model->state;
+                echo '省&nbsp;' . CHtml::dropDownList('AddressResult[state]', $s_default, $state,
+                        array(
+                            'empty' => '请选择省份',
+                            'ajax' => array(
+                                'type' => 'GET', //request type
+                                'url' => CController::createUrl('dynamiccities'), //url to call
+                                'update' => '#AddressResult_city', //selector to update
+                                'data' => 'js:"AddressResult_state="+jQuery(this).val()',
+                            )));
+                //empty since it will be filled by the other dropdown
+                $c_default = $model->isNewRecord ? '' : $model->city;
+                if (!$model->isNewRecord) {
+                    $city_data = Area::model()->findAll("parent_id=:parent_id",
+                        array(":parent_id" => $model->state));
+                    $city = CHtml::listData($city_data, "id", "name");
+                }
+                $city_update = $model->isNewRecord ? array() : $city;
+                echo '&nbsp;市&nbsp;' . CHtml::dropDownList('AddressResult[city]', $c_default, $city_update,
+                        array(
+                            'empty' => '请选择城市',
+                            'ajax' => array(
+                                'type' => 'GET', //request type
+                                'url' => CController::createUrl('dynamicdistrict'), //url to call
+                                'update' => '#AddressResult_district', //selector to update
+                                'data' => 'js:"AddressResult_city="+jQuery(this).val()',
+                            )));
+                $d_default = $model->isNewRecord ? '' : $model->district;
+                if (!$model->isNewRecord) {
+                    $district_data = Area::model()->findAll("parent_id=:parent_id",
+                        array(":parent_id" => $model->city));
+                    $district = CHtml::listData($district_data, "id", "name");
+                }
+                $district_update = $model->isNewRecord ? array() : $district;
+                echo '&nbsp;区&nbsp;' . CHtml::dropDownList('AddressResult[district]', $d_default, $district_update,
+                        array(
+                            'empty' => '请选择地区',
+                        )
+                    );
+                ?>
+            </div>
+            <div class="row">
+                <label for="AddressResult_zipcode" class="required">邮政编号 <span class="required">*</span></label> <input
+                    size="10" maxlength="45" name="AddressResult[zipcode]" id="AddressResult_zipcode" type="text"/>
+            </div>
+            <div class="row">
+                <label for="AddressResult_address" class="required">详细地址 <span class="required">*</span></label> <input
+                    size="60" maxlength="255" name="AddressResult[address]" id="AddressResult_address" type="text"/>
+            </div>
+            <div class="row">
+                <label for="AddressResult_mobile_phone" class="required">手机 <span class="required">*</span></label>
+                <input size="45" maxlength="45" name="AddressResult[mobile_phone]" id="AddressResult_mobile_phone"
+                       type="text"/></div>
+            <div class="row">
+                <label for="AddressResult_phone">电话</label> <input size="45" maxlength="45" name="AddressResult[phone]"
+                                                                   id="AddressResult_phone" type="text"/></div>
+            <div class="row">
+                <label for="AddressResult_memo">备注</label> <textarea rows="6" cols="50" name="AddressResult[memo]"
+                                                                     id="AddressResult_memo"></textarea></div>
+
+
+        </div>
+    </div>
+
+<?php } ?>
     <div class="box">
         <div class="box-title container_24">支付方式</div>
         <div class="box-content">
@@ -80,11 +161,11 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                     </tr>
                 <?php
                 } else {
-                    $price=0;
+                    $price = 0;
                     foreach ($keys as $key) {
                         if (!isset($items[$key])) continue;
                         $item = $items[$key];
-                        echo CHtml::hiddenField('keys[]',$key);
+                        echo CHtml::hiddenField('keys[]', $key);
                         ?>
                         <tr><?php
                             ?>
@@ -94,7 +175,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                             <td><?php echo $item->getPrice(); ?></td>
                             <td><?php echo $item->getQuantity(); ?></td>
                             <td><?php echo $item->getSumPrice() ?>元</td>
-                            <?php $price+=$item->getSumPrice()?>
+                            <?php $price += $item->getSumPrice() ?>
                         </tr>
                     <?php
                     }

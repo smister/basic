@@ -1,4 +1,4 @@
-<?php Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl . '/css/product.css'); ?>
+
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/pptBox.js'); ?>
 <div class="warp_contant">
     <div class="float">
@@ -75,9 +75,11 @@
             </div>
         </div>
         <div class="pd_l_fr grid_19">
-            <div class="searh_res">找到了 <span class="cor_red blod">搜索词</span> 共计 <span class="cor_red blod">100</span>
+            <?php if(isset($key)){?>
+            <div class="searh_res">找到了 <span class="cor_red blod"><?php echo $key;?></span> 共计 <span class="cor_red blod"><?php echo count($items);?></span>
                 款供您选择
             </div>
+            <?php }?>
             <div class="pd_select">
                 <?php if ($categories) { ?>
                     <ul>
@@ -115,13 +117,19 @@
                 }
                 ?>
             </div>
-            <div class="pd_sort">
+            <div class="pd_sort" data-sort="<?php echo $sort?>">
                 <a href="<?php echo Yii::app()->createUrl('catalog/index', array_merge($_GET, array('sort' => 'soldd'))); ?>">
                     <div class="pd_sort_sold current">销量</div>
                 </a>
-                <a href="<?php echo Yii::app()->createUrl('catalog/index', array_merge($_GET, array('sort' => 'priced'))); ?>">
-                    <div class="pd_sort_price">价格</div>
-                </a>
+                <?php if($sort=='price'){?>
+                    <a href="<?php echo Yii::app()->createUrl('catalog/index', array_merge($_GET, array('sort' => 'priced'))); ?>">
+                        <div class="pd_sort_price_up">价格</div>
+                    </a>
+                <?php }else{?>
+                    <a href="<?php echo Yii::app()->createUrl('catalog/index', array_merge($_GET, array('sort' => 'price'))); ?>">
+                        <div class="pd_sort_price">价格</div>
+                    </a>
+                <?php }?>
                 <a href="<?php echo Yii::app()->createUrl('catalog/index', array_merge($_GET, array('sort' => 'newd'))); ?>">
                     <div class="pd_sort_new">最新</div>
                 </a>
@@ -222,5 +230,31 @@
         $('#has_stock').click(function () {
             window.location.href = $(this).data('url');
         });
+        var pd_sort=$('.pd_sort');
+        var sort=pd_sort.data('sort');
+        if(sort.length>1){
+
+            pd_sort.find('div').removeClass('current');
+            switch (sort) {
+                case 'sold':
+                    break;
+                case 'soldd':
+                    $('.pd_sort_sold').addClass('current');
+                    break;
+                case 'price':
+                   $('.pd_sort_price_up').addClass('current');
+                    break;
+                case 'priced':
+                    $('.pd_sort_price').addClass('current');
+                    break;
+                case 'new':
+                    break;
+                case 'newd':
+                    $('.pd_sort_new').addClass('current');
+                    break;
+                default:
+                    break;
+            }
+        }
     });
 </script>
