@@ -85,6 +85,7 @@ class OrderController extends Controller
                         'condition' => 'contact_id =' . $_POST['delivery_address'] . ' AND user_id = ' . Yii::app()->user->id
                     ));
                     $address = AddressResult::model()->find($cri);
+
                     $model->order_id=F::get_order_id();
                     $model->receiver_name = $address->contact_name;
                     $model->receiver_country = $address->country;
@@ -100,6 +101,7 @@ class OrderController extends Controller
                         $item= $cart->itemAt($key);
                         $model->total_fee += $item['quantity'] * $item['price'];
                     }
+
                     if ($model->save()) {
                      foreach ($_POST['keys'] as $key){
                              $item= $cart->itemAt($key);
@@ -132,14 +134,17 @@ class OrderController extends Controller
                     $this->redirect(array('success'));
                 } catch (Exception $e) {
                     $transaction->rollBack();
-                    echo '<script>alert("'.$e->getMessage().'")</script>';
-                    echo '<script>history.go(-3)</script>';
+                    $this->redirect(array('fail'));
+
                 }
             }
         }
 
     }
-
+    public function actionFail()
+    {
+        $this->render('fail');
+    }
 
     public function actionSuccess()
     {

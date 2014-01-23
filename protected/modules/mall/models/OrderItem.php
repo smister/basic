@@ -125,14 +125,15 @@ class OrderItem extends CActiveRecord
         return parent::model($className);
     }
 
-//    public function afterSave(){
-//            $num=self::model()->count(array(
-//                'item_id'=>':item_id ',
-//                'params'=> array(':item_id' =>$this->item_id),
-//            ));
-//            $model=Item::model()->findByPk($this->item_id);
-//            $model->deal_count=$num;
-//            $model->save();
-//            return parent::afterSave();
-//    }
+    public function afterSave(){
+
+            $num=OrderItem::model()->count(array(
+                'condition'=> 'item_id=:item_id ',
+                'params'=> array(':item_id' =>$this->item_id),
+            ));
+            $model=Item::model()->findByPk($this->item_id);
+            $model->deal_count=$num;
+            $model->save();
+            return parent::afterSave();
+    }
 }

@@ -72,18 +72,17 @@ $(document).ready(function () {
         if ($(this).attr("id") == "checkAllPosition") {
             if ($(this).attr('checked')) {
                 $('[name="position[]"]').attr('checked', 'checked');
-                flag = 1;
             } else {
                 $('[name="position[]"]').removeAttr('checked');
                 flag = 0;
             }
         } else {
             $('#checkAllPosition').removeAttr('checked');
-            alert($(this).attr("checked"));
             if($(this).attr("checked")){
                 $(this).attr("checked","checked");
             }else{
                 $(this).removeAttr("checked");
+                flag = 0;
             }
         }
         var positions = [];
