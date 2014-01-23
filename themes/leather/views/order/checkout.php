@@ -152,34 +152,49 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                     <th width="15%">小计</th>
                 </tr>
                 <?php
-                $cart = Yii::app()->cart;
-                $items = $cart->getPositions();
-                if (empty($items)) {
+                if (isset($item)) {
                     ?>
-                    <tr>
-                        <td colspan="6" style="padding:10px">您的购物车是空的!</td>
+                    <tr><?php
+                        ?>
+                        <td><?php echo CHtml::image($item->getMainPic(), $item->title, array('width' => '80px', 'height' => '80px')); ?></td>
+                        <td><?php echo $item->title; ?></td>
+                        <td><?php echo empty($item->sku) ? '' : implode(';', json_decode($item->sku->props_name, true)); ?></td>
+                        <td><?php echo $item->getPrice(); ?></td>
+                        <td><?php echo $item->getQuantity(); ?></td>
+                        <td><?php echo $item->getSumPrice() ?>元</td>
+                        <?php $price += $item->getSumPrice() ?>
                     </tr>
                 <?php
                 } else {
-                    $price = 0;
-                    foreach ($keys as $key) {
-                        if (!isset($items[$key])) continue;
-                        $item = $items[$key];
-                        echo CHtml::hiddenField('keys[]', $key);
+                    $cart = Yii::app()->cart;
+                    $items = $cart->getPositions();
+                    if (empty($items)) {
                         ?>
-                        <tr><?php
-                            ?>
-                            <td><?php echo CHtml::image($item->getMainPic(), $item->title, array('width' => '80px', 'height' => '80px')); ?></td>
-                            <td><?php echo $item->title; ?></td>
-                            <td><?php echo empty($item->sku) ? '' : implode(';', json_decode($item->sku->props_name, true)); ?></td>
-                            <td><?php echo $item->getPrice(); ?></td>
-                            <td><?php echo $item->getQuantity(); ?></td>
-                            <td><?php echo $item->getSumPrice() ?>元</td>
-                            <?php $price += $item->getSumPrice() ?>
+                        <tr>
+                            <td colspan="6" style="padding:10px">您的购物车是空的!</td>
                         </tr>
                     <?php
+                    } else {
+                        $price = 0;
+                        foreach ($keys as $key) {
+                            if (!isset($items[$key])) continue;
+                            $item = $items[$key];
+                            echo CHtml::hiddenField('keys[]', $key);
+                            ?>
+                            <tr><?php
+                                ?>
+                                <td><?php echo CHtml::image($item->getMainPic(), $item->title, array('width' => '80px', 'height' => '80px')); ?></td>
+                                <td><?php echo $item->title; ?></td>
+                                <td><?php echo empty($item->sku) ? '' : implode(';', json_decode($item->sku->props_name, true)); ?></td>
+                                <td><?php echo $item->getPrice(); ?></td>
+                                <td><?php echo $item->getQuantity(); ?></td>
+                                <td><?php echo $item->getSumPrice() ?>元</td>
+                                <?php $price += $item->getSumPrice() ?>
+                            </tr>
+                        <?php
+                        }
                     }
-                } ?>
+                }?>
                 <tr>
                     <td colspan="6" style="padding:10px;text-align:right">总计：<?php echo $price; ?> 元</td>
                 </tr>

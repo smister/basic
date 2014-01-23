@@ -320,8 +320,10 @@ a.online_ser{
 }
 .news_list{
 	margin:2px;
+
 }
 .news_list li{
+    margin-right: 50px;
 	height:23px;
 	line-height:23px;
 	overflow:hidden;
@@ -586,7 +588,7 @@ a.online_ser{
     width:220px;
 }
 .view1 {
-    width: 350px;
+    width: 280px;
     display: inline-block;
 }
 .wangjingye{
@@ -595,6 +597,27 @@ a.online_ser{
 }
 .shenyue{
     text-align: right;
+    padding:10px;
+}
+.summary{
+    text-align: right;
+}
+.product_img_1{
+    margin-left: 35px;
+}
+.product_name_1{
+    text-align:center;
+}
+.product_price_1{
+    margin-left: 50px;
+}
+.items{
+    margin-left: 60px;
+}
+.summary{
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 30px;
 }
 /*li{*/
     /*width:88px;*/
