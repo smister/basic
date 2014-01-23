@@ -201,8 +201,8 @@
             <div class="page_p">
                 <?php if ($pager->pageCount > 1 ) {
                     if ($pager->currentPage == 0 ) {
-                        echo '<span class="end"><a href="javascript:void(0)" class="page_p"><img alt="" src=""/>首页</a></a></span>';
-                        echo '<span class="end"><a href="javascript:void(0)" class="page_p"><img alt="" src=""/>上一页</a></a></span>';
+                        echo '<span class="front"><a href="javascript:void(0)" class="page_h"><img alt="" src=""/>首页</a></a></span>';
+                        echo '<span class="front"><a href="javascript:void(0)" class="page_p"><img alt="" src=""/>上一页</a></a></span>';
                     } else {
                         echo '<span><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => 0))) . '" class="page_p"><img alt="" src=""/>首页</a></a></span>';
                         echo '<span><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => $pager->currentPage))) . '" class="page_p"><img alt="" src=""/>上一页</a></a></span>';
@@ -213,7 +213,7 @@
                     }
                     if ($pager->currentPage == $pager->pageCount - 1 ) {
                         echo '<span class="end"><a href="javascript:void(0)" class="page_n"><img alt="" src=""/>下一页</a></a></span>';
-                        echo '<span class="end"><a href="javascript:void(0)" class="page_n"><img alt="" src=""/>末页</a></a></span>';
+                        echo '<span class="end"><a href="javascript:void(0)" class="page_e"><img alt="" src=""/>末页</a></a></span>';
                     } else {
                         echo '<span><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => $pager->currentPage))) . '" class="page_n"><img alt="" src=""/>下一页</a></a></span>';
                         echo '<span><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => $pager->pageCount - 1))) . '" class="page_n"><img alt="" src=""/>末页</a></a></span>';
@@ -257,4 +257,5 @@
             }
         }
     });
+
 </script>

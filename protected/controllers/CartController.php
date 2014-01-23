@@ -25,7 +25,8 @@ class CartController extends YController
         if($sku->stock<$_GET['qty']){
             echo  '<div id="error-message" style="color:red">Stock is not enough</div>';
         }else{
-        $item = $this->loadItem();
+            $item = CartItem::model()->with('skus')->findByPk(intval($_GET['item_id']));
+            $item->cartProps = empty($_GET['props']) ? '' : $_GET['props'];
         $quantity = empty($_GET['qty']) ? 1 : intval($_GET['qty']);
         Yii::app()->cart->update($item, $quantity);
         }
@@ -45,14 +46,14 @@ class CartController extends YController
 
     public function loadItem()
     {
-        if (empty($_GET['item_id'])) {
+        if (empty($_POST['item_id'])) {
             throw new CHttpException(400, 'Bad Request!.');
         }
-        $item = CartItem::model()->with('skus')->findByPk(intval($_GET['item_id']));
+        $item = CartItem::model()->with('skus')->findByPk(intval($_POST['item_id']));
         if (empty($item)) {
             throw new CHttpException(400, 'Bad Request!.');
         }
-        $item->cartProps = empty($_GET['props']) ? '' : $_GET['props'];
+        $item->cartProps = empty($_POST['props']) ? '' : $_POST['props'];
         return $item;
     }
 
