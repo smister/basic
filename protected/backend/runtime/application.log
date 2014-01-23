@@ -28241,3 +28241,1082 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/mall/elfinder/admin
 HTTP_REFERER=http://localhost/basic/backend.php/mall/elfinder/admin
 ---
+2014/01/23 10:05:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `left`>=2 AND `right`<=11 AND `root`=:ycp0.
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (254)
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (289)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php (81)
+2014/01/23 10:05:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `left`>=2 AND `right`<=11 AND `root`=:ycp0' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1818): CDbCommand->execute()
+#1 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(254): CActiveRecord->deleteAll('`left`>=2 AND `...', Array)
+#2 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(289): NestedSetBehavior->delete()
+#3 [internal function]: NestedSetBehavior->deleteNode()
+#4 D:\wamp\www\yincart\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#5 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('deleteNode', Array)
+#6 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): CActiveRecord->__call('deleteNode', Array)
+#7 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): Category->deleteNode()
+#8 [internal function]: ItemCategoryController->actionDelete('110')
+#9 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemCategoryController), Array)
+#10 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemCategoryController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemCatego...')
+#19 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#21 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemCategory/delete/id/110
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/category/admin
+---
+2014/01/23 10:06:14 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='129'.
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (238)
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (289)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php (81)
+2014/01/23 10:06:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='129'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('129')
+#2 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(238): CActiveRecord->delete()
+#3 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(289): NestedSetBehavior->delete()
+#4 [internal function]: NestedSetBehavior->deleteNode()
+#5 D:\wamp\www\yincart\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#6 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('deleteNode', Array)
+#7 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): CActiveRecord->__call('deleteNode', Array)
+#8 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): Category->deleteNode()
+#9 [internal function]: ItemCategoryController->actionDelete('129')
+#10 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemCategoryController), Array)
+#11 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemCategoryController), Object(ReflectionMethod), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#19 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemCatego...')
+#20 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemCategory/delete/id/129
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/23 10:06:49 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='110'.
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (238)
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (289)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php (81)
+2014/01/23 10:06:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='110'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('110')
+#2 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(238): CActiveRecord->delete()
+#3 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(289): NestedSetBehavior->delete()
+#4 [internal function]: NestedSetBehavior->deleteNode()
+#5 D:\wamp\www\yincart\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#6 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('deleteNode', Array)
+#7 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): CActiveRecord->__call('deleteNode', Array)
+#8 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): Category->deleteNode()
+#9 [internal function]: ItemCategoryController->actionDelete('110')
+#10 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemCategoryController), Array)
+#11 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemCategoryController), Object(ReflectionMethod), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#19 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemCatego...')
+#20 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemCategory/delete/id/110
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/23 10:07:10 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='129'.
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (238)
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (289)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php (81)
+2014/01/23 10:07:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='129'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('129')
+#2 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(238): CActiveRecord->delete()
+#3 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(289): NestedSetBehavior->delete()
+#4 [internal function]: NestedSetBehavior->deleteNode()
+#5 D:\wamp\www\yincart\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#6 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('deleteNode', Array)
+#7 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): CActiveRecord->__call('deleteNode', Array)
+#8 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): Category->deleteNode()
+#9 [internal function]: ItemCategoryController->actionDelete('129')
+#10 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemCategoryController), Array)
+#11 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemCategoryController), Object(ReflectionMethod), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#19 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemCatego...')
+#20 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemCategory/delete/id/129
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/23 10:07:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='110'.
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (238)
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (289)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php (81)
+2014/01/23 10:07:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='110'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('110')
+#2 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(238): CActiveRecord->delete()
+#3 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(289): NestedSetBehavior->delete()
+#4 [internal function]: NestedSetBehavior->deleteNode()
+#5 D:\wamp\www\yincart\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#6 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('deleteNode', Array)
+#7 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): CActiveRecord->__call('deleteNode', Array)
+#8 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): Category->deleteNode()
+#9 [internal function]: ItemCategoryController->actionDelete('110')
+#10 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemCategoryController), Array)
+#11 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemCategoryController), Object(ReflectionMethod), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#19 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemCatego...')
+#20 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemCategory/delete/id/110
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/23 10:07:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`prop_value`, CONSTRAINT `fk_prop_value_item_prop1` FOREIGN KEY (`item_prop_id`) REFERENCES `item_prop` (`item_prop_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item_prop` WHERE `item_prop`.`item_prop_id`='1'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 10:07:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`prop_value`, CONSTRAINT `fk_prop_value_item_prop1` FOREIGN KEY (`item_prop_id`) REFERENCES `item_prop` (`item_prop_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item_prop` WHERE `item_prop`.`item_prop_id`='1'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('1')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('1')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemPropController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemPropController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemProp/d...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemProp/delete/id/1?ajax=item-prop-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/admin
+---
+2014/01/23 10:07:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='6'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 10:07:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='6'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('6')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('6')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/delet...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/delete/id/6?ajax=item-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2014/01/23 10:08:00 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='28'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 10:08:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='28'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('28')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('28')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/delet...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/delete/id/28?ajax=item-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2014/01/23 10:08:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='28'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 10:08:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='28'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('28')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('28')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/delet...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/delete/id/28?ajax=item-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2014/01/23 10:09:12 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yincart\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\yincart\basic\protected\modules\mall\views\refund\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\yincart\basic\protected\modules\mall\views\refund\_search.php(6): TbActiveForm->textFieldRow(Object(Refund), 'refund_id', Array)
+#2 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#3 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#4 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#5 D:\wamp\www\yincart\basic\protected\modules\mall\views\refund\admin.php(25): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#7 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#8 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#9 D:\wamp\www\yincart\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\RefundController.php(112): CController->render('admin', Array)
+#11 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(49): RefundController->actionAdmin()
+#12 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yincart\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#16 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#17 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/shipping/admin
+---
+2014/01/23 10:09:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='6'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 10:09:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='6'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('6')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('6')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/delet...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/delete/id/6?ajax=item-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2014/01/23 10:14:47 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yincart\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\yincart\basic\protected\modules\mall\views\refund\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\yincart\basic\protected\modules\mall\views\refund\_search.php(6): TbActiveForm->textFieldRow(Object(Refund), 'refund_id', Array)
+#2 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#3 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#4 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#5 D:\wamp\www\yincart\basic\protected\modules\mall\views\refund\admin.php(25): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#7 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#8 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#9 D:\wamp\www\yincart\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\RefundController.php(112): CController->render('admin', Array)
+#11 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(49): RefundController->actionAdmin()
+#12 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yincart\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#16 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#17 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/cms/contentCategory/admin
+---
+2014/01/23 10:15:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='35'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 10:15:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='35'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('35')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('35')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/delet...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/delete/id/35?ajax=item-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2014/01/23 10:15:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`prop_value`, CONSTRAINT `fk_prop_value_item_prop1` FOREIGN KEY (`item_prop_id`) REFERENCES `item_prop` (`item_prop_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item_prop` WHERE `item_prop`.`item_prop_id`='1'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 10:15:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`prop_value`, CONSTRAINT `fk_prop_value_item_prop1` FOREIGN KEY (`item_prop_id`) REFERENCES `item_prop` (`item_prop_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item_prop` WHERE `item_prop`.`item_prop_id`='1'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('1')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('1')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemPropController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemPropController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemProp/d...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemProp/delete/id/1?ajax=item-prop-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/admin
+---
+2014/01/23 10:16:11 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`prop_value`, CONSTRAINT `fk_prop_value_item_prop1` FOREIGN KEY (`item_prop_id`) REFERENCES `item_prop` (`item_prop_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item_prop` WHERE `item_prop`.`item_prop_id`='3'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 10:16:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`prop_value`, CONSTRAINT `fk_prop_value_item_prop1` FOREIGN KEY (`item_prop_id`) REFERENCES `item_prop` (`item_prop_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item_prop` WHERE `item_prop`.`item_prop_id`='3'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('3')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('3')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemPropController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemPropController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemProp/d...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemProp/delete/id/3?ajax=item-prop-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/admin
+---
+2014/01/23 10:36:49 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='35'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 10:36:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='35'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('35')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('35')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/delet...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/delete/id/35?ajax=item-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2014/01/23 10:39:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='35'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 10:39:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item_img`, CONSTRAINT `fk_item_img_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='35'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('35')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('35')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/delet...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/delete/id/35?ajax=item-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2014/01/23 11:36:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`sku`, CONSTRAINT `fk_sku_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='35'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 11:36:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`sku`, CONSTRAINT `fk_sku_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='35'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('35')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('35')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/delet...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/delete/id/35?ajax=item-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2014/01/23 11:36:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`sku`, CONSTRAINT `fk_sku_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='35'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 11:36:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`sku`, CONSTRAINT `fk_sku_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item` WHERE `item`.`item_id`='35'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('35')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('35')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/delet...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/delete/id/35?ajax=item-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2014/01/23 11:38:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`prop_value`, CONSTRAINT `fk_prop_value_item_prop1` FOREIGN KEY (`item_prop_id`) REFERENCES `item_prop` (`item_prop_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item_prop` WHERE `item_prop`.`item_prop_id`='1'.
+in D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php (86)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 11:38:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`prop_value`, CONSTRAINT `fk_prop_value_item_prop1` FOREIGN KEY (`item_prop_id`) REFERENCES `item_prop` (`item_prop_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `item_prop` WHERE `item_prop`.`item_prop_id`='1'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('1')
+#2 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(86): CActiveRecord->delete()
+#3 [internal function]: MallBaseController->actionDelete('1')
+#4 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemPropController), Array)
+#5 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemPropController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemProp/d...')
+#14 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemProp/delete/id/1?ajax=item-prop-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/admin
+---
+2014/01/23 11:47:17 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yincart\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\yincart\basic\protected\modules\mall\views\refund\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\yincart\basic\protected\modules\mall\views\refund\_search.php(6): TbActiveForm->textFieldRow(Object(Refund), 'refund_id', Array)
+#2 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#3 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#4 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#5 D:\wamp\www\yincart\basic\protected\modules\mall\views\refund\admin.php(25): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#7 D:\wamp\www\yincart\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#8 D:\wamp\www\yincart\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#9 D:\wamp\www\yincart\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\RefundController.php(112): CController->render('admin', Array)
+#11 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(49): RefundController->actionAdmin()
+#12 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yincart\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#16 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#17 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/23 13:03:40 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='110'.
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (238)
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (289)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php (81)
+2014/01/23 13:03:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='110'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('110')
+#2 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(238): CActiveRecord->delete()
+#3 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(289): NestedSetBehavior->delete()
+#4 [internal function]: NestedSetBehavior->deleteNode()
+#5 D:\wamp\www\yincart\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#6 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('deleteNode', Array)
+#7 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): CActiveRecord->__call('deleteNode', Array)
+#8 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): Category->deleteNode()
+#9 [internal function]: ItemCategoryController->actionDelete('110')
+#10 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemCategoryController), Array)
+#11 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemCategoryController), Object(ReflectionMethod), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#19 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemCatego...')
+#20 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemCategory/delete/id/110
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/23 13:06:46 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='110'.
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (238)
+in D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php (289)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php (81)
+2014/01/23 13:06:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`yincart-basic`.`item`, CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `category` WHERE `category`.`category_id`='110'' in D:\wamp\www\yincart\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('110')
+#2 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(238): CActiveRecord->delete()
+#3 D:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(289): NestedSetBehavior->delete()
+#4 [internal function]: NestedSetBehavior->deleteNode()
+#5 D:\wamp\www\yincart\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#6 D:\wamp\www\yincart\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('deleteNode', Array)
+#7 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): CActiveRecord->__call('deleteNode', Array)
+#8 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(81): Category->deleteNode()
+#9 [internal function]: ItemCategoryController->actionDelete('110')
+#10 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemCategoryController), Array)
+#11 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemCategoryController), Object(ReflectionMethod), Array)
+#12 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#19 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemCatego...')
+#20 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemCategory/delete/id/110
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/23 13:40:23 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "4" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "5" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "6" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:59:16 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:00:38 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:00:38 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:01:30 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (55)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:01:30 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (57)
+2014/01/23 14:01:30 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (57)
+2014/01/23 14:02:59 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:02:59 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:02:59 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:02:59 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:04:29 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:04:29 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:04:29 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:04:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:04:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:04:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:04:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:04:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:04:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:04:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:04:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:06:53 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:06:53 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:08:11 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:08:11 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:08:49 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:08:49 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:09:27 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:09:27 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:14:10 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (31)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:14:10 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (33)
+2014/01/23 14:14:10 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (33)
+2014/01/23 14:16:26 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (55)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:16:26 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (57)
+2014/01/23 14:16:26 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (57)
+2014/01/23 14:17:04 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (55)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:17:04 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (57)
+2014/01/23 14:17:04 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (57)
+2014/01/23 14:18:23 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:18:24 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:18:24 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:18:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php:85
+Stack trace:
+#0 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(71): ItemController->loadModel('44')
+#1 [internal function]: MallBaseController->actionView('44')
+#2 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#3 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#4 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/view/...')
+#12 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/view/id/44
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/create
+---
+2014/01/23 14:18:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php:85
+Stack trace:
+#0 D:\wamp\www\yincart\basic\protected\modules\mall\components\MallBaseController.php(71): ItemController->loadModel('44')
+#1 [internal function]: MallBaseController->actionView('44')
+#2 D:\wamp\www\yincart\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#3 D:\wamp\www\yincart\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#4 D:\wamp\www\yincart\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\wamp\www\yincart\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\wamp\www\yincart\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 D:\wamp\www\yincart\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\wamp\www\yincart\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#11 D:\wamp\www\yincart\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/view/...')
+#12 D:\wamp\www\yincart\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/view/id/44
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/view/id/44
+---
+2014/01/23 14:19:41 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:19:41 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:19:41 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:20:29 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:20:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:21:05 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:21:05 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:21:46 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:21:46 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:25:41 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:25:41 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:25:41 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:29:37 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:29:37 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:30:15 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (31)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:30:15 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (33)
+2014/01/23 14:30:15 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (33)
+2014/01/23 14:30:53 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:30:53 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:32:04 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:32:04 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:32:36 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:32:36 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:33:29 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:33:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:34:00 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:34:00 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:34:36 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:35:04 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:35:04 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:57:56 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (31)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:57:56 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (33)
+2014/01/23 14:57:56 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (33)
+2014/01/23 14:58:35 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (49)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:58:35 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 14:59:20 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 14:59:20 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 15:00:32 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (31)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 15:00:32 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (33)
+2014/01/23 15:00:32 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemPropController.php (33)
+2014/01/23 15:01:29 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 15:01:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 15:01:29 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
