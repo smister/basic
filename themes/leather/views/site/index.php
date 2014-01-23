@@ -87,7 +87,8 @@ EOF;
                                             $picUrl=$imageHelper->thumb('180','178',$article->pic_url);
                                             $picUrl=Yii::app()->baseUrl.$picUrl;
                                             echo 'box.add({"url": "'. $picUrl.'", "href": "", "title": "'.$article->title.'"});';
-                                  }$num++;
+                                            $num++;
+                                  }
                                }
                             //else echo 'box.add({"url": "image/tu2.jpg", "href": "", "title": "no data"});';
                 ?>
