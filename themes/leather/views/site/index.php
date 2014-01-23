@@ -45,8 +45,9 @@ EOF;
                 </ul>
             </div>
             <?php foreach ($hotItems as $hotItemList) { ?>
-                <div class="warp_tab_c" id="pop_<?php echo $i; ?>">
-                    <?php foreach ($hotItemList as $hotItem) {
+                <div class="warp_tab_c" id="pop_<?php echo $i; ?>" <?php if($i!=1) echo "style='display: none;'"?>>
+                    <?php $i++;
+                    foreach ($hotItemList as $hotItem) {
                         $itemUrl = Yii::app()->createUrl('item/view', array('id' => $hotItem->item_id));
                         ?>
                         <div class="warp_tab_list">
@@ -131,9 +132,9 @@ EOF;
                             <div class="product_img_b"><a href="<?php echo $itemUrl; ?>">
                                     <?php
                                         if( $newItem->getMainPic()){
-                                            $picUrl=$image->thumb('220','220', $newItem->getMainPic());
+                                            $picUrl=$image->thumb('470','530', $newItem->getMainPic());
                                             $picUrl=Yii::app()->baseUrl.$picUrl;
-                                        }else $picUrl=$newItem->getHolderJs('220','220');
+                                        }else $picUrl=$newItem->getHolderJs('470','530');
                                     ?>
                                     <img alt="<?php echo $newItem->title; ?>" src="<?php echo $picUrl; ?>"
                                          width="220" height="220"></a>
