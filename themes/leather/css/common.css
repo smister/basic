@@ -590,6 +590,7 @@ a.online_ser{
 }
 .shenyue{
     text-align: right;
+    padding:10px;
 }
 .summary{
     text-align: right;
@@ -602,6 +603,14 @@ a.online_ser{
 }
 .product_price_1{
     margin-left: 50px;
+}
+.items{
+    margin-left: 60px;
+}
+.summary{
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 30px;
 }
 /*li{*/
     /*width:88px;*/
