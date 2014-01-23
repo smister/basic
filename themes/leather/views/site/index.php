@@ -51,7 +51,16 @@ EOF;
                         ?>
                         <div class="warp_tab_list">
                             <div class="tab_img"><a href="<?php echo $itemUrl; ?>">
-                                    <?php echo CHtml::image($hotItem->getMainPic(), $hotItem->title, array('width' => 220, 'height' => '220')) ?>
+                                    <?php
+                                    $picUrl=$hotItem->getMainPic();
+                                    if(!empty($picUrl)){
+                                        echo CHtml::image($hotItem->getMainPic(), $hotItem->title, array('width' => 220, 'height' => '220'));
+                                    }else {
+                                        $picUrl=$hotItem->getHolderJs('220','220');
+                                       ?> <img alt="<?php echo $hotItem->title; ?>" src="<?php echo $picUrl; ?>"
+                                         width="220" height="220"></a><?php
+                                    }
+                                    ?>
                                 </a></div>
                             <div class="tab_name">
                                 <?php echo CHtml::link($hotItem->title, $itemUrl); ?>

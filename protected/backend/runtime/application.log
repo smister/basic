@@ -28864,3 +28864,83 @@ Stack trace:
 REQUEST_URI=/yincart/basic/backend.php/mall/itemCategory/delete/id/110
 HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
 ---
+2014/01/23 13:40:23 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "4" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "5" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:41:33 [warning] [application] Failed to set unsafe attribute "6" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/23 13:43:22 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in D:\wamp\www\yincart\basic\protected\models\Item.php (476)
+in D:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
