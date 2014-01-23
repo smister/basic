@@ -285,4 +285,26 @@ class ItemProp extends YActiveRecord
         }
         echo '</ul>';
     }
+
+
+    /**
+     * delete  Relational Active Record
+     * @return bool
+     */
+    public function beforeDelete(){
+        self::deleteRelationData($this->propValues);
+        return parent::beforeDelete();
+    }
+    public function deleteRelationData($data){
+        $num=count($data);
+        if($num>0){
+            if($num>1){
+                for($i=0;$i<$num;$i++){
+                    $data[$i]->delete();
+                }
+            }else
+                $data->delete();
+        }
+
+    }
 }

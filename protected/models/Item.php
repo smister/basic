@@ -194,6 +194,31 @@ class Item extends YActiveRecord
     }
 
     /**
+     * delete  Relational Active Record
+     * @return bool
+     */
+    public function beforeDelete(){
+        self::deleteRelationData($this->itemImgs);
+        self::deleteRelationData($this->orderItems);
+        self::deleteRelationData($this->propImgs);
+        self::deleteRelationData($this->skus);
+        return parent::beforeDelete();
+    }
+
+
+    public function deleteRelationData($data){
+        $num=count($data);
+        if($num>0){
+            if($num>1){
+                for($i=0;$i<$num;$i++){
+                    $data[$i]->delete();
+                }
+            }else
+                $data->delete();
+        }
+
+    }
+    /**
      * @param string $name
      * @param array $parameters
      * @return array|mixed

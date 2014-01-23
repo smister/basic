@@ -59,7 +59,6 @@
 }
  .tb-r-filter {
     position: relative;
-    padding: 10px 0px;
     z-index: 1;
     border-top: 2px solid rgb(233, 233, 233);
     background: none repeat scroll 0% 0% rgb(252, 252, 252);
@@ -69,14 +68,17 @@
 }
  .tb-taglist {
     padding-left: 10px;
-     text-align: center;
+     margin: 3px 0px 1px 0px;
 }
  .tb-taglist li.tb-long {
     min-width: 80px;
 }
  .tb-taglist li {
-    float: left;
+     display: inline-block;
     margin-right: 10px;
+}
+.tb-taglist li:hover {
+    background-color:rgb(156, 154, 156);
 }
  .tb-taglist li span {
     vertical-align: middle;
