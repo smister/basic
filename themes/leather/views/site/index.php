@@ -67,7 +67,7 @@ EOF;
             <?php } ?>
         </div>
         <div class="warp_news">
-            <div class="news_tit"><?php echo CHtml::link('更多>>', Yii::app()->createUrl('catalog/index', array())); ?></div>
+            <div class="news_tit"><?php echo CHtml::link('更多>>', Yii::app()->createUrl('article/index', array())); ?></div>
             <div class="news_c">
                 <div class="news_img">
                     <script>
@@ -87,7 +87,8 @@ EOF;
                                             $picUrl=$imageHelper->thumb('180','178',$article->pic_url);
                                             $picUrl=Yii::app()->baseUrl.$picUrl;
                                             echo 'box.add({"url": "'. $picUrl.'", "href": "", "title": "'.$article->title.'"});';
-                                  }$num++;
+                                            $num++;
+                                  }
                                }
                             //else echo 'box.add({"url": "image/tu2.jpg", "href": "", "title": "no data"});';
                 ?>
