@@ -101,7 +101,7 @@ class OrderController extends Controller
                         $item= $cart->itemAt($key);
                         $model->total_fee += $item['quantity'] * $item['price'];
                     }
-//                    var_dump($model->save());die;
+
                     if ($model->save()) {
                      foreach ($_POST['keys'] as $key){
                              $item= $cart->itemAt($key);
@@ -134,15 +134,17 @@ class OrderController extends Controller
                     $this->redirect(array('success'));
                 } catch (Exception $e) {
                     $transaction->rollBack();
-                    echo '<script>alert("'.$e->getMessage().'")</script>';
-                    echo '<script>history.go(-3)</script>';
+                    $this->redirect(array('fail'));
 
                 }
             }
         }
 
     }
-
+    public function actionFail()
+    {
+        $this->render('fail');
+    }
 
     public function actionSuccess()
     {

@@ -901,13 +901,19 @@ class elFinder {
 	protected function rename($args) {
 		$target = $args['target'];
 		$name   = $args['name'];
-		
+
 		if (($volume = $this->volume($target)) == false
 		||  ($rm  = $volume->file($target)) == false) {
 			return array('error' => $this->error(self::ERROR_RENAME, '#'.$target, self::ERROR_FILE_NOT_FOUND));
 		}
 		$rm['realpath'] = $volume->realpath($target);
-		
+        $names = explode('.', $rm['name']);
+        $ext = $names[count($names) - 1];
+        $names = explode('.', $name);
+        if ($names[count($names) - 1] != $ext) {
+            $name .= '.' . $ext;
+        }
+
 		return ($file = $volume->rename($target, $name)) == false
 			? array('error' => $this->error(self::ERROR_RENAME, $rm['name'], $volume->error()))
 			: array('added' => array($file), 'removed' => array($rm));

@@ -126,8 +126,9 @@ class OrderItem extends CActiveRecord
     }
 
     public function afterSave(){
-            $num=self::model()->count(array(
-                'item_id'=>':item_id ',
+
+            $num=OrderItem::model()->count(array(
+                'condition'=> 'item_id=:item_id ',
                 'params'=> array(':item_id' =>$this->item_id),
             ));
             $model=Item::model()->findByPk($this->item_id);
