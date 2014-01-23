@@ -67,7 +67,7 @@ EOF;
             <?php } ?>
         </div>
         <div class="warp_news">
-            <div class="news_tit"><?php echo CHtml::link('更多>>', Yii::app()->createUrl('catalog/index', array())); ?></div>
+            <div class="news_tit"><?php echo CHtml::link('更多>>', Yii::app()->createUrl('article/index', array())); ?></div>
             <div class="news_c">
                 <div class="news_img">
                     <script>
@@ -87,7 +87,8 @@ EOF;
                                             $picUrl=$imageHelper->thumb('180','178',$article->pic_url);
                                             $picUrl=Yii::app()->baseUrl.$picUrl;
                                             echo 'box.add({"url": "'. $picUrl.'", "href": "", "title": "'.$article->title.'"});';
-                                  }$num++;
+                                            $num++;
+                                  }
                                }
                             //else echo 'box.add({"url": "image/tu2.jpg", "href": "", "title": "no data"});';
                 ?>
@@ -113,16 +114,19 @@ EOF;
                 <div class="product_new contaniner_24">
                     <div class="product_new_tit"><label><?php echo $category_name; ?></label><a href="<?php echo Yii::app()->baseUrl.'/'.Menu::model()->getUrl($category_name).'&sort=newd';?>">更多新品>></a></div>
                     <div class="product_c">
+                    <?php  if(isset($newItem)){?>
                         <div class="product_new_b">
                             <?php $newItem = $items[0];
                             $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
                             ?>
                             <div class="product_img_b"><a href="<?php echo $itemUrl; ?>">
                                     <?php
-                                    if( $newItem->getMainPic()){
-                                        $picUrl=$image->thumb('220','220', $newItem->getMainPic());
-                                        $picUrl=Yii::app()->baseUrl.$picUrl;
-                                    }else $picUrl=$newItem->getHolderJs('220','220');
+
+                                        if( $newItem->getMainPic()){
+                                            $picUrl=$image->thumb('220','220', $newItem->getMainPic());
+                                            $picUrl=Yii::app()->baseUrl.$picUrl;
+                                        }else $picUrl=$newItem->getHolderJs('220','220');
+
                                     ?>
                                     <img alt="<?php echo $newItem->title; ?>" src="<?php echo $picUrl; ?>"
                                          width="220" height="220"></a>
@@ -136,6 +140,7 @@ EOF;
                                 <div class="product_price_v"><a href="<?php echo $itemUrl; ?>">详情点击</a></div>
                             </div>
                         </div>
+                    <?php  }?>
                         <div class="product_list">
                             <?php for ($i = 1, $count = count($items); $i < $count; $i++) {
                                 $newItem = $items[$i];
