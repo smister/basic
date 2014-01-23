@@ -43,7 +43,7 @@ $imageHelper=new ImageHelper();
             <div>
                 <ul id="idNum" class="hdnum">
                     <?php foreach ($item->itemImgs as $itemImg) {
-                        if($itemImg->pic){
+                        if(!empty($itemImg->pic)){
                             $picUrl=$imageHelper->thumb('70','70',$itemImg->pic);
                             $picUrl=yii::app()->baseUrl. $picUrl;
                         }else $picUrl=$item->getHolderJs('70','70');
