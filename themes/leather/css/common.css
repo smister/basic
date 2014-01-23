@@ -594,8 +594,14 @@ a.online_ser{
 .summary{
     text-align: right;
 }
-.product_img{
+.product_img_1{
     margin-left: 35px;
+}
+.product_name_1{
+    text-align:center;
+}
+.product_price_1{
+    margin-left: 50px;
 }
 /*li{*/
     /*width:88px;*/
