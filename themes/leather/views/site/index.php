@@ -187,7 +187,7 @@ EOF;
                             <?php foreach ($items as $newItem) {
                                 $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
                                 ?>
-                                <div class="product_d">
+                                <div class="product_e">
                                     <div class="product_img"><a href="<?php echo $itemUrl; ?>">
                                             <?php
                                             if( $newItem->getMainPic()){
