@@ -15,7 +15,6 @@ Yii::app()->clientScript->registerCoreScript('jquery');
 
 </script>
 
-<div id="sssss">ssss</div>
 <div class="box">
     <div class="box-title container_24">购物车</div>
     <div class="box-content cart container_24">
@@ -55,9 +54,9 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                         <td><a href="<?php echo $itemUrl; ?>"><?php echo CHtml::image($item->getMainPic(), $item->title, array('width' => '80px', 'height' => '80px')); ?></a></td>
                         <td><?php echo CHtml::link($item->title, $itemUrl); ?></td>
                         <td><?php echo empty($item->sku) ? '' : implode(';', json_decode($item->sku->props_name, true)); ?></td>
-                        <td><?php echo $item->getPrice(); ?></td>
-                        <td><?php echo CHtml::textField('quantity[]', $item->getQuantity(), array('size' => '4', 'maxlength' => '5', 'data-url' => Yii::app()->createUrl('cart/update'), 'data-num' => '3231')); ?></td>
-                        <td><?php echo $item->getSumPrice() ?>元</td>
+                        <td><div id="Singel-Price"><?php echo $item->getPrice(); ?></div></td>
+                        <td><?php echo CHtml::textField('quantity[]', $item->getQuantity(), array('size' => '4', 'maxlength' => '5', 'data-url' => Yii::app()->createUrl('cart/update'))); ?><div id="stock-error"></div></td>
+                        <td><div id="SumPrice"><?php echo $item->getSumPrice() ?></div>元</td>
                         <td><?php echo CHtml::link('移除', array('/cart/remove', 'key' => $item->getId())) ?></td>
                     </tr>
                 <?php

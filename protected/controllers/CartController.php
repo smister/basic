@@ -21,9 +21,14 @@ class CartController extends YController
 
     public function actionUpdate()
     {
+       $sku=Sku::model()->findByPk(substr($_GET['sku_id'],3));
+        if($sku->stock<$_GET['qty']){
+            echo  '<div id="error-message" style="color:red">Stock is not enough</div>';
+        }else{
         $item = $this->loadItem();
-        $quantity = empty($_POST['qty']) ? 1 : intval($_POST['qty']);
+        $quantity = empty($_GET['qty']) ? 1 : intval($_GET['qty']);
         Yii::app()->cart->update($item, $quantity);
+        }
     }
 
     public function actionRemove($key)
@@ -40,14 +45,14 @@ class CartController extends YController
 
     public function loadItem()
     {
-        if (empty($_POST['item_id'])) {
+        if (empty($_GET['item_id'])) {
             throw new CHttpException(400, 'Bad Request!.');
         }
-        $item = CartItem::model()->with('skus')->findByPk(intval($_POST['item_id']));
+        $item = CartItem::model()->with('skus')->findByPk(intval($_GET['item_id']));
         if (empty($item)) {
             throw new CHttpException(400, 'Bad Request!.');
         }
-        $item->cartProps = empty($_POST['props']) ? '' : $_POST['props'];
+        $item->cartProps = empty($_GET['props']) ? '' : $_GET['props'];
         return $item;
     }
 
@@ -63,13 +68,4 @@ class CartController extends YController
         echo json_encode(array('total' => $totalPrice));
     }
 
-
 }
-
-//   public function getStock()
-//  {
-//      var a = "stock";
-//      var b = document.getELementById('buy').value;
-//      if(b>a){
-//      alert("库存不足");
-//  }
