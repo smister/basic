@@ -78,7 +78,6 @@ $(document).ready(function () {
             }
         } else {
             $('#checkAllPosition').removeAttr('checked');
-            alert($(this).attr("checked"));
             if($(this).attr("checked")){
                 $(this).attr("checked","checked");
             }else{
