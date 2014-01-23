@@ -38,13 +38,10 @@ $(document).ready(function () {
         var cart=parseInt($(".shopping_car").find("span").html());
        var sumPrice= parseFloat($("#SumPrice").html());
         var singlePrice=parseFloat( tr.find("#Singel-Price").html());
-        // check input data
-//            alert(props.val());
-//            if (!/^\d+$/.test(qty)) {
-//                return;
-//            }
+            if (!/^\d+$/.test(qty)) {
+                return;
+            }
         $.get($(this).data('url'), {'sku_id': sku_id.val(), 'qty': qty.val(), 'item_id': item_id.val(), 'props': props.val()}, function (response) {
-//             window.location.reload();
             $("#error-message").remove();
             if (!response) {
                 $(".shopping_car").find("span").html(cart-sumPrice/singlePrice+parseInt(qty.val()));
