@@ -594,6 +594,9 @@ a.online_ser{
 .summary{
     text-align: right;
 }
+.product_img{
+    margin-left: 35px;
+}
 /*li{*/
     /*width:88px;*/
     /*height:33px;*/
