@@ -134,15 +134,17 @@ class OrderController extends Controller
                     $this->redirect(array('success'));
                 } catch (Exception $e) {
                     $transaction->rollBack();
-                    echo '<script>alert("'.$e->getMessage().'")</script>';
-                    echo '<script>history.go(-3)</script>';
+                    $this->redirect(array('fail'));
 
                 }
             }
         }
 
     }
-
+    public function actionFail()
+    {
+        $this->render('fail');
+    }
 
     public function actionSuccess()
     {
