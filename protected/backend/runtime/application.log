@@ -28219,3 +28219,25 @@ Stack trace:
 REQUEST_URI=/yincart/basic/backend.php/mall/order/selectProp?selectItem=6&_=1390382111015
 in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\OrderController.php (344)
 in D:\wamp\www\yincart\basic\backend.php (15)
+2014/01/23 08:47:44 [error] [exception.CException] exception 'CException' with message '$connectorRoute must be set!' in D:\wamp\www\basic\protected\extensions\elFinder\ElFinderWidget.php:61
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(147): ElFinderWidget->init()
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.elFinder.El...', Array)
+#2 D:\wamp\www\basic\protected\modules\mall\views\elfinder\admin.php(16): CBaseController->widget('ext.elFinder.El...', Array)
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', NULL, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', NULL, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', NULL, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\ElfinderController.php(35): CController->render('admin')
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ElfinderController->actionAdmin()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#13 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/elfinder/a...')
+#14 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/basic/backend.php/mall/elfinder/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/elfinder/admin
+---
