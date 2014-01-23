@@ -200,7 +200,6 @@
         </tr>
 
         <?php
-        $pay += $orderItems->total_price;
     }
     ?>
     <tr class="order-ft">
@@ -210,7 +209,7 @@
                 实付款：
                 <strong>
                     <?php
-                    echo $pay;
+                    echo $Order->pay_fee;
                     ?>
                 </strong>元
                 <br>

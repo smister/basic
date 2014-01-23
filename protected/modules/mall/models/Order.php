@@ -183,13 +183,16 @@ class Order extends CActiveRecord
     protected function beforeSave() {
         $orderLog = new OrderLog();
         if ($this->isNewRecord) {
+
             $orderLog->op_name = 'create';
             $orderLog->log_text = serialize($this);
         } else {
             $orderLog->op_name = 'update';
             $orderLog->log_text = serialize($this->findByPk($this->order_id));
-            $orderLog->order_id = $this->order_id;
+
         }
+        $orderLog->order_id = $this->order_id;
+//        var_dump($orderLog);exit;
         Yii::app()->params['orderLog'] = $orderLog;
         return parent::beforeSave();
     }

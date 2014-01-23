@@ -83,6 +83,7 @@ class OrderController extends Controller
                 $model->attributes = $_POST['Order'];
                 $model->order_id=F::get_order_id();
                 $model->create_time = time();
+
                 if ($model->save()) {
                     foreach ($_POST['Sku']['item_id'] as $key => $itemId) {
                         $items = Item::model()->findByPk($itemId);
@@ -100,16 +101,17 @@ class OrderController extends Controller
                         $orderItem->quantity = $_POST['Item-number'][$key]; //need to update
                         $sku->stock -= $_POST['Item-number'][$key];
                         if (!$sku->save()) {
-                            throw new Exception('Cut down stock fail',0,$sku);
+                            throw new Exception('Cut down stock fail');
                         }
                         $orderItem->total_price = $orderItem->price * $orderItem->quantity;
                         $orderItem->order_id = $model->order_id;
+//                        var_dump($orderItem->save());die;
                         if (!$orderItem->save()) {
-                            throw new Exception('save order item fail',0,$orderItem);
+                            throw new Exception('save order item fail');
                         }
                     }
                 } else {
-                    throw new Exception('save order fail', 0, $model);
+                    throw new Exception('save order fail');
                 }
                 $transaction->commit();
                 $this->redirect(array('view', 'id' => $model->order_id));
