@@ -1,4 +1,3 @@
-
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/pptBox.js'); ?>
 <div class="warp_contant">
     <div class="float">
@@ -176,7 +175,7 @@
                     $itemUrl = Yii::app()->createUrl('item/view', array('id' => $item->item_id));
                     ?>
                     <div class="product_pd">
-                        <div class="product_img"><a href="<?php echo $itemUrl; ?>">
+                        <div class="product_img_1"><a href="<?php echo $itemUrl; ?>">
                                 <?php
                                 if($item->getMainPic()){
                                     $imgHelper=new ImageHelper();
@@ -187,10 +186,10 @@
                                 <img alt="<?php echo $item->title; ?>"
                                      src="<?php echo $picUrl; ?>" width="220" height="220"></a>
                         </div>
-                        <div class="product_name">
+                        <div class="product_name_1">
                             <a href="<?php echo $itemUrl; ?>"><?php echo $item->title; ?></a>
                         </div>
-                        <div class="product_price">
+                        <div class="product_price_1">
                             <div class="product_price_n"><?php echo $item->currency . $item->price ?></div>
                             <div class="product_price_p"><?php echo $item->currency . $item->price ?></div>
                             <div class="product_price_v"><a href="<?php echo $itemUrl; ?>">详情点击</a></div>

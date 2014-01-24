@@ -21,9 +21,15 @@ class CartController extends YController
 
     public function actionUpdate()
     {
-        $item = $this->loadItem();
-        $quantity = empty($_POST['qty']) ? 1 : intval($_POST['qty']);
+       $sku=Sku::model()->findByPk(substr($_GET['sku_id'],3));
+        if($sku->stock<$_GET['qty']){
+            echo  '<div id="error-message" style="color:red">Stock is not enough</div>';
+        }else{
+            $item = CartItem::model()->with('skus')->findByPk(intval($_GET['item_id']));
+            $item->cartProps = empty($_GET['props']) ? '' : $_GET['props'];
+        $quantity = empty($_GET['qty']) ? 1 : intval($_GET['qty']);
         Yii::app()->cart->update($item, $quantity);
+        }
     }
 
     public function actionRemove($key)
@@ -63,13 +69,4 @@ class CartController extends YController
         echo json_encode(array('total' => $totalPrice));
     }
 
-
 }
-
-//   public function getStock()
-//  {
-//      var a = "stock";
-//      var b = document.getELementById('buy').value;
-//      if(b>a){
-//      alert("库存不足");
-//  }

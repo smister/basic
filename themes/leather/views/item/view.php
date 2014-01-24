@@ -43,7 +43,7 @@ $imageHelper=new ImageHelper();
             <div>
                 <ul id="idNum" class="hdnum">
                     <?php foreach ($item->itemImgs as $itemImg) {
-                        if($itemImg->pic){
+                        if(!empty($itemImg->pic)){
                             $picUrl=$imageHelper->thumb('70','70',$itemImg->pic);
                             $picUrl=yii::app()->baseUrl. $picUrl;
                         }else $picUrl=$item->getHolderJs('70','70');
@@ -67,7 +67,8 @@ $imageHelper=new ImageHelper();
             mytv("idNum", "idTransformView", "idSlider", 450, 5, true, 2000, 5, true, "onmouseover");
             //按钮容器aa，滚动容器bb，滚动内容cc，滚动宽度dd，滚动数量ee，滚动方向ff，延时gg，滚动速度hh，自动滚动ii，
         </script>
-        <form class="deal_info" id="deal">
+
+        <form action="<?php echo Yii::app()->createUrl('order/checkout'); ?>" method="post" class="deal_info" id="deal">
             <div class="deal_tit"><?php echo $item->title; ?></div>
             <div class="deal_price">
                 <span class="cor_red bold font30"><?php echo $item->currency . $item->price ?></span>
@@ -148,8 +149,7 @@ $imageHelper=new ImageHelper();
             <input type="hidden" id="props" name="props" value="" />
             <div class="deal_add_car" data-url="<?php echo Yii::app()->createUrl('cart/add'); ?>"><a href="javascript:void(0)">加入购物车</a></div>
 <!--            <div class="deal_add" data-url="--><?php //echo Yii::app()->createUrl('order/checkout');?><!--"><a data-url='' href="javascript:void(0)">立即购买</a></div>-->
-            <?php echo CHtml::link("立即购买",array("/order/checkout",),array("class"=>"deal_add"))?>
-            <div style="clear:both"></div>
+            <div class="deal_add"><?php echo CHtml::link("立即购买", 'javascript:void(0);')?></div>
             <div class="deal_collect" data-url="<?php echo Yii::app()->createUrl('member/wishlist/addWish'); ?>" ><a href="javascript:void(0)">立即收藏</a></div>
         </form>
     </div>
@@ -420,6 +420,15 @@ $imageHelper=new ImageHelper();
                     }else
                         showPopup(response.status) ;
                 },'json');
+        });
+        $('.deal_add').click(function() {
+            var selectProps = $('.prop-select,.img-prop-select');
+            if (selectProps.length < $('.deal_size p').length) {
+                $('.deal_size').addClass('prop-div-select');
+            } else {
+                $('.deal_size').removeClass('prop-div-select');
+                $(this).parents('form').submit();
+            }
         });
     });
 </script>

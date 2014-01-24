@@ -51,13 +51,31 @@ class OrderController extends Controller
 
     public function actionCheckout()
     {
-        $keys = isset($_REQUEST['position']) ? (is_array($_REQUEST['position']) ? $_REQUEST['position'] : explode('_', $_REQUEST['position'])) : array();
-//        if (Yii::app()->user->id) {
+        if (isset($_POST['position'])) {
+            $keys = isset($_REQUEST['position']) ? (is_array($_REQUEST['position']) ? $_REQUEST['position'] : explode('_', $_REQUEST['position'])) : array();
             $this->render('checkout', array('keys' => $keys));
-//        } else {
-//            Yii::app()->user->returnUrl = Yii::app()->createUrl('order/checkout', array('position' => implode('_', $keys)));
-//            $this->redirect(array('/user/login'));
-//        }
+        } else {
+            $item = $this->loadItem();
+            $item->detachBehavior("CartPosition");
+            $item->attachBehavior("CartPosition", new ECartPositionBehaviour());
+            $item->setRefresh(true);
+            $quantity = empty($_POST['qty']) ? 1 : intval($_POST['qty']);
+            $item->setQuantity($quantity);
+            $this->render('checkout', array('item' => $item));
+        }
+    }
+
+    public function loadItem()
+    {
+        if (empty($_POST['item_id'])) {
+            throw new CHttpException(400, 'Bad Request!.');
+        }
+        $item = CartItem::model()->with('skus')->findByPk(intval($_POST['item_id']));
+        if (empty($item)) {
+            throw new CHttpException(400, 'Bad Request!.');
+        }
+        $item->cartProps = empty($_POST['props']) ? '' : $_POST['props'];
+        return $item;
     }
 
     /**

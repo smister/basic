@@ -29,42 +29,24 @@ $(document).ready(function () {
             $("#cartForm").submit();
         }
     });
-    $("#cart-table").on("keyup", "input[type=text][id=quantity]", function () {
-
-        var $this = $(this),
-            $tr = $this.closest('tr'),
-            props = $tr.find('.props'),
-            tempId = $tr.find('.item-id'),
-            qty = $.trim(this.value);
-        clearTimeout(window.delay);
-        window.delay = setTimeout(function () {
-            $this.blur();
-            // check input data
-            if (!/^\d+$/.test(qty)) {
-                return;
-            }
-            var html = '<input type="hidden" name="hid" value="0">';
-            // compare number
-            if (parseInt(qty) <= parseInt($this.data('num'))) {
-                $.post($(this).data('url'), {'item_id': tempId, 'props': props, 'qty': qty}, function (response) {
-//             window.location.reload();
-                    $("id").attr("value");
-                }, 'json');
-            } else {
-                var s = "库存不足，请更改物品数量！";
-                document.write(s);
-//                show error
-            }
-        }, 1500);
-    });
     $('[name="quantity[]"]').change(function () {
-        var item_id = $(this).parents('tr').find('[name="item_id[]"]').val();
-        var props = $(this).parents('tr').find('[name="props[]"]').val();
-        var qty = $(this).val();
-        var data = {'item_id': item_id, 'props': props, 'qty': qty};
-        $.post($(this).data('url'), data, function (response) {
-            window.location.reload();
-        }, 'json');
+        var tr = $(this).closest('tr');
+        var sku_id = tr.find("#position");
+        var qty = tr.find("#quantity");
+        var item_id = tr.find(".item-id");
+        var props = tr.find(".props");
+        var cart=parseInt($(".shopping_car").find("span").html());
+        var sumPrice= parseFloat(tr.find("#SumPrice").html());
+        var singlePrice=parseFloat( tr.find("#Singel-Price").html());
+        var data = {'item_id': item_id.val(), 'props': props.val(), 'qty': qty.val(),'sku_id':sku_id.val()};
+        $.get($(this).data('url'), data, function (response) {
+            tr.find("#error-message").remove();
+            if (!response) {
+                $(".shopping_car").find("span").html(cart-sumPrice/singlePrice+parseInt(qty.val()));
+                tr.find("#SumPrice").html(parseFloat(qty.val()) * parseFloat(singlePrice));
+            }
+            tr.find("#stock-error").append(response);
+        });
     });
     $('#cartForm').on('click', '[name="position[]"],#checkAllPosition', function () {
         var flag = 0;
