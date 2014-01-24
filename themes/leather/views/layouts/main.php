@@ -61,12 +61,10 @@
 <div class="nav">
 <?php $this->widget('widgets.leather.WMainMenu') ?>
 </div>
+<?php if (Yii::app()->params['ads']) {
+    echo $this->renderPartial('picture', array('ads' => Yii::app()->params['ads']), true, true);
+} ?>
 <div class="container_24">
-    <?php if(isset($this->breadcrumbs)):?>
-        <?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-    <?php endif?>
     <?php echo $content; ?>
 </div>
 <div class="footer">
