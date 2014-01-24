@@ -64,9 +64,11 @@
 <?php if (Yii::app()->params['ads']) {
     echo $this->renderPartial('picture', array('ads' => Yii::app()->params['ads']), true, true);
 } ?>
+
 <div class="container_24">
     <?php echo $content; ?>
 </div>
+
 <div class="footer">
     <div class="foot_c">
         <div class="foot_new">
