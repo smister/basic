@@ -1,28 +1,5 @@
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/slides.jquery.js'); ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/pptBox.js'); ?>
-<div class="warp_banner index_bg01" id="mainbody">
-    <div id="slides" class="banner">
-            <a class="slidesjs-previous slidesjs-navigation" href="#" style="top: 240px;width: 43px;position: absolute;left: 0;z-index: 9999;">
-                <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/image/banner_l.png', '上一页', array('width' => '43', 'height' => '43')); ?>
-            </a>
-                <?php
-                $i = 0;
-                foreach ($ads as $ad) {
-                    $i++;
-                    echo <<<EOF
-                <div id="banner_pic_$i">
-                    <a href="{$ad->url}" target="_blank">
-                        <img alt="{$ad->title}" src="{$ad->pic}" width="1180" height="500">
-                    </a>
-                </div>
-EOF;
-                }
-                ?>
-            <a class="slidesjs-next slidesjs-navigation" href="#" style="top: 240px;width: 43px;position: absolute;right: 0;z-index: 9999;">
-                <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/image/banner_r.png', '下一页', array('width' => '43', 'height' => '43')); ?>
-            </a>
-    </div>
-</div>
 <div class="warp_contant">
     <div class="float">
         <div class="float_button">
@@ -45,13 +22,23 @@ EOF;
                 </ul>
             </div>
             <?php foreach ($hotItems as $hotItemList) { ?>
-                <div class="warp_tab_c" id="pop_<?php echo $i; ?>">
-                    <?php foreach ($hotItemList as $hotItem) {
+                <div class="warp_tab_c" id="pop_<?php echo $i; ?>" <?php if($i!=1) echo "style='display: none;'"?>>
+                    <?php $i++;
+                    foreach ($hotItemList as $hotItem) {
                         $itemUrl = Yii::app()->createUrl('item/view', array('id' => $hotItem->item_id));
                         ?>
                         <div class="warp_tab_list">
                             <div class="tab_img"><a href="<?php echo $itemUrl; ?>">
-                                    <?php echo CHtml::image($hotItem->getMainPic(), $hotItem->title, array('width' => 220, 'height' => '220')) ?>
+                                    <?php
+                                    $picUrl=$hotItem->getMainPic();
+                                    if(!empty($picUrl)){
+                                        echo CHtml::image($hotItem->getMainPic(), $hotItem->title, array('width' => 220, 'height' => '220'));
+                                    }else {
+                                        $picUrl=$hotItem->getHolderJs('220','220');
+                                       ?> <img alt="<?php echo $hotItem->title; ?>" src="<?php echo $picUrl; ?>"
+                                         width="220" height="220"></a><?php
+                                    }
+                                    ?>
                                 </a></div>
                             <div class="tab_name">
                                 <?php echo CHtml::link($hotItem->title, $itemUrl); ?>
@@ -114,19 +101,17 @@ EOF;
                 <div class="product_new contaniner_24">
                     <div class="product_new_tit"><label><?php echo $category_name; ?></label><a href="<?php echo Yii::app()->baseUrl.'/'.Menu::model()->getUrl($category_name).'&sort=newd';?>">更多新品>></a></div>
                     <div class="product_c">
-                    <?php  if(isset($newItem)){?>
+                    <?php  if(!isset($newItem)){?>
                         <div class="product_new_b">
                             <?php $newItem = $items[0];
                             $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
                             ?>
                             <div class="product_img_b"><a href="<?php echo $itemUrl; ?>">
                                     <?php
-
                                         if( $newItem->getMainPic()){
-                                            $picUrl=$image->thumb('220','220', $newItem->getMainPic());
+                                            $picUrl=$image->thumb('470','530', $newItem->getMainPic());
                                             $picUrl=Yii::app()->baseUrl.$picUrl;
-                                        }else $picUrl=$newItem->getHolderJs('220','220');
-
+                                        }else $picUrl=$newItem->getHolderJs('470','530');
                                     ?>
                                     <img alt="<?php echo $newItem->title; ?>" src="<?php echo $picUrl; ?>"
                                          width="220" height="220"></a>
@@ -148,8 +133,15 @@ EOF;
                                 ?>
                                 <div class="product_d">
                                     <div class="product_img"><a href="<?php echo $itemUrl; ?>">
-                                            <img alt="<?php echo $newItem->title; ?>"
-                                                 src="<?php echo $newItem->getMainPic(); ?>" width="220" height="220"></a>
+                                            <?php
+                                            if( $newItem->getMainPic()){
+                                                $image=new ImageHelper();
+                                                $picUrl=$image->thumb('220','220', $newItem->getMainPic());
+                                                $picUrl=Yii::app()->baseUrl.$picUrl;
+                                            }else $picUrl=$newItem->getHolderJs('220','220');
+                                            ?>
+                                            <img alt="<?php echo $newItem->title; ?>" src="<?php echo $picUrl; ?>"
+                                                 width="220" height="220"></a>
                                     </div>
                                     <div class="product_name">
                                         <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
@@ -172,10 +164,17 @@ EOF;
                             <?php foreach ($items as $newItem) {
                                 $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
                                 ?>
-                                <div class="product_d">
+                                <div class="product_e">
                                     <div class="product_img"><a href="<?php echo $itemUrl; ?>">
-                                            <img alt="<?php echo $newItem->title; ?>"
-                                                 src="<?php echo $newItem->getMainPic(); ?>" width="220" height="220"></a>
+                                            <?php
+                                            if( $newItem->getMainPic()){
+                                            $image=new ImageHelper();
+                                            $picUrl=$image->thumb('220','220', $newItem->getMainPic());
+                                            $picUrl=Yii::app()->baseUrl.$picUrl;
+                                            }else $picUrl=$newItem->getHolderJs('220','220');
+                                            ?>
+                                            <img alt="<?php echo $newItem->title; ?>" src="<?php echo $picUrl; ?>"
+                                                 width="220" height="220"></a>
                                     </div>
                                     <div class="product_name">
                                         <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
