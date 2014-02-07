@@ -16,7 +16,7 @@ class CartController extends YController
         if(Yii::app()->cart->put($item, $quantity))
             echo json_encode(array('status' => 'success'));
         else
-            echo json_encode(array('status' => 'fail'));
+            echo json_encode(array('status' => 'success'));
     }
 
     public function actionUpdate()
