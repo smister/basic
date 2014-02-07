@@ -28864,3 +28864,30 @@ Stack trace:
 REQUEST_URI=/yincart/basic/backend.php/mall/itemCategory/delete/id/110
 HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
 ---
+2014/01/27 13:24:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'yincart-basic'' in E:\wamp\www\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 E:\wamp\www\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 E:\wamp\www\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 E:\wamp\www\basic\protected\extensions\CmsSettings.php(362): CModule->getComponent('db')
+#4 E:\wamp\www\basic\protected\extensions\CmsSettings.php(453): CmsSettings->getDbComponent()
+#5 E:\wamp\www\basic\protected\extensions\CmsSettings.php(42): CmsSettings->createTable()
+#6 E:\wamp\www\yii\framework\base\CModule.php(387): CmsSettings->init()
+#7 E:\wamp\www\yii\framework\base\CModule.php(103): CModule->getComponent('settings')
+#8 E:\wamp\www\basic\protected\components\F.php(467): CModule->__get('settings')
+#9 E:\wamp\www\basic\themes\backend\views\layouts\main.php(96): F::sg('site', 'name')
+#10 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#11 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#12 E:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#13 E:\wamp\www\basic\protected\backend\controllers\SiteController.php(32): CController->render('index')
+#14 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#20 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 E:\wamp\www\basic\backend.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/basic/backend.php
+---
