@@ -320,7 +320,6 @@ a.online_ser{
 }
 .news_list{
 	margin:2px;
-
 }
 .news_list li{
     margin-right: 50px;
@@ -611,9 +610,9 @@ a.online_ser{
 .product_price_1{
     margin-left: 50px;
 }
-.items{
-    margin-left: 60px;
-}
+/*.items{*/
+    /*margin-left: 60px;*/
+/*}*/
 .summary{
     padding-bottom: 10px;
     margin-top: 10px;

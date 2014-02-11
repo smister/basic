@@ -1,0 +1,18 @@
+2014/02/11 15:42:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "mall/paymentMethod/admin"。' in E:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/paymentMet...')
+#1 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\wamp\www\basic\backend.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/basic/backend.php/mall/paymentMethod/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/itemProp/admin
+---
+2014/02/11 15:42:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "mall/paymentMethod/admin"。' in E:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/paymentMet...')
+#1 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\wamp\www\basic\backend.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/basic/backend.php/mall/paymentMethod/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/paymentMethod/admin
+---
