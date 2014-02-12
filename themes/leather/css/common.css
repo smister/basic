@@ -359,7 +359,7 @@ a.online_ser{
 .product_new_tit label,.product_cate_tit1 label,.product_cate_tit2 label{
     float: left;
     margin-left: 50px;
-    font-size: 30px;
+    font-size: 20px;
     font-weight:bold;
 }
 .product_cate_tit1{

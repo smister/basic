@@ -6,14 +6,17 @@
             <a href="">联系<br/>在线客服</a>
         </div>
     </div>
+    <!--首页NEW最新动态对应的那一行-->
     <div class="warp_tab contaniner_24">
         <div class="warp_tab_con">
             <div class="warp_tab_t">
+                <!--第一行的精品男装和精品女装的那几个字-->
                 <ul class="tab_t_list">
                     <?php
                     $i = 1;
                     $class = 'current';
                     foreach ($hotCategories as $hotCategory) {
+                        //输出那精品男装和精品女装，附加了onclick事件 点击就会变换颜色
                         echo '<li class="' . $class . '" onclick="change_bg(' . $i++ . ');">' . $hotCategory->name . '</li>';
                         $class = '';
                     }
@@ -21,7 +24,8 @@
                     ?>
                 </ul>
             </div>
-            <?php foreach ($hotItems as $hotItemList) { ?>
+            <?php
+            foreach ($hotItems as $hotItemList) { ?>
                 <div class="warp_tab_c" id="pop_<?php echo $i; ?>" <?php if($i!=1) echo "style='display: none;'"?>>
                     <?php $i++;
                     foreach ($hotItemList as $hotItem) {
@@ -93,13 +97,14 @@
             </div>
         </div>
     </div>
+
     <div class="warp_product">
         <?php $isFrist = true;
         $num = 0;
         foreach ($newItems as $category_name => $items) {
             if ($isFrist) { ?>
                 <div class="product_new contaniner_24">
-                    <div class="product_new_tit"><label><?php echo $category_name; ?></label><a href="<?php echo Yii::app()->baseUrl.'/'.Menu::model()->getUrl($category_name).'&sort=newd';?>">更多新品>></a></div>
+                    <div class="product_new_tit"><label class="product_main_name"><?php echo $category_name; ?></label><a href="<?php echo Yii::app()->baseUrl.'/'.Menu::model()->getUrl($category_name).'&sort=newd';?>">更多新品>></a></div>
                     <div class="product_c">
                     <?php  if(!isset($newItem)){?>
                         <div class="product_new_b">

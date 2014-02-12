@@ -55,14 +55,14 @@ $imageHelper=new ImageHelper();
                 <ul id=idSlider class=slider>
                     <?php foreach ($item->itemImgs as $itemImg) {
                         if($itemImg->pic){
-                            $picUrl=$imageHelper->thumb('450','450',$itemImg->pic);
+                            $picUrl=$imageHelper->thumb('400','450',$itemImg->pic);
                             $picUrl=yii::app()->baseUrl. $picUrl;
                         }else $picUrl=$item->getHolderJs('450','450');
-                        echo '<div><a href="javascript:void(0)" target="_blank"><img alt="' . $item->title . '" src="'  .$picUrl . '" width="450" height="450"/></a></div>';
+                        echo '<div><a href="javascript:void(0)" target="_blank"><img alt="' . $item->title . '" src="'  .$picUrl . '" width="400" height="450"/></a></div>';
                     } ?>
                 </ul>
             </div>
-        </div>
+        </div><!--end of pic-->
         <script language=javascript>
             mytv("idNum", "idTransformView", "idSlider", 450, 5, true, 2000, 5, true, "onmouseover");
             //按钮容器aa，滚动容器bb，滚动内容cc，滚动宽度dd，滚动数量ee，滚动方向ff，延时gg，滚动速度hh，自动滚动ii，
@@ -143,7 +143,7 @@ $imageHelper=new ImageHelper();
                     <label id="num"><?php echo $item->min_number; ?></label>
                     <input type="hidden" id="qty" name="qty" value="<?php echo $item->min_number; ?>" />
                     <a href="javascript:void(0)" class="add"></a></span>
-                <span>（库存剩余 <label id="stock"><?php echo $item->stock; ?></label> 台）</span>
+                <span>（库存剩余 <label id="stock"><?php echo $item->stock; ?></label> 件）</span>
             </div>
             <input type="hidden" id="item_id" name="item_id" value="<?php echo $item->item_id; ?>" />
             <input type="hidden" id="props" name="props" value="" />
